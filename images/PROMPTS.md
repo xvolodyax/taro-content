@@ -57,7 +57,7 @@
 
 Пиши это как кадр из фильма или съёмки для журнала: где свет, какой объектив, что в фокусе, что размыто.
 
-## 6. Форматы
+## 6. Форматы и разрешение
 
 | Слот | Aspect | Где |
 | --- | --- | --- |
@@ -65,7 +65,7 @@
 | Пост в ленту | 1:1 | post-* |
 | Обложка сториз/рилс | 9:16 | story-cover |
 
-Разрешение всегда `2K`.
+Разрешение по умолчанию — `1K`. `2K` ставим только тогда, когда площадка реально этого требует (например, крупная обложка, которую растягивают на широкий экран, или кадр, который потом кропают). Просто «чтобы получше» — не причина: 2K дороже и дольше, а в ленте разницы не видно. Если ставишь `2K`, в том же блоке добавь строку `why-2k:` с причиной одной фразой.
 
 ## 7. Люди в кадре
 
@@ -88,7 +88,7 @@
 - без референса: model `gpt-image-2-text-to-image`, `mode: t2i`;
 - с референсом: model `gpt-image-2-image-to-image`, `mode: i2i`, плюс `ref:`.
 
-Параметры: `aspect_ratio` = `16:9` | `1:1` | `9:16`, `resolution` = `2K`.
+Параметры: `aspect_ratio` = `16:9` | `1:1` | `9:16`, `resolution` = `1K` по умолчанию, `2K` — только по необходимости (см. пункт 6).
 
 ## 9. Как писать сам промпт
 
@@ -114,7 +114,7 @@
 aspect: 16:9
 mode: t2i
 model: gpt-image-2-text-to-image
-resolution: 2K
+resolution: 1K
 prompt: <английский промпт одним абзацем>
 why: <одна строка по-русски: что показываем и зачем под этот пост>
 ```
@@ -127,12 +127,14 @@ aspect: 1:1
 mode: i2i
 model: gpt-image-2-image-to-image
 ref: images/refs/victoria-1.jpg
-resolution: 2K
+resolution: 1K
 who: Виктория
 why-her: в посте таролог говорит от первого лица, нужно лицо ведущей
 prompt: <английский промпт одним абзацем>
 why: <одна строка по-русски>
 ```
+
+`resolution` — всегда `1K`, кроме случаев, когда площадка требует больше. Тогда ставим `2K` и добавляем в блок строку `why-2k:` с причиной одной фразой.
 
 `why` — служебная строка, без поэзии и метафор: что в кадре и зачем он этому посту. Одна строка, точка.
 
@@ -145,7 +147,7 @@ why: <одна строка по-русски>
 aspect: 16:9
 mode: t2i
 model: gpt-image-2-text-to-image
-resolution: 2K
+resolution: 1K
 prompt: A smartphone lying face up on crumpled white linen bedsheets in bright late-morning sunlight, screen glowing pale blue, a single tarot card resting face down beside it, window shadows striping the fabric, palette of white, warm sand and soft blue, 50mm lens, shallow depth of field, high angle, clean editorial photography, glossy magazine quality, no text, no letters, no watermark, no logo.
 why: пост про прочитанное и оставленное без ответа сообщение — показываем телефон и ожидание, без мистики.
 ```
@@ -157,7 +159,7 @@ why: пост про прочитанное и оставленное без о�
 aspect: 1:1
 mode: t2i
 model: gpt-image-2-text-to-image
-resolution: 2K
+resolution: 1K
 prompt: Two glass tumblers on a pale marble counter, one empty with a faint lip mark, the other still full, low golden sunset light refracting through the glass onto the stone, brass details out of focus in the background, palette of champagne, amber and warm grey, 85mm macro, very shallow depth of field, eye level, luxury advertising still, no text, no letters, no watermark, no logo.
 why: пост о том, что человек ушёл первым — два стакана вместо людей.
 ```
@@ -170,7 +172,7 @@ aspect: 9:16
 mode: i2i
 model: gpt-image-2-image-to-image
 ref: images/refs/alena-1.jpg
-resolution: 2K
+resolution: 1K
 who: Алёна
 why-her: кадр — прямое обращение к читателю, нужно узнаваемое лицо
 prompt: A woman in a soft beige knit sweater sitting by a large window in a bright minimal room, calm direct gaze into the camera, holding one face-down tarot card between her fingers at chest level, daylight from the left, sheer curtain behind her, palette of cream, pale pink and warm white, 85mm portrait lens, shallow depth of field, modern editorial fashion photography, no text, no letters, no watermark, no logo.
@@ -185,7 +187,7 @@ why: обложка-обращение, лицо ведущей плюс кар�
 - [ ] карта — деталь, а не весь кадр;
 - [ ] промпт на английском, есть свет, палитра, оптика, стиль;
 - [ ] в конце промпта запрет текста и логотипов;
-- [ ] `aspect` соответствует слоту, `resolution: 2K`;
+- [ ] `aspect` соответствует слоту, `resolution: 1K` (если стоит `2K` — есть строка `why-2k`);
 - [ ] если есть лицо — это `i2i` с существующим `ref:`, указаны `who` и `why-her`;
 - [ ] `why` — одна строка по делу;
 - [ ] кадр совпадает с темой поста, а не «просто красиво».
