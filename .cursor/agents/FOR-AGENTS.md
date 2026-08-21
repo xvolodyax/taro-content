@@ -13,7 +13,7 @@
 | 3 | Writer (смысл) | `dzen-writer.md` | inherit (смысл отдельным шагом) |
 | 4 | Главред / Sol | `dzen-glavred.md` | **Opus** |
 | 5 | Description | `dzen-description.md` | inherit |
-| 6 | Cover | `dzen-cover.md` | inherit |
+| 6 | Cover | `dzen-cover.md` | inherit; лицо i2i + hook 2–6 слов, 1K |
 | 7 | Publish-чеклист | `dzen-publish.md` | inherit; выкладку делает Холл |
 
 Посты 12:12 / 15:15 / 18:18 / 21:21, `posts/WRITING.md`, механики дня — **чужая машина**. Не открывать.

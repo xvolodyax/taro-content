@@ -22,7 +22,7 @@ is_background: false
 → Writer (writer.md)
 → Главред-Opus (article.md)
 → Description (dzen-description.md)
-→ Cover (cover-brief.md + файл 1K)
+→ Cover (лицо по рефу + cover_hook 2–6 слов + файл 1K)
 → стоп до отмашки «можно публиковать»
 → Холл публикует, строка в published-titles.md
 ```

@@ -20,7 +20,7 @@ is_background: false
 - формат: **Статья**, не пост
 - `article.md` (status `approved`)
 - `dzen-description.md` (карточка)
-- `cover-brief.md` + **файл** обложки с диска
+- `cover-brief.md` (face, cover_hook 2–6 слов, scene_hint) + **файл** обложки с диска
 - воронка Макс и/или ВК уже в тексте гиперссылками
 - без хештегов, без Telegram
 

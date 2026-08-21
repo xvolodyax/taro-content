@@ -19,7 +19,7 @@ articles/dzen/YYYY-MM-DD-slug/
   article.md
   dzen-description.md
   cover-brief.md
-  cover.png          # файл 1K на диске, в Дзен грузить файлом
+  cover.png          # 1K: лицо по рефу + хук 2–6 слов; в Дзен файлом
 ```
 
 Шаблоны копировать из [`templates/`](templates/). Имя папки = дата слота + кириллический запрос латиницей.
