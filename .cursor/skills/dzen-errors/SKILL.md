@@ -1,0 +1,30 @@
+---
+name: dzen-errors
+description: "Журнал ошибок пайплайна Дзена: localhost-обложка, /new-publication 404, двойная карточка. Писать короткий INC, не повторять."
+---
+
+# Ошибки пайплайна Дзена
+
+Журнал: [`articles/pipeline-errors.md`](../../../articles/pipeline-errors.md).
+
+Любой blocker, retry, 404, кривой URL обложки, «карточка = заголовок» — допиши INC. Не секреты, не токены, не абсолютные локальные пути.
+
+## Уже нельзя повторять
+
+1. **Обложка с localhost / 127.0.0.1.** В Дзен грузить файл с диска.
+2. **`/new-publication` → 404.** Не открывать этот путь. Статья через актуальный UI Студии, тип Статья, канал `todaytaro_bot`.
+3. **Description = title или обрезка лида.** Две одинаковые карточки в ленте. Писать отдельный тизер 80–180.
+4. **Главред выдумал факт.** Только `writer.md` + бриф.
+5. **Новая тема «он не пишет» / «дата рождения».** Смотреть ledger.
+
+## Формат
+
+```text
+## INC-YYYYMMDD-HHMM — ярлык
+дата: YYYY-MM-DD
+шаг: research | title | writer | glavred | description | cover | publish
+что случилось:
+что делать вместо этого:
+```
+
+В handoff шага: `incident_report: none | articles/pipeline-errors.md#INC-…`.
