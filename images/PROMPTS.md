@@ -60,11 +60,11 @@
 
 ## 6. Форматы и разрешение
 
-| Слот | Aspect | Где |
-| --- | --- | --- |
-| Обложка Дзена | 16:9 | dzen-cover |
-| Пост в ленту | 1:1 | post-* |
-| Обложка сториз/рилс | 9:16 | story-cover |
+| Слот | Aspect | Где | Подпись Виктории |
+| --- | --- | --- | --- |
+| Обложка статьи (Дзен) | 16:9 | dzen-cover | да, кодом после генерации |
+| Пост в ленту канала | 1:1 | post-* | нет (с 22.08) |
+| Обложка сториз/рилс канала | 9:16 | story-cover | нет (с 22.08) |
 
 Разрешение по умолчанию — `1K`. `2K` ставим только тогда, когда площадка реально этого требует (например, крупная обложка, которую растягивают на широкий экран, или кадр, который потом кропают). Просто «чтобы получше» — не причина: 2K дороже и дольше, а в ленте разницы не видно. Если ставишь `2K`, в том же блоке добавь строку `why-2k:` с причиной одной фразой.
 
@@ -97,7 +97,8 @@
 5. Медальон — деталь, не главный объект. Не перекрывает фокус кадра.
 6. В промпте явно: keep the circular form, the words ТАРО and СЕЙЧАС, and the Art Deco lattice; embed it as a real object or surface in the scene, not a sticker.
 7. Запрет в конце промпта: `no extra text, no website, no URL, no watermark, no logo except the referenced medallion`.
-8. Подпись ведущей («Виктория - таролог команды «ТАРО СЕЙЧАС»» и аналоги) — **только кодом после генерации**, не моделью. Сайт и URL на кадр не ставить.
+8. Подпись «Виктория - таролог команды «ТАРО СЕЙЧАС»» с **22.08.2026** на картинках к постам каналов **не нужна и не накладывается** — ни моделью, ни кодом. Слоты `post-*`, `story-cover` и любые кадры в ленту Telegram / VK идут без этой строки. Медальон по-прежнему вшивать нативно (пункты 1–7).
+9. Подпись Виктории остаётся **только на обложках статей** (`dzen-cover`, обложки в `articles/`). Там её кладёт код после генерации, не модель. Сайт и URL на кадр не ставить.
 
 `t2i` без лого-рефа для постов больше не используем. `t2i` допустим только если файла `images/refs/taro-seichas-logo.png` нет — тогда в выдаче написать об этом и описать медальон словами, не выдумывая другое клеймо.
 
@@ -136,8 +137,12 @@ model: gpt-image-2-image-to-image
 ref: images/refs/taro-seichas-logo.png
 resolution: 1K
 prompt: <английский промпт одним абзацем, медальон вшит в сцену>
+overlay: Виктория - таролог команды «ТАРО СЕЙЧАС»
+overlay-how: код после генерации, не модель
 why: <одна строка по-русски: что показываем и зачем под этот пост>
 ```
+
+Для слотов `post-*` и `story-cover` строки `overlay` нет. С 22.08 подпись Виктории на постах каналов не ставим.
 
 Блок с человеком:
 
@@ -170,7 +175,9 @@ model: gpt-image-2-image-to-image
 ref: images/refs/taro-seichas-logo.png
 resolution: 1K
 prompt: A smartphone lying face up on crumpled white linen bedsheets in bright late-morning sunlight, screen glowing pale blue, a single tarot card resting face down beside it, a circular gold Art Deco medallion from the reference embossed into the linen as a real woven emblem near the phone — keep the circle, ТАРО, СЕЙЧАС and geometric lattice, champagne-gold thread, window shadows striping the fabric, palette of white, warm sand and soft blue, 50mm lens, shallow depth of field, high angle, clean editorial photography, glossy magazine quality, no extra text, no website, no URL, no watermark, no logo except the referenced medallion.
-why: пост про прочитанное и оставленное без ответа сообщение — телефон и ожидание, медальон вшит в лён.
+overlay: Виктория - таролог команды «ТАРО СЕЙЧАС»
+overlay-how: код после генерации, не модель
+why: обложка статьи — телефон и ожидание, медальон вшит в лён, подпись Виктории кодом.
 ```
 
 **i2i, пост в ленту, палитра «стекло и золото», лого на стекле**
@@ -213,6 +220,6 @@ why: обложка-обращение, лицо ведущей, медальо�
 - [ ] в конце промпта запрет лишнего текста, сайта и URL;
 - [ ] `aspect` соответствует слоту, `resolution: 1K` (если стоит `2K` — есть строка `why-2k`);
 - [ ] если есть лицо — это `i2i` с существующим `ref:`, указаны `who` и `why-her`;
-- [ ] подпись ведущей, если нужна, наложена кодом, не моделью;
+- [ ] пост канала — без подписи Виктории; обложка статьи — подпись кодом, не моделью;
 - [ ] `why` — одна строка по делу;
 - [ ] кадр совпадает с темой поста, а не «просто красиво».
