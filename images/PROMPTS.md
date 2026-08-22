@@ -29,9 +29,11 @@
 - полный расклад, занимающий весь кадр;
 - «ведьма в темноте», балахон, капюшон;
 - стоковая безликая «тарологиня за столиком»;
-- любой текст: буквы, цифры, надписи, подписи, водяные знаки, чужие логотипы;
-- плоская наклейка логотипа поверх кадра;
+- лишний текст: цифры, чужие логотипы, водяные знаки, мемные стикеры, грубый капс, подпись Виктории на постах;
+- плоская наклейка логотипа или тезиса поверх кадра;
 - случайные люди, толпа, массовка на фоне.
+
+На слотах `post-*` и `story-cover` короткий тезис 2–6 слов обязателен и вшивается в генерацию (пункт 9). Это не «любой текст», а одна заданная строка.
 
 Проверка: если промпт сводится к «свечи + карты + темнота» — переписать с нуля.
 
@@ -60,11 +62,11 @@
 
 ## 6. Форматы и разрешение
 
-| Слот | Aspect | Где | Подпись Виктории |
-| --- | --- | --- | --- |
-| Обложка статьи (Дзен) | 16:9 | dzen-cover | да, кодом после генерации |
-| Пост в ленту канала | 1:1 | post-* | нет (с 22.08) |
-| Обложка сториз/рилс канала | 9:16 | story-cover | нет (с 22.08) |
+| Слот | Aspect | Где | Тезис 2–6 слов | Подпись Виктории |
+| --- | --- | --- | --- | --- |
+| Обложка статьи (Дзен) | 16:9 | dzen-cover | по правилам статьи (`cover_hook`), не этот пункт | да, кодом после генерации |
+| Пост в ленту канала | 1:1 | post-* | да, в генерации | нет (с 22.08) |
+| Обложка сториз/рилс канала | 9:16 | story-cover | да, в генерации | нет (с 22.08) |
 
 Разрешение по умолчанию — `1K`. `2K` ставим только тогда, когда площадка реально этого требует (например, крупная обложка, которую растягивают на широкий экран, или кадр, который потом кропают). Просто «чтобы получше» — не причина: 2K дороже и дольше, а в ленте разницы не видно. Если ставишь `2K`, в том же блоке добавь строку `why-2k:` с причиной одной фразой.
 
@@ -96,13 +98,27 @@
 4. Цветность можно менять под кадр: золото, серебро, медь, тон света. Форму круга, буквы ТАРО и СЕЙЧАС и геометрию решётки **не ломать**.
 5. Медальон — деталь, не главный объект. Не перекрывает фокус кадра.
 6. В промпте явно: keep the circular form, the words ТАРО and СЕЙЧАС, and the Art Deco lattice; embed it as a real object or surface in the scene, not a sticker.
-7. Запрет в конце промпта: `no extra text, no website, no URL, no watermark, no logo except the referenced medallion`.
+7. Запрет в конце промпта для постов: `no extra text besides the thesis, no website, no URL, no watermark, no logo except the referenced medallion`. Для обложки статьи — без тезиса этого пункта: `no extra text, no website, no URL, no watermark, no logo except the referenced medallion`.
 8. Подпись «Виктория - таролог команды «ТАРО СЕЙЧАС»» с **22.08.2026** на картинках к постам каналов **не нужна и не накладывается** — ни моделью, ни кодом. Слоты `post-*`, `story-cover` и любые кадры в ленту Telegram / VK идут без этой строки. Медальон по-прежнему вшивать нативно (пункты 1–7).
 9. Подпись Виктории остаётся **только на обложках статей** (`dzen-cover`, обложки в `articles/`). Там её кладёт код после генерации, не модель. Сайт и URL на кадр не ставить.
 
 `t2i` без лого-рефа для постов больше не используем. `t2i` допустим только если файла `images/refs/taro-seichas-logo.png` нет — тогда в выдаче написать об этом и описать медальон словами, не выдумывая другое клеймо.
 
-## 9. API, который вызывает Холл
+## 9. Короткий тезис на кадре поста
+
+Слоты `post-*` и `story-cover`. На картинке к посту канала обязателен **короткий ключевой тезис**. Кадр 12:12 от 22.08 (`posts/2026-08-22-1212/cover.png`) не перерисовывать — правило на будущие слоты.
+
+1. **2–6 слов.** Смысл этого поста, не заголовок статьи, не H1 Дзена, не описание, не подпись Виктории.
+2. Текст — **часть кадра**, вшивается в генерацию. Не наклейка кодом, не водяной знак, не стикер, не грубый капс (Impact, «кричащий» all-caps, мем).
+3. Шрифт современный и спокойный: editorial sans или лёгкий serif, регистр как в обычной фразе (не ВСЕ ЗАГЛАВНЫЕ). Цвет и вес букв берутся из палитры кадра — пудра, шампань, тёплый графит, не кислотный контраст.
+4. Куда класть: негативное пространство, край кадра, как набор журнальной строки в воздухе сцены, как надпись на бумаге / стекле / ткани. Буквы живут в свете кадра, не висят поверх.
+5. В блоке слота строка `thesis:` с точной русской фразой. В английском промпте эта фраза в кавычках один раз, плюс указание: modern editorial type, sentence case, integrated into the scene, not a sticker, not bold all-caps.
+6. Кроме тезиса и букв на медальоне ТАРО / СЕЙЧАС другого текста на кадре нет.
+
+Так можно: «Тишину называешь паузой», «Он не ставит точку», «Пустой второй стакан».
+Так нельзя: «ПАУЗА ИЛИ КОНЕЦ» как заголовок статьи, «Виктория - таролог…», сайт, URL, капс на всю ширину.
+
+## 10. API, который вызывает Холл
 
 - пост / слот с логотипом (норма): model `gpt-image-2-image-to-image`, `mode: i2i`, `ref: images/refs/taro-seichas-logo.png`;
 - плюс лицо: тот же `i2i`, второй `ref:` на `victoria-*.jpg` / `alena-*.jpg`;
@@ -110,7 +126,7 @@
 
 Параметры: `aspect_ratio` = `16:9` | `1:1` | `9:16`, `resolution` = `1K` по умолчанию, `2K` — только по необходимости (см. пункт 6).
 
-## 10. Как писать сам промпт
+## 11. Как писать сам промпт
 
 Промпт — **на английском** (модель точнее его понимает). 40–80 слов, одним абзацем, по порядку:
 
@@ -119,11 +135,11 @@
 3. палитра;
 4. оптика и ракурс (например `85mm, shallow depth of field, eye level`);
 5. стиль (`editorial photography`, `glossy magazine`, `clean app advertising still`);
-6. ограничения в конце: `no extra text, no website, no URL, no watermark, no logo except the referenced medallion`.
+6. для `post-*` / `story-cover` — точный тезис в кавычках и как он сидит в кадре; в конце: `no extra text besides the thesis, no website, no URL, no watermark, no logo except the referenced medallion`. Для `dzen-cover` тезиса этого пункта нет.
 
 Не писать: «мистика», «магия», «атмосферно» — модель уходит в готику. Писать конкретику: предмет, материал, время дня, цвет.
 
-## 11. Файл выдачи за день
+## 12. Файл выдачи за день
 
 Каждый день — `images/prompts/YYYY-MM-DD.md`. Один блок на слот, слот назван по посту (`dzen-cover`, `post-1212`, `post-1830`, `story-cover`).
 
@@ -142,20 +158,35 @@ overlay-how: код после генерации, не модель
 why: <одна строка по-русски: что показываем и зачем под этот пост>
 ```
 
-Для слотов `post-*` и `story-cover` строки `overlay` нет. С 22.08 подпись Виктории на постах каналов не ставим.
+Для слотов `post-*` и `story-cover` строки `overlay` нет. С 22.08 подпись Виктории на постах каналов не ставим. Есть строка `thesis:`.
 
-Блок с человеком:
+Блок поста в ленту:
 
 ```markdown
 ## post-1212
 aspect: 1:1
 mode: i2i
 model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+thesis: Он не ставит точку
+prompt: <английский промпт, медальон вшит, тезис в кавычках как часть кадра>
+why: <одна строка по-русски>
+```
+
+Блок с человеком:
+
+```markdown
+## story-cover
+aspect: 9:16
+mode: i2i
+model: gpt-image-2-image-to-image
 ref: images/refs/taro-seichas-logo.png; images/refs/victoria-1.jpg
 resolution: 1K
 who: Виктория
 why-her: в посте таролог говорит от первого лица, нужно лицо ведущей
-prompt: <английский промпт одним абзацем, медальон вшит в сцену>
+thesis: Спроси себя честно
+prompt: <английский промпт, медальон вшит, тезис в кавычках как часть кадра>
 why: <одна строка по-русски>
 ```
 
@@ -163,7 +194,7 @@ why: <одна строка по-русски>
 
 `why` — служебная строка, без поэзии и метафор: что в кадре и зачем он этому посту. Одна строка, точка.
 
-## 12. Примеры
+## 13. Примеры
 
 **i2i, обложка Дзена, палитра «дневной свет», лого на ткани**
 
@@ -189,8 +220,9 @@ mode: i2i
 model: gpt-image-2-image-to-image
 ref: images/refs/taro-seichas-logo.png
 resolution: 1K
-prompt: Two glass tumblers on a pale marble counter, one empty with a faint lip mark, the other still full, the circular Art Deco medallion from the reference engraved into the side of the empty glass as a real gold etching — keep the circle, ТАРО, СЕЙЧАС and lattice, low golden sunset light refracting through the glass onto the stone, palette of champagne, amber and warm grey, 85mm macro, very shallow depth of field, eye level, luxury advertising still, no extra text, no website, no URL, no watermark, no logo except the referenced medallion.
-why: пост о том, что человек ушёл первым — два стакана, медальон как гравировка на стекле.
+thesis: Он ушёл первым
+prompt: Two glass tumblers on a pale marble counter, one empty with a faint lip mark, the other still full, the circular Art Deco medallion from the reference engraved into the side of the empty glass as a real gold etching — keep the circle, ТАРО, СЕЙЧАС and lattice, the words "Он ушёл первым" set in the scene as modern editorial type in sentence case, champagne-grey letters that match the stone, not a sticker and not bold all-caps, low golden sunset light, palette of champagne, amber and warm grey, 85mm macro, very shallow depth of field, eye level, luxury advertising still, no extra text besides the thesis, no website, no URL, no watermark, no logo except the referenced medallion.
+why: пост о том, что человек ушёл первым — два стакана, медальон на стекле, тезис в наборе кадра.
 ```
 
 **i2i, обложка сториз, нужна ведущая + лого на стене**
@@ -204,11 +236,12 @@ ref: images/refs/taro-seichas-logo.png; images/refs/alena-1.jpg
 resolution: 1K
 who: Алёна
 why-her: кадр — прямое обращение к читателю, нужно узнаваемое лицо
-prompt: A woman in a soft beige knit sweater sitting by a large window in a bright minimal room, calm direct gaze into the camera, holding one face-down tarot card between her fingers at chest level, the circular gold Art Deco medallion from the reference mounted on the white wall behind her as a small real brass plaque — keep the circle, ТАРО, СЕЙЧАС and lattice, daylight from the left, sheer curtain, palette of cream, pale pink and warm white, 85mm portrait lens, shallow depth of field, modern editorial fashion photography, no extra text, no website, no URL, no watermark, no logo except the referenced medallion.
-why: обложка-обращение, лицо ведущей, медальон как латунная деталь на стене.
+thesis: Спроси себя честно
+prompt: A woman in a soft beige knit sweater sitting by a large window in a bright minimal room, calm direct gaze into the camera, holding one face-down tarot card between her fingers at chest level, the circular gold Art Deco medallion from the reference mounted on the white wall behind her as a small real brass plaque — keep the circle, ТАРО, СЕЙЧАС and lattice, the words "Спроси себя честно" as modern editorial type in sentence case on the wall beside the plaque, cream letters in the same light, not a sticker and not bold all-caps, daylight from the left, sheer curtain, palette of cream, pale pink and warm white, 85mm portrait lens, shallow depth of field, modern editorial fashion photography, no extra text besides the thesis, no website, no URL, no watermark, no logo except the referenced medallion.
+why: обложка-обращение, лицо ведущей, медальон на стене, тезис в наборе кадра.
 ```
 
-## 13. Самопроверка перед выдачей
+## 14. Самопроверка перед выдачей
 
 - [ ] один объект в фокусе, одна эмоция;
 - [ ] ничего из стоп-листа (пункт 3);
@@ -217,9 +250,11 @@ why: обложка-обращение, лицо ведущей, медальо�
 - [ ] промпт на английском, есть свет, палитра, оптика, стиль;
 - [ ] медальон «ТАРО СЕЙЧАС» вшит нативно, `ref: images/refs/taro-seichas-logo.png`, `mode: i2i`;
 - [ ] круг, буквы ТАРО / СЕЙЧАС и геометрия не описаны как «перерисовать с нуля»;
+- [ ] `post-*` / `story-cover`: есть `thesis:` из 2–6 слов, смысл поста, не заголовок статьи; в промпте фраза в кавычках, набор современный, не капс и не наклейка;
 - [ ] в конце промпта запрет лишнего текста, сайта и URL;
 - [ ] `aspect` соответствует слоту, `resolution: 1K` (если стоит `2K` — есть строка `why-2k`);
 - [ ] если есть лицо — это `i2i` с существующим `ref:`, указаны `who` и `why-her`;
 - [ ] пост канала — без подписи Виктории; обложка статьи — подпись кодом, не моделью;
 - [ ] `why` — одна строка по делу;
-- [ ] кадр совпадает с темой поста, а не «просто красиво».
+- [ ] кадр совпадает с темой поста, а не «просто красиво»;
+- [ ] сегодняшний исключение: `posts/2026-08-22-1212/cover.png` не перерисовывать.
