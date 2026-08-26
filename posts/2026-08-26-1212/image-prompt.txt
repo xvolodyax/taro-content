@@ -1,0 +1,12 @@
+aspect: 1:1
+mode: t2i
+model: gpt-image-2-text-to-image
+resolution: 1K
+palette: дневной свет + стекло + цитрус (не коралл/лён 22.08)
+who: none
+overlay: native thesis + gold medallion only
+signature: none (NO Victoria signature)
+
+prompt: Bright modern lunch still, not a dark candle tarot table. High-angle 1:1 editorial photo of a white marble cafe table by a large sunlit window. An iced citrus spritz in a clear glass with condensation, a barely touched green salad, and a smartphone face-up with a pale empty compose glow (no chat letters). One face-down tarot card as a small accent. A native circular champagne-gold Art Deco medallion sits on the marble as a real object: keep the circle and the exact readable letters ТАРО / СЕЙЧАС. In the frame, a short contemporary sans-serif thesis that belongs in the photo, not a sticker: «Писать первой?». Palette of white, lemon, sage, and warm daylight. 50mm, shallow depth of field, glossy magazine advertising still. No Victoria signature, no website, no URL, no watermark, no extra logos, no candles, no dark wood table, no gothic mist.
+
+why: пост про неотправленный «привет» в обед. Кадр: светлый стол, черновик в телефоне, тезис «Писать первой?», медальон как предмет.
