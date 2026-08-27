@@ -165,7 +165,7 @@ def check_pack(pack: Path, root: Path | None = None) -> list[str]:
 
     if slot == "1515":
         if (pack / "max.txt").is_file():
-            fails.append("15:15 must not have max.txt (no poll on Max)")
+            fails.append("15:15 must not have max.txt (Max has no poll)")
         story = _read(pack / "ig-story.txt")
         if story and not re.search(r"options_count:\s*2\b", story):
             fails.append("15:15 ig-story.txt must set options_count: 2")
@@ -174,8 +174,8 @@ def check_pack(pack: Path, root: Path | None = None) -> list[str]:
             fails.append("15:15 yt.txt must set poll_options: 4")
 
     if slot == "2121":
-        if not (pack / "max.txt").is_file():
-            fails.append("21:21 missing max.txt")
+        if (pack / "max.txt").is_file():
+            fails.append("21:21 must not have max.txt (Max had no poll, no debrief)")
         if (pack / "ig.txt").is_file():
             fails.append("21:21 uses ig-story.txt, not feed ig.txt")
         story = _read(pack / "ig-story.txt")

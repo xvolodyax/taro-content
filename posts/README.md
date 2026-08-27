@@ -7,7 +7,7 @@ posts/YYYY-MM-DD-HHMM/
 ```
 
 Пример: `posts/2026-08-27-2121/`. Как собирать — [`POSTS.md`](../POSTS.md).
-На 15:15 и 21:21 обязательны `yt.txt` (@todaytaro_club) и `ig-story.txt` (@todaytaro_ru).
+На 15:15 и 21:21 обязательны `yt.txt` (@todaytaro_club) и `ig-story.txt` (@todaytaro_ru). `max.txt` только на 12:12.
 Рой: [`shared/posts-swarm.md`](../shared/posts-swarm.md).
 Шаблоны: [`templates/`](templates/).
 

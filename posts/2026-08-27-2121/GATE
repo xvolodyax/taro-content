@@ -6,10 +6,10 @@ written_by: gemini
 director_wrote: no
 glavred_required: no
 water: сцена 2 строки, без заголовка темы, без штампов
-funnel: бот ≠ приложение; TG бот start=id8293683394 / приложение startapp=ref_361BDE45; Макс бот и startapp=ref_9BAD4149; ВК приложение app54565776; YT/IG без сырых ссылок
-limits: tg visible 920, max raw 1013 / vis 991, vk vis 946; все ≤ 1024
+funnel: бот ≠ приложение; TG бот start=id8293683394 / приложение startapp=ref_361BDE45; ВК разбор с ботом и VK-приложение app54565776; YT/IG без сырых ссылок
+limits: tg visible 920, vk vis 946; все ≤ 1024
 voice: ты, женский род, совет на вечер не диагноз, стоп-лист чист
-platforms: tg.html, max.txt, vk.html (разбор с кнопками/ссылками), yt.txt (@todaytaro_club без сырых URL), ig-story.txt (@todaytaro_ru 6 кадров разбор без стикера и без сырых URL)
+platforms: tg.html, vk.html, yt.txt, ig-story.txt (NO max.txt)
 cover: ok; hook center «Заходит и молчит»; candidates: Заходит и молчит | «Потом» с понедельника | Спросить вслух не вышло
 cards: Восьмёрка мечей | Луна | Королева кубков | Королева пентаклей
 tg_len: 920
@@ -21,7 +21,7 @@ incident_report: none
 - [x] written_by: gemini на эфире
 - [x] есть swarm/copywriter.md (если есть tg.html / debrief.md)
 - [x] нет Главреда как шага
-- [x] нет штампа публикации как требования
+- [x] нет требования отдельного штампа одобрения публикации
 - [x] стоп-лист чист, запретных слов нет
 - [x] бот ≠ приложение
 - [x] TG/ВК/Макс без кодового слова
@@ -31,5 +31,5 @@ incident_report: none
 - [x] 15:15: TG/ВК/YT 4 варианта; ig-story стикер ровно 2; Макс нет; debrief есть
 - [x] 21:21 не тизер статьи
 - [x] 21:21: 4 разные случайные карты, не вчерашний набор
-- [x] 21:21: есть yt.txt, ig-story.txt, vk.html, max.txt
+- [x] 21:21: есть yt.txt, ig-story.txt, vk.html; max.txt нет
 - [x] чужие пакеты и video/ не тронуты

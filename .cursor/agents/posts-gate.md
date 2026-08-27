@@ -50,7 +50,7 @@ python3 scripts/posts_gate_check.py --pack posts/YYYY-MM-DD-HHMM
 
 **15:15.** Нет картинки, нет Макс. Вопрос ВК ≤ 80. 4 варианта рук в TG/ВК/`yt.txt` (@todaytaro_club). `ig-story.txt`: стикер, ровно 2 варианта, без сырого URL. Есть `debrief.md`. Cover шага нет.
 
-**21:21.** Не тизер статьи. Есть `tg.html`, `vk.html`, `max.txt`, `yt.txt`, `ig-story.txt`. Нет ленты `ig.txt`. TG = Макс по смыслу, ≤ 1024. 4 блока: вариант / карта / совет / действие. Карты случайные. YT и IG Stories: сырых URL нет, «ссылки в шапке». Есть `cover-text.json` + `image-prompt.txt`. Живые пиксели Kie не обязательны.
+**21:21.** Не тизер статьи. Есть `tg.html`, `vk.html`, `yt.txt`, `ig-story.txt`. Нет `max.txt`. Нет ленты `ig.txt`. TG ≤ 1024. 4 блока: вариант / карта / совет / действие. Карты случайные. YT и IG Stories: сырых URL нет, «ссылки в шапке». Есть `cover-text.json` + `image-prompt.txt`. Живые пиксели Kie не обязательны.
 
 ## Выход
 

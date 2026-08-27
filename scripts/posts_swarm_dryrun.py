@@ -89,7 +89,6 @@ def main() -> int:
         (good / "debrief.md").write_text("---\nwritten_by: gemini\n---\nкарты\n", encoding="utf-8")
         (good / "tg.html").write_text("<!-- written_by: gemini -->\nкадр\n", encoding="utf-8")
         (good / "vk.html").write_text("<!-- written_by: gemini -->\nкадр\n", encoding="utf-8")
-        (good / "max.txt").write_text("written_by: gemini\nкадр\n", encoding="utf-8")
         (good / "yt.txt").write_text(
             "written_by: gemini\nchannel: @todaytaro_club\nссылки в шапке канала\n",
             encoding="utf-8",
@@ -119,6 +118,13 @@ def main() -> int:
         )
         ok = run_check(["--pack", str(good), "--root", str(ROOT)])
         assert_true(ok.returncode == 0, f"good pack should PASS: {ok.stderr}", errors)
+
+        max_pack = tmp_path / "badmax-2121"
+        shutil.copytree(good, max_pack)
+        (max_pack / "max.txt").write_text("written_by: gemini\nразбор на Макс\n", encoding="utf-8")
+        bad_max = run_check(["--pack", str(max_pack), "--root", str(ROOT)])
+        assert_true(bad_max.returncode != 0, "21:21 max.txt must FAIL", errors)
+        assert_true("max.txt" in bad_max.stderr, f"max.txt fail reason missing: {bad_max.stderr}", errors)
 
         director_pack = tmp_path / "director-inline"
         shutil.copytree(good, director_pack)
@@ -155,6 +161,7 @@ def main() -> int:
     sys.stdout.write("step records: posts/_dryrun/swarm/ (no Kie pixels)\n")
     sys.stdout.write("rejected: inline Director writing\n")
     sys.stdout.write("rejected: Glavred as required step\n")
+    sys.stdout.write("rejected: 21:21 max.txt\n")
     return 0
 
 

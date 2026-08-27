@@ -7,7 +7,6 @@ written_by: gemini
 - debrief.md
 - tg.html
 - vk.html
-- max.txt
 - yt.txt
 - ig-story.txt
 

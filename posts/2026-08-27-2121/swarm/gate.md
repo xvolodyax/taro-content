@@ -7,5 +7,5 @@ director_wrote: no
 glavred_required: no
 tg_len: 920
 cards: Восьмёрка мечей | Луна | Королева кубков | Королева пентаклей
-platforms: yt.txt, ig-story.txt, vk.html, max.txt, tg.html
+platforms: tg.html, vk.html, yt.txt, ig-story.txt (NO max.txt)
 incident_report: none

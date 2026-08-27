@@ -30,7 +30,7 @@ researcher → meaning → copywriter → cover-text → gate
 
 ## Вход (целиком)
 
-1. `meaning.md` и финальный текст: `tg.html` (и `max.txt` / `debrief.md` на 21:21)
+1. `meaning.md` и финальный текст: `tg.html` (и `debrief.md` на 21:21)
 2. `brief.md` — сцена и палитра, не источник хука
 3. `shared/posts-soul.md`
 
