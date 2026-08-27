@@ -2,23 +2,24 @@
 
 slot: 2026-08-27-2121
 pack: posts/2026-08-27-2121/
-mode: replace old single-agent pack
+mode: rewrite after Vladimir reject (card must advise)
 do_not_publish: true
-pixels: hall later, not this run
+cards_locked: Восьмёрка мечей | Луна | Королева кубков | Королева пентаклей
+draw: keep real draw, do not redraw
 
 ```text
 === POSTS-RESEARCHER ===
-OK
+pending
 
 === POSTS-MEANING ===
-OK
+pending
 
 === POSTS-COPYWRITER ===
-OK
+pending
 
 === POSTS-COVER-TEXT ===
-OK
+pending
 
 === POSTS-GATE ===
-PASS
+pending
 ```

@@ -50,7 +50,7 @@ python3 scripts/posts_gate_check.py --pack posts/YYYY-MM-DD-HHMM
 
 **15:15.** Нет картинки, нет Макс, нет Instagram. Вопрос ВК ≤ 80. 4 варианта рук в TG/ВК/`yt.txt` (@todaytaro_club). Есть `debrief.md`. Cover шага нет.
 
-**21:21.** Не тизер статьи. Есть `tg.html`, `vk.html`, `yt.txt`. Нет `max.txt`, `ig-story.txt`, `ig.txt`. TG ≤ 1024. 4 блока: вариант / карта / совет / действие. Карты случайные. YT: сырых URL нет, «ссылки в шапке канала». Есть `cover-text.json` + `image-prompt.txt`. Живые пиксели Kie не обязательны.
+**21:21.** Не тизер статьи. Есть `tg.html`, `vk.html`, `yt.txt`. Нет `max.txt`, `ig-story.txt`, `ig.txt`. TG ≤ 1024. 4 блока: вариант / карта / 2–3 предложения совета карты. Действие руками не заменяет расклад. FAIL форма «Карта. Закрой профиль.» Карты случайные. YT: сырых URL нет, «ссылки в шапке канала». Есть `cover-text.json` + `image-prompt.txt`. Живые пиксели Kie не обязательны.
 
 ## Выход
 
