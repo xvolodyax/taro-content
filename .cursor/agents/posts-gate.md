@@ -16,6 +16,7 @@ is_background: false
 
 **Язык:** русский.
 Канон: `POSTS.md`, `shared/posts-soul.md`, `shared/posts-funnel.md`, `shared/posts-soul-examples/bad-outputs.md`.
+На Алёне: `posts/ALENA.md`, `shared/alena-letter.md`, `shared/alena-funnel.md`. Главред не подменять Gate.
 
 ## Роль
 
@@ -27,7 +28,7 @@ is_background: false
 - Одна сцена (опрос: сцена в вопросе)
 - Нет стоп-листа, нет слова «ловушка», нет длинного тире
 - Нет SEO-глажки и воздуха
-- Бот ≠ приложение, ссылки из `shared/posts-funnel.md`
+- Бот ≠ приложение; на ТАРО СЕЙЧАС ссылки из `shared/posts-funnel.md`, на Алёне из `shared/alena-funnel.md`
 - Существующие посты/рилсы не задеты
 
 ## По слоту
@@ -57,6 +58,18 @@ is_background: false
 - Карты случайные, без повтора, не «подобраны в тему»
 - Таро = совет, не диагноз
 - Есть cover-text + image-prompt (после PASS Директор зовёт Cover). Хук по центру, не угол. Если файлов кадра ещё нет — не FAIL по ним до шага Cover.
+
+**alena-0700**
+
+- Канал queen, не @TodayTaro. Cover-файлов нет и не требовать
+- Есть `caption.txt`, `caption.html`, `REFS`, `package.md`
+- Первая строка = привет и дата, не заголовок темы
+- 4–6 живых предложений; нет одиноких заголовков «Развилка / Действие / Не стоит»
+- Луна, день с часом, 1–2 аспекта, легче/тяжелее на месте
+- «Кстати» не копия вчерашнего; стрижка только по правилам слота
+- Рефки байт-в-байт как `shared/alena-funnel.md` (столбик). Сжать или переписать = FAIL → Sol
+- Видимый текст `caption.txt` ≤ 1024. Прогнать `python3 scripts/alena_check.py posts/YYYY-MM-DD-alena`
+- Главред не звали. Обложку не генерили
 
 ## Выход
 
