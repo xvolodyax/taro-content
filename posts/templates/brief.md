@@ -2,6 +2,7 @@
 date: YYYY-MM-DD
 slot: 1212
 status: draft
+written_by: gemini
 wordstat: PARTIAL | фразы и частоты
 ---
 

@@ -1,21 +1,25 @@
-# Посты каналов — роли
+# Посты каналов — роли роя
 
-Канон: [`POSTS.md`](../../POSTS.md).
-Не Excalibur-плагин. Не статьи Дзена. Не рилсы.
+Канон: [`POSTS.md`](../../POSTS.md). Контракт роя: [`shared/posts-swarm.md`](../../shared/posts-swarm.md).
+Не Excalibur-плагин. Не статьи Дзена. Не рилсы. Не Каруселька целиком.
 
-Одно окно: Директор ведёт цепочку. Специалист — один шаг, не зовёт соседние роли.
+Одно окно: Директор ведёт цепочку. Сотрудник — один шаг, не зовёт соседние роли.
+Cloud: нет `Task(posts-*)`. Директор зовёт `Task(generalPurpose)` с промптом файла роли.
 
 | # | Роль | Файл | Модель | Task? |
 | --- | --- | --- | --- | --- |
 | 0 | Директор | `posts-director.md` | inherit | **нет** |
-| 1 | Scout / Wordstat | `posts-scout.md` | inherit | да, foreground |
-| 2 | Writer (смысл) | `posts-writer.md` | `gemini-3.7-flash-high` | да |
-| 3 | Sol (слог) | `posts-sol.md` | `gemini-3.7-flash-high` | да |
-| 4 | Gate | `posts-gate.md` | `gemini-3.7-flash-high` | да |
-| 5 | Cover (хук + prompt) | `posts-cover-text.md` | `gemini-3.7-flash-high` | да, 12:12 и 21:21 |
+| 1 | researcher | `posts-researcher.md` | `gemini-3.7-flash-high` | да, foreground / generalPurpose |
+| 2 | meaning | `posts-meaning.md` | `gemini-3.7-flash-high` | да |
+| 3 | copywriter | `posts-copywriter.md` | `gemini-3.7-flash-high` | да |
+| 4 | cover-text | `posts-cover-text.md` | `gemini-3.7-flash-high` | да, только 12:12 и 21:21 |
+| 5 | gate | `posts-gate.md` | `gemini-3.7-flash-high` | да |
 
-Cover читает весь `writer.md` и финальный текст слота. Хук 2–6 слов **по центру** 1:1, чтобы читался как превью сетки Instagram (~200px). Пиксели и Kie — Холл. Ролей `posts-cover-hook` / `posts-cover-render` нет.
+Cover читает смысл и пишет **только хуки** + `image-prompt.txt`. Хук 2–6 слов **по центру** 1:1. Пиксели и Kie — Холл.
 
-Нет ролей: Publish, Research-статья, Title, Schema, Indexer, Setup, Главред снаружи, отдельный Cover-директор.
+## Запрещённые роли
 
-Статьи Дзена, `video/`, `images/prompts/` старого плейбука, однофайловые посты на других ветках — **чужая машина**. Не открывать, не «дотягивать».
+Главред, `posts-glavred`, Scout, Writer, Sol, Publish, `posts-cover-hook`, `posts-cover-render`.
+Штамп «можно публиковать» не требуется. Качество внутри researcher + meaning + Gemini + gate.
+
+Статьи Дзена, `video/`, однофайловые посты на других ветках — чужая машина.

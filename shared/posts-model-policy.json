@@ -1,18 +1,19 @@
 {
-  "pipeline": "taro-posts",
+  "pipeline": "taro-posts-swarm",
   "text_model": "gemini-3.7-flash-high",
   "text_model_id": "gemini-3.7-flash",
   "text_model_display": "Gemini 3.7 Flash",
-  "inherit_means": "Модель родителя = модель Cursor Automation / выбранная Холлом. Не подменять Gemini на текстовых шагах.",
+  "written_by": "gemini",
+  "inherit_means": "Модель родителя = модель окна Директора. Человеческий текст всё равно Gemini.",
   "text_agents": [
-    "posts-writer",
-    "posts-sol",
-    "posts-gate",
-    "posts-cover-text"
+    "posts-researcher",
+    "posts-meaning",
+    "posts-copywriter",
+    "posts-cover-text",
+    "posts-gate"
   ],
   "inherit_agents": [
-    "posts-director",
-    "posts-scout"
+    "posts-director"
   ],
   "orchestrators": [
     "posts-director"
@@ -20,6 +21,38 @@
   "never_as_task": [
     "posts-director"
   ],
+  "required_steps": [
+    "researcher",
+    "meaning",
+    "copywriter",
+    "gate"
+  ],
+  "optional_steps_by_slot": {
+    "1212": ["cover-text"],
+    "1515": [],
+    "2121": ["cover-text"]
+  },
+  "forbidden_roles": [
+    "glavred",
+    "posts-glavred",
+    "posts-scout",
+    "posts-writer",
+    "posts-sol",
+    "publish",
+    "posts-cover-hook",
+    "posts-cover-render"
+  ],
+  "forbidden_phrases_as_required_step": [
+    "можно публиковать",
+    "главред",
+    "glavred"
+  ],
+  "cloud_fallback": {
+    "if_missing": "Task(posts-*)",
+    "use": "Task(generalPurpose)",
+    "model": "gemini-3.7-flash-high",
+    "with": "full worker prompt from .cursor/agents/posts-*.md"
+  },
   "parallel_pairs": [],
   "forbidden_task_fields": {
     "environment": ["cloud"],
@@ -28,5 +61,6 @@
   },
   "forbidden_subagent_types": [
     "best-of-n-runner"
-  ]
+  ],
+  "pixels_required_for_pass": false
 }
