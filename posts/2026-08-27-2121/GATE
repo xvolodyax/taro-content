@@ -7,7 +7,7 @@ funnel: бот ≠ приложение; TG бот start=id8293683394 / прил
 limits: tg visible 806, tg raw 1018, max 897; все ≤ 1024
 voice: ты, совет не диагноз, слова «ловушка» нет
 platforms: tg.html = max.txt по смыслу; vk.html фото+текст, не опрос; ig.txt/yt.txt нет
-cover: ok
+cover: ok; hook center «Заходит и молчит»; candidates: Заходит и молчит | Потом так и висит | Спросить не вышло
 cards: Король жезлов | Девятка жезлов | Пятёрка кубков | Рыцарь мечей
 tg_len: 806
 incident_report: none
