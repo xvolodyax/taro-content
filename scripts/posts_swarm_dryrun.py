@@ -88,7 +88,16 @@ def main() -> int:
         (good / "meaning.md").write_text("---\nwritten_by: gemini\n---\nтезис\n", encoding="utf-8")
         (good / "debrief.md").write_text("---\nwritten_by: gemini\n---\nкарты\n", encoding="utf-8")
         (good / "tg.html").write_text("<!-- written_by: gemini -->\nкадр\n", encoding="utf-8")
+        (good / "vk.html").write_text("<!-- written_by: gemini -->\nкадр\n", encoding="utf-8")
         (good / "max.txt").write_text("written_by: gemini\nкадр\n", encoding="utf-8")
+        (good / "yt.txt").write_text(
+            "written_by: gemini\nchannel: @todaytaro_club\nссылки в шапке канала\n",
+            encoding="utf-8",
+        )
+        (good / "ig-story.txt").write_text(
+            "written_by: gemini\naccount: @todaytaro_ru\npoll_sticker: no\nссылки в шапке профиля\n",
+            encoding="utf-8",
+        )
         (good / "cover-text.json").write_text(
             json.dumps(
                 {

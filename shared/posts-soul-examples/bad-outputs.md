@@ -52,7 +52,7 @@
 
 **Bad:** https://t.me/TodayTaro_bot?start=id8293683394
 
-**Why:** В IG — слово + «ссылки в шапке». URL палит охваты. В 21:21 IG нет совсем.
+**Why:** В IG и сторис — «ссылки в шапке». URL палит охваты. На 21:21 сторис @todaytaro_ru и YT community тоже без сырого URL.
 
 ---
 

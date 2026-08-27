@@ -35,14 +35,16 @@ wordstat: PARTIAL | фразы и частоты
 3. 
 4. 
 **debrief.md:** сразу, 4 случайные карты. Голоса не ждать.
+**Площадки опроса:** TG + ВК + YT community @todaytaro_club (4). IG Stories @todaytaro_ru (стикер, 2 самых острых). Макс нет.
 
 ## 21:21
 
 **Разбор опроса:** да. Не тизер статьи.
 **debrief_from:** posts/YYYY-MM-DD-1515/debrief.md | этот пакет
 **site_url:** нет
-**IG/YT:** нет
-**Хук на кадр (черновик; Cover читает writer + финал, хук по центру):** 
+**Площадки разбора:** TG, ВК, YT community @todaytaro_club, IG Stories @todaytaro_ru, Макс.
+**IG/YT URL:** нет сырых ссылок; «в шапке профиля / канала»
+**Хук на кадр (черновик; Cover читает meaning + финал, хук по центру):** 
 **Палитра (не вчерашняя):** 
 
 ## Воронка

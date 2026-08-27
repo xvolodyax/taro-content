@@ -1,0 +1,21 @@
+written_by: gemini
+channel: @todaytaro_club
+format: community
+slot: 1212 | 1515 | 2121
+
+# YouTube community — RU
+
+Сырых URL нет. Ссылки в шапке / описании канала.
+
+## 15:15
+
+poll_options: 4
+Вопрос:
+1.
+2.
+3.
+4.
+
+## 21:21
+
+Разбор опроса, не тизер. Тот же смысл, что TG, без ссылок.

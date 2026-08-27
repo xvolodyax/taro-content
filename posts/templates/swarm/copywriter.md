@@ -6,6 +6,9 @@ written_by: gemini
 Артефакты:
 - debrief.md
 - tg.html
+- vk.html
 - max.txt
+- yt.txt
+- ig-story.txt
 
 incident_report: none

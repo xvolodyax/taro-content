@@ -38,8 +38,12 @@ HUMAN_FILES = (
     "tg.html",
     "max.txt",
     "vk.html",
+    "yt.txt",
+    "ig-story.txt",
+    "ig.txt",
     "cover-text.json",
 )
+RAW_URL = re.compile(r"https?://", re.I)
 
 
 def _read(path: Path) -> str:
@@ -146,6 +150,37 @@ def check_pack(pack: Path, root: Path | None = None) -> list[str]:
             fails.append("12:12/21:21 missing cover-text.json")
         if (swarm / "cover-text.md").is_file() is False and (pack / "cover-text.json").exists():
             fails.append("cover-text.json without swarm/cover-text.md")
+
+    if slot in {"1515", "2121"}:
+        if not (pack / "yt.txt").is_file():
+            fails.append(f"{slot}: missing yt.txt")
+        if not (pack / "ig-story.txt").is_file():
+            fails.append(f"{slot}: missing ig-story.txt")
+        if not (pack / "vk.html").is_file():
+            fails.append(f"{slot}: missing vk.html")
+        for name in ("yt.txt", "ig-story.txt", "ig.txt"):
+            text = _read(pack / name)
+            if text and RAW_URL.search(text):
+                fails.append(f"{name}: raw URL forbidden on IG/YT")
+
+    if slot == "1515":
+        if (pack / "max.txt").is_file():
+            fails.append("15:15 must not have max.txt (no poll on Max)")
+        story = _read(pack / "ig-story.txt")
+        if story and not re.search(r"options_count:\s*2\b", story):
+            fails.append("15:15 ig-story.txt must set options_count: 2")
+        yt = _read(pack / "yt.txt")
+        if yt and not re.search(r"poll_options:\s*4\b", yt):
+            fails.append("15:15 yt.txt must set poll_options: 4")
+
+    if slot == "2121":
+        if not (pack / "max.txt").is_file():
+            fails.append("21:21 missing max.txt")
+        if (pack / "ig.txt").is_file():
+            fails.append("21:21 uses ig-story.txt, not feed ig.txt")
+        story = _read(pack / "ig-story.txt")
+        if story and re.search(r"poll_sticker:\s*yes", story, re.I):
+            fails.append("21:21 ig-story is debrief, not a poll sticker")
 
     return fails
 
