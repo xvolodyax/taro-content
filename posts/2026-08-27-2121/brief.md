@@ -21,8 +21,8 @@ wordstat: PARTIAL
 **Опрос:** https://t.me/TodayTaro/4136
 **debrief_from:** этот пакет (`debrief.md`)
 **site_url:** нет
-**Площадки разбора:** TG, ВК, YT community @todaytaro_club, IG Stories @todaytaro_ru. Макс нет.
-**IG/YT URL:** нет сырых ссылок; «в шапке профиля / канала»
+**Площадки разбора:** TG, ВК, YT community @todaytaro_club. Макс нет. Instagram нет.
+**YT URL:** нет сырых ссылок; «в шапке канала»
 **Хук на кадр (черновик; Cover читает writer + финал, хук по центру):** Заходит и молчит
 **Палитра (не вчерашняя):** вечернее окно + тёплый графит (не цитрус 26.08, не коралл 22.08)
 

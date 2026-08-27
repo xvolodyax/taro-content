@@ -93,10 +93,6 @@ def main() -> int:
             "written_by: gemini\nchannel: @todaytaro_club\nссылки в шапке канала\n",
             encoding="utf-8",
         )
-        (good / "ig-story.txt").write_text(
-            "written_by: gemini\naccount: @todaytaro_ru\npoll_sticker: no\nссылки в шапке профиля\n",
-            encoding="utf-8",
-        )
         (good / "cover-text.json").write_text(
             json.dumps(
                 {
@@ -125,6 +121,13 @@ def main() -> int:
         bad_max = run_check(["--pack", str(max_pack), "--root", str(ROOT)])
         assert_true(bad_max.returncode != 0, "21:21 max.txt must FAIL", errors)
         assert_true("max.txt" in bad_max.stderr, f"max.txt fail reason missing: {bad_max.stderr}", errors)
+
+        ig_pack = tmp_path / "badig-2121"
+        shutil.copytree(good, ig_pack)
+        (ig_pack / "ig-story.txt").write_text("written_by: gemini\nstory\n", encoding="utf-8")
+        bad_ig = run_check(["--pack", str(ig_pack), "--root", str(ROOT)])
+        assert_true(bad_ig.returncode != 0, "21:21 ig-story.txt must FAIL", errors)
+        assert_true("ig-story" in bad_ig.stderr, f"ig-story fail reason missing: {bad_ig.stderr}", errors)
 
         director_pack = tmp_path / "director-inline"
         shutil.copytree(good, director_pack)
@@ -162,6 +165,7 @@ def main() -> int:
     sys.stdout.write("rejected: inline Director writing\n")
     sys.stdout.write("rejected: Glavred as required step\n")
     sys.stdout.write("rejected: 21:21 max.txt\n")
+    sys.stdout.write("rejected: 15:15/21:21 Instagram\n")
     return 0
 
 

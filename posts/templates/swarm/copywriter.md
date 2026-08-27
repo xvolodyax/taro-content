@@ -8,6 +8,5 @@ written_by: gemini
 - tg.html
 - vk.html
 - yt.txt
-- ig-story.txt
 
 incident_report: none

@@ -37,7 +37,7 @@ Cloud: `Task(generalPurpose)` + полный промпт из `.cursor/agents/p
 5. По очереди Task: researcher → meaning → copywriter. На 12:12 и 21:21 ещё cover-text. Потом gate.
 6. Перед следующим шагом: fragment `swarm/<role>.md` со строкой `incident_report:`.
 7. FAIL → вернуть тот шаг. Не чинить эфир самому.
-8. Стоп. Холлу: путь, GATE, на 21:21 карты, хук, длина TG, наличие yt.txt и ig-story.txt. Не публиковать. Kie не звать.
+8. Стоп. Холлу: путь, GATE, на 21:21 карты, хук, длина TG, наличие yt.txt. Не публиковать. Kie не звать.
 
 ## Выход
 
