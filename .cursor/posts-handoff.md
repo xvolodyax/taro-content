@@ -9,7 +9,7 @@ draw: keep real draw, do not redraw
 
 ```text
 === POSTS-RESEARCHER ===
-pending
+OK
 
 === POSTS-MEANING ===
 pending

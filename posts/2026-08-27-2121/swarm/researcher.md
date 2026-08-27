@@ -1,7 +1,6 @@
-=== POSTS-RESEARCHER ===
-Статус: OK
+=== POSTS RESEARCHER ===
+slot: 2026-08-27-2121
 written_by: gemini
-Кратко: Зафиксирован бриф разбора опроса 21:21 по живой сцене сторис и молчания после «потом».
-Артефакты:
-- posts/2026-08-27-2121/brief.md
+wordstat: PARTIAL
+next: meaning
 incident_report: none
