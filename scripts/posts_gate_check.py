@@ -113,6 +113,8 @@ def check_pack(pack: Path, root: Path | None = None) -> list[str]:
         fails.append("GATE returns to Glavred")
     if LOVUSHKA.search(gate):
         fails.append("GATE contains «ловушка»")
+    if slot == "2121" and (SCENA_LABEL.search(gate) or re.search(r"(?i)(?<![\w])сцена(?![\w])", gate)):
+        fails.append("GATE: слово «Сцена» запрещено в 21:21")
 
     handoff = _read((root or ROOT) / ".cursor" / "posts-handoff.md")
     pack_text = "\n".join(_read(p) for p in pack.glob("*") if p.is_file())
@@ -158,7 +160,6 @@ def check_pack(pack: Path, root: Path | None = None) -> list[str]:
         elif written != "gemini":
             fails.append(f"{name}: written_by must be gemini, got {written}")
 
-    slot = pack.name[-4:] if len(pack.name) >= 4 else ""
     if slot in {"1212", "2121"} and (pack / "tg.html").exists():
         if not (pack / "cover-text.json").exists():
             fails.append("12:12/21:21 missing cover-text.json")

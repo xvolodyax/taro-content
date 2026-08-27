@@ -15,7 +15,7 @@ OK
 OK
 
 === POSTS-COPYWRITER ===
-pending
+OK
 
 === POSTS-COVER-TEXT ===
 pending
