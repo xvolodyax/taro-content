@@ -1,0 +1,12 @@
+aspect: 1:1
+mode: t2i
+model: gpt-image-2-text-to-image
+resolution: 1K
+palette: августовский двор + персик + лёд (не цитрус/мрамор 26.08, не коралл/лён 22.08)
+who: none
+overlay: native thesis + gold medallion only
+signature: none (NO Victoria face, NO Victoria signature)
+
+prompt: Bright modern late-August still, not a dark candle tarot table. Square 1:1 editorial photo of a sunlit courtyard walk: pale concrete, a condensation-beaded iced drink in a clear cup, a smartphone face-up with a muted chat glow (no readable letters, no names). Soft peach light, heat haze, a slice of blue noon sky. One face-down tarot card as a small accent on a warm stone ledge. A native circular champagne-gold Art Deco medallion sits on the stone as a real object: keep the circle and the exact readable letters ТАРО / СЕЙЧАС. In the frame, a short contemporary sans-serif thesis that belongs in the photo, not a sticker: «Что у него ко мне?». Palette of peach, ice-blue, pale concrete, and warm daylight. 50mm, shallow depth of field, glossy magazine advertising still. No people, no faces, no Victoria signature, no website, no URL, no watermark, no extra logos, no candles, no dark wood table, no gothic mist.
+
+why: пост про паузу и чувство, которое она лепит из мелочей. Кадр: светлый двор, лёд, чат в телефоне, тезис «Что у него ко мне?», медальон как предмет.
