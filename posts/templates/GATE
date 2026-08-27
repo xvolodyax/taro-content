@@ -1,0 +1,35 @@
+=== POSTS GATE ===
+slot: YYYY-MM-DD-HHMM
+verdict: FAIL
+return: copywriter | meaning | researcher | cover-text | none
+written_by: gemini
+director_wrote: no
+glavred_required: no
+water:
+funnel:
+limits:
+voice:
+platforms:
+cover: skip | ok | n/a
+cards:
+tg_len:
+incident_report: none
+
+# Чеклист
+
+- [ ] первая строка = ситуация без ярлыка (на 21:21 нет «Сцена»)
+- [ ] written_by: gemini на эфире
+- [ ] есть swarm/copywriter.md (если есть tg.html / debrief.md)
+- [ ] нет Главреда как шага
+- [ ] нет штампа «можно публиковать» как требования
+- [ ] нет слова «ловушка»
+- [ ] бот ≠ приложение
+- [ ] TG/ВК/Макс без кодового слова
+- [ ] YT без сырого URL; 12:12 IG без сырого URL
+- [ ] TG ≤ 1024 (12:12 и 21:21)
+- [ ] ВК вопрос ≤ 80 (15:15)
+- [ ] 15:15: TG/ВК/YT 4 варианта; Макс нет; Instagram нет; debrief есть
+- [ ] 21:21 не тизер статьи
+- [ ] 21:21: 4 разные случайные карты, не вчерашний набор
+- [ ] 21:21: есть yt.txt, vk.html; max.txt / ig-story.txt / ig.txt нет
+- [ ] чужие пакеты и video/ не тронуты
