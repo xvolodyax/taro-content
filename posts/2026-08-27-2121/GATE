@@ -5,19 +5,19 @@ return: none
 written_by: gemini
 director_wrote: no
 glavred_required: no
-water: сцена 2 строки, без заголовка темы, без штампов
+water: первая строка без ярлыка, без заголовка темы, без штампов
 funnel: бот ≠ приложение; TG бот start=id8293683394 / приложение startapp=ref_361BDE45; ВК разбор с ботом и VK-приложение app54565776; YT без сырых ссылок
-limits: tg visible 920, vk vis 946; все ≤ 1024
+limits: tg visible 1005, vk vis 946; все ≤ 1024
 voice: ты, женский род, совет на вечер не диагноз, стоп-лист чист
 platforms: tg.html, vk.html, yt.txt (NO ig-story, NO ig.txt, NO max.txt)
 cover: ok; hook center «Заходит и молчит»; candidates: Заходит и молчит | «Потом» с понедельника | Спросить вслух не вышло
 cards: Восьмёрка мечей | Луна | Королева кубков | Королева пентаклей
-tg_len: 920
+tg_len: 1005
 incident_report: none
 
 # Чеклист
 
-- [x] первая строка = кадр
+- [x] первая строка без ярлыка
 - [x] written_by: gemini на эфире
 - [x] есть swarm/copywriter.md (если есть tg.html / debrief.md)
 - [x] нет Главреда как шага

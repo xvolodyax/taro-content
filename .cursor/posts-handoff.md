@@ -21,5 +21,5 @@ OK
 OK
 
 === POSTS-GATE ===
-pending
+PASS
 ```

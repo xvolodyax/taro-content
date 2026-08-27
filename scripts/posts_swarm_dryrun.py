@@ -84,7 +84,7 @@ def main() -> int:
         tmp_path = Path(tmp)
         good = tmp_path / "2026-08-27-2121"
         (good / "swarm").mkdir(parents=True)
-        (good / "brief.md").write_text("---\nwritten_by: gemini\n---\nсцена\n", encoding="utf-8")
+        (good / "brief.md").write_text("---\nwritten_by: gemini\n---\nситуация\n", encoding="utf-8")
         (good / "meaning.md").write_text("---\nwritten_by: gemini\n---\nтезис\n", encoding="utf-8")
         (good / "debrief.md").write_text("---\nwritten_by: gemini\n---\nкарты\n", encoding="utf-8")
         (good / "tg.html").write_text("<!-- written_by: gemini -->\nкадр\n", encoding="utf-8")

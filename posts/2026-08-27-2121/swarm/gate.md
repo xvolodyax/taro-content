@@ -5,7 +5,7 @@ return: none
 written_by: gemini
 director_wrote: no
 glavred_required: no
-tg_len: 920
+tg_len: 1005
 cards: Восьмёрка мечей | Луна | Королева кубков | Королева пентаклей
 platforms: tg.html, vk.html, yt.txt (NO ig-story, NO ig.txt, NO max.txt)
 incident_report: none
