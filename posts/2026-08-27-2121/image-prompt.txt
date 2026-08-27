@@ -5,11 +5,11 @@ ref: images/refs/taro-seichas-logo.png
 resolution: 1K
 palette: вечернее окно + тёплый графит (не цитрус 26.08, не коралл 22.08)
 who: none
-thesis: Он написал «потом» в понедельник и молчит в сторис; вечерний разбор опроса даёт случайную карту и действие руками под каждый выбор.
+thesis: Он написал «потом» в понедельник и молчит в сторис; вечерний разбор опроса даёт случайную карту и совет под каждый выбор.
 placement: center
 overlay: centered hook + gold medallion only
 signature: none
 
-prompt: Bright late-evening 1:1 editorial still, clean minimal interior. Pale oak windowsill in quiet twilight and soft ambient room glow. A smartphone lies face down with a muted notification edge. At the optical center of the square frame, high contrast type against the light background: "Заходит и молчит" in magazine display didone typography, perfectly readable at Instagram grid thumbnail. The letters live in the natural light, not a sticker, not a bottom bar, not a corner plaque. A native circular champagne-gold medallion with clear readable embossed ТАРО / СЕЙЧАС sits off-center as a tactile luxury object. Ivory, soft graphite, pale champagne tones. 50mm lens, shallow depth of field, tactile magazine cover aesthetic. No face, no Victoria signature, no candles, no dark wood table. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.
+prompt: Bright late-evening 1:1 editorial still, clean minimal interior. Pale oak windowsill in quiet twilight and soft ambient room glow. A smartphone lies face down with a muted notification edge. Hook centered at optical center, high contrast type vs background: "Заходит и молчит" in magazine display didone typography, readable at Instagram grid thumbnail. The letters live in the natural light, not a sticker, not a bottom bar, not a corner plaque. A native circular champagne-gold medallion with clear readable embossed ТАРО / СЕЙЧАС sits off-center as a tactile luxury object. Ivory, soft graphite, pale champagne tones. 50mm lens, shallow depth of field, tactile magazine cover aesthetic. No face, no Victoria signature, no candles, no dark wood table. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.
 
-why: хук «Заходит и молчит» строго по центру: превью сетки про сторис без слов. Медальон сбоку, светлый подоконник, телефон экраном вниз.
+why: фраза «Заходит и молчит» строго по центру: превью сетки про просмотр сторис без слов. Медальон сбоку, светлый подоконник, телефон экраном вниз.

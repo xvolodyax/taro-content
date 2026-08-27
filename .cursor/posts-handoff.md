@@ -18,7 +18,7 @@ OK
 OK
 
 === POSTS-COVER-TEXT ===
-pending
+OK
 
 === POSTS-GATE ===
 pending
