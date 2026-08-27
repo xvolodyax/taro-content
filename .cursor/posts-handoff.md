@@ -12,7 +12,7 @@ draw: keep real draw, do not redraw
 OK
 
 === POSTS-MEANING ===
-pending
+OK
 
 === POSTS-COPYWRITER ===
 pending
