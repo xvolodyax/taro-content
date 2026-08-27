@@ -30,6 +30,7 @@ DIRECTOR_INLINE = re.compile(
     re.I,
 )
 LOVUSHKA = re.compile(r"ловушк", re.I)
+SCENA_LABEL = re.compile(r"сцена\s*:", re.I)
 
 HUMAN_FILES = (
     "brief.md",
@@ -99,6 +100,8 @@ def check_pack(pack: Path, root: Path | None = None) -> list[str]:
     if not pack.is_dir():
         return [f"pack not found: {pack}"]
 
+    slot = pack.name[-4:] if len(pack.name) >= 4 else ""
+
     swarm = pack / "swarm"
     if (swarm / "glavred.md").exists() or (swarm / "posts-glavred.md").exists():
         fails.append("swarm/glavred.md present: Glavred must not be a step")
@@ -127,6 +130,17 @@ def check_pack(pack: Path, root: Path | None = None) -> list[str]:
         text = _read(path)
         if LOVUSHKA.search(text):
             fails.append(f"{name}: слово «ловушка»")
+        if slot == "2121" and name in {
+            "brief.md",
+            "meaning.md",
+            "debrief.md",
+            "tg.html",
+            "vk.html",
+            "yt.txt",
+            "GATE",
+        }:
+            if SCENA_LABEL.search(text) or re.search(r"(?i)(?<![\w])сцена(?![\w])", text):
+                fails.append(f"{name}: слово «Сцена» запрещено в 21:21")
         if name.endswith(".json"):
             try:
                 data = json.loads(text)
