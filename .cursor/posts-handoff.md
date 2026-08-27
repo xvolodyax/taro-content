@@ -1,20 +1,23 @@
 # Posts — handoff
 
-Слот и дата из промпта Холла. Директор сбрасывает этот файл в начале run.
-Эфир сюда не писать.
+slot: 2026-08-27-2121
+pack: posts/2026-08-27-2121/
+mode: replace old single-agent pack
+do_not_publish: true
+pixels: hall later, not this run
 
 ```text
 === POSTS-RESEARCHER ===
-pending
+OK
 
 === POSTS-MEANING ===
-pending
+OK
 
 === POSTS-COPYWRITER ===
 pending
 
 === POSTS-COVER-TEXT ===
-pending | skip-1515
+pending
 
 === POSTS-GATE ===
 pending
