@@ -1,6 +1,6 @@
 ---
 name: posts-cover-text
-description: "Cover-text 12:12: тезис в cover-text.json и image-prompt до кадра. Director-chain only; no nested Task/cloud."
+description: "Cover-text 12:12 и 21:21: тезис в cover-text.json и image-prompt до кадра. Director-chain only; no nested Task/cloud."
 model: gemini-3.7-flash-high
 readonly: false
 is_background: false
@@ -8,12 +8,13 @@ is_background: false
 
 ## Цепочка (HARD)
 
-Ты один шаг в окне Директора. Только после `GATE` = PASS. Только слот **12:12**.
+Ты один шаг в окне Директора. Только после `GATE` = PASS. Слоты **12:12 и 21:21**.
 
 - Запрещено: `Task(posts-*)`, `/in-cloud`, `/babysit`, `environment: cloud`
 - Не генерируешь картинку и не публикуешь
-- 15:15 / 21:21 — стоп, файлов кадра нет
+- 15:15 — стоп, файлов кадра нет
 - Если открыли как главный чат — стоп: нужен Директор
+- Слово «ловушка» не писать в тезисе
 
 **Язык:** русский. Промпт кадра — английский.
 
@@ -41,6 +42,7 @@ is_background: false
 - `who: none`. Лица нет. Подписи Виктории нет. Сайта нет
 - Карта — мелкий акцент. Один объект в фокусе
 - Палитра не копирует вчерашнюю из ledger, если она указана
+- 21:21: кадр про вечерний разбор той же дневной сцены, не «статья на сайте»
 
 ## Выход
 

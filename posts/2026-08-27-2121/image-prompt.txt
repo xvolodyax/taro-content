@@ -1,0 +1,14 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: вечернее окно + тёплый графит (не цитрус 26.08, не коралл 22.08)
+who: none
+thesis: Он написал потом
+overlay: native thesis + gold medallion only
+signature: none
+
+prompt: Bright late-evening still, not a dark candle tarot table. 1:1 editorial photo of a pale oak windowsill in cool leftover daylight mixed with a warm lamp glow. A smartphone lies face down, one muted notification halo with no letters. A single face-down tarot card as a small accent. A circular champagne-gold Art Deco medallion sits on the wood as a real object: keep the circle and the exact readable letters ТАРО / СЕЙЧАС. In the frame, a short magazine display thesis integrated into the light, not a sticker, not Arial, not squish-bold: «Он написал потом». Palette of ivory, warm graphite, pale gold. 50mm, shallow depth of field, glossy magazine advertising still. No face, no Victoria signature, no website, no URL, no watermark, no extra logos, no candles, no dark wood table, no gothic mist. End: no extra text besides the thesis, no website, no URL, no watermark, no logo except the referenced medallion.
+
+why: вечерний разбор опроса про «потом» и сторис. Кадр: светлый подоконник, телефон вниз, тезис «Он написал потом», медальон как предмет.

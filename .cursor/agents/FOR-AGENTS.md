@@ -12,7 +12,7 @@
 | 2 | Writer (смысл) | `posts-writer.md` | `gemini-3.7-flash-high` | да |
 | 3 | Sol (слог) | `posts-sol.md` | `gemini-3.7-flash-high` | да |
 | 4 | Gate | `posts-gate.md` | `gemini-3.7-flash-high` | да |
-| 5 | Cover-text + prompt | `posts-cover-text.md` | `gemini-3.7-flash-high` | да, только 12:12 |
+| 5 | Cover-text + prompt | `posts-cover-text.md` | `gemini-3.7-flash-high` | да, 12:12 и 21:21 |
 
 Нет ролей: Publish, Research-статья, Title, Schema, Indexer, Setup, Главред снаружи.
 
