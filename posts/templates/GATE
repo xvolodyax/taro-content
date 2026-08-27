@@ -1,7 +1,11 @@
 === POSTS GATE ===
 slot: YYYY-MM-DD-HHMM
 verdict: FAIL
-return: Writer | Sol | Scout | none
+return: copywriter | meaning | researcher | cover-text | none
+publish: SKIP
+glavred: REMOVED
+director_inline: ok | FAIL
+written_by: gemini
 water: 
 funnel: 
 limits: 
