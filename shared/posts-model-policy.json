@@ -1,0 +1,32 @@
+{
+  "pipeline": "taro-posts",
+  "text_model": "gemini-3.7-flash-high",
+  "text_model_id": "gemini-3.7-flash",
+  "text_model_display": "Gemini 3.7 Flash",
+  "inherit_means": "Модель родителя = модель Cursor Automation / выбранная Холлом. Не подменять Gemini на текстовых шагах.",
+  "text_agents": [
+    "posts-writer",
+    "posts-sol",
+    "posts-gate",
+    "posts-cover-text"
+  ],
+  "inherit_agents": [
+    "posts-director",
+    "posts-scout"
+  ],
+  "orchestrators": [
+    "posts-director"
+  ],
+  "never_as_task": [
+    "posts-director"
+  ],
+  "parallel_pairs": [],
+  "forbidden_task_fields": {
+    "environment": ["cloud"],
+    "run_in_background": [true],
+    "isolated": true
+  },
+  "forbidden_subagent_types": [
+    "best-of-n-runner"
+  ]
+}

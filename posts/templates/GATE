@@ -1,0 +1,23 @@
+=== POSTS GATE ===
+slot: YYYY-MM-DD-HHMM
+verdict: FAIL
+return: Writer | Sol | Scout | none
+water: 
+funnel: 
+limits: 
+voice: 
+platforms: 
+cover: skip | ok | n/a
+incident_report: none
+
+# Чеклист
+
+- [ ] первая строка = кадр
+- [ ] одна ловушка
+- [ ] бот ≠ приложение
+- [ ] TG/ВК/Макс без кодового слова
+- [ ] IG без сырого URL (если файл есть)
+- [ ] TG ≤ 1024 (12:12)
+- [ ] ВК вопрос ≤ 80 (15:15)
+- [ ] 21:21 не чеклист
+- [ ] чужие пакеты и video/ не тронуты

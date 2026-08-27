@@ -1,0 +1,14 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: 
+who: none
+thesis: 
+overlay: native thesis + gold medallion only
+signature: none
+
+prompt: <English, 40–80 words: scene, light, palette, lens, editorial still, thesis in quotes as magazine display type integrated in the frame not a sticker, native circular champagne-gold medallion with readable ТАРО / СЕЙЧАС, no face, no Victoria credit, no Arial, no squish-bold, no dark wood table, no candles. End: no extra text besides the thesis, no website, no URL, no watermark, no logo except the referenced medallion.>
+
+why: <одна строка по-русски: что в кадре и зачем этому посту>
