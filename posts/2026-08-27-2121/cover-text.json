@@ -1,19 +1,20 @@
 {
   "slot": "2121",
-  "thesis": "Заходит и молчит",
+  "written_by": "gemini",
+  "thesis": "Он написал «потом» в понедельник и молчит в сторис, пока ты дежуришь у экрана; вечерний разбор опроса даёт случайную карту и конкретное действие руками под каждый выбор, чтобы перестать собирать намёки из тишины и убрать телефон до утра.",
   "candidates": [
     "Заходит и молчит",
-    "Потом так и висит",
-    "Спросить не вышло"
+    "«Потом» с понедельника",
+    "Спросить вслух не вышло"
   ],
   "chosen": "Заходит и молчит",
-  "why_this_one": "Смысл вечера: «потом» с понедельника, сторис без слов, спросить вслух не вышло. Три коротких слова держатся в центре сетки (~200px). Удар — «молчит». Не капс-H1 и не первая строка TG.",
+  "why_this_one": "Смысл вечера: он смотрит сторис без слов после обещания «потом», а спросить напрямую нельзя. Три коротких слова чётко считываются в оптическом центре превью сетки (~200px). Ударное слово — «молчит». Не капс-H1 и не первая строка TG целиком.",
   "highlight": "молчит",
   "words": 3,
   "case": "sentence",
   "placement": "center",
   "contrast": "high type-on-ground, readable at ~200px Instagram grid",
-  "font": "magazine display didone or refined grotesque; not Arial, Roboto, Inter, Impact, squish-bold, meme caps",
+  "font": "magazine display serif/didone or refined grotesque; not Arial, Roboto, Inter, Impact, squish-bold, meme caps",
   "medallion": "native",
   "face": false,
   "victoria_credit": false,
