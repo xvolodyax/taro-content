@@ -1,0 +1,25 @@
+{
+  "slot": "1212",
+  "written_by": "gemini",
+  "thesis": "Онлайн и молчит",
+  "candidates": [
+    "Онлайн и молчит",
+    "Чай уже остыл",
+    "Сорок минут тишины"
+  ],
+  "chosen": "Онлайн и молчит",
+  "why_this_one": "Три слова держат паузу в центре сетки. Не капс-тема и не первая строка целиком.",
+  "highlight": "молчит",
+  "words": 3,
+  "case": "sentence",
+  "placement": "center",
+  "contrast": "high type-on-ground, readable at ~200px Instagram grid",
+  "font": "magazine display didone",
+  "medallion": "native",
+  "face": false,
+  "victoria_credit": false,
+  "resolution": "1K",
+  "aspect": "1:1",
+  "palette": "холодное окно + молоко",
+  "scene": "подоконник, остывший чай, хук в оптическом центре"
+}
