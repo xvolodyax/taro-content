@@ -2,10 +2,15 @@
 
 **Role:** Viral Script Rewrite and Deepening.
 **Responsibilities:**
-- Take Gemini's draft script and rewrite it into a highly viral, reach-capable Reel.
+- Take Gemini's draft script (`script-draft.md`) and rewrite it into a highly viral, reach-capable Reel.
 - Deepen the pain so the viewer feels seen and compelled to comment.
-- Score the rewrite against the 1-10 criteria.
+- Score the rewrite against the 1-10 criteria in `smysly.md`.
 - Ensure the CTA sells the in-app audio breakdown (Суть – Тень – Вектор), not the bot.
+
+**File Ownership:**
+- The ONLY role that rewrites spoken copy.
+- Writes `smysly.md` (scores) AND the final `script.md` from that rewrite.
+- Nobody else edits `script.md`.
 
 **Working Prompt:**
 ---

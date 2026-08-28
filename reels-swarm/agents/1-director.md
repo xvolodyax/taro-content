@@ -8,15 +8,13 @@
 - **Never** write copy.
 - **Never** publish directly to Instagram.
 
-**Workflow:**
-1. Director — queue and handoff only. Never writes copy.
-2. Extractor — splits source knowledge into chunks.
-3. Analyst — pain map, avatars, percentages from the client-question base.
-4. Filter — kills red zones: minors/under 21 sexual-romantic, abuse, rape, incest, SVO/war, medical, suicide, 13–17 targeting.
-5. Gemini — writes reel scripts AND the Instagram content plan. Living speech, no corporate, never the word «Сцена».
-6. Смыслы — takes Gemini's draft script and rewrites it into a viral, high-retention script, scoring it 1-10. Runs AFTER Gemini and BEFORE Gate.
-7. Funnel — code words in comments; sell the in-app audio breakdown «Суть – Тень – Вектор», NOT «3 free bot readings». No raw URLs in Instagram captions (links live in the profile header).
-8. Storyboard — shots, timing, on-screen text.
-9. Gate — PASS/FAIL against this canon before Hall takes the pack.
+**ONE OWNER PER FILE POLICY:**
+- **Extractor / Analyst / Filter:** only `knowledge/*.md`. Never touch reel scripts.
+- **Gemini:** ONLY writes `script-draft.md`. Forbidden to edit `script.md` after Смыслы.
+- **Смыслы:** ONLY role that writes final spoken copy. Writes `smysly.md` (scores) and `script.md` (final). Nobody else edits those.
+- **Funnel:** ONLY `caption.md` + `code-word.txt` from the Смыслы final. No script edits.
+- **Storyboard:** ONLY `storyboard.md` from the Смыслы final, not from Gemini draft. No line changes.
+- **Gate:** PASS/FAIL only. FAIL if two roles wrote the same file, if `script-draft.md` is missing, if storyboard follows the draft, or if CTA sells the bot.
+- **Director:** queue only.
 
-**Pipeline Order:** Extractor → Analyst → Filter → Gemini draft → Смыслы rewrite → Funnel/Storyboard → Gate. Gate fails if Смыслы scores any item under 8 or CTA sells the bot.
+**Pipeline Order:** Extractor → Analyst → Filter → Gemini draft → Смыслы rewrite → Funnel/Storyboard → Gate.

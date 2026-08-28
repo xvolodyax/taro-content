@@ -3,20 +3,24 @@
 **Status:** PASS
 
 **Reasons for PASS:**
-- **Roles:** All 8 role specs exist in `reels-swarm/agents/`.
+- **Roles:** All 9 role specs exist in `reels-swarm/agents/`.
 - **Canon:** `canon.md` is present and accurately reflects funnel, red zones, no «Сцена», app vs bot, and Instagram no-URL rule.
-- **Knowledge:** `pain-map.md`, `hook-bank.md`, `avatars.md`, and `red-zones.md` are correctly populated with the provided ground truth numbers and constraints. No extra percentages were invented.
-- **Plan:** `INSTAGRAM_CONTENT_PLAN.md` exists, covering a 30-day period (12 reels total, 3 times a week), written in Gemini's living spoken voice, shoot-ready, in Russian.
-- **Reels:** 12 reel packs (01 to 12) exist. Each contains `script.md`, `storyboard.md`, `caption.md`, and `code-word.txt`.
+- **Knowledge:** `pain-map.md`, `hook-bank.md`, `avatars.md`, and `red-zones.md` are correctly populated.
+- **Plan:** `INSTAGRAM_CONTENT_PLAN.md` exists, covering a 30-day period.
+- **Reels:** 12 reel packs (01 to 12) exist. Each contains `script-draft.md` (Gemini's draft), `script.md` (Смыслы final), `smysly.md` (scores), `storyboard.md`, `caption.md`, and `code-word.txt`.
+- **Handoff Lock:** ONE OWNER PER FILE policy is strictly followed.
+  - Gemini wrote ONLY `script-draft.md`.
+  - Смыслы wrote ONLY `script.md` and `smysly.md`.
+  - Funnel wrote ONLY `caption.md` and `code-word.txt`.
+  - Storyboard wrote ONLY `storyboard.md` based on `script.md`.
 - **Compliance:** 
-  - Scripts use Gemini's living spoken voice.
-  - No corporate speak.
-  - The word «Сцена» is never used (only "Shot" and "Visual" in storyboards).
+  - Scripts use living spoken voice.
+  - No corporate speak, no forbidden words.
   - CTAs correctly sell the in-app audio breakdown «Суть – Тень – Вектор».
   - No mentions of the Telegram/Max bot's 3 free spreads.
   - No raw URLs in Instagram captions.
-  - Real names anonymized (e.g., Кирилл).
-  - No red zones violated (no mind reading promises, no scaring with loneliness, no war/medical hype).
+  - Real names anonymized.
+  - No red zones violated.
 - **No Publication:** No direct publication or API usage occurred. All work is contained within `reels-swarm/`.
 
 **Handoff:** Hall is cleared to take the pack.
