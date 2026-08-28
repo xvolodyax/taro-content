@@ -1,7 +1,0 @@
-aspect: 1:1
-resolution: 1K
-placement: center
-
-prompt: Pale morning window, cooled tea glass, quiet phone face-up. Hook "Онлайн и молчит" centered at optical center, high contrast type vs background, readable at Instagram grid thumbnail. Magazine display didone. Native champagne-gold medallion. No face, no URL.
-
-why: хук в центре, читается в сетке
