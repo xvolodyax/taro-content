@@ -1,0 +1,27 @@
+=== POSTS GATE ===
+slot: 2026-08-28-2121
+verdict: PASS
+return: none
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+written_by: gemini
+tg_len: 1012
+incident_report: none
+
+# Причины
+- резать нечего
+
+# Чеклист
+- [x] рой: researcher → meaning → copywriter → cover-text → gate
+- [x] Директор не писал inline
+- [x] written_by: gemini
+- [x] Главред снят, фразы от Главреда нет
+- [x] первая строка = сцена
+- [x] нет слова «ловушка» и «Сцена»
+- [x] воронка 21:21 бот ≠ приложение
+- [x] TG visible = 1012 ≤ 1024
+- [x] yt.txt без сырого URL, ссылки в описании и шапке
+- [x] нет IG / Макс (ig.txt и max.txt отсутствуют)
+- [x] cover: 3 хука, placement center (выбран: «Платье уже на тебе»)
+- [x] publish: SKIP

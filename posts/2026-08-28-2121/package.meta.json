@@ -1,0 +1,17 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.7-flash-high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "2121",
+  "date": "2026-08-28",
+  "cards_locked": [
+    "Девятка мечей",
+    "Туз жезлов",
+    "Колесо Фортуны",
+    "Семёрка жезлов"
+  ],
+  "debrief_from": "posts/2026-08-28-1515/debrief.md"
+}

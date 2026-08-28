@@ -1,0 +1,25 @@
+{
+  "slot": "2121",
+  "written_by": "gemini",
+  "thesis": "Пятничный вечер уже собран в руках, а он снял встречу без новой даты",
+  "candidates": [
+    "Платье уже на тебе",
+    "Вечер остался в руках",
+    "Снял встречу без даты"
+  ],
+  "chosen": "Платье уже на тебе",
+  "why_this_one": "Четыре слова бьют точно в физическое состояние вечера: ткань уже надета, а планов нет. Крупно и контрастно читается в центре превью.",
+  "highlight": "Платье",
+  "words": 4,
+  "case": "sentence",
+  "placement": "center",
+  "contrast": "high type-on-ground, readable at ~200px Instagram grid",
+  "font": "magazine display didone",
+  "medallion": "native",
+  "face": false,
+  "victoria_credit": false,
+  "resolution": "1K",
+  "aspect": "1:1",
+  "palette": "глубокий индиго + приглушённый тёплый янтарь",
+  "scene": "вечерний интерьер, шёлковая ткань на кресле, приглушённый свет лампы"
+}
