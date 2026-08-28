@@ -14,7 +14,8 @@
 - **Смыслы:** ONLY role that writes final spoken copy. Writes `smysly.md` (scores) and `script.md` (final). Nobody else edits those.
 - **Funnel:** ONLY `caption.md` + `code-word.txt` from the Смыслы final. No script edits.
 - **Storyboard:** ONLY `storyboard.md` from the Смыслы final, not from Gemini draft. No line changes.
-- **Gate:** PASS/FAIL only. FAIL if two roles wrote the same file, if `script-draft.md` is missing, if storyboard follows the draft, or if CTA sells the bot.
+- **Монтаж:** ONLY `montage.md`. Reads final script, storyboard, and caption. No copy edits.
+- **Gate:** PASS/FAIL only. FAIL if two roles wrote the same file, if `script-draft.md` is missing, if storyboard follows the draft, if `montage.md` is missing or generic, or if CTA sells the bot.
 - **Director:** queue only.
 
-**Pipeline Order:** Extractor → Analyst → Filter → Gemini draft → Смыслы rewrite → Funnel/Storyboard → Gate.
+**Pipeline Order:** Extractor → Analyst → Filter → Gemini draft → Смыслы rewrite → Funnel/Storyboard → Монтаж → Gate.
