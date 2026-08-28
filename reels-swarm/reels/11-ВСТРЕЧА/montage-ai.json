@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "code": "ВСТРЕЧА",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 32.2,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "У всех вокруг любовь.",
+      "startSec": 0.0,
+      "endSec": 1.8,
+      "card": {
+        "text": "У всех вокруг любовь",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "любовь"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "любовь"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Свадьбы, совместные отпуски, переезды.",
+      "startSec": 1.8,
+      "endSec": 4.4,
+      "card": {
+        "text": "Свадьбы. Отпуска. Переезды",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "Свадьбы"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.04,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "переезды"
+      }
+    },
+    {
+      "id": 3,
+      "line": "А у тебя... даже нормальной переписки нет.",
+      "startSec": 4.4,
+      "endSec": 7.2,
+      "card": {
+        "text": "А у тебя даже переписки нет",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "переписки"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.15,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "переписки"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Кажется, что с тобой что-то фундаментально не так.",
+      "startSec": 7.2,
+      "endSec": 10.0,
+      "card": {
+        "text": "Кажется, со мной что-то не так",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "фундаментально"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.1,
+        "zoomTo": 1.1,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "так"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Но проблема не в тебе.",
+      "startSec": 10.0,
+      "endSec": 11.6,
+      "card": {
+        "text": "Проблема не в тебе",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "проблема"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "проблема"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Зачастую мы сами наглухо блокируем новые знакомства.",
+      "startSec": 11.6,
+      "endSec": 14.8,
+      "card": {
+        "text": "Сами блокируем знакомства",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "блокируем"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "блокируем"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Непрожитая обида, страх снова обжечься или подсознательная установка «мне никто не нужен» работают как щит.",
+      "startSec": 14.8,
+      "endSec": 20.0,
+      "card": {
+        "text": "Обида и «мне никто не нужен»",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "щит"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "обида"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Ты можешь сколько угодно хотеть отношений, но транслируешь в мир абсолютную закрытость.",
+      "startSec": 20.0,
+      "endSec": 24.2,
+      "card": {
+        "text": "Хочешь отношений — транслируешь закрытость",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "закрытость"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "закрытость"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Давай найдем, что именно тебя тормозит.",
+      "startSec": 24.2,
+      "endSec": 26.4,
+      "card": {
+        "text": "Что именно тебя тормозит",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "тормозит"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.12,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "тормозит"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Пиши слово ВСТРЕЧА в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 26.4,
+      "endSec": 30.2,
+      "card": {
+        "text": "ВСТРЕЧА",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ВСТРЕЧА"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "ВСТРЕЧА"
+      }
+    },
+    {
+      "id": 11,
+      "line": "Разберем твои внутренние блоки.",
+      "startSec": 30.2,
+      "endSec": 32.2,
+      "card": {
+        "text": "СРАЗУ пришлю · в моём приложении",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "блоки"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.06,
+        "zoomTo": 1.06,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "внутренние"
+      }
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "code": "СТЁР",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 31.4,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Он написал «как самочувствие».",
+      "startSec": 0.0,
+      "endSec": 2.2,
+      "card": {
+        "text": "Написал «как самочувствие»",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "написал"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.05,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "написал"
+      }
+    },
+    {
+      "id": 2,
+      "line": "И тут же удалил.",
+      "startSec": 2.2,
+      "endSec": 3.6,
+      "card": {
+        "text": "И тут же удалил",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "удалил"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.18,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "удалил"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Но пуш-уведомление осталось.",
+      "startSec": 3.6,
+      "endSec": 5.4,
+      "card": {
+        "text": "Пуш остался",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "осталось"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "осталось"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Теперь ты прокручиваешь это в голове сотый раз.",
+      "startSec": 5.4,
+      "endSec": 8.0,
+      "card": {
+        "text": "Крутишь это сотый раз",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "сотый"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.04,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "голове"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Испугался? Передумал? Случайно нажал?",
+      "startSec": 8.0,
+      "endSec": 10.4,
+      "card": {
+        "text": "Испугался? Передумал?",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "Испугался"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "Передумал"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Нет.",
+      "startSec": 10.4,
+      "endSec": 11.2,
+      "card": {
+        "text": "Нет",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "Нет"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.12,
+        "zoomTo": 1.12,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "Нет"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Это самая дешевая проверка связи из всех возможных.",
+      "startSec": 11.2,
+      "endSec": 14.2,
+      "card": {
+        "text": "Дешёвая проверка связи",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "проверка"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.07,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "дешевая"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Он забросил крючок и спрятал руку.",
+      "startSec": 14.2,
+      "endSec": 16.6,
+      "card": {
+        "text": "Забросил крючок — спрятал руку",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "крючок"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.13,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "спрятал"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Ждет, что ты сама спросишь: «А что ты удалил?».",
+      "startSec": 16.6,
+      "endSec": 19.4,
+      "card": {
+        "text": "Ждёт: «А что ты удалил?»",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "удалил"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "спросишь"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Ему нужно твое внимание, но он категорически не готов брать ответственность за полноценный диалог.",
+      "startSec": 19.4,
+      "endSec": 23.6,
+      "card": {
+        "text": "Внимание — да. Ответственность — нет",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "ответственность"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.02,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "ответственность"
+      }
+    },
+    {
+      "id": 11,
+      "line": "Не поддавайся на эту манипуляцию.",
+      "startSec": 23.6,
+      "endSec": 25.4,
+      "card": {
+        "text": "Не ведись на манипуляцию",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "манипуляцию"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.05,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "манипуляцию"
+      }
+    },
+    {
+      "id": 12,
+      "line": "Пиши слово СТЁР в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 25.4,
+      "endSec": 29.2,
+      "card": {
+        "text": "СТЁР",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "СТЁР"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "СТЁР"
+      }
+    },
+    {
+      "id": 13,
+      "line": "Разберем, чего он добивается на самом деле.",
+      "startSec": 29.2,
+      "endSec": 31.4,
+      "card": {
+        "text": "СРАЗУ пришлю · в моём приложении",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "добивается"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.08,
+        "zoomTo": 1.08,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "добивается"
+      }
+    }
+  ]
+}

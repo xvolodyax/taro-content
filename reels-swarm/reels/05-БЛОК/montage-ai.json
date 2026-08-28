@@ -1,0 +1,326 @@
+{
+  "version": 1,
+  "code": "БЛОК",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 33.6,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Ты держалась.",
+      "startSec": 0.0,
+      "endSec": 1.6,
+      "card": {
+        "text": "Ты держалась",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "держалась"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Dark Ambient Pad",
+        "onWord": "держалась"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Блокировала везде.",
+      "startSec": 1.6,
+      "endSec": 3.2,
+      "card": {
+        "text": "Блокировала везде",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "Блокировала"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.08,
+        "zoomTo": 1.08,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "везде"
+      }
+    },
+    {
+      "id": 3,
+      "line": "А сегодня просто сняла блок.",
+      "startSec": 3.2,
+      "endSec": 5.4,
+      "card": {
+        "text": "Сегодня сняла блок",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "сняла"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "блок"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Ничего не написала, просто открыла доступ.",
+      "startSec": 5.4,
+      "endSec": 8.0,
+      "card": {
+        "text": "Ничего не написала — открыла доступ",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "доступ"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "написала"
+      }
+    },
+    {
+      "id": 5,
+      "line": "И теперь тебя сжигает один вопрос: он вообще заметил?",
+      "startSec": 8.0,
+      "endSec": 11.2,
+      "card": {
+        "text": "Он вообще заметил?",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "заметил"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.15,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "заметил"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Поверь, мужчины мониторят такие вещи.",
+      "startSec": 11.2,
+      "endSec": 13.6,
+      "card": {
+        "text": "Мужчины это мониторят",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "мониторят"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.04,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "мониторят"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Особенно те, кто привык контролировать ситуацию.",
+      "startSec": 13.6,
+      "endSec": 16.4,
+      "card": {
+        "text": "Кто привык контролировать",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "контролировать"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.09,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "контролировать"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Твоя разблокировка для него — это зеленый свет.",
+      "startSec": 16.4,
+      "endSec": 19.0,
+      "card": {
+        "text": "Разблокировка = зелёный свет",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "свет"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.12,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "зеленый"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Но он молчит. Почему?",
+      "startSec": 19.0,
+      "endSec": 20.8,
+      "card": {
+        "text": "Но он молчит. Почему?",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "молчит"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.12,
+        "zoomTo": 1.12,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "Почему"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Потому что ждет твоего следующего шага.",
+      "startSec": 20.8,
+      "endSec": 23.2,
+      "card": {
+        "text": "Ждёт твоего следующего шага",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "шага"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "ждет"
+      }
+    },
+    {
+      "id": 11,
+      "line": "Он тешит свое эго тем, что ты сдалась первой.",
+      "startSec": 23.2,
+      "endSec": 26.2,
+      "card": {
+        "text": "Эго: ты сдалась первой",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "сдалась"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.14,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "эго"
+      }
+    },
+    {
+      "id": 12,
+      "line": "Не делай резких движений.",
+      "startSec": 26.2,
+      "endSec": 27.8,
+      "card": {
+        "text": "Без резких движений",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "резких"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "движений"
+      }
+    },
+    {
+      "id": 13,
+      "line": "Пиши слово БЛОК в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 27.8,
+      "endSec": 31.6,
+      "card": {
+        "text": "БЛОК",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "БЛОК"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.07,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "БЛОК"
+      }
+    },
+    {
+      "id": 14,
+      "line": "Узнаем, что происходит в его голове прямо сейчас.",
+      "startSec": 31.6,
+      "endSec": 33.6,
+      "card": {
+        "text": "СРАЗУ пришлю · в моём приложении",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "голове"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.07,
+        "zoomTo": 1.07,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "сейчас"
+      }
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "code": "ШАГ",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 30.8,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Ты набираешь текст.",
+      "startSec": 0.0,
+      "endSec": 1.6,
+      "card": {
+        "text": "Набираешь текст",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "набираешь"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "набираешь"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Стираешь.",
+      "startSec": 1.6,
+      "endSec": 2.8,
+      "card": {
+        "text": "Стираешь",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "Стираешь"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "Стираешь"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Снова набираешь.",
+      "startSec": 2.8,
+      "endSec": 4.2,
+      "card": {
+        "text": "Снова набираешь",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "набираешь"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.04,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "Снова"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Страх навязаться парализует сильнее, чем его молчание.",
+      "startSec": 4.2,
+      "endSec": 7.4,
+      "card": {
+        "text": "Страх навязаться сильнее молчания",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "навязаться"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "парализует"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Ты боишься, что он ответит сухо, или хуже того — оставит на «прочитано».",
+      "startSec": 7.4,
+      "endSec": 11.2,
+      "card": {
+        "text": "Боишься «прочитано»",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "прочитано"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.15,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "прочитано"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Пока ты гипнотизируешь пустой экран диалога, твоя энергия уходит в черную дыру.",
+      "startSec": 11.2,
+      "endSec": 15.0,
+      "card": {
+        "text": "Энергия уходит в чёрную дыру",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "энергия"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.09,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "дыру"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Любой твой шаг сейчас — это игра в рулетку с завязанными глазами.",
+      "startSec": 15.0,
+      "endSec": 18.4,
+      "card": {
+        "text": "Рулетка с завязанными глазами",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "рулетку"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.12,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "рулетку"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Ты не знаешь, в какой он позиции: ждет твоего проявления или отдалился окончательно.",
+      "startSec": 18.4,
+      "endSec": 22.6,
+      "card": {
+        "text": "Ждёт тебя или уже ушёл?",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "позиции"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.02,
+        "zoomTo": 1.02,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "отдалился"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Прекрати действовать вслепую.",
+      "startSec": 22.6,
+      "endSec": 24.4,
+      "card": {
+        "text": "Хватит действовать вслепую",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "вслепую"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "вслепую"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Пиши слово ШАГ в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 24.4,
+      "endSec": 28.2,
+      "card": {
+        "text": "ШАГ",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ШАГ"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.07,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "ШАГ"
+      }
+    },
+    {
+      "id": 11,
+      "line": "Заглянем в его мотивы до того, как ты нажмешь «отправить».",
+      "startSec": 28.2,
+      "endSec": 30.8,
+      "card": {
+        "text": "СРАЗУ пришлю · Суть – Тень – Вектор",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "мотивы"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.07,
+        "zoomTo": 1.07,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "отправить"
+      }
+    }
+  ]
+}

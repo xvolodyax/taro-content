@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "code": "ТАЙНА",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 30.4,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "«Что он думает о ней?» — знаешь, обычно так спрашивают о себе.",
+      "startSec": 0.0,
+      "endSec": 3.8,
+      "card": {
+        "text": "«Что он думает о ней?»",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "думает"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.13,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "ней"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Когда ты оказываешься в роли другой женщины, этот вопрос становится навязчивой идеей.",
+      "startSec": 3.8,
+      "endSec": 8.0,
+      "card": {
+        "text": "Роль другой. Навязчивая идея",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "идеей"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.05,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "роли"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Кто я для него?",
+      "startSec": 8.0,
+      "endSec": 9.4,
+      "card": {
+        "text": "Кто я для него?",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "него"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.16,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "я"
+      }
+    },
+    {
+      "id": 4,
+      "line": "А кто она?",
+      "startSec": 9.4,
+      "endSec": 10.6,
+      "card": {
+        "text": "А кто она?",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "она"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.16,
+        "zoomTo": 1.16,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "она"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Кажется, если узнать, что у них всё плохо, станет легче дышать.",
+      "startSec": 10.6,
+      "endSec": 14.2,
+      "card": {
+        "text": "Если у них плохо — легче дышать?",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "дышать"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "плохо"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Но пока твой фокус намертво прибит к их отношениям, твоя собственная жизнь стоит на паузе.",
+      "startSec": 14.2,
+      "endSec": 18.8,
+      "card": {
+        "text": "Фокус прибит к ним. Ты на паузе",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "фокус"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.07,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "паузе"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Ты сливаешь энергию туда, где тебе даже не дали главную роль.",
+      "startSec": 18.8,
+      "endSec": 22.6,
+      "card": {
+        "text": "Сливаешь энергию не в свою роль",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "энергию"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.1,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "роль"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Смести фокус.",
+      "startSec": 22.6,
+      "endSec": 24.0,
+      "card": {
+        "text": "Смести фокус",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "фокус"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.14,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "Смести"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Пиши слово ТАЙНА в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 24.0,
+      "endSec": 27.8,
+      "card": {
+        "text": "ТАЙНА",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ТАЙНА"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "ТАЙНА"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Разберем, как тебе выйти из этого треугольника.",
+      "startSec": 27.8,
+      "endSec": 30.4,
+      "card": {
+        "text": "СРАЗУ пришлю · в моём приложении",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "треугольника"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.06,
+        "zoomTo": 1.06,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "выйти"
+      }
+    }
+  ]
+}

@@ -15,8 +15,18 @@
 - Suicide
 - 13–17 targeting
 
+## Montage (two artifacts)
+- Role **Монтаж** writes two files per reel: `montage.md` (human) and `montage-ai.json` (Remotion). Schema: `MONTAGE-AI.md`.
+- Every future reel pack MUST contain valid `montage-ai.json`. Gate FAIL if missing, invalid, or a beat lacks exact `card.text` / `startSec` / `endSec` / `line`.
+- Hall does not write montage. Director does not write montage. Script, caption, questions stay with their owners.
+
+## CTA wording (spoken + on-screen)
+- «автоматически пришлю» → «СРАЗУ пришлю»
+- «в нашем приложении» / «нашем приложении» → «в моём приложении»
+- Sell the app audio «Суть – Тень – Вектор». Never «3 free bot readings».
+
 ## Tone & Style
-- **No «Сцена»:** Never use the word «Сцена» in scripts.
+- **No «Сцена»:** Never use the word «Сцена» in scripts, cards, or montage.
 - **Voice:** Gemini's living spoken voice. No corporate speak.
 - **Promises:** Do not promise to read minds.
 - **Fear:** Do not scare with loneliness.

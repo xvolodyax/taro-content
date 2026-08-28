@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "code": "ПАУЗА",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 32.4,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Он смотрит твои истории через 10 минут после публикации.",
+      "startSec": 0.0,
+      "endSec": 3.2,
+      "card": {
+        "text": "Смотрит истории через 10 минут",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "смотрит"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.14,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "публикации"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Но молчит.",
+      "startSec": 3.2,
+      "endSec": 4.8,
+      "card": {
+        "text": "Но молчит",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "молчит"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.14,
+        "zoomTo": 1.14,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "молчит"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Три недели подряд.",
+      "startSec": 4.8,
+      "endSec": 6.4,
+      "card": {
+        "text": "Три недели подряд",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "недели"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "недели"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Твой мозг уже придумал ему оправдания: занят, стесняется, не знает с чего начать.",
+      "startSec": 6.4,
+      "endSec": 10.6,
+      "card": {
+        "text": "Мозг уже придумал оправдания",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "оправдания"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "оправдания"
+      }
+    },
+    {
+      "id": 5,
+      "line": "На самом деле он просто держит тебя на коротком поводке.",
+      "startSec": 10.6,
+      "endSec": 13.6,
+      "card": {
+        "text": "Держит на коротком поводке",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "поводке"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.16,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "поводке"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Ему комфортно знать, что ты никуда не делась.",
+      "startSec": 13.6,
+      "endSec": 16.2,
+      "card": {
+        "text": "Тебе никуда не деться",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "комфортно"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.16,
+        "zoomTo": 1.16,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "комфортно"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Каждый его просмотр — это микродоза контроля, которая не стоит ему ровно ничего, а тебя выматывает до дна.",
+      "startSec": 16.2,
+      "endSec": 20.8,
+      "card": {
+        "text": "Микродоза контроля",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "контроля"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "контроля"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Он проверяет твою доступность, не рискуя получить отказ.",
+      "startSec": 20.8,
+      "endSec": 23.6,
+      "card": {
+        "text": "Проверяет доступность без риска",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "доступность"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "доступность"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Хочешь увидеть, что у него в голове прямо сейчас?",
+      "startSec": 23.6,
+      "endSec": 25.8,
+      "card": {
+        "text": "Что у него в голове сейчас?",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "голове"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "голове"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Пиши слово ПАУЗА в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в нашем приложении.",
+      "startSec": 25.8,
+      "endSec": 30.4,
+      "card": {
+        "text": "ПАУЗА",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ПАУЗА"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "ПАУЗА"
+      }
+    },
+    {
+      "id": 11,
+      "line": "Узнаем, почему он застрял в зрителях.",
+      "startSec": 30.4,
+      "endSec": 32.4,
+      "card": {
+        "text": "СРАЗУ пришлю · в моём приложении",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "застрял"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.06,
+        "zoomTo": 1.06,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "зрителях"
+      }
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "code": "ЧУВСТВА",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 28.8,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Что он чувствует к тебе, но никогда не озвучит вслух?",
+      "startSec": 0.0,
+      "endSec": 3.6,
+      "card": {
+        "text": "Что чувствует — и молчит",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "чувствует"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.11,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "вслух"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Мужчины виртуозно прячут эмоции за маской тотальной занятости или ледяного равнодушия.",
+      "startSec": 3.6,
+      "endSec": 8.0,
+      "card": {
+        "text": "Маска занятости или льда",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "маской"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.02,
+        "zoomTo": 1.02,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Dark Ambient Pad",
+        "onWord": "эмоции"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Тебе кажется, что ему плевать, потому что он не обрывает телефон.",
+      "startSec": 8.0,
+      "endSec": 11.4,
+      "card": {
+        "text": "Кажется, ему плевать",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "плевать"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.07,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "плевать"
+      }
+    },
+    {
+      "id": 4,
+      "line": "А внутри у него может бушевать шторм.",
+      "startSec": 11.4,
+      "endSec": 13.8,
+      "card": {
+        "text": "Внутри может бушевать шторм",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "шторм"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.16,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "шторм"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Страх потерять контроль, боязнь уязвимости, сомнения.",
+      "startSec": 13.8,
+      "endSec": 17.0,
+      "card": {
+        "text": "Контроль. Уязвимость. Сомнения",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "уязвимости"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.1,
+        "zoomTo": 1.1,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "контроль"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Он может думать о тебе постоянно, но внешне оставаться неприступной стеной.",
+      "startSec": 17.0,
+      "endSec": 21.0,
+      "card": {
+        "text": "Думает о тебе — снаружи стена",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "стеной"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.09,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "стеной"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Загляни за эту стену.",
+      "startSec": 21.0,
+      "endSec": 22.8,
+      "card": {
+        "text": "Загляни за эту стену",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "стену"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.13,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "стену"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Пиши слово ЧУВСТВА в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 22.8,
+      "endSec": 26.6,
+      "card": {
+        "text": "ЧУВСТВА",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ЧУВСТВА"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "ЧУВСТВА"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Узнаем, что он скрывает на самом деле.",
+      "startSec": 26.6,
+      "endSec": 28.8,
+      "card": {
+        "text": "СРАЗУ пришлю · Суть – Тень – Вектор",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "скрывает"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.06,
+        "zoomTo": 1.06,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "скрывает"
+      }
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "code": "КАК ЕСТЬ",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 26.4,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Он не сказал «нет», но и не сказал «да».",
+      "startSec": 0.0,
+      "endSec": 2.4,
+      "card": {
+        "text": "Ни «нет», ни «да»",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "нет"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "да"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Это самая удобная мужская позиция из всех существующих.",
+      "startSec": 2.4,
+      "endSec": 5.0,
+      "card": {
+        "text": "Самая удобная мужская позиция",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "удобная"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.04,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "позиция"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Ты не отвергнута, но и ясности ноль.",
+      "startSec": 5.0,
+      "endSec": 7.2,
+      "card": {
+        "text": "Не отвергнута. Ясности ноль",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ясности"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.12,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "ноль"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Он просто оставил дверь приоткрытой.",
+      "startSec": 7.2,
+      "endSec": 9.4,
+      "card": {
+        "text": "Дверь приоткрыта",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "приоткрытой"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "дверь"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Зачем? Чтобы всегда иметь запасной аэродром, если станет скучно.",
+      "startSec": 9.4,
+      "endSec": 12.6,
+      "card": {
+        "text": "Запасной аэродром на скуку",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "аэродром"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "аэродром"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Он не берет ответственность за решение, перекладывая это ожидание на тебя.",
+      "startSec": 12.6,
+      "endSec": 15.8,
+      "card": {
+        "text": "Решение переложил на тебя",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "ответственность"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.02,
+        "zoomTo": 1.02,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "решение"
+      }
+    },
+    {
+      "id": 7,
+      "line": "И пока ты ждешь, когда он определится, твоя собственная жизнь стоит на паузе.",
+      "startSec": 15.8,
+      "endSec": 19.2,
+      "card": {
+        "text": "Твоя жизнь стоит на паузе",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "паузе"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "паузе"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Выходи из этого подвешенного состояния.",
+      "startSec": 19.2,
+      "endSec": 21.0,
+      "card": {
+        "text": "Выходи из подвешенного",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "подвешенного"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "Выходи"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Пиши КАК ЕСТЬ в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 21.0,
+      "endSec": 24.4,
+      "card": {
+        "text": "КАК ЕСТЬ",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ЕСТЬ"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.05,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "ЕСТЬ"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Посмотрим правде в глаза.",
+      "startSec": 24.4,
+      "endSec": 26.4,
+      "card": {
+        "text": "СРАЗУ пришлю · в моём приложении",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "правде"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.05,
+        "zoomTo": 1.05,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "глаза"
+      }
+    }
+  ]
+}

@@ -10,4 +10,4 @@
 **File Ownership:**
 - ONLY writes `questions.md` in each reel pack.
 - Reads `script.md` to understand the topic.
-- **Never** edits the script, captions, storyboard, or montage.
+- **Never** edits the script, captions, storyboard, `montage.md`, or `montage-ai.json`.
