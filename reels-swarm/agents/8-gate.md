@@ -5,7 +5,9 @@
 - Review the entire package against the canon.
 - Verify that every reel pack in `reels/01-12` includes `smysly.md` with the scored rewrite.
 - Verify that every reel pack includes `montage.md`.
-- Fail if `montage.md` is missing, or if it is generic (e.g., "динамичный монтаж" without specific timecodes, sounds, zooms, and crops).
+- Verify that every reel pack includes `questions.md` with 3-5 questions.
+- Fail if `montage.md` is missing, generic, uses forbidden slang sounds (like "Low Boom" or "whoosh"), or does not quote exact script lines.
+- Fail if `questions.md` is missing, contains introductory text, or violates red zones (e.g., mind reading).
 - Scan `script.md`, `smysly.md`, AND `caption.md` against the banned words list: «Давай честно», «Знакомо?», «Знакомая ситуация», «Представь», «Это не…, это…», «Главное начать», «Ты можешь больше, чем думаешь», «Сцена», long dashes, coaching clichés.
 - Fail if any banned word is found (requires Funnel or Смыслы rewrite). Hall never cuts these.
 - Fail if Смыслы scores any self-check item under 8.
