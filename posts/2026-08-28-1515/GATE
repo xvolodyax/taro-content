@@ -1,0 +1,20 @@
+=== POSTS GATE ===
+slot: 2026-08-28-1515
+verdict: PASS
+return: none
+publish: SKIP
+glavred: REMOVED
+written_by: gemini
+tg_len: 992
+incident_report: none
+
+# Лимиты
+
+- [x] вопрос TG (header+вопрос) 107 ≤ 300
+- [x] вопрос ВК 27 ≤ 80
+- [x] варианты 32 / 28 / 36 / 30 ≤ 100
+- [x] TG 21:21 visible 992 ≤ 1024
+- [x] 4 разные случайные карты, не набор 27.08
+- [x] нет ПРИНИМАЮ, нет ссылок на бота, нет картинки, нет кодового слова
+- [x] Макс и Instagram не трогали
+- [x] чужие пакеты не тронуты
