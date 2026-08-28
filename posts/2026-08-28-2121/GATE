@@ -1,0 +1,23 @@
+=== POSTS GATE ===
+slot: 2026-08-28-2121
+verdict: FAIL
+return: copywriter
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+written_by: gemini
+tg_len: 1012
+incident_report: none
+
+# Причины
+- 21:21: не писать IG/YT
+
+# Чеклист
+- [ ] рой: researcher → meaning → copywriter → cover-text? → gate
+- [ ] Директор не писал inline
+- [ ] written_by: gemini
+- [ ] Главред снят, фразы от Главреда нет
+- [ ] первая строка = сцена
+- [ ] нет слова «ловушка»
+- [ ] бот ≠ приложение
+- [ ] publish SKIP
