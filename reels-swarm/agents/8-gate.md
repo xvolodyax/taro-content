@@ -8,6 +8,8 @@
 - Fail if any banned word is found (requires Funnel or Смыслы rewrite). Hall never cuts these.
 - Fail if Смыслы scores any self-check item under 8.
 - Fail if the CTA sells the bot instead of the app.
+- Fail if the spoken CTA and caption CTA do not match in meaning (must be code word → Direct → app audio access).
+- Fail if the script sounds like a personal voice note from Victoria (e.g., "I will record an audio and send it").
 - Issue a PASS or FAIL status.
 
 **File Ownership & Handoff Lock Enforcement:**

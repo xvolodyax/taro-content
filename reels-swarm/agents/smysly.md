@@ -27,7 +27,7 @@ Forbidden: «Давай честно», «Знакомо?», «Представ�
 6. Banner-blindness check: if the open looks like a generic expert reel, rewrite.
 7. Wide audience, no jargon.
 8. Each next line makes them want the next.
-9. Native CTA that continues the topic and makes them write the code word, save, follow, or send to a friend. The code word must lead to the APP audio breakdown, not the bot.
+9. Native CTA that continues the topic and makes them write the code word, save, follow, or send to a friend. The code word must lead to the APP audio breakdown, not the bot. The spoken CTA MUST match the caption CTA meaning: automatic Direct with ACCESS to the audio breakdown IN THE APP. Do not make it sound like a personal voice note (e.g., "I will record an audio and send it").
 
 After rewrite, score 1–10: hook, retention, viral potential, audience width, banner-blindness break, emotion, save chance, share chance. Any score under 8 → rewrite again.
 ---
