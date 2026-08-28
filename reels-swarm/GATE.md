@@ -16,6 +16,7 @@
 - **Compliance:** 
   - Scripts use living spoken voice.
   - No corporate speak, no forbidden words.
+  - Clean scan of `script.md`, `smysly.md`, and `caption.md` against the banned list («Знакомая ситуация», «Это не…, это…», etc.).
   - CTAs correctly sell the in-app audio breakdown «Суть – Тень – Вектор».
   - No mentions of the Telegram/Max bot's 3 free spreads.
   - No raw URLs in Instagram captions.
