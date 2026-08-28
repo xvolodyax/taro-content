@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "code": "ПРОЧИТАЛ",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 30.8,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Две синие галочки.",
+      "startSec": 0.0,
+      "endSec": 1.8,
+      "card": {
+        "text": "Две синие галочки",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "галочки"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.08,
+        "zoomTo": 1.08,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "галочки"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Прочитано.",
+      "startSec": 1.8,
+      "endSec": 3.4,
+      "card": {
+        "text": "Прочитано",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "Прочитано"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.16,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "Прочитано"
+      }
+    },
+    {
+      "id": 3,
+      "line": "И два часа звенящей тишины.",
+      "startSec": 3.4,
+      "endSec": 6.0,
+      "card": {
+        "text": "Два часа звенящей тишины",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "тишины"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.16,
+        "zoomTo": 1.16,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "тишины"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Ты уже проверила интернет, перезагрузила телефон и убедила себя, что он просто за рулем.",
+      "startSec": 6.0,
+      "endSec": 10.2,
+      "card": {
+        "text": "Уже оправдала: он за рулём",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "убедила"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "интернет"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Хватит.",
+      "startSec": 10.2,
+      "endSec": 11.4,
+      "card": {
+        "text": "Хватит",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "Хватит"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.14,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "Хватит"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Если мужчина хочет ответить, он находит секунду даже на совещании.",
+      "startSec": 11.4,
+      "endSec": 14.8,
+      "card": {
+        "text": "Хочет ответить — найдёт секунду",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "секунду"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "ответить"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Молчание после прочитанного означает осознанную паузу.",
+      "startSec": 14.8,
+      "endSec": 18.0,
+      "card": {
+        "text": "Осознанная пауза",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "паузу"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.1,
+        "zoomTo": 1.1,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "паузу"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Он либо берет время на раздумья, либо искусственно завышает свою значимость, заставляя тебя нервничать.",
+      "startSec": 18.0,
+      "endSec": 22.8,
+      "card": {
+        "text": "Либо думает, либо набивает цену",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "значимость"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.11,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "значимость"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Перестань гипнотизировать экран.",
+      "startSec": 22.8,
+      "endSec": 24.8,
+      "card": {
+        "text": "Хватит гипнотизировать экран",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "экран"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "гипнотизировать"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Пиши ПРОЧИТАЛ в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 24.8,
+      "endSec": 28.6,
+      "card": {
+        "text": "ПРОЧИТАЛ",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ПРОЧИТАЛ"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.05,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "ПРОЧИТАЛ"
+      }
+    },
+    {
+      "id": 11,
+      "line": "Посмотрим, что скрывается за его молчанием.",
+      "startSec": 28.6,
+      "endSec": 30.8,
+      "card": {
+        "text": "СРАЗУ пришлю · Суть – Тень – Вектор",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "молчанием"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.05,
+        "zoomTo": 1.05,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "скрывается"
+      }
+    }
+  ]
+}

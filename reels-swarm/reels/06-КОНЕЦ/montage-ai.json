@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "code": "КОНЕЦ",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 33.0,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Два месяца полной тишины.",
+      "startSec": 0.0,
+      "endSec": 2.6,
+      "card": {
+        "text": "Два месяца полной тишины",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "месяца"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.06,
+        "zoomTo": 1.06,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "тишины"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Вы оба молчите.",
+      "startSec": 2.6,
+      "endSec": 4.4,
+      "card": {
+        "text": "Вы оба молчите",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "молчите"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.06,
+        "zoomTo": 1.06,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "молчите"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Каждое утро начинается с мысли: это просто затянувшаяся пауза или финальная точка?",
+      "startSec": 4.4,
+      "endSec": 9.0,
+      "card": {
+        "text": "Пауза или финальная точка?",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "точка"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "пауза"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Отсутствие ясного финала не дает мозгу отпустить ситуацию.",
+      "startSec": 9.0,
+      "endSec": 12.4,
+      "card": {
+        "text": "Мозг не отпускает без финала",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "финала"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.05,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "отпустить"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Ты цепляешься за обрывки хороших воспоминаний.",
+      "startSec": 12.4,
+      "endSec": 15.2,
+      "card": {
+        "text": "Цепляешься за обрывки",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "обрывки"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.08,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "воспоминаний"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Но два месяца — это огромный срок.",
+      "startSec": 15.2,
+      "endSec": 17.6,
+      "card": {
+        "text": "Два месяца — огромный срок",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "срок"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.14,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "огромный"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Если он молчит так долго, он либо выбрал трусливый уход по-английски, либо ведет игру на выживание, ожидая, что ты сломаешься первой.",
+      "startSec": 17.6,
+      "endSec": 24.4,
+      "card": {
+        "text": "Уход по-английски или игра на износ",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "сломаешься"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.12,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "выживание"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Не изводи себя неизвестностью.",
+      "startSec": 24.4,
+      "endSec": 26.4,
+      "card": {
+        "text": "Хватит изводить себя",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "неизвестностью"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "изводи"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Пиши слово КОНЕЦ в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 26.4,
+      "endSec": 30.4,
+      "card": {
+        "text": "КОНЕЦ",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "КОНЕЦ"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "КОНЕЦ"
+      }
+    },
+    {
+      "id": 10,
+      "line": "Разберем, есть ли там еще что спасать.",
+      "startSec": 30.4,
+      "endSec": 33.0,
+      "card": {
+        "text": "СРАЗУ пришлю · есть ли что спасать",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "спасать"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.06,
+        "zoomTo": 1.06,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "спасать"
+      }
+    }
+  ]
+}

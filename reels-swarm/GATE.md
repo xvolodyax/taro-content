@@ -7,14 +7,15 @@
 - **Canon:** `canon.md` is present and accurately reflects funnel, red zones, no «Сцена», app vs bot, and Instagram no-URL rule.
 - **Knowledge:** `pain-map.md`, `hook-bank.md`, `avatars.md`, and `red-zones.md` are correctly populated.
 - **Plan:** `INSTAGRAM_CONTENT_PLAN.md` exists, covering a 30-day period.
-- **Reels:** 12 reel packs (01 to 12) exist. Each contains `script-draft.md`, `script.md`, `smysly.md`, `storyboard.md`, `caption.md`, `code-word.txt`, `montage.md`, and `questions.md`.
+- **Reels:** 12 reel packs (01 to 12) exist. Each contains `script-draft.md`, `script.md`, `smysly.md`, `storyboard.md`, `caption.md`, `code-word.txt`, `montage.md`, `montage-ai.json`, and `questions.md`.
 - **Handoff Lock:** ONE OWNER PER FILE policy is strictly followed.
   - Gemini wrote ONLY `script-draft.md`.
   - Смыслы wrote ONLY `script.md` and `smysly.md`.
   - Funnel wrote ONLY `caption.md` and `code-word.txt`.
   - Storyboard wrote ONLY `storyboard.md` based on `script.md`.
-  - Монтаж wrote ONLY `montage.md`.
+  - Монтаж wrote ONLY `montage.md` + `montage-ai.json` (and hall-paste copies).
   - Вопросы wrote ONLY `questions.md`.
+- **montage-ai.json:** all 12 parse as JSON; every beat has exact `card.text` / `startSec` / `endSec` / `line`; CTA beat shows the code word with `UI Soft Click`. Schema: `MONTAGE-AI.md`.
 - **Compliance:** 
   - Scripts use living spoken voice.
   - No corporate speak, no forbidden words.

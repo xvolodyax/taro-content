@@ -1,0 +1,282 @@
+{
+  "version": 1,
+  "code": "СЕРЬЁЗНО",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 31.4,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Вы спите уже год.",
+      "startSec": 0.0,
+      "endSec": 1.8,
+      "card": {
+        "text": "Спите уже год",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "год"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.12,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "спите"
+      }
+    },
+    {
+      "id": 2,
+      "line": "Вам хорошо вместе.",
+      "startSec": 1.8,
+      "endSec": 3.4,
+      "card": {
+        "text": "Вам хорошо вместе",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "хорошо"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.12,
+        "zoomTo": 1.12,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Dark Ambient Pad",
+        "onWord": "вместе"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Но как только речь заходит о статусе — он сливается.",
+      "startSec": 3.4,
+      "endSec": 6.4,
+      "card": {
+        "text": "Про статус — сливается",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "сливается"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.05,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "статусе"
+      }
+    },
+    {
+      "id": 4,
+      "line": "«Мне и так хорошо», «я не готов к серьезному».",
+      "startSec": 6.4,
+      "endSec": 9.2,
+      "card": {
+        "text": "«Мне и так хорошо»",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "хорошо"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "серьезному"
+      }
+    },
+    {
+      "id": 5,
+      "line": "И ты соглашаешься, надеясь, что однажды он поймет твою ценность.",
+      "startSec": 9.2,
+      "endSec": 12.8,
+      "card": {
+        "text": "Соглашаешься. Надеешься",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "ценность"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.09,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "надеясь"
+      }
+    },
+    {
+      "id": 6,
+      "line": "Иллюзия.",
+      "startSec": 12.8,
+      "endSec": 13.8,
+      "card": {
+        "text": "Иллюзия",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "Иллюзия"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.18,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "Иллюзия"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Для него этот формат идеален.",
+      "startSec": 13.8,
+      "endSec": 16.0,
+      "card": {
+        "text": "Для него формат идеален",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "идеален"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.04,
+        "zoomTo": 1.04,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "формат"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Он получает весь спектр эмоций и заботы, не отдавая взамен никаких гарантий.",
+      "startSec": 16.0,
+      "endSec": 20.0,
+      "card": {
+        "text": "Всё берёт — гарантий ноль",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "гарантий"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.07,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "гарантий"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Отношения без обязательств всегда удобны только одному человеку.",
+      "startSec": 20.0,
+      "endSec": 23.4,
+      "card": {
+        "text": "Без обязательств удобно одному",
+        "position": "center-above-face",
+        "in": "word-sync",
+        "onWord": "обязательств"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "удобны"
+      }
+    },
+    {
+      "id": 10,
+      "line": "К чему это приведет?",
+      "startSec": 23.4,
+      "endSec": 25.0,
+      "card": {
+        "text": "К чему это приведёт?",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "приведет"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.12,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "приведет"
+      }
+    },
+    {
+      "id": 11,
+      "line": "Пиши слово СЕРЬЁЗНО в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 25.0,
+      "endSec": 29.0,
+      "card": {
+        "text": "СЕРЬЁЗНО",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "СЕРЬЁЗНО"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.07,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "СЕРЬЁЗНО"
+      }
+    },
+    {
+      "id": 12,
+      "line": "Узнаем, есть ли у этой истории будущее.",
+      "startSec": 29.0,
+      "endSec": 31.4,
+      "card": {
+        "text": "СРАЗУ пришлю · в моём приложении",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "будущее"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.07,
+        "zoomTo": 1.07,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "будущее"
+      }
+    }
+  ]
+}

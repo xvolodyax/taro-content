@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "code": "ПРАВДА",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationSec": 29.4,
+  "safe": {
+    "bottomPct": 20,
+    "cardNotOnFace": true
+  },
+  "music": {
+    "name": "Dark Ambient Pad",
+    "duckOnSfx": true
+  },
+  "beats": [
+    {
+      "id": 1,
+      "line": "Бывшая звонит ему ночью.",
+      "startSec": 0.0,
+      "endSec": 2.2,
+      "card": {
+        "text": "Бывшая звонит ночью",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ночью"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.14,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Reverse Cymbal",
+        "onWord": "звонит"
+      }
+    },
+    {
+      "id": 2,
+      "line": "А он спокойно отвечает: «Мы просто общаемся, не накручивай».",
+      "startSec": 2.2,
+      "endSec": 6.0,
+      "card": {
+        "text": "«Мы просто общаемся»",
+        "position": "top-third",
+        "in": "word-sync",
+        "onWord": "общаемся"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.0,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "общаемся"
+      }
+    },
+    {
+      "id": 3,
+      "line": "Ты пытаешься верить, но внутри всё сжимается в комок.",
+      "startSec": 6.0,
+      "endSec": 9.2,
+      "card": {
+        "text": "Внутри всё сжимается",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "сжимается"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.1,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Tension Riser",
+        "onWord": "комок"
+      }
+    },
+    {
+      "id": 4,
+      "line": "Ночные звонки бывшим означают незавершенный гештальт.",
+      "startSec": 9.2,
+      "endSec": 12.6,
+      "card": {
+        "text": "Ночные звонки = незакрытый гештальт",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "гештальт"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.03,
+        "zoomTo": 1.03,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Sub Drop",
+        "onWord": "гештальт"
+      }
+    },
+    {
+      "id": 5,
+      "line": "Он либо держит её на запасном пути, либо она всё еще имеет над ним власть.",
+      "startSec": 12.6,
+      "endSec": 16.8,
+      "card": {
+        "text": "Запасной путь или её власть",
+        "position": "top-third",
+        "in": "punch",
+        "onWord": "власть"
+      },
+      "camera": {
+        "shot": "mid-chest",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "jump-cut"
+      },
+      "sfx": {
+        "name": "Air Whoosh Transition",
+        "onWord": "власть"
+      }
+    },
+    {
+      "id": 6,
+      "line": "В любом случае, ты оказалась втянута в чужую игру, где твои границы грубо нарушаются.",
+      "startSec": 16.8,
+      "endSec": 21.2,
+      "card": {
+        "text": "Тебя втянули в чужую игру",
+        "position": "center-above-face",
+        "in": "fade-up",
+        "onWord": "игру"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.11,
+        "cut": "slow-zoom"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "границы"
+      }
+    },
+    {
+      "id": 7,
+      "line": "Узнай, что их связывает на самом деле.",
+      "startSec": 21.2,
+      "endSec": 23.6,
+      "card": {
+        "text": "Что их связывает на самом деле",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "связывает"
+      },
+      "camera": {
+        "shot": "close-face",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.13,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "Cinematic Impact",
+        "onWord": "связывает"
+      }
+    },
+    {
+      "id": 8,
+      "line": "Пиши слово ПРАВДА в комментариях, и я автоматически пришлю тебе в Директ доступ к глубокому аудиоразбору «Суть – Тень – Вектор» в приложении.",
+      "startSec": 23.6,
+      "endSec": 27.4,
+      "card": {
+        "text": "ПРАВДА",
+        "position": "center-above-face",
+        "in": "punch",
+        "onWord": "ПРАВДА"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.0,
+        "zoomTo": 1.06,
+        "cut": "punch-in"
+      },
+      "sfx": {
+        "name": "UI Soft Click",
+        "onWord": "ПРАВДА"
+      }
+    },
+    {
+      "id": 9,
+      "line": "Разберем эту ситуацию до конца.",
+      "startSec": 27.4,
+      "endSec": 29.4,
+      "card": {
+        "text": "СРАЗУ пришлю · Суть – Тень – Вектор",
+        "position": "top-third",
+        "in": "fade-up",
+        "onWord": "конца"
+      },
+      "camera": {
+        "shot": "mid-confident",
+        "zoomFrom": 1.06,
+        "zoomTo": 1.06,
+        "cut": "hold"
+      },
+      "sfx": {
+        "name": "Downlifter",
+        "onWord": "ситуацию"
+      }
+    }
+  ]
+}
