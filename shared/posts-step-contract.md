@@ -8,9 +8,9 @@ Inline Директора = `GATE` FAIL.
 ```text
 posts/<slot>/steps/01-researcher.json
 posts/<slot>/steps/01-researcher.prompt.md   # cloud: полный dispatch-prompt
-posts/<slot>/steps/02-meaning.json
+posts/<slot>/steps/02-meaning.json            # нет на 21:21
 posts/<slot>/steps/03-copywriter.json
-posts/<slot>/steps/04-cover-text.json         # нет на 15:15
+posts/<slot>/steps/04-cover-text.json         # нет на 15:15; на 21:21 после поста
 posts/<slot>/steps/05-gate.json
 posts/<slot>/package.meta.json
 ```

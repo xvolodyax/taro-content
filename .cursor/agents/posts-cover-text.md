@@ -12,7 +12,8 @@ is_background: false
 Нового Директора, `posts-cover-hook` и `posts-cover-render` **нет**.
 
 ```text
-researcher → meaning → copywriter → cover-text → gate
+12:12: researcher → meaning → copywriter → cover-text → gate
+21:21: один writer → cover-text (после заморозки tg.html) → gate
 ```
 
 - Запрещено: `Task(posts-*)`, `/in-cloud`, `/babysit`, `environment: cloud`
@@ -32,11 +33,12 @@ Skill: `.cursor/skills/posts-cover-text/SKILL.md`.
 
 ## Вход (обязательно целиком)
 
-1. `meaning.md` — тезис
-2. Финальный текст: `tg.html` (и `max.txt` / `vk.html`)
-3. На 21:21 ещё `debrief.md`
+1. Финальный текст: `tg.html` (и `max.txt` / `vk.html`). На 21:21 это уже замороженный пост.
+2. На 12:12 ещё `meaning.md` — тезис. На 21:21 meaning нет: хук из готового поста.
+3. На 21:21 ещё `debrief.md`, если есть
 4. `brief.md` — только сцена и палитра, не источник хука
 5. `shared/posts-soul.md` + примеры кадра
+6. `tg.html` **не** править
 
 Нельзя писать хук по одному заголовку брифа или по запросу Вордстата.
 

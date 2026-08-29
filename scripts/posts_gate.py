@@ -88,6 +88,8 @@ def detect_slot(package: Path) -> str:
 
 
 def required_steps(slot: str) -> list[str]:
+    if slot == "2121":
+        return ["posts-copywriter", "posts-gate"]
     roles = ["posts-researcher", "posts-meaning", "posts-copywriter"]
     if slot not in {"1515", "alena"}:
         roles.append("posts-cover-text")
@@ -266,6 +268,13 @@ FROZEN_TEMPLATE = (
     "о чем он думает когда молчит",
 )
 FAIRY = ("он думает о тебе, потерпи", "он думает о тебе потерпи")
+EMPTY_TRY_ON = ("примерьте на свою", "примерь на свою", "примерить на свою")
+SUIT_METAPHOR = (
+    "живая вода",
+    "щуп",
+    "дозрел до",
+)
+HER_TOKENS = ("неё", "нее", "тебе", "тебя", "ты ", "ты.", "ей", "читатель", "собой", "себе")
 
 
 def check_debrief_rubric(text: str, label: str, result: GateResult) -> None:
@@ -286,14 +295,26 @@ def check_debrief_rubric(text: str, label: str, result: GateResult) -> None:
     )
     if third:
         blob = third.group(0).lower()
-        if not any(tok in blob for tok in ("неё", "нее", "тебе", "тебя", "ты ", "ей", "читатель")):
+        if not any(tok in blob for tok in HER_TOKENS):
             result.fail(f"{label}: позиция 3 должна быть про неё")
+    for phrase in EMPTY_TRY_ON:
+        if phrase in low:
+            result.fail(f"{label}: пустая вода про «примерить»")
 
 
 def check_2121_text(vis: str, label: str, result: GateResult) -> None:
     low = vis.lower()
     if SCENA_RE.search(vis) or "«сцена»" in low:
         result.fail(f"{label}: слово «Сцена» запрещено")
+    for phrase in EMPTY_TRY_ON:
+        if phrase in low:
+            result.fail(f"{label}: пустая вода про «примерить»")
+    if "похоже" not in low or "не то" not in low:
+        result.fail(f"{label}: нет пульса «Похоже? / Не то»")
+    pulse = re.search(r"(?i)похоже", vis)
+    body = vis[: pulse.start()] if pulse else vis
+    if not any(tok in body.lower() for tok in HER_TOKENS):
+        result.fail(f"{label}: позиция 3 должна быть про неё")
     if "когда напишет" in low:
         result.fail(f"{label}: нельзя тянуть «когда напишет»")
     for phrase in OLD_2121:
@@ -302,8 +323,9 @@ def check_2121_text(vis: str, label: str, result: GateResult) -> None:
     for phrase in FAIRY:
         if phrase in low:
             result.fail(f"{label}: дневная сказка")
-    if "похоже" not in low or "не то" not in low:
-        result.fail(f"{label}: нет пульса «Похоже? / Не то»")
+    for phrase in SUIT_METAPHOR:
+        if phrase in low:
+            result.fail(f"{label}: метафора мастей / «дозрел до»")
 
 
 def check_editorial(package: Path, slot: str, result: GateResult) -> None:
@@ -353,11 +375,8 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
         if evening_hold(package) or preview_poll_only(package):
             if debrief.is_file():
                 result.fail("15:15 evening HOLD: debrief.md не писать")
-        else:
-            if not debrief.is_file():
-                result.fail("15:15: нет debrief.md (опрос и вечер пишутся вместе)")
-            else:
-                check_debrief_rubric(debrief.read_text(encoding="utf-8"), "debrief.md", result)
+        elif debrief.is_file():
+            check_debrief_rubric(debrief.read_text(encoding="utf-8"), "debrief.md", result)
     if slot in {"1212", "2121"}:
         cover = package / "cover-text.json"
         if cover.is_file():
@@ -425,14 +444,15 @@ incident_report: none
 {reasons}
 
 # Чеклист
-- [ ] рой: researcher → meaning → copywriter → cover-text? → gate
-- [ ] Директор не писал inline
+- [ ] 12:12/15:15: researcher → meaning → copywriter → cover-text? → gate
+- [ ] 21:21: один writer → gate (meaning нет)
+- [ ] Директор / Холл не писал inline
 - [ ] written_by: gemini
 - [ ] Главред снят, фразы Главреда нет
-- [ ] первая строка = сцена
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
-- [ ] 21:21 рубрика, 3 позиции, пульс, без «Сцена»
+- [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», пульс, позиция 3 = она
+- [ ] Gate предложения не переписывает
 - [ ] publish SKIP у писателей; эфир — posts_publish.py
 """
     (package / "GATE").write_text(text, encoding="utf-8")

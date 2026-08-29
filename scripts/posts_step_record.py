@@ -15,10 +15,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def step_index(role: str, slot: str) -> int:
-    order = ["posts-researcher", "posts-meaning", "posts-copywriter"]
-    if slot not in {"1515", "alena", "0700"}:
-        order.append("posts-cover-text")
-    order.append("posts-gate")
+    slot = str(slot).replace(":", "")
+    if slot == "2121":
+        order = ["posts-researcher", "posts-copywriter", "posts-cover-text", "posts-gate"]
+    else:
+        order = ["posts-researcher", "posts-meaning", "posts-copywriter"]
+        if slot not in {"1515", "alena", "0700"}:
+            order.append("posts-cover-text")
+        order.append("posts-gate")
     role = canon_role(role)
     return order.index(role) + 1
 

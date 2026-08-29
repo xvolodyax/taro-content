@@ -6,8 +6,9 @@ disable-model-invocation: true
 
 # Cover-text
 
-Вход: `meaning.md` + `tg.html`.
+Вход: замороженный `tg.html`. На 12:12 ещё `meaning.md`. На 21:21 meaning нет.
 Выход: `cover-text.json`, `image-prompt.txt`. `written_by: gemini`.
+`tg.html` не править.
 
 3 кандидата, один chosen, `placement: center`. Превью IG ~200px.
 15:15 — не запускать.

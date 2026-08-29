@@ -44,7 +44,7 @@ is_background: false
   Вечерний пост не писать.
 - **21:21** — не статья. Можешь выбрать три вопроса из сегодняшнего опроса
   и записать в `brief.md`. Карты не выбирать (скрипт). Текст поста не писать.
-  Если `evening: HOLD` — стоп.
+  Meaning не звать. Если `evening: HOLD` — стоп.
 
 ## Запрещено
 
@@ -68,7 +68,7 @@ is_background: false
 slot: YYYY-MM-DD-HHMM
 topic: <одна тема>
 wordstat: <фразы/частотности | PARTIAL | skip>
-next: meaning
+next: meaning | copywriter
 publish: SKIP
 incident_report: none
 ```

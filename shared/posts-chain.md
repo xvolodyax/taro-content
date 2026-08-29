@@ -40,7 +40,8 @@ python3 scripts/posts_dispatch_prompt.py --role posts-copywriter --package posts
 | Opus / Sonnet / Composer как писатель | `written_by` не gemini |
 | Публикация писателем шага | `publish: SKIP`; после PASS — `posts_publish.py`, Холл не публикует |
 
-Параллелей нет. Cover после copywriter, только 12:12 и 21:21.
+Параллелей нет. Cover после copywriter, только 12:12 и 21:21 (после заморозки поста).
+На 21:21 Meaning нет. Один писатель.
 
 ## Модели
 

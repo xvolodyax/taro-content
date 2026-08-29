@@ -99,8 +99,16 @@ class PolicyAndAgentsTest(unittest.TestCase):
         text = (ROOT / "POSTS.md").read_text(encoding="utf-8")
         self.assertIn("Другая сторона экрана", text)
         self.assertIn("Похоже?", text)
-        self.assertIn("примерьте на свою", text)
+        self.assertIn("один писатель", text.lower())
+        self.assertNotIn("примерьте на свою", text.lower())
         self.assertIn("убита", text.lower())
+
+    def test_2121_requires_writer_and_gate_only(self) -> None:
+        from posts_gate import required_steps
+
+        self.assertEqual(required_steps("2121"), ["posts-copywriter", "posts-gate"])
+        self.assertIn("posts-meaning", required_steps("1515"))
+        self.assertNotIn("posts-meaning", required_steps("2121"))
 
     def test_cover_skips_1515(self) -> None:
         text = (ROOT / ".cursor/agents/posts-cover-text.md").read_text(encoding="utf-8")
@@ -151,6 +159,34 @@ class DispatchAndGateTest(unittest.TestCase):
             self.assertEqual(result.publish_count, 0)
             self.assertLessEqual(result.tg_len, 1024)
             self.assertFalse(first_line(dest).isupper())
+
+    def test_2121_rejects_empty_try_on_line(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            dest = Path(tmp) / "2026-08-31-2121"
+            dest.mkdir()
+            (dest / "package.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slot": "2121",
+                        "written_by": "gemini",
+                        "publish": "SKIP",
+                        "glavred": "REMOVED",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (dest / "tg.html").write_text(
+                "Другая сторона экрана\nПримерьте на свою.\nПохоже? / Не то\n",
+                encoding="utf-8",
+            )
+            (dest / "vk.html").write_text(
+                "Другая сторона экрана\nПохоже? / Не то\nтебе\n",
+                encoding="utf-8",
+            )
+            result = evaluate(dest, require_swarm=False)
+            self.assertEqual(result.verdict, "FAIL")
+            blob = " ".join(result.reasons).lower()
+            self.assertTrue("ример" in blob)
 
     def test_old_four_advice_debrief_fails(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
