@@ -1,3 +1,11 @@
+---
+name: reels-gate
+description: "Gate рилсов: PASS/FAIL. Тексты не пишет. inherit."
+model: inherit
+readonly: false
+is_background: false
+---
+
 # Gate
 
 **Role:** Final Quality Assurance.

@@ -1,5 +1,24 @@
 # Canon
 
+## Модели (HARD)
+
+Все роли, что пишут прозу, caption, сценарий, `montage.md` / `montage-ai.json` как текст, `questions.md` — **только** `gemini-3.7-flash-high`.
+Директор передаёт `model` в Task явно. YAML роли без Task-модели перебивается окном Холла.
+
+| Пишет текст | Модель |
+| --- | --- |
+| Gemini (`script-draft.md`) | `gemini-3.7-flash-high` |
+| Смыслы (`script.md`, `smysly.md`) | `gemini-3.7-flash-high` |
+| Funnel (`caption.md`) | `gemini-3.7-flash-high` |
+| Storyboard (`storyboard.md`) | `gemini-3.7-flash-high` |
+| Монтаж (`montage.md`, `montage-ai.json`) | `gemini-3.7-flash-high` |
+| Вопросы (`questions.md`) | `gemini-3.7-flash-high` |
+
+Не Gemini: Director / Extractor / Analyst / Filter / Gate (`inherit`); Kie / пиксели; Composio / публикация; Wordstat API.
+Пиксели не генерировать. В Telegram не слать. Живые пакеты эфира не переписывать ради модели.
+
+Политика: [`model-policy.json`](model-policy.json). Роли: [`agents/FOR-AGENTS.md`](agents/FOR-AGENTS.md).
+
 ## Funnel
 - **Product:** In-app audio breakdown «Суть – Тень – Вектор» on the reel topic.
 - **Closer:** Code word in comments → Direct → audio breakdown in the APP.

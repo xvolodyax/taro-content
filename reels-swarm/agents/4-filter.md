@@ -1,3 +1,11 @@
+---
+name: reels-filter
+description: "Filter рилсов: red zones. Не сценарий. inherit."
+model: inherit
+readonly: false
+is_background: false
+---
+
 # Filter
 
 **Role:** Content safety and compliance.

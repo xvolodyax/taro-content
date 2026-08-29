@@ -1,6 +1,14 @@
+---
+name: reels-gemini
+description: "Черновик сценария рилса (script-draft.md). Gemini 3.7. Не финал, не caption."
+model: gemini-3.7-flash-high
+readonly: false
+is_background: false
+---
+
 # Gemini
 
-**Role:** Copywriting and Content Planning.
+**Role:** Copywriting and Content Planning. `model: gemini-3.7-flash-high`. `written_by: gemini`.
 **Responsibilities:**
 - Write the Instagram content plan.
 - Write the initial reel scripts as drafts.
