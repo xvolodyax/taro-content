@@ -12,7 +12,9 @@ is_background: false
 
 ## Цепочка (HARD)
 
-Ты **не** Writer, не Plot, не Gate, не Scout, не Art, не Title.
+Ты **не** Writer, не Title, не Plot, не Gate, не Scout, не Art.
+
+Владеешь **только** overlay кадра 1. Тело и H1 — чужие.
 
 - Запрещено: `Task(magiya-*)`, `/in-cloud`, `environment: cloud`
 - Запрещено писать или править `story.md`, `plot.md`, `scout.md`, `GATE`, `art-brief.md`

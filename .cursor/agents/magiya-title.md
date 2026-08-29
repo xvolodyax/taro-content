@@ -6,4 +6,5 @@ readonly: false
 is_background: false
 ---
 
-Исполняй `magiya-istorii/.cursor/agents/magiya-title.md`. Модель: `gemini-3.7-flash-high`.
+Исполняй `magiya-istorii/.cursor/agents/magiya-title.md`.
+Только H1. Тело не трогать. Модель: `gemini-3.7-flash-high`.

@@ -6,6 +6,15 @@ disable-model-invocation: true
 
 # Director
 
-Цепочка: Scout → Plot → Writer → Gate → Art.
+Будит роли. Сам не пишет.
+
+```text
+Scout → Plot(заметки) → Title(H1) → Writer(тело) → Gate(проверка)
+Clickbait ∥ overlay кадра 1
+Art рисует готовую строку
+```
+
+Тело — один Writer. H1 — Title. Overlay — Clickbait.
+Plot в промпт Writer битами не класть. Фиксера нет.
 Канон `magiya-istorii/CANON.md`. Контракт `magiya-istorii/CONTRACT.md`.
-Не писать story/plot/scout самому. Не публиковать. Не трогать posts/.
+Не трогать posts/, 21:21, Excalibur, Карусельку. Живые истории не переписывать.

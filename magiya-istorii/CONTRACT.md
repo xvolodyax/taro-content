@@ -23,17 +23,17 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 
 | Файл | Кто | Зачем |
 | --- | --- | --- |
-| `scout.md` | Scout | Живой спрос, угол ≠ топ H1 |
-| `plot.md` | Plot | Кто / где / когда / ставка / цена |
-| `title-brief.md` | Title | H1 == title, Эскалибур |
-| `story.md` | Writer | Быстрая история с триггерным вопросом в конце |
+| `scout.md` | Scout | Живой спрос, угол ≠ топ H1. Историю не пишет |
+| `plot.md` | Plot | Необязательные заметки. В статью не пишет. Биты не предписывает |
+| `title-brief.md` | Title | Только H1 == title. Тело не правит |
+| `story.md` | Writer | Только тело: проза + триггерный вопрос. Один проход |
 | `article.html` | Director / Publisher | Чистый HTML из `story.md` + H1 + врезки `slice-02`…`06` |
 | `article.meta.json` | Director / Publisher | Метаданные для загрузки на сайт |
 | `description-brief.json` | Director / Publisher | Описание/excerpt (не дубль первого абзаца) |
 | `caption-01.txt` … `caption-06.txt` | Writer | Тезисы/подписи к кадрам |
 | `clickbait.txt` | Clickbait | Overlay кадра 1, одна строка |
 | `meta.json` | Package Metadata | `title`/`h1` ≠ `overlay_clickbait` |
-| `GATE` | Gate | PASS или FAIL |
+| `GATE` | Gate | Только проверка. Предложения не переписывает |
 | `art-brief.md` | Art | Холст 2×3, кадр 1 только текст Clickbait |
 | `canvas.png`, `slice-01.png`…`slice-06.png` | Art | Холст и 6 срезов |
 | `package.meta.json` | Director | Статус публикации и пайплайна |
@@ -60,28 +60,31 @@ package-upload.tgz
 - Лид идёт один раз в тексте, без дублирования `dek` / `excerpt` сразу под H1.
 - Обложка (`cover.png` = `slice-01.png`) отображается сайтом как hero один раз. Внутри `article.html` картинка `slice-01` **НЕ дублируется**.
 - В теле статьи размещаются только врезки `inline-01.png` … `inline-05.png` (`slice-02` … `slice-06`).
-- Нет слов «Сцена», «Возьмём:» и карточек Plot.
+- Нет слов «Сцена», «Возьмём:», «Примерьте на свою» и карточек Plot.
 
 ## Swarm
 
 Директор **не** пишет scout / plot / title / story / clickbait / GATE / art-brief.
 Каждый шаг — отдельный `Task`. Cloud: `Task(generalPurpose)` + файл роли.
 Inline Директора = FAIL.
+Фиксера / копирайтера / второго прохода по телу **нет**.
 
 ```text
-Scout → Plot → Title → Writer → Gate(текст)
-Clickbait: после Plot (можно параллельно с Writer / Gate)
-Art: после Clickbait; на кадр 1 кладёт ТОЛЬКО clickbait.txt
-Publisher: после GATE PASS и готовых картинок -> заливка на сайт
+Scout → Plot(заметки) → Title(только H1) → Writer(только тело) → Gate(только проверка)
+Clickbait: после Plot (можно параллельно с Writer — разный текст)
+Art: после Clickbait; на кадр 1 кладёт ТОЛЬКО clickbait.txt; прозу не пишет
+Publisher: только если Холл явно сказал публиковать
 ```
 
-FAIL Gate → только проза. Холст текст не валит. Вернуть дырявый текстовый шаг, не чинить самому.
+FAIL тела → Writer. FAIL H1 → Title. FAIL overlay → Clickbait.
+Plot на тело не возвращать. Холст текст не валит. Не чинить самому.
 **Одна генерация холста.** Director не говорит «ещё раз нарисуй». Art не fail'ит Writer.
 Лицо Холл не рисует.
 
 ## Чужое
 
-Не открывать и не трогать: слоты 12:12 / 15:15 / 21:21, Алёну, `posts/`, `PUBLISH.md`, Composio, Дзен-боль.
+Не открывать и не трогать: слоты 12:12 / 15:15 / 21:21, Алёну, `posts/`, `PUBLISH.md`, Composio, Дзен-боль, Excalibur-плагин, Карусельку.
+Живые пакеты (домовой, соль) не переписывать без нового задания Холла.
 
 ## Выход Директора Холлу
 

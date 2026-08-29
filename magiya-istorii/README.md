@@ -18,9 +18,11 @@
 ```text
 Собери пакет «Магия истории» на YYYY-MM-DD.
 Канон: magiya-istorii/CANON.md. Контракт: magiya-istorii/CONTRACT.md.
-Director сам тексты не пишет:
-Scout → Plot → Title(H1==title, Эскалибур) → Writer → Gate(текст).
-Clickbait (только overlay кадра 1) после Plot, не в title/h1.
+Director сам тексты не пишет.
+Тело — только Writer (один проход, Gemini 3.7). H1 — только Title. Overlay — только Clickbait.
+Plot — необязательные заметки, биты в Writer не вшивать.
+Scout → Plot → Title(только H1) → Writer(только тело) → Gate(только проверка).
+Clickbait (только overlay кадра 1) после Plot, не в title/h1/тело.
 Art: холст 6 клеток (2×3), глянец 2020-х. Вика держит DJI Mic Mini в руке у рта.
 Кадр 1 — жирная красная рамка + clickbait.txt (display-шрифт). Кадры 2–6 — тезисы действия сюжета.
 Свет и локацию Art берет из сюжета, в базовое ядро промпта «ночь» не зашивать.
@@ -32,19 +34,19 @@ Art: холст 6 клеток (2×3), глянец 2020-х. Вика держи
 ## Цепочка
 
 ```text
-Scout → Plot → Title → Writer → Gate
-Clickbait ∥ после Plot
-Art после Clickbait (холст 2×3)
-Publisher: magiya_site_publish.py -> сайт (при наличии ключа)
+Scout → Plot(заметки) → Title(H1) → Writer(тело) → Gate(проверка)
+Clickbait ∥ после Plot (не в тело, не в H1)
+Art после Clickbait (холст 2×3, готовую строку)
+Publisher: только если Холл сказал публиковать
 ```
 
 | Шаг | Агент / Скрипт | Выход |
 | --- | --- | --- |
 | 1 | `magiya-scout` | `scout.md` |
-| 2 | `magiya-plot` | `plot.md` |
-| 3 | `magiya-title` | `title-brief.md`, `meta.title`=`meta.h1` |
-| 4 | `magiya-writer` | `story.md` |
-| 5 | `magiya-gate` | `GATE` |
+| 2 | `magiya-plot` | `plot.md` (необязательные заметки) |
+| 3 | `magiya-title` | только H1; тело не трогает |
+| 4 | `magiya-writer` | только тело `story.md` |
+| 5 | `magiya-gate` | `GATE` (проверка, не рерайт) |
 | 6 | `clickbait` | `clickbait.txt`, `meta.overlay_clickbait` |
 | 7 | `magiya-art` | `art-brief.md`, `canvas.png`, `slice-01..06.png` |
 | 8 | `magiya_site_publish.py` | upload, approve, publish на сайт |
