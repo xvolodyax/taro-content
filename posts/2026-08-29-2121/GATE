@@ -1,0 +1,27 @@
+=== POSTS GATE ===
+slot: 2026-08-29-2121
+verdict: PASS
+return: none
+publish: READY
+glavred: REMOVED
+director_inline: ok
+written_by: gemini
+cover_written_by: grok
+cards: Семёрка жезлов | Паж жезлов | Семёрка пентаклей | Девятка кубков
+debrief_from: posts/2026-08-29-1515
+limits: tg_len=931
+tg_len: 931
+incident_report: none
+
+# Причины
+расклады не переписывались; текст 15:15 GATE PASS, 931 / ≤1024; cover добавлен
+
+# Чеклист
+- [x] debrief из 15:15, 4 карты не переписаны
+- [x] карта = совет, без слова «Сцена»
+- [x] Главред не звать / REMOVED
+- [x] TG visible = 931 ≤ 1024
+- [x] нет IG / Макс / YT / ВК файлов эфира
+- [x] cover: 3 хука, placement center (выбран: «Второго так и нет»)
+- [x] медальон native, victoria_credit false, 1K 1:1
+- [x] чужие пакеты (1515, 1212, alena) не тронуты
