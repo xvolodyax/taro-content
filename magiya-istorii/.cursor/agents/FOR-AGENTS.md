@@ -21,6 +21,7 @@
 | 7 | Art (только текст art-brief) | `magiya-art.md` | `gemini-3.7-flash-high` | да, после Clickbait |
 
 Все текстовые роли (Title, Writer, Clickbait, Art-brief) — строго `gemini-3.7-flash-high`.
+Директор передаёт эту модель в Task явно (шаблоны `templates/steps/03-title.json`, `04-writer.json`, `06-clickbait.json`, `07-art.json`).
 Title ≠ Clickbait. Clickbait не меняет `title`/`h1`.
 Art: одно полотно, одна генерация; на кадр 1 только `clickbait.txt`. Пиксели не запускать.
 Холст не валит текст. Director не говорит «ещё раз нарисуй».
