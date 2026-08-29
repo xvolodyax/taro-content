@@ -20,10 +20,16 @@
 5. Обряд у персонажа, не инструкция читателю. Нет «сделай так, чтобы испортить».
 6. Выдумка или документ — только в `meta`. Живых не оговаривать.
 
-## Модель Writer (HARD)
+## Модели ролей (HARD)
 
-Writer в `magiya-istorii` пишется **только на модели Gemini 3.7** (`gemini-3.7-flash-high`).
-Другой моделью (Grok, Claude, Composer) текст историй не генерировать и не переписывать.
+Все **текстовые роли** продукта (всё, что видит читатель или что уходит в промпт картинки) пишутся **только на модели Gemini 3.7** (`gemini-3.7-flash-high`):
+- **Writer** (`magiya-writer.md`): `gemini-3.7-flash-high`
+- **Title** (`magiya-title.md`): `gemini-3.7-flash-high`
+- **Clickbait** (`magiya-clickbait.md` / `clickbait.md`): `gemini-3.7-flash-high`
+- **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.7-flash-high`. Генерацию пикселей / холста НЕ запускать.
+
+Другими моделями (Grok, Claude, Composer) заголовки, кликбейт, промпты картинок и `story.md` не писать.
+Scout / Plot / Gate могут оставаться `inherit` как служебные.
 
 Ориентир — длина эталона быстрой истории, не роман.
 

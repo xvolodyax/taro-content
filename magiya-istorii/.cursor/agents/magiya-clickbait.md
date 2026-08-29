@@ -1,12 +1,16 @@
 ---
 name: magiya-clickbait
 description: |
-  Clickbait «Магия истории»: один ударный overlay на кадр 1 холста + красная окантовка.
+  Clickbait «Магия истории»: один ударный overlay на кадр 1 холста. Gemini 3.7 only.
   НЕ Writer, НЕ Plot, НЕ Gate, НЕ Scout, НЕ Art. Director-chain only.
-model: inherit
+model: gemini-3.7-flash-high
 readonly: false
 is_background: false
 ---
+
+## Модель (HARD)
+
+Только **`gemini-3.7-flash-high`**. Никаких Grok, Composer, Claude.
 
 ## Цепочка (HARD)
 

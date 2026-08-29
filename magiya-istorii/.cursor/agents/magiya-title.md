@@ -1,10 +1,14 @@
 ---
 name: magiya-title
-description: "Title «Магия истории»: H1 == title по Эскалибуру. Не кликбейт. Не overlay кадра 1."
-model: inherit
+description: "Title «Магия истории»: H1 == title по Эскалибуру. Gemini 3.7 only."
+model: gemini-3.7-flash-high
 readonly: false
 is_background: false
 ---
+
+## Модель (HARD)
+
+Только **`gemini-3.7-flash-high`**. Никаких Grok, Composer, Claude.
 
 ## Цепочка (HARD)
 

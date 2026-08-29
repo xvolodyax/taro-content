@@ -1,10 +1,14 @@
 ---
 name: magiya-art
-description: "Art «Магия истории»: холст 6 кадров (2×3), Вика i2i, DJI Mic Mini. Кадр 1 — только overlay Clickbait + красная рамка. Лицо Холл не рисует."
-model: inherit
+description: "Art «Магия истории»: текст art-brief холста 6 кадров (2×3). Gemini 3.7 only. Пиксели не запускать."
+model: gemini-3.7-flash-high
 readonly: false
 is_background: false
 ---
+
+## Модель (HARD)
+
+Только **`gemini-3.7-flash-high`**. Пиксели, Kie и генерацию холста НЕ запускать — роль пишет только текстовый бриф / промпт.
 
 ## Цепочка (HARD)
 
