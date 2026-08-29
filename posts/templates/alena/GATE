@@ -1,0 +1,27 @@
+=== POSTS GATE ===
+slot: YYYY-MM-DD-alena
+verdict: FAIL
+return: Writer | Sol | Scout | none
+water: 
+funnel: 
+limits: 
+voice: 
+kstati: 
+cover: skip
+tg_len: 
+incident_report: none
+
+# Чеклист
+
+- [ ] канал queen, не @TodayTaro
+- [ ] первая строка = привет и дата
+- [ ] 4–6 живых предложений
+- [ ] нет заголовков «Развилка / Действие / Не стоит»
+- [ ] луна, день с часом, 1–2 аспекта, легче/тяжелее
+- [ ] «кстати» не копия вчера
+- [ ] стрижка по правилам слота
+- [ ] рефки байт-в-байт, столбик
+- [ ] caption ≤ 1024
+- [ ] Cover не звали, Главред не звали
+- [ ] чужие пакеты не тронуты
+- [ ] `python3 scripts/alena_check.py` = ok
