@@ -98,7 +98,7 @@ class PolicyAndAgentsTest(unittest.TestCase):
     def test_posts_md_locks_2121_rubric(self) -> None:
         text = (ROOT / "POSTS.md").read_text(encoding="utf-8")
         self.assertIn("Другая сторона экрана", text)
-        self.assertIn("Похоже?", text)
+        self.assertIn("Похоже? ❤️/ Не то ⚡", text)
         self.assertIn("один писатель", text.lower())
         self.assertNotIn("примерьте на свою", text.lower())
         self.assertIn("убита", text.lower())
@@ -159,6 +159,34 @@ class DispatchAndGateTest(unittest.TestCase):
             self.assertEqual(result.publish_count, 0)
             self.assertLessEqual(result.tg_len, 1024)
             self.assertFalse(first_line(dest).isupper())
+
+    def test_2121_rejects_pulse_without_emoji(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            dest = Path(tmp) / "2026-08-31-2121"
+            dest.mkdir()
+            (dest / "package.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slot": "2121",
+                        "written_by": "gemini",
+                        "publish": "SKIP",
+                        "glavred": "REMOVED",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (dest / "tg.html").write_text(
+                "Другая сторона экрана\nтебе вечером\nПохоже? / Не то\n",
+                encoding="utf-8",
+            )
+            (dest / "vk.html").write_text(
+                "Другая сторона экрана\nтебе вечером\nПохоже? ❤️/ Не то ⚡\n",
+                encoding="utf-8",
+            )
+            result = evaluate(dest, require_swarm=False)
+            self.assertEqual(result.verdict, "FAIL")
+            blob = " ".join(result.reasons)
+            self.assertTrue("смайл" in blob or "❤️" in blob or "⚡" in blob)
 
     def test_2121_rejects_empty_try_on_line(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
