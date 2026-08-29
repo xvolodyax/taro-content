@@ -1,9 +1,12 @@
 {
-  "status": "FAIL",
-  "step": "publish",
+  "status": "OK",
   "article_id": 30,
-  "http_code": 409,
-  "error": "{\"error\":\"Публиковать можно только одобренную статью\",\"detail\":\"Публиковать можно только одобренную статью\"}",
-  "approve_http_code": 409,
-  "approve_error": "{\"error\":\"Сначала статья должна пройти проверку качества\",\"detail\":\"Сначала статья должна пройти проверку качества\"}"
+  "live_url": "https://www.xn--80aaoqxlidb0d.xn--p1ai/blog/kak-vyzyvayut-domovogo-v-kvartire",
+  "published_at": "2026-08-29T18:33:10.242Z",
+  "approve_status": 200,
+  "publish_status": 200,
+  "site_response": {
+    "status": "published",
+    "canonical_url": "https://www.таросейчас.рф/blog/kak-vyzyvayut-domovogo-v-kvartire/"
+  }
 }

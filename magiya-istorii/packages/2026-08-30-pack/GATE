@@ -15,7 +15,8 @@ overlay_not_in_title: yes
 theme_magic: yes
 canvas_note: none
 canvas_regen: no
-publish: UPLOAD_OK
+publish: PUBLISHED
+live_url: https://www.xn--80aaoqxlidb0d.xn--p1ai/blog/kak-vyzyvayut-domovogo-v-kvartire
 incident_report: none
 
 # Чеклист
