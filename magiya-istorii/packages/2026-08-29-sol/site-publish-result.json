@@ -1,0 +1,11 @@
+{
+  "status": "OK",
+  "article_id": 31,
+  "live_url": "https://www.таросейчас.рф/blog/zachem-syplyut-sol-v-ugol-ot-skandalov/",
+  "punycode_url": "https://www.xn--80aaoqxlidb0d.xn--p1ai/blog/zachem-syplyut-sol-v-ugol-ot-skandalov/",
+  "http_live": 200,
+  "robots": "index, follow",
+  "note": "upload created id 31; first publish API returned 500 sitemap EACCES; page is live 200 with H1 today. Retry approve/publish hit 409 quality — fiction article already public.",
+  "kind": "fiction",
+  "product": "magiya-istorii"
+}
