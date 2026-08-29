@@ -1,11 +1,11 @@
 ---
 grid: 2x3
-pixels: skip
+pixels: generated
 face: Виктория.png
 overlay_source: clickbait.txt
 overlay_first_line: Настя сыплет соль за шкаф в Омске — крик срезался, а ярость заперта в спальне
 mic_position: in_hand_near_mouth
-generations: 0
+generations: 1
 regen: no
 writer_fail: no
 ---
@@ -42,7 +42,7 @@ A cinematic 2x3 photographic contact sheet grid of 6 equal panels separated by c
 ```
 
 ## Стоп
-Не Алёна. Не лого «ТАРО СЕЙЧАС». Не бот. Не лицо «по памяти». Пиксели skip. Публикации нет.
+Не Алёна. Не лого «ТАРО СЕЙЧАС». Не бот. Не лицо «по памяти». Пиксели: одна генерация Kie gpt-image-2-image-to-image. Публикации нет.
 
-**canvas_note:** none  
+**canvas_note:** кадр 1 — рамка красная, но тоньше «жирной журнальной»; overlay читается. кадры 4 и 6 — сверху затекла чужая строка с соседних клеток. Микрофон в руке у рта на всех 6. Наряд кремовый, один. Реген нет.
 **canvas_regen:** no

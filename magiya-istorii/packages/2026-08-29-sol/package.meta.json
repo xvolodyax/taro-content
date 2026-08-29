@@ -2,7 +2,9 @@
   "pipeline": "magiya-istorii",
   "director_inline": false,
   "publish": "SKIP",
-  "pixels": "skip",
+  "pixels": "generated",
   "date": "2026-08-29",
-  "slug": "2026-08-29-sol"
+  "slug": "zachem-syplyut-sol-v-ugol-ot-skandalov",
+  "generations": 1,
+  "regen": false
 }
