@@ -23,4 +23,4 @@ RuStore → https://www.rustore.ru/catalog/app/ru.taroseychas.app?referrerId=E9F
 В `caption.txt` блок копируется байт-в-байт.
 В `caption.html` слова строк те же; кликабелен только URL (`<a href="URL">URL</a>`). Подпись `RuStore → ` и остальные ярлыки не переименовывать.
 
-Gate: любое сжатие, перестановка, другой ref или обёртка «одним абзацем» = FAIL → Sol.
+Gate: любое сжатие, перестановка, другой ref или обёртка «одним абзацем» = FAIL → Writer. Прозу Gate не переписывает. Sol на рефки не звать.
