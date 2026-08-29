@@ -1,0 +1,9 @@
+{
+  "role": "magiya-plot",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["plot.md"],
+  "publish": "SKIP"
+}

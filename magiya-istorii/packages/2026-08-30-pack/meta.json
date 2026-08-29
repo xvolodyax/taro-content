@@ -1,0 +1,31 @@
+{
+  "product": "magiya-istorii",
+  "kind": "fiction",
+  "title": "Как вызывают домового в квартире",
+  "h1": "Как вызывают домового в квартире",
+  "overlay_clickbait": "Кирилл ставит блюдце — в темноте захрустело",
+  "clickbait_red_frame": true,
+  "slug": "kak-vyzyvayut-domovogo-v-kvartire",
+  "person": "Кирилл",
+  "city": "Воронеж",
+  "story_date": "2018-11",
+  "ritual": "вызов домового на блюдце с молоком",
+  "stake": "испуг в темноте",
+  "price": "страх в собственной квартире",
+  "wordstat_status": "OK",
+  "angle": "как вызвать домового",
+  "fattest_query_not_in_h1": true,
+  "h1_equals_title": true,
+  "overlay_not_in_title": true,
+  "captions": [
+    "caption-01.txt",
+    "caption-02.txt",
+    "caption-03.txt",
+    "caption-04.txt",
+    "caption-05.txt",
+    "caption-06.txt"
+  ],
+  "chars": 2919,
+  "living_people": "none",
+  "publish": "SKIP"
+}

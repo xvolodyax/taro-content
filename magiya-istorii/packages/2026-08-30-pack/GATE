@@ -1,0 +1,32 @@
+=== MAGIYA GATE ===
+package: magiya-istorii/packages/2026-08-30-pack
+verdict: PASS
+return: none
+chars: 2919
+hook_first_line: yes
+short_grafs: yes
+escalation: yes
+dossier: no
+recipe: no
+sale: no
+he_didnt_write: no
+h1_equals_title: yes
+overlay_not_in_title: yes
+theme_magic: yes
+canvas_note: none
+canvas_regen: no
+publish: SKIP
+incident_report: none
+
+# Чеклист
+
+- [x] крючок-парадокс в первой строке («Это блюдце поставили не для кошки.»)
+- [x] абзацы 1–3 предложения, воздух
+- [x] эскалация случаев (Воронеж → Самара → Пермь → Ростов-на-Дону)
+- [x] не досье, не plot в рот
+- [x] тема = магия (вызов домового)
+- [x] не рецепт, не продажа, нет бота
+- [x] title == h1 Эскалибур («Как вызывают домового в квартире»)
+- [x] overlay не в H1 («Кирилл ставит блюдце — в темноте захрустело»)
+- [x] холст не валит текст
+- [x] триггерный вопрос в финале
