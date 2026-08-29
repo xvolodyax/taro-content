@@ -68,6 +68,7 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 
 Директор **не** пишет scout / plot / title / story / clickbait / GATE / art-brief.
 Каждый шаг — отдельный `Task`. Cloud: `Task(generalPurpose)` + файл роли.
+Title / Writer / Clickbait / Art: в Task явно `model: gemini-3.7-flash-high`. Scout / Plot / Gate: `inherit`.
 Inline Директора = FAIL.
 
 ```text

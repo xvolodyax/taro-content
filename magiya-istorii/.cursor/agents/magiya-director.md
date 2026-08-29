@@ -47,6 +47,19 @@ Art — после Clickbait: холст 6, на кадр 1 только clickba
 
 `Task(generalPurpose)` + полный текст роли из `magiya-istorii/.cursor/agents/`.
 
+## Модели (HARD)
+
+Агенты Writer / Title / Clickbait / Art уже `gemini-3.7-flash-high` в YAML — не дублировать роли.
+Директор **обязан** передать модель в Task явно. Если опустить — окно Холла перебьёт YAML.
+
+| Роль | Task `model` |
+| --- | --- |
+| Title / Writer / Clickbait / Art | `gemini-3.7-flash-high` |
+| Scout / Plot / Gate / Director | `inherit` |
+
+Не Gemini: Kie / пиксели, Composio / публикация, Wordstat API.
+Картинки не генерировать. В Telegram не слать. Живой пакет сегодняшнего эфира не переписывать.
+
 ## Выход
 
 ```text
