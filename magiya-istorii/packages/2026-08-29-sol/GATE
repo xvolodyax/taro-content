@@ -1,53 +1,15 @@
 === MAGIYA GATE ===
-package: magiya-istorii/packages/YYYY-MM-DD-slug
-verdict: FAIL
-return: Writer | Plot | Title | Scout | Clickbait | Director | none
-chars: 
-theme_magic: 
-tension: 
-names_city_date: 
-recipe: 
-sale: 
-he_didnt_write: 
-kind_in_mouth: 
-living_people: 
-h1_equals_title: 
-h1_excalibur: 
-overlay_not_in_title: 
-h1_not_fattest: 
-art_grid_6: 
-frame1_clickbait_only: 
-frame1_red_journal: 
-frames2_6_clean: 
-magazine_2020s: 
-one_scene_same_outfit: 
-no_cover_hero_dup: 
-not_carousel: 
-canvas_note: none
-canvas_regen: no 
-steps_swarm: 
-publish: SKIP
+verdict: PASS
+return: none
+chars: 3043
+own_architecture: yes
+range_clone: none
+one_spine: yes
+magazine_not_anecdote: yes
+encyclopedia: no
+kirill_clone: no
+dossier: no
+recipe: no
+canvas_note: overlay («к утру дорожка пришла к подушке») расходится с финалом story (ярость заперта в спальне, утра нет); холст не валит прозу
+canvas_regen: no
 incident_report: none
-
-# Чеклист
-
-- [ ] тема = магия
-- [ ] первый абзац сцена, нет слова «Сцена»
-- [ ] одна ночь / один человек / один обряд
-- [ ] имя + город + дата
-- [ ] напряжение до последней строки
-- [ ] крючок в первой строке, короткие абзацы, эскалация случаев
-- [ ] не досье, не набор фактов, не plot в рот
-- [ ] не рецепт
-- [ ] не продажа, нет бота ТАРО СЕЙЧАС
-- [ ] не «он не написал»
-- [ ] kind только в meta
-- [ ] title == h1, Эскалибур, не кликбейт
-- [ ] overlay_clickbait только кадр 1, не в title/URL
-- [ ] холст 6, глянец 2020-х
-- [ ] кадр 1: overlay Clickbait + журнальная красная рамка
-- [ ] кадры 2–6 без заголовка и без красной рамки
-- [ ] холст не валит verdict прозы (только canvas_note, regen=no)
-- [ ] срезы в статью, не карусель; обложку в теле не дублировать
-- [ ] publish SKIP
-- [ ] posts/ не задеты
