@@ -101,9 +101,26 @@ def make_tar_bytes(package_dir: Path) -> bytes:
     article_html = "".join(html_parts)
 
     # description / excerpt (не дубль первого абзаца, строго от 80 до 170 символов)
-    desc_text = f"История ночного обряда в Воронеже: подросток оставил молоко для домового и услышал странные звуки на кухне."[:160]
+    desc_text = ""
+    for p in paragraphs[1:]:
+        clean = " ".join(p.split())
+        if clean.endswith("?"):
+            continue
+        if 80 <= len(clean) <= 170:
+            desc_text = clean
+            break
+        if len(clean) > 170:
+            cut = clean[:167].rsplit(" ", 1)[0]
+            if len(cut) >= 80:
+                desc_text = cut + "…"
+                break
     if len(desc_text) < 80:
-        desc_text = f"История ночного обряда в Воронеже: подросток оставил блюдце с молоком для домового в пустой квартире."
+        ritual = meta.get("ritual") or meta.get("angle") or "обряд"
+        city = meta.get("city") or ""
+        person = meta.get("person") or ""
+        desc_text = f"{person} {city} {ritual}".strip()
+        if len(desc_text) < 80:
+            desc_text = (desc_text + ". Журнальная история одного случая, без воронки и без рецепта.")[:170]
 
     desc_brief = {
         "description": desc_text,
