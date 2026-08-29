@@ -6,6 +6,6 @@
   "inline": false,
   "artifacts": ["art-brief.md"],
   "publish": "SKIP",
-  "generations": 0,
+  "generations": 1,
   "regen": false
 }

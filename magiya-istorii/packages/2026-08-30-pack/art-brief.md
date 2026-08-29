@@ -1,9 +1,9 @@
 ---
 grid: 2x3
-pixels: skip
-face: pending-ref
+pixels: generated
+face: Виктория.png
 overlay_source: clickbait.txt
-generations: 0
+generations: 1
 regen: no
 writer_fail: no
 ---
