@@ -65,4 +65,4 @@ python3 magiya-istorii/scripts/slice_canvas.py canvas.png --out .
 
 ## Демо
 
-`packages/2026-08-29-pack/` — `story.md` + `meta.json` (`title`/`h1` отдельно от `overlay_clickbait`). В эфир не выкладывать.
+`packages/2026-08-29-pack/` — `story.md` + `meta.json` (`title`/`h1` отдельно от `overlay_clickbait`) + `caption-01`…`06`. В эфир не выкладывать.

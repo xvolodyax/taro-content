@@ -16,6 +16,7 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 | `plot.md` | Plot | Кто / где / когда / ставка / цена |
 | `title-brief.md` | Title | H1 == title, Эскалибур |
 | `story.md` | Writer | Повесть 8–14 тыс. |
+| `caption-01.txt` … `caption-06.txt` | Writer | Подписи figure, не overlay |
 | `clickbait.txt` | Clickbait | Overlay кадра 1, одна строка |
 | `meta.json` | Title + Writer + Clickbait (свои поля) | `title`/`h1` ≠ `overlay_clickbait` |
 | `GATE` | Gate | PASS или FAIL |
@@ -59,7 +60,8 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 Правила полей:
 
 - `title` == `h1` (Эскалибур). Clickbait эти поля не пишет.
-- `overlay_clickbait` — только кадр 1. Не копировать в `title` / `h1` / slug.
+- `overlay_clickbait` — только кадр 1. Не копировать в `title` / `h1` / slug / `caption-*`.
+- `captions`: шесть файлов. `caption-01` ≠ `overlay_clickbait`. Кадры 2–6 без текста на картинке.
 - `kind: document` — только если есть открытый источник и живых не оговариваем.
 
 ## Swarm
@@ -76,6 +78,7 @@ Art: после Clickbait; на кадр 1 кладёт ТОЛЬКО clickbait.t
 
 FAIL Gate → только проза. Холст текст не валит. Вернуть дырявый текстовый шаг, не чинить самому.
 **Одна генерация холста.** Director не говорит «ещё раз нарисуй». Art не fail'ит Writer.
+Подписи `caption-01`…`06` дописывают в пакет без новой генерации, даже если холст уже заказан.
 Пиксели не обязательны. Лицо Холл не рисует. Публикации нет. `publish` всегда `SKIP`.
 
 ## Чужое
