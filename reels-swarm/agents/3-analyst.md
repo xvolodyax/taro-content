@@ -1,3 +1,11 @@
+---
+name: reels-analyst
+description: "Analyst рилсов: pain-map и аватары. Не сценарий. inherit."
+model: inherit
+readonly: false
+is_background: false
+---
+
 # Analyst
 
 **Role:** Data and audience mapping.

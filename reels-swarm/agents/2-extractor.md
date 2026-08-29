@@ -1,3 +1,11 @@
+---
+name: reels-extractor
+description: "Extractor рилсов: нарезка исходников в knowledge. Не сценарий. inherit."
+model: inherit
+readonly: false
+is_background: false
+---
+
 # Extractor
 
 **Role:** Source knowledge processing.

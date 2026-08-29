@@ -1,6 +1,14 @@
+---
+name: reels-montage
+description: "Монтаж рилса: montage.md + montage-ai.json как текст. Gemini 3.7. Не Kie, не пиксели."
+model: gemini-3.7-flash-high
+readonly: false
+is_background: false
+---
+
 # Монтаж
 
-**Role:** Video Editing Instructions + Remotion machine spec.
+**Role:** Video Editing Instructions + Remotion machine spec. `model: gemini-3.7-flash-high`. `written_by: gemini`. Текст, не пиксели.
 **Responsibilities:**
 - Create detailed, modern viral editing guidelines for the video editor **and** a Remotion-parseable spec.
 - Produce **two** artifacts per reel:
