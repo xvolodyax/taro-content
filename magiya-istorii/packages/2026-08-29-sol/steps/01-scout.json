@@ -1,0 +1,13 @@
+{
+  "role": "magiya-scout",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "written_by": "scout-task",
+  "artifacts": ["scout.md"],
+  "publish": "SKIP",
+  "wordstat": "OK",
+  "angle": "соль в угол от скандалов",
+  "fattest": "соль заговор / 11921"
+}

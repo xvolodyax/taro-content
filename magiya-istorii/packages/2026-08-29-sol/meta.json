@@ -1,0 +1,31 @@
+{
+  "product": "magiya-istorii",
+  "kind": "fiction",
+  "title": "Зачем сыплют соль в угол от скандалов",
+  "h1": "Зачем сыплют соль в угол от скандалов",
+  "overlay_clickbait": "Настя сыплет соль за шкаф в Омске — к утру дорожка пришла к подушке",
+  "clickbait_red_frame": true,
+  "slug": "zachem-syplyut-sol-v-ugol-ot-skandalov",
+  "person": "",
+  "city": "",
+  "story_date": "",
+  "ritual": "",
+  "stake": "",
+  "price": "",
+  "wordstat_status": "PARTIAL",
+  "angle": "",
+  "fattest_query_not_in_h1": true,
+  "h1_equals_title": true,
+  "overlay_not_in_title": true,
+  "captions": [
+    "caption-01.txt",
+    "caption-02.txt",
+    "caption-03.txt",
+    "caption-04.txt",
+    "caption-05.txt",
+    "caption-06.txt"
+  ],
+  "chars": 0,
+  "living_people": "none",
+  "publish": "SKIP"
+}

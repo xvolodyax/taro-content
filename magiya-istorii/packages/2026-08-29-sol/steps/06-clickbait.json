@@ -1,0 +1,12 @@
+{
+  "role": "magiya-clickbait",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gemini-3.7-flash-high",
+  "inline": false,
+  "overlay": "Настя сыплет соль за шкаф в Омске — к утру дорожка пришла к подушке",
+  "artifacts": [
+    "clickbait.txt"
+  ],
+  "publish": "SKIP"
+}

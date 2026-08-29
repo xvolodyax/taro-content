@@ -1,0 +1,16 @@
+{
+  "role": "magiya-plot",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "written_by": "plot-task",
+  "artifacts": ["plot.md"],
+  "publish": "SKIP",
+  "person": "Настя",
+  "city": "Омск",
+  "night": "11 февраля, после крика",
+  "stake": "не досыпать — крик вернётся из кухни; досыпать — соль возьмёт не скандал, а того, кто ляжет",
+  "price": "к утру дорожка к её подушке; скандал сел не в угол",
+  "kind": "fiction"
+}
