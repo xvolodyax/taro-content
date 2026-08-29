@@ -1,10 +1,9 @@
 {
-  "status": "UPLOAD_OK_PUBLISH_PERMISSION_DENIED",
+  "status": "FAIL",
+  "step": "publish",
   "article_id": 30,
-  "upload_status": "SUCCESS",
-  "publish_step": "publish",
-  "http_code": 403,
-  "error": "{\"error\":\"Токен Hall не даёт доступ к этому действию\"}",
-  "note": "Статья успешно загружена на сервер (article_id присвоен). Токен Hall имеет право upload, но действие publish/approve на сервере ограничено (403: Токен Hall не даёт доступ к этому действию).",
-  "live_url": "https://www.xn--80aaoqxlidb0d.xn--p1ai/blog/kak-vyzyvayut-domovogo-v-kvartire"
+  "http_code": 409,
+  "error": "{\"error\":\"Публиковать можно только одобренную статью\",\"detail\":\"Публиковать можно только одобренную статью\"}",
+  "approve_http_code": 409,
+  "approve_error": "{\"error\":\"Сначала статья должна пройти проверку качества\",\"detail\":\"Сначала статья должна пройти проверку качества\"}"
 }

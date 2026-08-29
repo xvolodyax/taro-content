@@ -98,7 +98,7 @@ Scout / Plot / Gate могут оставаться `inherit` как служе�
 После успешного прохождения `GATE` = PASS и готовности нарезанных кадров (`slice-01`…`slice-06`), рой **самостоятельно загружает и публикует историю на сайте** через API Эскалибура:
 - Сайт: `https://www.xn--80aaoqxlidb0d.xn--p1ai`
 - Скрипт: `magiya-istorii/scripts/magiya_site_publish.py`
-- Эндпоинты: `POST /api/admin/content/excalibur/upload` (tgz) → `POST /api/admin/content/excalibur/articles/{id}/approve` → `POST /api/admin/content/excalibur/articles/{id}/publish`
+- Эндпоинты: `POST /api/admin/content/excalibur/upload` (tgz) → `POST /api/admin/content/articles/{id}/approve` → `POST /api/admin/content/articles/{id}/publish`
 - Авторизация: `Authorization: Bearer <SITE_PUBLISH_TOKEN>` или заголовок `X-Publish-Token`
 - Холл публикацию не делает — рой публикует сам. `publish` больше не всегда `SKIP`.
 - При отсутствии токена в переменных окружения статус публикации переходит в `SKIP` (причина: `нет ключа`), пайплайн завершается без ошибки.

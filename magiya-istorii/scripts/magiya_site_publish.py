@@ -167,6 +167,81 @@ def make_tar_bytes(package_dir: Path) -> bytes:
     return buf.getvalue()
 
 
+def publish_existing_id(article_id: int | str, slug: str, base_url: str = DEFAULT_BASE_URL) -> dict:
+    token = _get_token()
+    if not token:
+        return {
+            "status": "SKIP",
+            "reason": "нет ключа (SITE_PUBLISH_TOKEN / HALL_PUBLISH_TOKEN не найдены в env)",
+            "live_url": None,
+        }
+
+    ctx = ssl.create_default_context()
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "X-Publish-Token": token,
+        "Content-Type": "application/json",
+        "User-Agent": "MagiyaPublisher/1.0",
+    }
+
+    # 1. Approve (POST /api/admin/content/articles/{id}/approve)
+    approve_url = f"{base_url.rstrip('/')}/api/admin/content/articles/{article_id}/approve"
+    req_app = urllib.request.Request(
+        approve_url,
+        data=b"{}",
+        headers=headers,
+        method="POST",
+    )
+    app_data = None
+    app_err_body = None
+    app_http_code = None
+    try:
+        with urllib.request.urlopen(req_app, timeout=30, context=ctx) as resp:
+            app_data = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        app_http_code = e.code
+        app_err_body = e.read().decode("utf-8", errors="replace")
+    except Exception as e:
+        app_err_body = str(e)
+
+    # 2. Publish (POST /api/admin/content/articles/{id}/publish)
+    pub_url = f"{base_url.rstrip('/')}/api/admin/content/articles/{article_id}/publish"
+    req_pub = urllib.request.Request(
+        pub_url,
+        data=b"{}",
+        headers=headers,
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req_pub, timeout=30, context=ctx) as resp:
+            pub_data = json.loads(resp.read().decode("utf-8"))
+            live_url = pub_data.get("url") or f"{base_url.rstrip('/')}/blog/{slug}"
+            return {
+                "status": "OK",
+                "article_id": article_id,
+                "live_url": live_url,
+                "response": pub_data,
+            }
+    except urllib.error.HTTPError as e:
+        err_body = e.read().decode("utf-8", errors="replace")
+        return {
+            "status": "FAIL",
+            "step": "publish",
+            "article_id": article_id,
+            "http_code": e.code,
+            "error": _redact(err_body, token)[:500],
+            "approve_http_code": app_http_code,
+            "approve_error": _redact(app_err_body or "", token)[:500],
+        }
+    except Exception as e:
+        return {
+            "status": "FAIL",
+            "step": "publish",
+            "article_id": article_id,
+            "error": _redact(str(e), token),
+        }
+
+
 def upload_and_publish(package_dir: Path, base_url: str = DEFAULT_BASE_URL) -> dict:
     token = _get_token()
     if not token:
@@ -218,7 +293,6 @@ def upload_and_publish(package_dir: Path, base_url: str = DEFAULT_BASE_URL) -> d
 
     article_id = data.get("id") or data.get("article_id") or data.get("article", {}).get("id")
     if not article_id:
-        # Если API сразу вернул url или статус
         if data.get("url") or data.get("published"):
             live_url = data.get("url") or f"{base_url.rstrip('/')}/blog/{slug}"
             return {
@@ -232,77 +306,34 @@ def upload_and_publish(package_dir: Path, base_url: str = DEFAULT_BASE_URL) -> d
             "error": f"Сервер не вернул article_id: {raw[:300]}",
         }
 
-    # Approve
-    approve_url = f"{base_url.rstrip('/')}/api/admin/content/excalibur/articles/{article_id}/approve"
-    req_app = urllib.request.Request(
-        approve_url,
-        data=b"{}",
-        headers={**headers, "Content-Type": "application/json"},
-        method="POST",
-    )
-    app_data = None
-    try:
-        with urllib.request.urlopen(req_app, timeout=30, context=ctx) as resp:
-            app_data = json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        err_app = e.read().decode("utf-8", errors="replace")
-    except Exception as e:
-        err_app = str(e)
-
-    # Publish
-    pub_url = f"{base_url.rstrip('/')}/api/admin/content/excalibur/articles/{article_id}/publish"
-    req_pub = urllib.request.Request(
-        pub_url,
-        data=b"{}",
-        headers={**headers, "Content-Type": "application/json"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req_pub, timeout=30, context=ctx) as resp:
-            pub_data = json.loads(resp.read().decode("utf-8"))
-            live_url = pub_data.get("url") or f"{base_url.rstrip('/')}/blog/{slug}"
-            return {
-                "status": "OK",
-                "article_id": article_id,
-                "live_url": live_url,
-                "response": pub_data,
-            }
-    except urllib.error.HTTPError as e:
-        err_body = e.read().decode("utf-8", errors="replace")
-        return {
-            "status": "UPLOAD_OK_PUBLISH_PERMISSION_DENIED",
-            "article_id": article_id,
-            "upload_status": "SUCCESS",
-            "publish_step": "publish",
-            "http_code": e.code,
-            "error": _redact(err_body, token)[:500],
-            "note": "Статья успешно загружена на сервер (article_id присвоен). Токен Hall имеет право upload, но действие publish/approve на сервере ограничено (403: Токен Hall не даёт доступ к этому действию).",
-            "live_url": f"{base_url.rstrip('/')}/blog/{slug}"
-        }
-    except Exception as e:
-        return {
-            "status": "FAIL",
-            "step": "publish",
-            "article_id": article_id,
-            "error": _redact(str(e), token),
-        }
+    return publish_existing_id(article_id, slug, base_url)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Публикация пакета Магия истории на сайт")
-    parser.add_argument("--package", required=True, help="Путь к папке пакета")
+    parser.add_argument("--package", help="Путь к папке пакета")
+    parser.add_argument("--article-id", type=int, help="ID уже загруженной статьи для approve/publish")
+    parser.add_argument("--slug", help="Slug статьи при передаче --article-id")
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL, help="Базовый URL сайта")
     args = parser.parse_args()
 
-    pkg_dir = Path(args.package)
-    res = upload_and_publish(pkg_dir, args.base_url)
-
-    # Записываем результат в пакет
-    result_path = pkg_dir / "site-publish-result.json"
-    result_path.write_text(json.dumps(res, ensure_ascii=False, indent=2), encoding="utf-8")
+    if args.article_id:
+        slug = args.slug or "kak-vyzyvayut-domovogo-v-kvartire"
+        res = publish_existing_id(args.article_id, slug, args.base_url)
+        if args.package:
+            pkg_dir = Path(args.package)
+            result_path = pkg_dir / "site-publish-result.json"
+            result_path.write_text(json.dumps(res, ensure_ascii=False, indent=2), encoding="utf-8")
+    elif args.package:
+        pkg_dir = Path(args.package)
+        res = upload_and_publish(pkg_dir, args.base_url)
+        result_path = pkg_dir / "site-publish-result.json"
+        result_path.write_text(json.dumps(res, ensure_ascii=False, indent=2), encoding="utf-8")
+    else:
+        parser.error("Укажите --package или --article-id")
 
     print(json.dumps(res, ensure_ascii=False, indent=2))
-    return 0 if res.get("status") in ("OK", "SKIP", "UPLOAD_OK_PUBLISH_PERMISSION_DENIED") else 1
+    return 0 if res.get("status") in ("OK", "SKIP") else 1
 
 
 if __name__ == "__main__":
