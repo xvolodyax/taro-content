@@ -111,6 +111,13 @@ def evening_hold(package: Path) -> bool:
     return str(_meta(package).get("evening") or "").upper() == "HOLD"
 
 
+def poll_locked(package: Path) -> bool:
+    meta = _meta(package)
+    if meta.get("poll_locked") is True:
+        return True
+    return str(meta.get("evening") or "").upper() in {"ATTACHED", "WRITTEN"}
+
+
 def first_line(package: Path) -> str:
     for name in ("tg.html", "max.txt", "vk.html"):
         path = package / name
@@ -193,7 +200,9 @@ def check_funnel(text: str, slot: str, filename: str, result: GateResult) -> Non
 
 
 def check_swarm(package: Path, slot: str, result: GateResult, require_swarm: bool) -> None:
-    if slot == "1515" and (evening_hold(package) or preview_poll_only(package)):
+    if slot == "1515" and (
+        evening_hold(package) or preview_poll_only(package) or poll_locked(package)
+    ):
         return
     steps = load_steps(package)
     has_copy = any((package / name).is_file() for name in ("tg.html", "vk.html", "max.txt"))

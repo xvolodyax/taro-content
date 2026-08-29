@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: Sunday evening cool phone glass + warm graphite (not citrus 26.08, not window-silence 27.08)
+who: none
+thesis: Другая сторона экрана
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Bright Sunday-evening 1:1 editorial still, not a dark candle tarot table. Pale windowsill, leftover daylight, phone face up with one short unread line blurred so no letters are readable. Empty chat gap as negative space. A circular champagne-gold Art Deco medallion sits off-center as a real object: keep the circle and the exact readable letters ТАРО / СЕЙЧАС. At the optical center of the square, large high-contrast magazine display type, didone or refined grotesque, not Arial, not Roboto, not Inter, not Impact, not squish-bold: «Другая сторона экрана». Letters live in the light, not a sticker, not a bottom bar, not a corner plaque. Readable at Instagram grid thumbnail. Ivory, cool glass, warm graphite, pale gold. 50mm, shallow depth of field, glossy magazine still. No face, no Victoria signature, no candles, no dark wood table. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.
+
+why: хук «Другая сторона экрана» строго по центру: стоящее имя рубрики, не оверлей тишины. Медальон сбоку.

@@ -7,7 +7,8 @@
   "director_inline": false,
   "slot": "1515",
   "date": "2026-08-30",
-  "evening": "HOLD",
+  "evening": "ATTACHED",
+  "poll_locked": true,
   "hall_publishes": false,
   "hall_writes": false,
   "destinations": {

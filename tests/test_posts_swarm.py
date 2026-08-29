@@ -190,8 +190,8 @@ class DispatchAndGateTest(unittest.TestCase):
         self.assertTrue((pkg / "poll.txt").is_file())
         lines = [ln for ln in (pkg / "poll.txt").read_text(encoding="utf-8").splitlines() if ln.strip()]
         self.assertEqual(len(lines), 5)
-        self.assertFalse((pkg / "debrief.md").exists())
-        self.assertFalse((ROOT / "posts/2026-08-30-2121").exists())
+        self.assertTrue((pkg / "debrief.md").is_file())
+        self.assertTrue((ROOT / "posts/2026-08-30-2121/tg.html").is_file())
         self.assertFalse((pkg / "ig.txt").exists())
         self.assertFalse((pkg / "max.txt").exists())
         result = evaluate(pkg, require_swarm=True)

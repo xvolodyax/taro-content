@@ -2,7 +2,8 @@
 date: 2026-08-30
 slot: 1515
 status: ready
-evening: HOLD
+evening: ATTACHED
+poll_locked: true
 wordstat: PARTIAL
 publish: SKIP
 ---
@@ -27,7 +28,7 @@ publish: SKIP
 2. Пишу короткое «привет, нормально»
 3. Вижу и не открываю
 4. Открываю, читаю и не отвечаю
-**debrief.md:** нет. evening HOLD. Карты не тянуть. 21:21 не собирать, пока Холл не попросит.
+**debrief.md:** рубрика «Другая сторона экрана», 3 карты. Опрос не менять.
 
 ## Площадки
 
