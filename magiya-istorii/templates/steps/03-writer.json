@@ -1,0 +1,9 @@
+{
+  "role": "magiya-writer",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["story.md", "meta.json"],
+  "publish": "SKIP"
+}
