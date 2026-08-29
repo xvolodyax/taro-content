@@ -4,7 +4,7 @@
   "subagent_type": "generalPurpose",
   "model": "gemini-3.7-flash-high",
   "inline": false,
-  "overlay": "Настя сыплет соль за шкаф в Омске — к утру дорожка пришла к подушке",
+  "overlay": "Настя сыплет соль за шкаф в Омске — крик срезался, а ярость заперта в спальне",
   "artifacts": [
     "clickbait.txt"
   ],
