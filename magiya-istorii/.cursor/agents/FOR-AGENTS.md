@@ -15,7 +15,7 @@
 | 1 | Scout / Wordstat | `magiya-scout.md` | `inherit` | да |
 | 2 | Plot | `magiya-plot.md` | `inherit` | да |
 | 3 | Title (H1==title, Эскалибур) | `magiya-title.md` | `gemini-3.7-flash-high` | да |
-| 4 | Writer (статья: 1 случай, 4 слоя) | `magiya-writer.md` | `gemini-3.7-flash-high` | да |
+| 4 | Writer (статья: 1 случай, векторы не биты) | `magiya-writer.md` | `gemini-3.7-flash-high` | да |
 | 5 | Gate (текст) | `magiya-gate.md` | `inherit` | да |
 | 6 | Clickbait (только кадр 1) | `clickbait.md` | `gemini-3.7-flash-high` | да, после Plot |
 | 7 | Art (только текст art-brief) | `magiya-art.md` | `gemini-3.7-flash-high` | да, после Clickbait |
