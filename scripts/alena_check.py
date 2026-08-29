@@ -34,8 +34,8 @@ def main() -> int:
         cap_cmp = cap[: -1] if cap.endswith("\n") and not cap.endswith("\n\n") else cap.rstrip("\n")
 
     n = len(cap_cmp)
-    if n > 1024:
-        errors.append(f"caption.txt {n} > 1024")
+    if n > 1700:
+        errors.append(f"caption.txt {n} > 1700")
     if REFS not in cap_cmp:
         errors.append("рефки в caption.txt не совпали с каноном")
     if HEADINGS.search(cap_cmp):

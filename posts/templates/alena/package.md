@@ -3,8 +3,8 @@
 **Слот:** alena-0700
 **Дата эфира:** YYYY-MM-DD 07:00 МСК
 **Канал:** https://t.me/AlenaSafonova_queen
-**Caption:** `caption.txt` / `caption.html`
-**Длина caption.txt:** 0 / 1024
+**Caption:** `caption.txt` / `caption.html` (пишет Writer, один проход; Sol не звать)
+**Длина caption.txt:** 0 / 1700
 **Луна:** знак, фаза
 **День:** N до ЧЧ:ММ МСК, затем N+1
 **Кстати:** 

@@ -26,7 +26,7 @@
 
 Параллелей нет. Cover после PASS, только 12:12 и 21:21, не рядом с Sol.
 Cover = `posts-cover-text`. Не плодить `posts-cover-hook` / `posts-cover-render`.
-Слот `alena-0700` в том же окне: Scout(луна) → Writer → Sol → Gate. Cover не звать. Второго Директора нет.
+Слот `alena-0700` в том же окне: Scout(луна) → Writer(письмо) → Gate. Sol не звать. Cover не звать. Второго Директора нет.
 
 ## Как Директор вызывает Task
 
@@ -49,4 +49,4 @@ Scout:
 Если Task опускает `model`, runtime может взять модель окна и перебить YAML.
 Текстовые шаги Директор передаёт явно: `gemini-3.7-flash-high`.
 
-На `alena-0700` Cover-шага нет. Scout всё ещё `inherit`: луну считает Cursor, не Холл.
+На `alena-0700` Sol и Cover не звать. Writer пишет `caption.*` одним проходом, `gemini-3.7-flash-high`. Scout всё ещё `inherit`: луну считает Cursor, не Холл. Gate прозу не переписывает.

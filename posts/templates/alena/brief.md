@@ -29,4 +29,4 @@ wordstat: skip
 
 ## Не делать
 
-Wordstat. Письмо. Рефки. Обложка. Telegram.
+Wordstat. Тело письма. `caption.*`. `writer.md`. Рефки. Обложка. Telegram.
