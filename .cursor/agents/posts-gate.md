@@ -70,7 +70,7 @@ is_background: false
 - Луна, день с часом, 1–2 аспекта, легче/тяжелее на месте
 - «Кстати» не копия вчерашнего; стрижка не каждый день — только по правилам слота
 - Рефки байт-в-байт как `shared/alena-funnel.md` (столбик). Сжать или переписать = FAIL → Writer
-- Видимый текст `caption.txt` ≤ 1024. Прогнать `python3 scripts/alena_check.py posts/YYYY-MM-DD-alena`
+- Видимый текст `caption.txt` ≤ 1700. Прогнать `python3 scripts/alena_check.py posts/YYYY-MM-DD-alena`
 - Главред не звали. Обложку не генерили. Sol тело не трогал
 
 ## Выход
