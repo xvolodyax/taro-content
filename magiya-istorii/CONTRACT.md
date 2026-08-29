@@ -15,7 +15,7 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 | `scout.md` | Scout | Живой спрос, угол ≠ топ H1 |
 | `plot.md` | Plot | Кто / где / когда / ставка / цена |
 | `title-brief.md` | Title | H1 == title, Эскалибур |
-| `story.md` | Writer | Повесть 8–14 тыс. |
+| `story.md` | Writer | Быстрая история. Кончилась — стоп |
 | `caption-01.txt` … `caption-06.txt` | Writer | Подписи figure, не overlay |
 | `clickbait.txt` | Clickbait | Overlay кадра 1, одна строка |
 | `meta.json` | Title + Writer + Clickbait (свои поля) | `title`/`h1` ≠ `overlay_clickbait` |

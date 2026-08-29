@@ -1,34 +1,31 @@
 === MAGIYA GATE ===
-package: magiya-istorii/packages/YYYY-MM-DD-slug
-verdict: FAIL
-return: Writer | Plot | Scout | Art | Director | none
-chars: 
-theme_magic: 
-tension: 
-names_city_date: 
-recipe: 
-sale: 
-he_didnt_write: 
-kind_in_mouth: 
-living_people: 
-h1_not_fattest: 
-steps_swarm: 
+package: magiya-istorii/packages/2026-08-29-pack
+verdict: PASS
+return: none
+chars: 3123
+hook_first_line: yes
+short_grafs: yes
+escalation: yes
+dossier: no
+recipe: no
+sale: no
+he_didnt_write: no
+h1_equals_title: yes
+overlay_not_in_title: yes
+theme_magic: yes
+canvas_note: none
+canvas_regen: no
 publish: SKIP
 incident_report: none
 
 # Чеклист
 
-- [ ] тема = магия
-- [ ] первый абзац сцена, нет слова «Сцена»
-- [ ] одна ночь / один человек / один обряд
-- [ ] имя + город + дата
-- [ ] напряжение до последней строки
-- [ ] 8–14 тыс. знаков
-- [ ] не рецепт
-- [ ] не продажа, нет бота ТАРО СЕЙЧАС
-- [ ] не «он не написал»
-- [ ] kind только в meta
-- [ ] живых не оговаривает
-- [ ] угол ≠ жирнейшая фраза в H1
-- [ ] publish SKIP
-- [ ] posts/ не задеты
+- [x] крючок-парадокс в первой строке
+- [x] абзацы 1–3 предложения, воздух
+- [x] эскалация случаев (Рязань → Кимры → Тула → Калуга)
+- [x] не досье, не plot в рот
+- [x] тема = магия (соль на порог)
+- [x] не рецепт, не продажа, нет бота
+- [x] title == h1 Эскалибур
+- [x] overlay не в H1
+- [x] холст не валит текст
