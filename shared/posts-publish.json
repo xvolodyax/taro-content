@@ -1,0 +1,72 @@
+{
+  "timezone": "Europe/Moscow",
+  "composio_key_env": "COMPOSIO_API_KEY",
+  "composio_base_url": "https://backend.composio.dev/api/v3",
+  "never_use_default_account": true,
+  "aliases": {
+    "telegram": "telegram-composia",
+    "instagram_ru": "instagram-ru",
+    "instagram_en": "instagram-en"
+  },
+  "instagram_en": {
+    "alias": "instagram-en",
+    "used_by_slots": [],
+    "note": "Алиас зарезервирован. Слоты 12:12 / 15:15 / 21:21 / alena-0700 в EN не кладут."
+  },
+  "channels": {
+    "todaytaro": "@TodayTaro",
+    "alena": "@AlenaSafonova_queen"
+  },
+  "forbidden_platforms": ["vk", "youtube", "yt", "youtube_community"],
+  "slots": {
+    "1212": {
+      "clock": "12:12",
+      "telegram": "photo+caption",
+      "instagram": "ru",
+      "poll": false,
+      "max": "if_MAX_BOT_TOKEN",
+      "vk": false,
+      "youtube": false
+    },
+    "1515": {
+      "clock": "15:15",
+      "telegram": "TELEGRAM_SEND_POLL",
+      "instagram": false,
+      "poll": true,
+      "max": false,
+      "vk": false,
+      "youtube": false
+    },
+    "2121": {
+      "clock": "21:21",
+      "telegram": "photo+caption",
+      "instagram": false,
+      "poll": false,
+      "card": "advice",
+      "forbid_scena": true,
+      "max": "if_MAX_BOT_TOKEN",
+      "vk": false,
+      "youtube": false
+    },
+    "alena": {
+      "clock": "07:00",
+      "telegram": "photo+caption",
+      "channel": "@AlenaSafonova_queen",
+      "instagram": false,
+      "poll": false,
+      "max": false,
+      "vk": false,
+      "youtube": false,
+      "refs": "immutable"
+    }
+  },
+  "tools": {
+    "telegram_photo": "TELEGRAM_SEND_PHOTO",
+    "telegram_poll": "TELEGRAM_SEND_POLL",
+    "telegram_history": "TELEGRAM_GET_CHAT_HISTORY",
+    "ig_create": "INSTAGRAM_POST_IG_USER_MEDIA",
+    "ig_publish": "INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
+    "ig_user": "INSTAGRAM_GET_USER_INFO",
+    "ig_media": "INSTAGRAM_GET_IG_USER_MEDIA"
+  }
+}

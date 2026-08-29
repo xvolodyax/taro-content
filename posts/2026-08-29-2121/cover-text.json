@@ -1,0 +1,25 @@
+{
+  "slot": "2121",
+  "written_by": "grok",
+  "thesis": "Когда под сообщением висит «прочитано», руки выдают тревогу быстрее головы: ты либо дежуришь у экрана, либо набираешь и стираешь вторую строку, пытаясь вернуть контроль над тишиной.",
+  "candidates": [
+    "Второго так и нет",
+    "Прочитано до вечера",
+    "Чат висит открытым"
+  ],
+  "chosen": "Второго так и нет",
+  "why_this_one": "Вечерний факт опроса: утреннее «прочитано» так и не стало ответом. Четыре слова бьют в центр сетки (~200px). Не хук 12:12 («Поле ввода уже открыто») и не первая строка TG.",
+  "highlight": "нет",
+  "words": 4,
+  "case": "sentence",
+  "placement": "center",
+  "contrast": "high type-on-ground, readable at ~200px Instagram grid",
+  "font": "magazine display didone or refined grotesque; not Arial, Roboto, Inter, Impact, squish-bold, meme caps",
+  "medallion": "native",
+  "face": false,
+  "victoria_credit": false,
+  "resolution": "1K",
+  "aspect": "1:1",
+  "palette": "вечерний лён + тёплый камень",
+  "scene": "субботний вечерний стол, телефон экраном вверх с тихим «прочитано», хук в оптическом центре, медальон как предмет сбоку"
+}

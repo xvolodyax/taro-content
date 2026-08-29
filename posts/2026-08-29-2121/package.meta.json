@@ -1,0 +1,31 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "cover_written_by": "grok",
+  "text_model": "gemini-3.7-flash-high",
+  "publish": "SENT",
+  "live_url": "https://t.me/TodayTaro/4149",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "2121",
+  "date": "2026-08-29",
+  "kind": "debrief",
+  "debrief_from": "posts/2026-08-29-1515/debrief.md",
+  "cards_locked": [
+    "Семёрка жезлов",
+    "Паж жезлов",
+    "Семёрка пентаклей",
+    "Девятка кубков"
+  ],
+  "image_url": "https://raw.githubusercontent.com/xvolodyax/taro-content/cursor/debrief-2121-29aug-dcda/posts/2026-08-29-2121/cover.png",
+  "cover": {
+    "model": "gpt-image-2-image-to-image",
+    "resolution": "1K",
+    "aspect": "1:1",
+    "hook": "Второго так и нет",
+    "placement": "center",
+    "medallion": "native",
+    "victoria_credit": false,
+    "file": "cover.png"
+  }
+}
