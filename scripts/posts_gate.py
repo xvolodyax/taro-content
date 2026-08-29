@@ -95,6 +95,22 @@ def required_steps(slot: str) -> list[str]:
     return roles
 
 
+def _meta(package: Path) -> dict:
+    path = package / "package.meta.json"
+    if not path.is_file():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def preview_poll_only(package: Path) -> bool:
+    preview = str(_meta(package).get("preview") or "").lower()
+    return preview in {"poll-only", "poll", "preview"}
+
+
+def evening_hold(package: Path) -> bool:
+    return str(_meta(package).get("evening") or "").upper() == "HOLD"
+
+
 def first_line(package: Path) -> str:
     for name in ("tg.html", "max.txt", "vk.html"):
         path = package / name
@@ -142,7 +158,7 @@ def check_writer_stamp(text: str, label: str, result: GateResult) -> None:
             result.fail(f"{label}: written_by {name} = FAIL")
     if "главред" in low and "removed" not in low:
         result.fail(f"{label}: Главред не удалён")
-    if "можно публиковать" in low:
+    if "можно публиковать" in low and label != "GATE":
         result.fail(f"{label}: «можно публиковать» от Главреда запрещено")
 
 
@@ -177,6 +193,8 @@ def check_funnel(text: str, slot: str, filename: str, result: GateResult) -> Non
 
 
 def check_swarm(package: Path, slot: str, result: GateResult, require_swarm: bool) -> None:
+    if slot == "1515" and (evening_hold(package) or preview_poll_only(package)):
+        return
     steps = load_steps(package)
     has_copy = any((package / name).is_file() for name in ("tg.html", "vk.html", "max.txt"))
     if require_swarm or steps or (package / "package.meta.json").is_file():
@@ -229,6 +247,56 @@ def check_swarm(package: Path, slot: str, result: GateResult, require_swarm: boo
             result.fail("шаг Главреда запрещён")
 
 
+OLD_2121 = (
+    "ты проголосовала. вот расклад по твоему варианту",
+    "действие руками сегодня вечером",
+)
+WHEN_WRITES = ("когда напишет", "когда он напишет", "когда напишет?")
+FROZEN_TEMPLATE = (
+    "о чём он думает когда молчит",
+    "о чем он думает когда молчит",
+)
+FAIRY = ("он думает о тебе, потерпи", "он думает о тебе потерпи")
+
+
+def check_debrief_rubric(text: str, label: str, result: GateResult) -> None:
+    low = text.lower()
+    if "вариант 4" in low and "совет" in low:
+        result.fail(f"{label}: старая форма 4 советов на варианты")
+    pos = len(re.findall(r"(?im)^##\s*позиция\s*[123]", text))
+    if pos < 3:
+        result.fail(f"{label}: нужны 3 позиции рубрики, не 4 совета")
+    if "когда напишет" in low:
+        result.fail(f"{label}: нельзя тянуть «когда напишет»")
+    for phrase in FROZEN_TEMPLATE:
+        if phrase in low:
+            result.fail(f"{label}: запечён шаблон тишины")
+    third = re.search(
+        r"(?is)##\s*позиция\s*3.*?(?=##\s*позиция|\Z)",
+        text,
+    )
+    if third:
+        blob = third.group(0).lower()
+        if not any(tok in blob for tok in ("неё", "нее", "тебе", "тебя", "ты ", "ей", "читатель")):
+            result.fail(f"{label}: позиция 3 должна быть про неё")
+
+
+def check_2121_text(vis: str, label: str, result: GateResult) -> None:
+    low = vis.lower()
+    if SCENA_RE.search(vis) or "«сцена»" in low:
+        result.fail(f"{label}: слово «Сцена» запрещено")
+    if "когда напишет" in low:
+        result.fail(f"{label}: нельзя тянуть «когда напишет»")
+    for phrase in OLD_2121:
+        if phrase in low:
+            result.fail(f"{label}: убитая форма 4 советов на варианты")
+    for phrase in FAIRY:
+        if phrase in low:
+            result.fail(f"{label}: дневная сказка")
+    if "похоже" not in low or "не то" not in low:
+        result.fail(f"{label}: нет пульса «Похоже? / Не то»")
+
+
 def check_editorial(package: Path, slot: str, result: GateResult) -> None:
     line = first_line(package)
     if line:
@@ -265,11 +333,22 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
     if slot == "1515":
         if (package / "cover-text.json").is_file() or (package / "image-prompt.txt").is_file():
             result.fail("15:15 не должен иметь cover/image")
-        if (package / "ig.txt").is_file() or (package / "yt.txt").is_file() or (package / "max.txt").is_file():
-            result.fail("15:15: нет Макс / IG / YT")
+        if (package / "ig.txt").is_file() or (package / "max.txt").is_file():
+            result.fail("15:15: нет Макс / IG")
+        poll = package / "poll.txt"
+        if poll.is_file():
+            lines = [ln for ln in poll.read_text(encoding="utf-8").splitlines() if ln.strip()]
+            if len(lines) != 5:
+                result.fail(f"15:15: poll.txt должен быть 5 строк, сейчас {len(lines)}")
         debrief = package / "debrief.md"
-        if not debrief.is_file():
-            result.fail("15:15: нет debrief.md (опрос и вечер пишутся вместе)")
+        if evening_hold(package) or preview_poll_only(package):
+            if debrief.is_file():
+                result.fail("15:15 evening HOLD: debrief.md не писать")
+        else:
+            if not debrief.is_file():
+                result.fail("15:15: нет debrief.md (опрос и вечер пишутся вместе)")
+            else:
+                check_debrief_rubric(debrief.read_text(encoding="utf-8"), "debrief.md", result)
     if slot in {"1212", "2121"}:
         cover = package / "cover-text.json"
         if cover.is_file():
@@ -285,12 +364,20 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
             for name in ("ig.txt", "yt.txt", "max.txt", "vk.html"):
                 if not (package / name).is_file():
                     result.fail(f"12:12: нет {name}")
-        if slot == "2121" and ((package / "ig.txt").is_file() or (package / "yt.txt").is_file()):
-            result.fail("21:21: не писать IG/YT")
-        if slot == "2121" and tg.is_file():
-            vis = visible_text(tg.read_text(encoding="utf-8"))
-            if SCENA_RE.search(vis) or "«сцена»" in vis.lower():
-                result.fail("21:21: слово «Сцена» запрещено, карта = совет")
+        if slot == "2121":
+            if (package / "ig.txt").is_file() or (package / "max.txt").is_file():
+                result.fail("21:21: не писать IG/Макс")
+            if not (package / "vk.html").is_file():
+                result.fail("21:21: нет vk.html (пульс Похоже / Не то)")
+            if tg.is_file():
+                vis = visible_text(tg.read_text(encoding="utf-8"))
+                check_2121_text(vis, "tg.html", result)
+            vk = package / "vk.html"
+            if vk.is_file():
+                check_2121_text(visible_text(vk.read_text(encoding="utf-8")), "vk.html", result)
+            debrief = package / "debrief.md"
+            if debrief.is_file():
+                check_debrief_rubric(debrief.read_text(encoding="utf-8"), "debrief.md", result)
     meta = package / "package.meta.json"
     if meta.is_file():
         data = json.loads(meta.read_text(encoding="utf-8"))
@@ -332,11 +419,11 @@ incident_report: none
 - [ ] рой: researcher → meaning → copywriter → cover-text? → gate
 - [ ] Директор не писал inline
 - [ ] written_by: gemini
-- [ ] Главред снят, «можно публиковать» нет
+- [ ] Главред снят, фразы Главреда нет
 - [ ] первая строка = сцена
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
-- [ ] 21:21 без «Сцена», карта = совет
+- [ ] 21:21 рубрика, 3 позиции, пульс, без «Сцена»
 - [ ] publish SKIP у писателей; эфир — posts_publish.py
 """
     (package / "GATE").write_text(text, encoding="utf-8")

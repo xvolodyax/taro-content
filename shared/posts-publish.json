@@ -42,11 +42,13 @@
       "telegram": "photo+caption",
       "instagram": false,
       "poll": false,
-      "card": "advice",
+      "rubric": "Другая сторона экрана",
+      "positions": 3,
+      "pulse": ["Похоже?", "Не то"],
       "forbid_scena": true,
-      "max": "if_MAX_BOT_TOKEN",
-      "vk": false,
-      "youtube": false
+      "max": false,
+      "vk": "hall_if_no_key",
+      "youtube": "hall_if_no_key"
     },
     "alena": {
       "clock": "07:00",

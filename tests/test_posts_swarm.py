@@ -92,6 +92,15 @@ class PolicyAndAgentsTest(unittest.TestCase):
         self.assertIn("ловушка", text)
         self.assertIn("draw_rw_cards.py", text)
         self.assertIn("ссылки в шапке", text)
+        self.assertIn("Другая сторона экрана", text)
+        self.assertIn("--count 3", text)
+
+    def test_posts_md_locks_2121_rubric(self) -> None:
+        text = (ROOT / "POSTS.md").read_text(encoding="utf-8")
+        self.assertIn("Другая сторона экрана", text)
+        self.assertIn("Похоже?", text)
+        self.assertIn("примерьте на свою", text)
+        self.assertIn("убита", text.lower())
 
     def test_cover_skips_1515(self) -> None:
         text = (ROOT / ".cursor/agents/posts-cover-text.md").read_text(encoding="utf-8")
@@ -142,6 +151,51 @@ class DispatchAndGateTest(unittest.TestCase):
             self.assertEqual(result.publish_count, 0)
             self.assertLessEqual(result.tg_len, 1024)
             self.assertFalse(first_line(dest).isupper())
+
+    def test_old_four_advice_debrief_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            dest = Path(tmp) / "2026-08-30-1515"
+            dest.mkdir()
+            (dest / "package.meta.json").write_text(
+                json.dumps(
+                    {
+                        "slot": "1515",
+                        "written_by": "gemini",
+                        "publish": "SKIP",
+                        "glavred": "REMOVED",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (dest / "tg.html").write_text(
+                "Чай остыл. Что делаешь?\nЖду\nПишу\nСтираю\nКладу\n",
+                encoding="utf-8",
+            )
+            (dest / "poll.txt").write_text(
+                "Чай остыл. Что делаешь?\nЖду\nПишу\nСтираю\nКладу\n",
+                encoding="utf-8",
+            )
+            (dest / "debrief.md").write_text(
+                "## Вариант 1 — Жду\n**Карта:** Луна\n**Совет:** потерпи.\n"
+                "## Вариант 2\n## Вариант 3\n## Вариант 4 — и совет\n",
+                encoding="utf-8",
+            )
+            result = evaluate(dest, require_swarm=False)
+            self.assertEqual(result.verdict, "FAIL")
+            blob = " ".join(result.reasons).lower()
+            self.assertTrue("4 совет" in blob or "позиц" in blob)
+
+    def test_sunday_1515_poll_hold_evening(self) -> None:
+        pkg = ROOT / "posts/2026-08-30-1515"
+        self.assertTrue((pkg / "poll.txt").is_file())
+        lines = [ln for ln in (pkg / "poll.txt").read_text(encoding="utf-8").splitlines() if ln.strip()]
+        self.assertEqual(len(lines), 5)
+        self.assertFalse((pkg / "debrief.md").exists())
+        self.assertFalse((ROOT / "posts/2026-08-30-2121").exists())
+        self.assertFalse((pkg / "ig.txt").exists())
+        self.assertFalse((pkg / "max.txt").exists())
+        result = evaluate(pkg, require_swarm=True)
+        self.assertEqual(result.verdict, "PASS", result.reasons)
 
     def test_pass_1515_has_debrief_no_cover(self) -> None:
         pkg = ROOT / "posts/fixtures/swarm-pass-1515"

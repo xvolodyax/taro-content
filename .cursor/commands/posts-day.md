@@ -11,5 +11,8 @@
    `python3 scripts/posts_publish.py --package DIR`
 6. Кадр: публичный HTTPS в `POST_IMAGE_URL` / `cover-url.txt`. Без URL фото-площадки SKIP.
 
-Алиасы: `telegram-composia`, `instagram-ru`. ВК и YouTube не трогать.
+Алиасы: `telegram-composia`, `instagram-ru`.
+12:12: ВК и YouTube не трогать. 21:21: TG рой; ВК/YouTube — Холл/браузер, если нет ключа.
+21:21 = «Другая сторона экрана». Холл не пишет.
+`preview: poll-only` — не публиковать.
 Главред не звать. PASS + скрипт публикации.

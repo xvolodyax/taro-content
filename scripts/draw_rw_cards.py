@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Жеребьёвка 4 карт Райдер-Уэйт. Сначала случайный набор, потом расклад."""
+"""Жеребьёвка карт Райдер-Уэйт. С 21:21 рубрики — 3 карты, не 4 совета."""
 
 from __future__ import annotations
 
@@ -55,7 +55,7 @@ MINOR = [f"{rank} {suit}" for suit in SUITS for rank in RANKS]
 DECK = MAJOR + MINOR
 
 
-def yesterday_sets(ledger: Path) -> list[set[str]]:
+def yesterday_sets(ledger: Path, count: int) -> list[set[str]]:
     if not ledger.is_file():
         return []
     text = ledger.read_text(encoding="utf-8")
@@ -64,16 +64,18 @@ def yesterday_sets(ledger: Path) -> list[set[str]]:
         if "карты:" in line.lower() or "cards:" in line.lower():
             names = re.split(r"\s*[|/,-]\s*", line.split(":", 1)[1])
             names = [n.strip() for n in names if n.strip()]
-            if len(names) >= 4:
-                sets.append(set(names[:4]))
+            if len(names) >= count:
+                sets.append(set(names[:count]))
     return sets
 
 
-def draw(ledger: Path | None) -> list[str]:
-    banned = yesterday_sets(ledger) if ledger else []
+def draw(ledger: Path | None, count: int = 3) -> list[str]:
+    if count < 1 or count > len(DECK):
+        raise SystemExit(f"count {count} вне колоды")
+    banned = yesterday_sets(ledger, count) if ledger else []
     rng = random.SystemRandom()
     for _ in range(40):
-        pick = rng.sample(DECK, 4)
+        pick = rng.sample(DECK, count)
         if set(pick) not in banned:
             return pick
     raise SystemExit("не удалось вытянуть набор, отличный от ledger")
@@ -82,8 +84,9 @@ def draw(ledger: Path | None) -> list[str]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ledger", type=Path, default=None)
+    parser.add_argument("--count", type=int, default=3, help="21:21 рубрика: 3")
     args = parser.parse_args()
-    cards = draw(args.ledger)
+    cards = draw(args.ledger, args.count)
     sys.stdout.write(" | ".join(cards) + "\n")
 
 

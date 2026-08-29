@@ -302,9 +302,7 @@ def build_destinations(slot: str) -> list[Dest]:
     if slot == "1515":
         return [Dest("telegram-poll", "telegram", tg_alias, tools["telegram_poll"], today)]
     if slot == "2121":
-        dests = [Dest("telegram", "telegram", tg_alias, tools["telegram_photo"], today)]
-        dests.append(Dest("max", "max", "", "MAX_SEND", skip=True, reason="нет MAX_BOT_TOKEN"))
-        return dests
+        return [Dest("telegram", "telegram", tg_alias, tools["telegram_photo"], today)]
     if slot == "alena":
         return [Dest("telegram-alena", "telegram", tg_alias, tools["telegram_photo"], alena)]
     raise ValueError(f"unknown slot {slot}")
@@ -336,6 +334,14 @@ def plan_package(package: Path, now: datetime | None = None) -> Plan:
         plan.status = "SKIP"
         plan.reason = f"слот {slot} не публикуем"
         return plan
+    meta_path = package / "package.meta.json"
+    if meta_path.is_file():
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        preview = str(meta.get("preview") or "").lower()
+        if preview in {"poll-only", "poll", "preview"}:
+            plan.status = "SKIP"
+            plan.reason = "preview — не публиковать"
+            return plan
     verdict = gate_verdict(package)
     if verdict != "PASS":
         plan.status = "SKIP"
@@ -363,7 +369,7 @@ def plan_package(package: Path, now: datetime | None = None) -> Plan:
         text = html_caption(package) or plain_caption(package)
         if contains_scena(text):
             plan.status = "SKIP"
-            plan.reason = "21:21: слово «Сцена» запрещено, карта = совет"
+            plan.reason = "21:21: слово «Сцена» запрещено"
             return plan
 
     if slot == "alena":

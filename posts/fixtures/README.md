@@ -5,7 +5,7 @@
 | Папка | Зачем |
 | --- | --- |
 | `swarm-pass-1212` | полный рой 12:12 + cover |
-| `swarm-pass-1515` | опрос + 4 расклада, без картинки |
+| `swarm-pass-1515` | опрос-заявка + debrief рубрики (3 позиции), без картинки |
 | `swarm-fail-inline` | Директор писал сам → Gate FAIL |
 
 Прогон: `python3 scripts/posts_swarm_dry_run.py` → 0 публикаций.

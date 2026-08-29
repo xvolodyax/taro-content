@@ -115,6 +115,58 @@ class PlanTest(unittest.TestCase):
         self.assertEqual(dests[0].alias, "telegram-composia")
         self.assertEqual(dests[0].chat_id, "@TodayTaro")
 
+    def test_2121_has_no_max_or_ig(self) -> None:
+        dests = build_destinations("2121")
+        names = [d.name for d in dests]
+        self.assertEqual(names, ["telegram"])
+        self.assertNotIn("max", names)
+
+    def test_preview_never_sends(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            pkg = _pkg(
+                tmp,
+                "2026-08-30-1515",
+                files={
+                    "tg.html": "Вопрос?\nОдин\nДва\nТри\nЧетыре\n",
+                    "package.meta.json": json.dumps(
+                        {
+                            "slot": "1515",
+                            "preview": "poll-only",
+                            "publish": "SKIP",
+                            "written_by": "gemini",
+                        }
+                    ),
+                },
+            )
+            with mock.patch.dict(os.environ, {KEY_ENV: "dummy-key"}):
+                plan = plan_package(pkg, now=datetime(2026, 8, 30, 16, 0, tzinfo=MSK))
+            self.assertEqual(plan.status, "SKIP")
+            self.assertIn("preview", plan.reason)
+
+    def test_evening_hold_1515_can_wait_for_slot(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            pkg = _pkg(
+                tmp,
+                "2026-08-30-1515",
+                files={
+                    "poll.txt": "Вопрос?\nОдин\nДва\nТри\nЧетыре\n",
+                    "tg.html": "Вопрос?\nОдин\nДва\nТри\nЧетыре\n",
+                    "package.meta.json": json.dumps(
+                        {
+                            "slot": "1515",
+                            "evening": "HOLD",
+                            "publish": "SKIP",
+                            "written_by": "gemini",
+                            "glavred": "REMOVED",
+                        }
+                    ),
+                },
+            )
+            with mock.patch.dict(os.environ, {KEY_ENV: "dummy-key"}):
+                plan = plan_package(pkg, now=datetime(2026, 8, 30, 1, 46, tzinfo=MSK))
+            self.assertEqual(plan.status, "WAIT")
+            self.assertIn("не наступил", plan.reason)
+
     def test_2121_rejects_scena(self) -> None:
         self.assertTrue(contains_scena("Сцена:\nНочь."))
         self.assertTrue(contains_scena("в эфире «Сцена» нельзя"))

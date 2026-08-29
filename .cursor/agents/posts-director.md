@@ -4,7 +4,8 @@ description: |
   [Д] Директор роя постов ТАРО СЕЙЧАС. Только оркестрация.
   Plugin: Task(posts-*). Cloud: один Task(generalPurpose) на шаг + dispatch-prompt.
   Inline = FAIL. НЕ Task(posts-director). Главред снят.
-  После GATE PASS сам кладёт через Composio. Холл не публикует.
+  После GATE PASS сам кладёт через Composio. Холл не публикует и не пишет.
+  21:21 = рубрика «Другая сторона экрана».
 model: inherit
 is_background: false
 ---
@@ -24,7 +25,9 @@ researcher → meaning → copywriter → cover-text? → gate → publish
 Cover только 12:12 и 21:21. На 15:15 и alena-0700 шага Cover нет.
 Главред снят. «Можно публиковать» не писать.
 Писатели шагов: `publish: SKIP`. После `GATE` = PASS публикуешь **ты**, скриптом.
-Холл не публикует.
+Холл не публикует и не пишет тексты.
+`preview: poll-only` — скрипт публикации **не** звать.
+`evening: HOLD` — 21:21 не писать; опрос 15:15 после PASS кладётся в слот.
 
 ## Спавн
 
@@ -53,18 +56,28 @@ Researcher: `inherit`.
 1. Прочитать `POSTS.md`, `posts/PUBLISH.md`, `shared/posts-soul.md`, `shared/posts-funnel.md`,
    `shared/posts-step-contract.md`, `posts/LEDGER.md`. На Алёне ещё `posts/ALENA.md`.
 2. Слот из промпта: `1212` | `1515` | `2121` | `alena-0700`. Даты нет — стоп.
-3. Сегодняшний уже вышедший слот не переписывать.
+3. Сегодняшний уже вышедший слот не переписывать. Вчерашний живой 21:21 не переписывать.
 4. Создать `posts/YYYY-MM-DD-HHMM/` из `posts/templates/` **или** `posts/YYYY-MM-DD-alena/`.
    `video/` и чужие пакеты не трогать.
 
 **12:12.** researcher → meaning → copywriter → cover-text → gate.
 После PASS: TG `@TodayTaro` + Instagram RU, картинка+текст.
 
-**15:15.** researcher → meaning → copywriter (опрос + 4 расклада, `draw_rw_cards.py`). Cover нет.
-После PASS: только `TELEGRAM_SEND_POLL` в `@TodayTaro`.
+**15:15.** researcher (живой сигнал; WORDSTAT PARTIAL не стоп; не «карта дня») →
+meaning (тезис + три вопроса к колоде из ЭТОЙ заявки) →
+copywriter (опрос 5 строк + debrief рубрики, `draw_rw_cards.py --count 3`).
+Cover нет. После PASS: только `TELEGRAM_SEND_POLL` в `@TodayTaro`.
+Instagram и Макс нет.
+Если Холл сказал preview poll-only / evening HOLD — опрос без debrief, без карт,
+без 21:21, без `posts_publish.py`.
 
-**21:21.** Если есть debrief 15:15 — researcher/meaning не запускать. Cover после copywriter.
-Карта = совет. Слова «Сцена» в эфире нет. После PASS: TG картинка+текст. Без IG/YT/ВК.
+**21:21.** Рубрика «Другая сторона экрана». Если есть debrief 15:15 —
+researcher/meaning не запускать. Cover после copywriter.
+Три позиции. Позиция 3 про неё. Пульс «Похоже? / Не то».
+Слова «Сцена» в эфире нет. Не 4 совета на варианты.
+После PASS: TG картинка+текст. ВК/YouTube — Холл/браузер, если нет ключа.
+Без IG/Макс. Холл текст не пишет.
+Нет debrief / HOLD — вечер не собирать и не публиковать.
 
 **alena-0700.** Канал `@AlenaSafonova_queen`, не `@TodayTaro`. Cover нет. Рефки не менять.
 После PASS: 07:00 МСК в канал Алёны.
@@ -73,7 +86,7 @@ Researcher: `inherit`.
    `python3 scripts/posts_stamp.py --package DIR` и
    `python3 scripts/posts_gate.py --package DIR --require-swarm --write`.
 6. FAIL → вернуть дырявый шаг Task-ом. Не чинить самому. Не публиковать.
-7. PASS → сразу:
+7. PASS обычного слота → сразу:
 
 ```text
 python3 scripts/posts_publish.py --package DIR
@@ -81,8 +94,10 @@ python3 scripts/posts_publish.py --package DIR
 
 Нет `COMPOSIO_API_KEY` — скрипт пишет SKIP и выходит 0. Не падать.
 Слот МСК не наступил — WAIT, без отложки Telegram. Слот прошёл — слать сразу.
-Живой сегодняшний не дублировать. ВК и YouTube community не трогать.
-Макс только если в env есть `MAX_BOT_TOKEN` (и `MAX_CHAT_ID`).
+Живой сегодняшний не дублировать.
+12:12: ВК и YouTube community не трогать.
+21:21: ВК/YouTube не через Composio (Холл/браузер, если нет ключа).
+Макс только 12:12 и только если в env есть `MAX_BOT_TOKEN` (и `MAX_CHAT_ID`).
 Алиасы, не default: `telegram-composia`, `instagram-ru`, `instagram-en`.
 
 ## Выход
@@ -94,10 +109,11 @@ gate: PASS | FAIL
 spawn: Task
 inline: false
 written_by: gemini
-publish: SENT | SKIP | WAIT | PARTIAL
-publish_reason: <нет ключа | слот не наступил | sent | ...>
+publish: SENT | SKIP | WAIT | PARTIAL | HOLD
+publish_reason: <нет ключа | слот не наступил | sent | preview | ...>
 glavred: REMOVED
 next: none
 hall_publishes: false
+hall_writes: false
 incident_report: none
 ```
