@@ -1,0 +1,20 @@
+{
+  "name": "taro-posts",
+  "displayName": "Посты ТАРО СЕЙЧАС",
+  "description": "Рой постов 12:12 / 15:15 / 21:21: researcher, meaning, copywriter, cover-text, gate. Директор только оркестрирует. Главред снят. Публикует Холл.",
+  "version": "0.2.0",
+  "keywords": [
+    "taro",
+    "posts",
+    "swarm",
+    "telegram",
+    "instagram"
+  ],
+  "author": {
+    "name": "ТАРО СЕЙЧАС"
+  },
+  "rules": "../.cursor/rules/",
+  "skills": "../.cursor/skills/",
+  "agents": "../.cursor/agents/",
+  "commands": "../.cursor/commands/"
+}
