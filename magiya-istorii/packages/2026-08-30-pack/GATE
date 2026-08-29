@@ -15,7 +15,7 @@ overlay_not_in_title: yes
 theme_magic: yes
 canvas_note: none
 canvas_regen: no
-publish: SKIP
+publish: UPLOAD_OK
 incident_report: none
 
 # Чеклист

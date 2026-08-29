@@ -35,9 +35,10 @@ Art: холст 6 клеток (2×3), глянец 2020-х. Вика держи
 Scout → Plot → Title → Writer → Gate
 Clickbait ∥ после Plot
 Art после Clickbait (холст 2×3)
+Publisher: magiya_site_publish.py -> сайт (при наличии ключа)
 ```
 
-| Шаг | Агент | Выход |
+| Шаг | Агент / Скрипт | Выход |
 | --- | --- | --- |
 | 1 | `magiya-scout` | `scout.md` |
 | 2 | `magiya-plot` | `plot.md` |
@@ -45,9 +46,11 @@ Art после Clickbait (холст 2×3)
 | 4 | `magiya-writer` | `story.md` |
 | 5 | `magiya-gate` | `GATE` |
 | 6 | `clickbait` | `clickbait.txt`, `meta.overlay_clickbait` |
-| 7 | `magiya-art` | `art-brief.md` |
+| 7 | `magiya-art` | `art-brief.md`, `canvas.png`, `slice-01..06.png` |
+| 8 | `magiya_site_publish.py` | upload, approve, publish на сайт |
 
-Title ≠ Clickbait. Кликбейт не в H1, не в URL. Пиксели не обязательны.
+Title ≠ Clickbait. Кликбейт не в H1, не в URL.
+Публикация: при наличии `SITE_PUBLISH_TOKEN` рой сам заливает историю на сайт. Холл не публикует.
 
 ## Wordstat
 

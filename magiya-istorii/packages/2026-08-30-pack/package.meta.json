@@ -1,7 +1,7 @@
 {
   "pipeline": "magiya-istorii",
   "director_inline": false,
-  "publish": "SKIP",
+  "publish": "UPLOAD_OK",
   "pixels": "generated",
   "date": "2026-08-30",
   "slug": "kak-vyzyvayut-domovogo-v-kvartire"

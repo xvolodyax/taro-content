@@ -19,9 +19,11 @@
 | 5 | Gate (текст) | `magiya-gate.md` | `inherit` | да |
 | 6 | Clickbait (только кадр 1) | `clickbait.md` | `gemini-3.7-flash-high` | да, после Plot |
 | 7 | Art (только текст art-brief) | `magiya-art.md` | `gemini-3.7-flash-high` | да, после Clickbait |
+| 8 | Site Publish | `scripts/magiya_site_publish.py` | Python stdlib | скрипт Director |
 
 Все текстовые роли (Title, Writer, Clickbait, Art-brief) — строго `gemini-3.7-flash-high`.
 Title ≠ Clickbait. Clickbait не меняет `title`/`h1`.
 Art: холст 2×3, Вика держит DJI Mic Mini в руке у рта, на кадр 1 жирная красная рамка + `clickbait.txt` (display), кадры 2–6 — тезисы действия сюжета.
 Свет и место — по сюжету (в базовый промпт «ночь» не зашивать).
-Холст не валит текст. Лицо Холл не рисует. Публикации нет.
+Холст не валит текст. Лицо Холл не рисует.
+Публикация: при наличии `SITE_PUBLISH_TOKEN` скрипт автоматически отправляет пакет на сайт. Холл не публикует.
