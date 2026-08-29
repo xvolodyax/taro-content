@@ -1,11 +1,6 @@
-# Исключаем приватные/бинарные изображения из git, но разрешаем файлы референсов лица и листы ракурсов
-*.png
-*.jpg
-*.jpeg
-*.webp
+# Разрешаем все референсы лица в этой папке для коммитов
+!*.png
+!*.jpg
+!*.jpeg
+!*.webp
 !README.md
-!viktoriaref.png
-!*viktoria*.png
-!*viktoria*.jpg
-!*sheet*.png
-!*sheet*.jpg
