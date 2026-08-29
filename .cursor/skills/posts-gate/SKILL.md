@@ -12,4 +12,4 @@ python3 scripts/posts_gate.py --package DIR --require-swarm --write
 
 FAIL если Директор писал inline, нет Task-шагов, writer не gemini,
 есть Главред или «можно публиковать», publish не SKIP.
-PASS достаточно Холлу. Агент не публикует.
+PASS достаточно Директору для `posts_publish.py`. Писатель не публикует. Холл не публикует.

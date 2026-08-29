@@ -42,7 +42,7 @@ posts/<slot>/package.meta.json
 | `dispatch_prompt` | Cloud обязателен: файл с полным промптом из `scripts/posts_dispatch_prompt.py` |
 | `model` | meaning / copywriter / cover-text / gate → `gemini-3.7-flash-high` |
 | `written_by` | человеческий текст → `gemini`. Opus / Sonnet / Composer = FAIL |
-| `publish` | всегда `SKIP` |
+| `publish` | у писателей всегда `SKIP`. Эфир после PASS — `scripts/posts_publish.py` у Директора |
 
 ## Cloud vs plugin
 
@@ -61,7 +61,7 @@ posts/<slot>/package.meta.json
 - dispatch-prompt не содержит путь агента роли
 - `written_by` из стоп-листа моделей
 - есть шаг / файл Главреда, или фраза «можно публиковать» от Главреда
-- `publish` не `SKIP`
+- `publish` у шага писателя не `SKIP`
 
 Алиасы старых имён в step record принимаются: `posts-scout` → researcher,
 `posts-writer` → meaning, `posts-sol` → copywriter.

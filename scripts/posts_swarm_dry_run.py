@@ -102,7 +102,8 @@ def main() -> int:
         "live_today": touched_live,
         "reports": reports,
         "glavred": "REMOVED",
-        "hall_publishes": True,
+        "hall_publishes": False,
+        "swarm_publishes_after_pass": True,
     }
     out_json = args.out / "dry-run.json"
     out_json.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

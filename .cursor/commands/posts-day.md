@@ -1,13 +1,15 @@
-# Холл — старт дня постов
+# Старт дня постов
 
-Не писать сегодняшний уже вышедший слот. Не публиковать из агента.
+Не писать сегодняшний уже вышедший слот. Холл не публикует.
 
 1. Одно окно в `taro-content`. Главный агент = `posts-director`.
-2. Вставить промпт слота из `POSTS.md` (блок «Как Холл запускает день»).
-3. Cloud: Директор на каждый шаг делает `Task(generalPurpose)` + dispatch-prompt.
+2. Env: `COMPOSIO_API_KEY` (значение в чат не писать). Нет ключа — слот SKIP, не падать.
+3. Вставить промпт слота из `POSTS.md`.
+4. Cloud: Директор на каждый шаг делает `Task(generalPurpose)` + dispatch-prompt.
    Plugin: `Task(posts-*)`.
-4. Дождаться `GATE` = PASS и `publish: SKIP`.
-5. Кадр (12:12 / 21:21) Холл собирает по `image-prompt.txt` в Kie.
-6. Выкладка только Холл: Composio / browser. 15:15 без картинки.
+5. Дождаться `GATE` = PASS. Директор сам:
+   `python3 scripts/posts_publish.py --package DIR`
+6. Кадр: публичный HTTPS в `POST_IMAGE_URL` / `cover-url.txt`. Без URL фото-площадки SKIP.
 
-Главред не звать. PASS достаточно.
+Алиасы: `telegram-composia`, `instagram-ru`. ВК и YouTube не трогать.
+Главред не звать. PASS + скрипт публикации.

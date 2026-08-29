@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def step_index(role: str, slot: str) -> int:
     order = ["posts-researcher", "posts-meaning", "posts-copywriter"]
-    if slot != "1515":
+    if slot not in {"1515", "alena", "0700"}:
         order.append("posts-cover-text")
     order.append("posts-gate")
     role = canon_role(role)

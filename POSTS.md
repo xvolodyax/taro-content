@@ -2,7 +2,8 @@
 
 Одно окно. Один слот. Директор **только** оркестрирует.
 Тема, тезис, пост и хук — разные агенты. Inline Директора = `GATE` FAIL.
-В эфир — только `GATE` = PASS. Публикует Холл (Composio / browser), не агент.
+В эфир — только `GATE` = PASS. После PASS **рой сам** кладёт слот через Composio.
+Холл **не** публикует. Как вызывать и env: [`posts/PUBLISH.md`](posts/PUBLISH.md).
 
 Это не статьи Excalibur, не Дзен, не рилсы, не Каруселька-контент.
 Репу `taro-excalibur` не клонировать.
@@ -16,24 +17,47 @@
 ## Петля дня
 
 ```text
-12:12  сцена + вопросы в бота
-15:15  опрос на ту же сцену, 4 варианта = 4 состояния рук
-21:21  разбор опроса: 4 случайные карты + мини-расклад по варианту
+alena-0700  письмо Алёны в t.me/AlenaSafonova_queen (не @TodayTaro)
+12:12       сцена + вопросы в бота → TG + IG RU
+15:15       опрос на ту же сцену → только TELEGRAM_SEND_POLL
+21:21       разбор опроса: карта = совет, без «Сцена» → TG
 ```
 
 Статьи 9:00 / 16:00 / 20:00 живут в Дзене и на сайте. **21:21 от статьи не зависит.**
 Instagram и YouTube в 21:21 не писать.
 
-## Как Холл запускает день
+## Как запускать день
 
-Утро. Одно Cloud / plugin окно в `taro-content`. Главный агент — `posts-director`.
+Одно Cloud / plugin окно в `taro-content`. Главный агент — `posts-director`.
 Не `Task(posts-director)`. Не `/in-cloud`. Не `/babysit`. Главред не звать.
+Холл не публикует.
 
-1. **12:12** — вставить промпт слота ниже. Дождаться PASS. Кадр по `image-prompt.txt` (Kie, 1K). Выложить фото+текст на TG / ВК / Макс / IG / YT community.
-2. **13:15** — слот 15:15 (опрос + 4 вечерних расклада вместе). PASS. В 15:15 выложить опрос TG+ВК. Картинки нет.
-3. **Вечер** — слот 21:21 из `debrief.md`. PASS + Cover. Выложить фото+текст TG / Макс / ВК.
+Env в среду агента (значение ключа в чат и git не писать):
 
-Агент после PASS ничего не публикует. `publish: SKIP`.
+| Env | Зачем |
+| --- | --- |
+| `COMPOSIO_API_KEY` | TG и IG. Нет — SKIP, не падать |
+| `POST_IMAGE_URL` / `ALENA_COVER_URL` | публичный HTTPS кадра |
+| `MAX_BOT_TOKEN` + `MAX_CHAT_ID` | Макс; иначе Макс не трогаем |
+
+Алиасы Composio, не default: `telegram-composia` (`@TodayTaro` / канал Алёны),
+`instagram-ru`, `instagram-en` (EN этими слотами не шлём).
+
+1. **alena-0700** — промпт слота. PASS → `posts_publish.py` в `t.me/AlenaSafonova_queen` в 07:00 МСК. Рефки не менять.
+2. **12:12** — промпт. PASS → TG+IG RU, картинка+текст. ВК и YouTube community не трогать.
+3. **15:15** — опрос + 4 расклада вместе. PASS → только `TELEGRAM_SEND_POLL`.
+4. **21:21** — из `debrief.md`. PASS → TG картинка+текст. Карта = совет, без «Сцена».
+
+Telegram без отложки: раньше слота МСК не слать. Слот прошёл — сразу.
+Живые сегодняшние не дублировать.
+
+После PASS Директор:
+
+```text
+python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-HHMM
+```
+
+Писатели шагов: `publish: SKIP`.
 
 ### Cloud vs plugin
 
@@ -54,9 +78,10 @@ Cloud: один Task(generalPurpose) на шаг + dispatch-prompt.
 Plugin: Task(posts-*).
 written_by: gemini. Opus/Sonnet/Composer = FAIL.
 Пакет: posts/YYYY-MM-DD-1212/
-Не публиковать. Не генерировать картинку. Не писать 15:15 и 21:21.
+После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-1212
+TG+IG RU, картинка+текст. ВК и YouTube не трогать. Холл не публикует.
+Не генерировать картинку. Не писать 15:15 и 21:21.
 Главред не звать. Существующие и уже вышедшие посты не трогать.
-После PASS верни Холлу: путь, GATE, лимит TG, chosen хук.
 ```
 
 ## Промпт 15:15
@@ -68,10 +93,10 @@ written_by: gemini. Opus/Sonnet/Composer = FAIL.
 Канон: POSTS.md. Рой: researcher → meaning → copywriter → gate. Cover нет.
 Copywriter: опрос + 4 расклада вместе. Карты: draw_rw_cards.py, не «в тему».
 Cloud: Task(generalPurpose)+dispatch. Plugin: Task(posts-*).
-written_by: gemini. Не публиковать. Главред не звать.
+written_by: gemini. Главред не звать.
 Пакет: posts/YYYY-MM-DD-1515/
-Существующие посты не трогать.
-После PASS верни Холлу: путь, 4 карты, GATE.
+После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-1515
+Только TELEGRAM_SEND_POLL. Холл не публикует. Существующие посты не трогать.
 ```
 
 ## Промпт 21:21
@@ -83,10 +108,10 @@ written_by: gemini. Не публиковать. Главред не звать.
 Канон: POSTS.md. Разбор опроса, не тизер статьи.
 Рой: copywriter (из debrief) → cover-text → gate.
 Cloud: Task(generalPurpose)+dispatch. Plugin: Task(posts-*).
-written_by: gemini. Без IG/YT. Не публиковать. Главред не звать.
+written_by: gemini. Без IG/YT. Карта = совет, без «Сцена». Главред не звать.
 Пакет: posts/YYYY-MM-DD-2121/
-Существующие посты не трогать.
-После PASS верни Холлу: путь, 4 карты, GATE, длина TG, chosen хук.
+После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-2121
+TG картинка+текст. Холл не публикует. Существующие посты не трогать.
 ```
 
 ## Цепочка
@@ -94,16 +119,16 @@ written_by: gemini. Без IG/YT. Не публиковать. Главред н
 ```text
 researcher(одна тема) → meaning(один тезис)
 → copywriter(сцена, вопросы / опрос+debrief, CTA)
-→ cover-text(3 хука, один в центре) → gate
+→ cover-text(3 хука, один в центре) → gate → publish
 ```
 
 | Шаг | Агент | Модель | Выход |
 | --- | --- | --- | --- |
-| 0 | `posts-director` | inherit | папка, Task, step records |
+| 0 | `posts-director` | inherit | папка, Task, step records, после PASS `posts_publish.py` |
 | 1 | `posts-researcher` | inherit | `brief.md` |
 | 2 | `posts-meaning` | `gemini-3.7-flash-high` | `meaning.md` |
 | 3 | `posts-copywriter` | `gemini-3.7-flash-high` | площадки; на 15:15 ещё `debrief.md` |
-| 4 | `posts-cover-text` | `gemini-3.7-flash-high` | `cover-text.json` + `image-prompt.txt` (нет на 15:15) |
+| 4 | `posts-cover-text` | `gemini-3.7-flash-high` | `cover-text.json` + `image-prompt.txt` (нет на 15:15 и alena) |
 | 5 | `posts-gate` | `gemini-3.7-flash-high` + `scripts/posts_gate.py` | `GATE` |
 
 Алиасы: Scout → researcher, Writer → meaning, Sol → copywriter. Новых ролей сверх таблицы нет.
@@ -113,11 +138,12 @@ FAIL → вернуть дырявый шаг Task-ом. Директор не �
 
 ## Слоты
 
-| Слот | Что | Площадки | Картинка |
+| Слот | Что | В эфир (рой) | Не трогать |
 | --- | --- | --- | --- |
-| **12:12** | фото + текст. Сцена и 2–3 вопроса в бота | TG, ВК, Макс, IG, YT community | да, 1K |
-| **15:15** | опрос + сразу 4 вечерних расклада | TG + ВК | нет |
-| **21:21** | разбор опроса: 4 случайные карты | TG, Макс, ВК | да, 1K |
+| **alena-0700** | письмо, рефки как есть | TG `@AlenaSafonova_queen` 07:00 | `@TodayTaro`, IG, ВК, YT |
+| **12:12** | фото + текст. Сцена и 2–3 вопроса в бота | TG `@TodayTaro` + IG RU | ВК, YouTube community |
+| **15:15** | опрос + сразу 4 вечерних расклада | только `TELEGRAM_SEND_POLL` | картинка, IG, Макс, ВК, YT |
+| **21:21** | разбор: карта = совет, без «Сцена» | TG фото+текст | IG, YT, ВК |
 
 **12:12.** Первая строка = сцена, не заголовок темы. Подпись TG ≤ 1024.
 TG / ВК / Макс **без** кодового слова. IG — слово в комментарий + «ссылки в шапке». YT — шапка канала.
@@ -125,7 +151,8 @@ TG / ВК / Макс **без** кодового слова. IG — слово �
 **15:15.** Без картинки, без Макс, без IG/YT. Вопрос ВК ≤ 80.
 Четыре варианта = четыре состояния рук. Карты случайные Райдер-Уэйт, не подобраны к ответам.
 
-**21:21.** Не тизер статьи. Instagram и YouTube не делать.
+**21:21.** Не тизер статьи. Instagram и YouTube не делать. В эфире нет слова «Сцена».
+Карта советует ход, не ставит диагноз.
 
 На каждый из 4 вариантов:
 
@@ -190,10 +217,13 @@ posts/YYYY-MM-DD-HHMM/
   package.meta.json
   steps/*.json
   GATE
+  publish.json        # после posts_publish.py
+  cover-url.txt       # публичный HTTPS кадра, если есть
 ```
 
 Шаблоны: [`posts/templates/`](posts/templates/). Старые пакеты не переписывать.
-Сухой прогон роя: `python3 scripts/posts_swarm_dry_run.py` (0 публикаций).
+Сухой прогон роя: `python3 scripts/posts_swarm_dry_run.py` (0 живых публикаций).
+Публикация: `python3 scripts/posts_publish.py --package DIR`. Холл не публикует.
 
 ## Запреты
 
@@ -201,18 +231,35 @@ posts/YYYY-MM-DD-HHMM/
 - Директор пишет inline (без Task / без dispatch-prompt)
 - Главред, «можно публиковать» от Главреда
 - Opus / Sonnet / Composer как писатель
-- Публикация из агента
+- Публикация писателем шага или Холлом; default-аккаунт Composio
+- Ключ `COMPOSIO_API_KEY` в git / лог / чат
+- ВК и YouTube community
+- Отложка Telegram; слать раньше слота МСК
+- Дубль живого сегодняшнего
 - `Task(posts-director)`, `/in-cloud`, `/babysit`, background Task
 - Специалист зовёт `Task(posts-*)`
 - Писать соседний слот «заодно» или уже вышедший сегодняшний
 - Путать бот и приложение; сырой URL в IG
 - «Загадай ситуацию», слово «ловушка»
 - Подбирать карту «под вариант»; ждать голоса 15:15
-- Тизер статьи в 21:21
+- Тизер статьи в 21:21; слово «Сцена» в 21:21
 - Плодить 13-го агента / `posts-cover-hook` / второго Директора
+- Менять рефки Алёны; слать alena-0700 в `@TodayTaro`
+
+## Промпт alena-0700
+
+```text
+Слот alena-0700 на YYYY-MM-DD.
+Канал: https://t.me/AlenaSafonova_queen (не @TodayTaro).
+Канон: POSTS.md + posts/ALENA.md. Рефки не менять.
+После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-alena
+Холл не публикует. Cover нет.
+```
 
 ## Файлы
 
+Публикация: [`posts/PUBLISH.md`](posts/PUBLISH.md).
+Алёна: [`posts/ALENA.md`](posts/ALENA.md).
 Цепочка: [`shared/posts-chain.md`](shared/posts-chain.md).
 Шаги: [`shared/posts-step-contract.md`](shared/posts-step-contract.md).
 Модели: [`shared/posts-model-policy.json`](shared/posts-model-policy.json).

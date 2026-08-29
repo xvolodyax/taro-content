@@ -1,4 +1,7 @@
 posts/_dry-run/
+posts/_publish-ledger.json
+.env
+.env.*
 __pycache__/
 *.pyc
 .pytest_cache/

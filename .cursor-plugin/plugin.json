@@ -1,8 +1,8 @@
 {
   "name": "taro-posts",
   "displayName": "Посты ТАРО СЕЙЧАС",
-  "description": "Рой постов 12:12 / 15:15 / 21:21: researcher, meaning, copywriter, cover-text, gate. Директор только оркестрирует. Главред снят. Публикует Холл.",
-  "version": "0.2.0",
+  "description": "Рой постов 12:12 / 15:15 / 21:21 / alena-0700. После GATE PASS Директор публикует через Composio. Холл не публикует.",
+  "version": "0.3.0",
   "keywords": [
     "taro",
     "posts",

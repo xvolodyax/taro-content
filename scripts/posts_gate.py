@@ -37,7 +37,8 @@ STOP_PHRASES = (
     "без розовых очков",
 )
 
-SLOT_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2})-(?P<slot>1212|1515|2121)$")
+SLOT_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2})-(?P<slot>1212|1515|2121|alena)$")
+SCENA_RE = re.compile(r"(?i)(?:^|\n)\s*«?сцена»?\s*(?:[:.\-—–]|$)|«сцена»")
 
 
 class _Visible(HTMLParser):
@@ -68,7 +69,9 @@ def detect_slot(package: Path) -> str:
     if meta.is_file():
         slot = str(json.loads(meta.read_text(encoding="utf-8")).get("slot") or "")
         slot = slot.replace(":", "")
-        if slot in {"1212", "1515", "2121"}:
+        if slot in {"0700", "alena", "alena-0700", "alena0700"}:
+            return "alena"
+        if slot in {"1212", "1515", "2121", "alena"}:
             return slot
     brief = package / "brief.md"
     if brief.is_file():
@@ -79,12 +82,14 @@ def detect_slot(package: Path) -> str:
             return "2121"
         if "12:12" in text or "slot: 1212" in text:
             return "1212"
+        if "alena" in text.lower() or "07:00" in text:
+            return "alena"
     raise SystemExit(f"cannot detect slot: {package}")
 
 
 def required_steps(slot: str) -> list[str]:
     roles = ["posts-researcher", "posts-meaning", "posts-copywriter"]
-    if slot != "1515":
+    if slot not in {"1515", "alena"}:
         roles.append("posts-cover-text")
     roles.append("posts-gate")
     return roles
@@ -282,6 +287,10 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
                     result.fail(f"12:12: нет {name}")
         if slot == "2121" and ((package / "ig.txt").is_file() or (package / "yt.txt").is_file()):
             result.fail("21:21: не писать IG/YT")
+        if slot == "2121" and tg.is_file():
+            vis = visible_text(tg.read_text(encoding="utf-8"))
+            if SCENA_RE.search(vis) or "«сцена»" in vis.lower():
+                result.fail("21:21: слово «Сцена» запрещено, карта = совет")
     meta = package / "package.meta.json"
     if meta.is_file():
         data = json.loads(meta.read_text(encoding="utf-8"))
@@ -327,7 +336,8 @@ incident_report: none
 - [ ] первая строка = сцена
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
-- [ ] publish SKIP
+- [ ] 21:21 без «Сцена», карта = совет
+- [ ] publish SKIP у писателей; эфир — posts_publish.py
 """
     (package / "GATE").write_text(text, encoding="utf-8")
 

@@ -38,7 +38,7 @@ python3 scripts/posts_dispatch_prompt.py --role posts-copywriter --package posts
 | Специалист вызывает `Task(posts-*)` | вложенный пайплайн |
 | Главред / «можно публиковать» | шаг снят |
 | Opus / Sonnet / Composer как писатель | `written_by` не gemini |
-| Публикация из агента | `publish: SKIP`; Холл + Composio / browser |
+| Публикация писателем шага | `publish: SKIP`; после PASS — `posts_publish.py`, Холл не публикует |
 
 Параллелей нет. Cover после copywriter, только 12:12 и 21:21.
 

@@ -5,6 +5,9 @@
   "text_model_display": "Gemini 3.7 Flash",
   "written_by": "gemini",
   "publish": "SKIP",
+  "publish_after_pass": "composio",
+  "hall_publishes": false,
+  "composio_aliases": ["telegram-composia", "instagram-ru", "instagram-en"],
   "glavred": "REMOVED",
   "inherit_means": "Модель родителя = модель окна Холла. Текстовые шаги всё равно Gemini. Не подменять.",
   "roles": [
