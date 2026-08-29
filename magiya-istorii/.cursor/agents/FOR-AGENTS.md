@@ -15,7 +15,7 @@
 | 1 | Scout / Wordstat | `magiya-scout.md` | да |
 | 2 | Plot | `magiya-plot.md` | да |
 | 3 | Title (H1==title, Эскалибур) | `magiya-title.md` | да |
-| 4 | Writer | `magiya-writer.md` | да |
+| 4 | Writer | `magiya-writer.md` | `gemini-3.7-flash-high` | да |
 | 5 | Gate (текст) | `magiya-gate.md` | да |
 | 6 | Clickbait (только кадр 1) | `clickbait.md` | да, после Plot |
 | 7 | Art (холст 6) | `magiya-art.md` | да, после Clickbait |

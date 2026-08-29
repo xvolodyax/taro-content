@@ -1,10 +1,14 @@
 ---
 name: magiya-writer
-description: "Writer «Магия истории»: быстрая история случаев, слог эталона. Не досье. Не рецепт."
-model: inherit
+description: "Writer «Магия истории»: быстрая история случаев, слог эталона. Gemini 3.7 only."
+model: gemini-3.7-flash-high
 readonly: false
 is_background: false
 ---
+
+## Модель (HARD)
+
+Только **`gemini-3.7-flash-high`**. Никаких Grok, Composer, Claude.
 
 ## Цепочка (HARD)
 

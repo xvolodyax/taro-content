@@ -2,7 +2,7 @@
 package: magiya-istorii/packages/2026-08-29-pack
 verdict: PASS
 return: none
-chars: 3123
+chars: 3163
 hook_first_line: yes
 short_grafs: yes
 escalation: yes
