@@ -1,6 +1,6 @@
 ---
 name: magiya-art
-description: "Art brief «Магия истории»: кинокадр/живопись. Не Вика, не лого."
+description: "Art «Магия истории»: холст 6, глянец 2020-х, кадр 1 только Clickbait. Лицо Холл не рисует."
 model: inherit
 readonly: false
 is_background: false

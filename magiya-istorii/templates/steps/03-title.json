@@ -1,0 +1,9 @@
+{
+  "role": "magiya-title",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["title-brief.md"],
+  "publish": "SKIP"
+}

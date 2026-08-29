@@ -2,6 +2,9 @@
   "product": "magiya-istorii",
   "kind": "fiction",
   "title": "",
+  "h1": "",
+  "overlay_clickbait": "",
+  "clickbait_red_frame": true,
   "slug": "",
   "person": "",
   "city": "",
@@ -12,6 +15,8 @@
   "wordstat_status": "PARTIAL",
   "angle": "",
   "fattest_query_not_in_h1": true,
+  "h1_equals_title": true,
+  "overlay_not_in_title": true,
   "chars": 0,
   "living_people": "none",
   "publish": "SKIP"

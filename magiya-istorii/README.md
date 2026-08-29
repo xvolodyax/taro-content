@@ -3,53 +3,51 @@
 Отдельный продукт в `taro-content`. Захватывающие истории про магию, чёрную магию, обряды, духов, колоды, проклятия.
 
 Это **не** посты «ТАРО СЕЙЧАС», не Алёна, не слоты 12:12 / 15:15 / 21:21, не `PUBLISH.md`, не Composio.
-Не канал боли и не продажа раскладов. Бот и приложение «ТАРО СЕЙЧАС» сюда не тащить.
+Не канал боли и не продажа раскладов.
 
 Канон: [`CANON.md`](CANON.md).  
-Контракт пакета: [`CONTRACT.md`](CONTRACT.md).  
-Роли: [`.cursor/agents/FOR-AGENTS.md`](.cursor/agents/FOR-AGENTS.md).  
-Ledger: [`LEDGER.md`](LEDGER.md).
+Контракт: [`CONTRACT.md`](CONTRACT.md).  
+Роли: [`.cursor/agents/FOR-AGENTS.md`](.cursor/agents/FOR-AGENTS.md).
 
 ## Как запустить Director
 
-1. Открыть **одно** окно Cloud Agent / чат в репо `taro-content`.
-2. Главный агент — **`magiya-director`**. Не `Task(magiya-director)`. Не `/in-cloud`. Не `/babysit`.
-3. В промпт вставить блок. Дату подставить. Тему за Scout не придумывать.
+1. Одно окно Cloud Agent в `taro-content`.
+2. Главный агент — **`magiya-director`**. Не `Task(magiya-director)`. Не `/in-cloud`.
+3. Промпт:
 
 ```text
 Собери пакет «Магия истории» на YYYY-MM-DD.
 Канон: magiya-istorii/CANON.md. Контракт: magiya-istorii/CONTRACT.md.
-Цепочка в этом окне, Director сам тексты не пишет:
-Scout/Wordstat → Plot → Writer → Gate → Art brief.
-Пакет: magiya-istorii/packages/YYYY-MM-DD-slug/
-Env Scout: YANDEX_CLOUD_SEARCH_API_KEY + YANDEX_FOLDER_ID.
-Ключ не в лог. PARTIAL не стоп. Угол не самая жирная фраза в H1.
-Не публиковать. Пиксели не обязательны.
+Director сам тексты не пишет:
+Scout → Plot → Title(H1==title, Эскалибур) → Writer → Gate(текст).
+Clickbait (только overlay кадра 1) после Plot, не в title/h1.
+Art: одно полотно, одна сцена (одежда/место/свет не менять). Холст 6, глянец 2020-х.
+Кадр 1 — только clickbait.txt + журнальная красная рамка (обложка). Кадры 2–6 — врезки в статью, не карусель.
+Одна генерация холста. Не «ещё раз нарисуй». Холст не валит текст.
+Лицо Холл не рисует. Не публиковать.
 Посты ТАРО СЕЙЧАС, Алёну, 12:12/15:15/21:21, PUBLISH.md, Composio не трогать.
-После PASS верни Холлу: путь пакета, GATE, знаки, kind, угол.
+После PASS: путь, GATE, h1, overlay, art.
 ```
-
-4. Дождаться `GATE` = PASS, `story.md` + `meta.json`, `art-brief.md`.
-5. Публикацию в соцсети **не** делать. Картинку Холл рисует сам, если нужно.
 
 ## Цепочка
 
 ```text
-Scout (живой Wordstat) → Plot (кто/где/когда/ставка/цена)
-→ Writer (8–14 тыс.) → Gate → Art brief (один кадр)
+Scout → Plot → Title → Writer → Gate
+Clickbait ∥ после Plot
+Art после Clickbait (холст 2×3)
 ```
 
 | Шаг | Агент | Выход |
 | --- | --- | --- |
-| 0 | `magiya-director` | папка пакета, вызовы Task |
 | 1 | `magiya-scout` | `scout.md` |
 | 2 | `magiya-plot` | `plot.md` |
-| 3 | `magiya-writer` | `story.md`, `meta.json` |
-| 4 | `magiya-gate` | `GATE` |
-| 5 | `magiya-art` | `art-brief.md` |
+| 3 | `magiya-title` | `title-brief.md`, `meta.title`=`meta.h1` |
+| 4 | `magiya-writer` | `story.md` |
+| 5 | `magiya-gate` | `GATE` |
+| 6 | `clickbait` | `clickbait.txt`, `meta.overlay_clickbait` |
+| 7 | `magiya-art` | `art-brief.md` |
 
-Cloud: на шаг — `Task(generalPurpose)` и текст роли из `.cursor/agents/magiya-*.md`.
-Директор inline = FAIL.
+Title ≠ Clickbait. Кликбейт не в H1, не в URL. Пиксели не обязательны.
 
 ## Wordstat
 
@@ -57,10 +55,14 @@ Cloud: на шаг — `Task(generalPurpose)` и текст роли из `.curs
 python3 magiya-istorii/scripts/wordstat.py "чёрная магия" "обряд на пороге" "проклятие"
 ```
 
-Нужны `YANDEX_CLOUD_SEARCH_API_KEY` и `YANDEX_FOLDER_ID`.  
-Скрипт не печатает ключ. Нет доступа или часть фраз упала → `PARTIAL`, цепочка идёт дальше.
+Env: `YANDEX_CLOUD_SEARCH_API_KEY` + `YANDEX_FOLDER_ID`. Ключ не в лог. PARTIAL не стоп.
+
+Нарезка холста (когда появится `canvas.png`):
+
+```text
+python3 magiya-istorii/scripts/slice_canvas.py canvas.png --out .
+```
 
 ## Демо
 
-Пакет после первого прогона: см. `packages/` и строку в `LEDGER.md`.
-Минимум готового пакета: `story.md` + `meta.json`. В эфир не выкладывать.
+`packages/2026-08-29-pack/` — `story.md` + `meta.json` (`title`/`h1` отдельно от `overlay_clickbait`). В эфир не выкладывать.

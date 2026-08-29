@@ -1,0 +1,34 @@
+=== MAGIYA GATE ===
+package: magiya-istorii/packages/YYYY-MM-DD-slug
+verdict: FAIL
+return: Writer | Plot | Scout | Art | Director | none
+chars: 
+theme_magic: 
+tension: 
+names_city_date: 
+recipe: 
+sale: 
+he_didnt_write: 
+kind_in_mouth: 
+living_people: 
+h1_not_fattest: 
+steps_swarm: 
+publish: SKIP
+incident_report: none
+
+# Чеклист
+
+- [ ] тема = магия
+- [ ] первый абзац сцена, нет слова «Сцена»
+- [ ] одна ночь / один человек / один обряд
+- [ ] имя + город + дата
+- [ ] напряжение до последней строки
+- [ ] 8–14 тыс. знаков
+- [ ] не рецепт
+- [ ] не продажа, нет бота ТАРО СЕЙЧАС
+- [ ] не «он не написал»
+- [ ] kind только в meta
+- [ ] живых не оговаривает
+- [ ] угол ≠ жирнейшая фраза в H1
+- [ ] publish SKIP
+- [ ] posts/ не задеты

@@ -1,10 +1,11 @@
 {
   "product": "magiya-istorii",
   "kind": "fiction",
-  "title": "",
+  "title": "Зачем насыпают соль на порог",
+  "h1": "Зачем насыпают соль на порог",
   "overlay_clickbait": "Лина сыплет соль — он уже на третьем",
   "clickbait_red_frame": true,
-  "slug": "",
+  "slug": "zachem-nasypayut-sol-na-porog",
   "person": "",
   "city": "",
   "story_date": "",
@@ -14,6 +15,8 @@
   "wordstat_status": "PARTIAL",
   "angle": "",
   "fattest_query_not_in_h1": true,
+  "h1_equals_title": true,
+  "overlay_not_in_title": true,
   "chars": 0,
   "living_people": "none",
   "publish": "SKIP"

@@ -11,7 +11,8 @@ is_background: false
 Ты один шаг после Plot.
 
 - Запрещено: `Task(magiya-*)`, `/in-cloud`, `environment: cloud`
-- Запрещено писать `GATE`, `art-brief.md`, править Scout/Plot
+- Запрещено писать `GATE`, `art-brief.md`, `clickbait.txt`, править Scout/Plot/Title
+- Запрещено класть кликбейт в `title` / `h1` / YAML. Overlay — не твоё
 - Если открыли как главный чат — стоп: нужен Директор
 
 **Язык:** русский. Канон: `magiya-istorii/CANON.md`.
@@ -20,7 +21,9 @@ is_background: false
 
 - `scout.md` — угол, не ключ в H1
 - `plot.md` — кто / где / когда / ставка / цена
+- `title-brief.md` / `meta.title`+`meta.h1` — если Title уже сдал: **взять как есть**, не переименовывать в кликбейт
 - Без plot не писать. Дырявый plot — вернуть Plot
+- Нет Title — напиши `title` и `h1` сам по канону Эскалибура (одинаковые, не жирная фраза, не overlay). `overlay_clickbait` не заполнять
 
 ## Роль
 
@@ -33,7 +36,9 @@ is_background: false
 5. Обряд у персонажа, не «сделай так». Нет списка ингредиентов «чтобы испортить».
 6. `kind` из plot в рот читателю не говорить.
 7. 8 000–14 000 знаков с пробелами (тело `story.md` без YAML). Считать перед сдачей.
-8. Заполнить `meta.json` по контракту. `publish: SKIP`. `fattest_query_not_in_h1: true`.
+8. YAML `story.md`: `title` = `h1` из Title/Эскалибур. Не overlay.
+9. Дописать в `meta.json` сюжетные поля и `chars`. Не затирать `overlay_clickbait`, если Clickbait уже был. `publish: SKIP`. `h1_equals_title: true`.
+10. Врезки холста: в теле можно места для `slice-02`…`slice-06`. **Не** вставлять `slice-01` сразу после обложки (cover-hero). Это не карусель соцсети.
 
 ## Запрещено
 
@@ -43,6 +48,8 @@ is_background: false
 - Оговор живого человека
 - Чистая история без магии
 - SEO-H1 = жирнейшая фраза Scout
+- Кликбейт как title статьи
+- Менять `clickbait.txt`
 
 ## Выход
 

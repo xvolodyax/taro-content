@@ -30,15 +30,22 @@ is_background: false
 - Не тема «он не написал / не пишет / молчит в чате»
 - `kind` только в `meta.json`, не в рот читателю
 - Живых не оговаривает
-- Угол ≠ жирнейшая фраза в H1 (`fattest_query_not_in_h1`)
+- `title` == `h1` (Эскалибур). Не кликбейт, не жирнейшая фраза, не overlay — проверка **строк**, не пикселей
+- `overlay_clickbait` есть в файле, **не равен** title/h1 (проверка строк, не картинки)
+- Clickbait не правил title/h1
+- **Холст не валит текст.** Одежда разъехалась / шрифт / рамка / шов / кривой кликбейт на кадре → `canvas_note` одна строка, `verdict` прозы всё равно PASS, если история держит. Не `return: Art`. Не `return: Writer` из-за картинок
+- Art **не** может сделать Writer FAIL. Второй холст не требовать
+- В брифе Art: одна сцена, 6 клеток, overlay только кадр 1 — как промпт первой генерации, не как повод перерисовать
 - `publish: SKIP`
 - Чужие `posts/` не задеты
 - Есть `steps/` с `inline: false` (если пакет новый)
 
 ## Вердикт
 
-PASS только если резать нечего.  
-Иначе FAIL и `return`: Scout | Plot | Writer | Art | Director.
+`verdict` = только проза (сюжет, магия, длина, не рецепт, H1).  
+Картинки в `verdict` не входят. FAIL из-за холста — запрещён.  
+Иначе FAIL и `return`: Scout | Plot | Title | Writer | Clickbait | Director.  
+`return: Art` нет: Art не чинит генерацию в этом прогоне.
 
 ## Выход
 
@@ -47,11 +54,15 @@ PASS только если резать нечего.
 ```text
 === MAGIYA GATE ===
 verdict: PASS | FAIL
-return: none | Writer | Plot | Scout | Art | Director
+return: none | Writer | Plot | Title | Scout | Clickbait | Director
 chars: <n>
+h1_equals_title: yes | no
+overlay_not_in_title: yes | no
 theme_magic: yes | no
 recipe: no | yes
 sale: no | yes
 he_didnt_write: no | yes
+canvas_note: none | <одна строка, не валит PASS>
+canvas_regen: no
 incident_report: none
 ```
