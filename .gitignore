@@ -1,5 +1,6 @@
 posts/_dry-run/
 posts/_publish-ledger.json
+posts/**/publish.json
 .env
 .env.*
 __pycache__/
