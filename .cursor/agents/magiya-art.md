@@ -1,6 +1,6 @@
 ---
 name: magiya-art
-description: "Art «Магия истории»: текст art-brief холста 6 кадров. Gemini 3.7. Пиксели не запускать."
+description: "Art «Магия истории»: один кадр 16:9, реф Виктория.png, микрофон в руке, жирная красная рамка + кликбейт. Gemini 3.7. Не шесть кадров."
 model: gemini-3.7-flash-high
 readonly: false
 is_background: false
