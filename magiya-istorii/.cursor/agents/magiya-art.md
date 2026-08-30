@@ -1,6 +1,6 @@
 ---
 name: magiya-art
-description: "Art «Магия истории»: текст art-brief обложки 16:9 (1K). Gemini 3.7 only. Пиксели не запускать."
+description: "Art «Магия истории»: один кадр 16:9, реф Виктория.png, микрофон в руке, жирная красная рамка + кликбейт. Gemini 3.7. Не шесть кадров."
 model: gemini-3.7-flash-high
 readonly: false
 is_background: false
@@ -31,21 +31,21 @@ is_background: false
 
 ## Роль
 
-`art-brief.md`: **одна горизонтальная обложка 16:9 (1K)**. Не сетка 2×3, не 6 кадров.
+`art-brief.md`: **один кадр-обложка 16:9**. Не холст, не сетка 2×3, не шесть картинок, не нарезка.
 
-**Замок образа и правила (HARD 30.08):**
+**Замок образа (HARD 30.08) — на этом единственном кадре остаются все слои:**
 
-- **Формат:** 16:9 горизонтальный, 1K (~1920×1080).
-- **Лицо и глаза:** i2i с `Виктория.png` (2.1 МБ). Глаза **строго зелёные с лёгким карим оттенком** (distinct hazel-green: green with a subtle warm brown tint), тёплый блонд с более тёмными корнями, мягкие черты лица ведущей (без усреднения 12 лиц).
-- **Микрофон:** DJI Mic Mini Transmitter **ВСЕГДА В РУКЕ У РТА** (компактный чёрный передатчик в руке ведущей, которая говорит на месте событий). Не на одежде!
-- **Одежда:** стильный современный глянец 2020-х (ведущая-расследователь).
-- **Локация и свет:** берутся Art **строго из сюжета конкретной истории** (по `story.md`). В базовый промпт время суток/ночь не зашивать.
-- **Окантовка:** ЖИРНАЯ красная рамка обложки по всему внешнему периметру кадра 16:9.
-- **Текст:** ударный overlay из `clickbait.txt` (броский журнальный display-шрифт).
+- **Формат:** один горизонтальный кадр 16:9. Файл `cover.png`. В тело ту же картинку не ставить.
+- **Реф:** только `magiya-istorii/refs/Виктория.png` (2 191 823 байт). Лицо с рефа, один ракурс, без усреднения 12 лиц. Живые пакеты (домовой, соль) не перерисовывать.
+- **Микрофон:** DJI Mic Mini Transmitter **ВСЕГДА В РУКЕ У РТА**. Не на одежде.
+- **ЖИРНАЯ красная окантовка** по всему периметру 16:9. Не снимать.
+- **Кликбейт-название** на картинке: только готовая строка из `clickbait.txt`. Не снимать. Свой заголовок не выдумывать.
+- **Одежда:** стильный глянец 2020-х (ведущая-расследователь).
+- **Локация и свет:** строго из `story.md`. В базовый промпт «ночь» не зашивать.
 
-## Базовое ядро промпта (16:9, 1K, без зашитой ночи)
+## Базовое ядро промпта (1 кадр 16:9 + реф + микрофон + жирная красная рамка + кликбейт)
 ```text
-A cinematic 16:9 horizontal photographic editorial magazine cover. A single woman on scene: distinct hazel-green eyes (green with a subtle warm brown tint), warm blonde hair with darker roots, soft gentle facial features referenced strictly from single identity anchor of reference sheet (no face morphing). She is a stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth as she speaks on scene. Panel features a BOLD THICK RED magazine cover border frame around the entire perimeter and high-impact DISPLAY typography overlay text. 1K resolution, cinematic lighting, editorial magazine aesthetic.
+A cinematic 16:9 horizontal photographic editorial magazine cover. ONE FRAME ONLY — not a 2x3 grid, not six panels, not a contact sheet. A single woman on scene: distinct hazel-green eyes (green with a subtle warm brown tint), warm blonde hair with darker roots, soft gentle facial features referenced strictly from one angle of the Victoria reference sheet (no face morphing, not a 12-face average). She is a stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth as she speaks on scene. The frame has a BOLD THICK RED magazine cover border around the entire perimeter and high-impact DISPLAY typography overlay with the clickbait title. 16:9, cinematic lighting, editorial magazine aesthetic.
 ```
 
 ## Выход

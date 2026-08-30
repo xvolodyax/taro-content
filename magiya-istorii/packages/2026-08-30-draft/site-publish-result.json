@@ -1,0 +1,10 @@
+{
+  "status": "OK",
+  "article_id": 32,
+  "live_url": "https://www.xn--80aaoqxlidb0d.xn--p1ai/blog/zachem-vtykayut-igolku-v-dvernoy-kosyak/",
+  "http_live": 200,
+  "in_rss": true,
+  "cover_once": true,
+  "inlines": "none",
+  "note": "upload article 32; sitemap.xml EACCES на шаге publish; страница и RSS уже 200 index,follow"
+}

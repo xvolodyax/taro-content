@@ -1,0 +1,11 @@
+{
+  "role": "magiya-clickbait",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gemini-3.7-flash-high",
+  "inline": false,
+  "artifacts": ["clickbait.txt"],
+  "publish": "SKIP",
+  "equals_h1": false,
+  "red_frame": true
+}

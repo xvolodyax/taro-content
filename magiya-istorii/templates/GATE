@@ -15,14 +15,13 @@ h1_equals_title:
 h1_excalibur: 
 overlay_not_in_title: 
 h1_not_fattest: 
-art_grid_6: 
+art_one_frame_16x9: 
 frame1_clickbait_only: 
 frame1_red_journal: 
-frames2_6_clean: 
+inlines_2_6: none
 magazine_2020s: 
-one_scene_same_outfit: 
 no_cover_hero_dup: 
-not_carousel: 
+not_six_frames: 
 cover_note: none
 cover_regen: no 
 steps_swarm: 
@@ -46,11 +45,10 @@ incident_report: none
 - [ ] не «он не написал»
 - [ ] kind только в meta
 - [ ] title == h1, Эскалибур, не кликбейт
-- [ ] overlay_clickbait только кадр 1, не в title/URL
-- [ ] холст 6, глянец 2020-х
-- [ ] кадр 1: overlay Clickbait + журнальная красная рамка
-- [ ] кадры 2–6 без заголовка и без красной рамки
+- [ ] overlay_clickbait только на единственной обложке 16:9, не в title/URL
+- [ ] один кадр 16:9, глянец 2020-х; не холст, не шесть картинок
+- [ ] на этом кадре: overlay Clickbait + жирная красная рамка (не снимать)
 - [ ] обложка 16:9 не валит verdict прозы (только cover_note, regen=no)
-- [ ] срезы в статью, не карусель; обложку в теле не дублировать
+- [ ] обложку в теле не дублировать; inline-02…06 не делать
 - [ ] publish SKIP
 - [ ] posts/ не задеты

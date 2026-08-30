@@ -1,0 +1,32 @@
+{
+  "product": "magiya-istorii",
+  "kind": "fiction",
+  "title": "Зачем втыкают иголку в дверной косяк",
+  "h1": "Зачем втыкают иголку в дверной косяк",
+  "overlay_clickbait": "Оля нащупала иглу в дверном косяке в Кирове — гость ушёл, а подклад остался",
+  "clickbait_red_frame": true,
+  "slug": "zachem-vtykayut-igolku-v-dvernoy-kosyak",
+  "person": "Ольга",
+  "city": "Киров",
+  "story_date": "2026-08",
+  "ritual": "иголка в дверном косяке",
+  "stake": "безопасность дома и покой в собственной квартире",
+  "price": "чужая запертая злоба в собственном дверном косяке",
+  "wordstat_status": "OK",
+  "angle": "иголка в дверном косяке",
+  "fattest_query_not_in_h1": true,
+  "h1_equals_title": true,
+  "overlay_not_in_title": true,
+  "captions": [
+    "caption-01.txt",
+    "caption-02.txt",
+    "caption-03.txt",
+    "caption-04.txt",
+    "caption-05.txt",
+    "caption-06.txt"
+  ],
+  "chars": 2985,
+  "living_people": "none",
+  "pixels": "generated",
+  "publish": "PUBLISHED"
+}

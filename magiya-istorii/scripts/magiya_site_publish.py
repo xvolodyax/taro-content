@@ -49,7 +49,7 @@ def make_tar_bytes(package_dir: Path) -> bytes:
     - article.html
     - article.meta.json
     - description-brief.json
-    - cover/cover.png (обложка 16:9)
+    - cover/cover.png (один кадр 16:9; в article.html не дублировать; inline-02…06 не класть)
     """
     story_path = package_dir / "story.md"
     meta_path = package_dir / "meta.json"

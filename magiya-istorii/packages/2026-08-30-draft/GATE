@@ -1,0 +1,23 @@
+=== MAGIYA GATE ===
+verdict: PASS
+return: none
+chars: 2985
+rewrote_sentences: no
+own_architecture: yes
+range_clone: none
+one_spine: yes
+magazine_not_anecdote: yes
+encyclopedia: no
+funnel: no
+cover_once: n/a
+inlines_2_6: none
+kirill_clone: no
+dossier: no
+recipe: no
+cover_note: none
+cover_regen: no
+incident_report: none
+
+# Причина
+
+Тело: один случай (Ольга, косяк, игла после визита свекрови), история кончилась — длина не брак. Нет воронки, нет «Возьмём» / «Примерьте» / «Сцена», нет лекторских терминов и паразитных интонаций, нет штампа «Это X не для Y». Не клон кашалота / Эйнштейна / зубов и не каркас домового / соли. Не энциклопедия и не рецепт. H1 == title, H1 ≠ overlay, H1 ≠ «порча». Overlay не в title / h1 / story.md. article.html нет — обложка в теле не дублируется; inline-02…06 нет. Картинка прозу не валит. Предложения не переписывал.

@@ -21,9 +21,9 @@ overlay_source: clickbait.txt
 ## Промпт (ядро 16:9, 1K)
 
 ```text
-A cinematic 16:9 horizontal photographic editorial magazine cover. A single woman on scene: distinct hazel-green eyes (green with a subtle warm brown tint), warm blonde hair with darker roots, soft gentle facial features referenced strictly from single identity anchor of reference sheet (no face morphing). She is a stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth as she speaks on scene. Panel features a BOLD THICK RED magazine cover border frame around the entire perimeter and high-impact DISPLAY typography overlay text. 1K resolution, cinematic lighting, editorial magazine aesthetic.
+A cinematic 16:9 horizontal photographic editorial magazine cover. ONE FRAME ONLY — not a 2x3 grid, not six panels. A single woman on scene: distinct hazel-green eyes (green with a subtle warm brown tint), warm blonde hair with darker roots, soft gentle facial features referenced strictly from one angle of the Victoria reference sheet (no face morphing). She is a stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth as she speaks on scene. The frame has a BOLD THICK RED magazine cover border around the entire perimeter and high-impact DISPLAY typography overlay with the clickbait title. 16:9, cinematic lighting, editorial magazine aesthetic.
 ```
 
 ## Стоп
 
-Не 2×3, не 6 кадров. Не Алёна. Не лого «ТАРО СЕЙЧАС». Не бот. Не лицо «по памяти». Пиксели не обязательны. Публикации нет.
+Не 2×3, не 6 кадров, не нарезка. Жирную красную рамку и кликбейт с этого кадра не снимать. В тело ту же картинку не ставить. Не Алёна. Не лого «ТАРО СЕЙЧАС». Не бот. Не лицо «по памяти». Живые пакеты не перерисовывать.

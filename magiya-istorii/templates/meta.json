@@ -17,7 +17,7 @@
   "fattest_query_not_in_h1": true,
   "h1_equals_title": true,
   "overlay_not_in_title": true,
-  "captions": ["caption-01.txt", "caption-02.txt", "caption-03.txt", "caption-04.txt", "caption-05.txt", "caption-06.txt"],
+  "captions": [],
   "chars": 0,
   "living_people": "none",
   "publish": "SKIP"

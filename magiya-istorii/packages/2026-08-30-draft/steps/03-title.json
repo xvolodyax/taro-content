@@ -1,0 +1,11 @@
+{
+  "role": "magiya-title",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gemini-3.7-flash-high",
+  "inline": false,
+  "artifacts": ["title-brief.md"],
+  "publish": "SKIP",
+  "h1": "Зачем втыкают иголку в дверной косяк",
+  "used_fattest": false
+}
