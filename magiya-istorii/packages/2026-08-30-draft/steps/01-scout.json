@@ -5,5 +5,9 @@
   "model": "inherit",
   "inline": false,
   "artifacts": ["scout.md"],
-  "publish": "SKIP"
+  "publish": "SKIP",
+  "wordstat": "OK",
+  "angle": "иголка в дверном косяке",
+  "fattest": "порча / 624864",
+  "live_signal": "dzen+site+week+wordstat"
 }
