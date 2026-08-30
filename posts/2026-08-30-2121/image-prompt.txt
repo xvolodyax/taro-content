@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: slate blue + smoked porcelain
+who: none
+thesis: Другая сторона «как ты?»
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Minimalist Sunday evening editorial still, slate blue and smoked porcelain palette, soft moody twilight sidelight, 50mm lens. A quiet smartphone resting on a matte ceramic surface. Hook «Другая сторона «как ты?»» strictly at optical center of the 1:1 frame, high contrast refined display serif typography, readable at thumbnail size. Native circular champagne-gold medallion with readable ТАРО / СЕЙЧАС placed off-center as a physical object. No face, no credit, no candles. No extra text, no URL, no watermark.
+
+why: хук в оптическом центре кадра 1:1, вечерний натюрморт с телефоном, читается в сетке ~200px
