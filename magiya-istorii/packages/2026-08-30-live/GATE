@@ -1,55 +1,21 @@
 === MAGIYA GATE ===
-package: magiya-istorii/packages/YYYY-MM-DD-slug
-verdict: FAIL
-return: Writer | Plot | Title | Scout | Clickbait | Director | none
-chars: 
-theme_magic: 
-tension: 
-names_city_date: 
-recipe: 
-sale: 
-he_didnt_write: 
-kind_in_mouth: 
-living_people: 
-h1_equals_title: 
-h1_excalibur: 
-overlay_not_in_title: 
-h1_not_fattest: 
-art_one_frame_16x9: 
-frame1_clickbait_only: 
-frame1_red_journal: 
+verdict: PASS
+return: none
+chars: 3181
+rewrote_sentences: no
+own_architecture: yes
+range_clone: none
+one_spine: yes
+magazine_not_anecdote: yes
+encyclopedia: no
+funnel: no
+cover_once: n/a
 inlines_2_6: none
-magazine_2020s: 
-no_cover_hero_dup: 
-not_six_frames: 
+kirill_clone: no
+dossier: no
+recipe: no
 cover_note: none
-cover_regen: no 
-steps_swarm: 
-publish: SKIP
+cover_regen: no
 incident_report: none
 
-# Чеклист
-
-- [ ] тема = магия
-- [ ] первый абзац сцена, нет слова «Сцена»
-- [ ] одна ночь / один человек / один обряд
-- [ ] имя + город + дата
-- [ ] напряжение до последней строки
-- [ ] своя архитектура этого сюжета (не клон кашалота / Эйнштейна / зубов)
-- [ ] один позвоночник как статья: ситуация → что происходит → куда ведёт → варианты решения
-- [ ] варианты решения — развилка в прозе, не рецепт / не инструкция / не воронка
-- [ ] не байка-клон домового, не энциклопедия, не каталог городов
-- [ ] не обязательные биты «утро / правило / кухня»
-- [ ] не досье, не набор фактов, не plot в рот
-- [ ] не рецепт
-- [ ] не продажа, нет бота ТАРО СЕЙЧАС
-- [ ] не «он не написал»
-- [ ] kind только в meta
-- [ ] title == h1, Эскалибур, не кликбейт
-- [ ] overlay_clickbait только на единственной обложке 16:9, не в title/URL
-- [ ] один кадр 16:9, глянец 2020-х; не холст, не шесть картинок
-- [ ] на этом кадре: overlay Clickbait + жирная красная рамка (не снимать)
-- [ ] обложка 16:9 не валит verdict прозы (только cover_note, regen=no)
-- [ ] обложку в теле не дублировать; inline-02…06 не делать
-- [ ] publish SKIP
-- [ ] posts/ не задеты
+Причина: свой позвоночник одного обряда до развилки; H1 совпадает с title и не равен overlay; история кончилась без вики и воронки; обложки ещё нет.
