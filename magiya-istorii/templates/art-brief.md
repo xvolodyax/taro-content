@@ -1,46 +1,29 @@
 ---
-grid: 2x3
+format: 16:9
+resolution: 1K
 pixels: skip
 face: pending-ref
 overlay_source: clickbait.txt
 ---
 
-# Art brief
+# Art brief (Обложка 16:9, 1K)
 
-**Холст:** одно полотно, 6 клеток, 2×3, белые швы. Не 9, не 12. Не карусель.
-**Сцена (замок, на всех 6 одно и то же):** место / эпоха / свет / реквизит / одежда / Mic Mini
-**Язык:** современный журнал / editorial / reportage cover, глянец 2020-х. Не шаблон нейросети, не открытка, не винтажный коллаж.
-**Лицо:** i2i `magiya-istorii/refs/Виктория.png`. Холл лицо не рисует.
-**Микрофон:** DJI Mic Mini Transmitter на каждом кадре (петличка, не телепушка).
-**Наряд (один на 1–6, не менять):** 
-**Куда срезы:** slice-01 обложка; slice-02…06 врезки в статью. В теле не дублировать 01. 
+**Формат:** одна горизонтальная обложка 16:9, 1K (~1920×1080). Не сетка 2×3, не 6 кадров.
+**Язык:** современный журнал / editorial / reportage cover, глянец 2020-х. Не шаблон нейросети, не открытка.
+**Персонаж:** Вика (i2i `magiya-istorii/refs/Виктория.png`).
+**Глаза:** строго зелёные с лёгким карим оттенком (hazel-green).
+**Волосы и лицо:** тёплый блонд с более тёмными корнями, мягкие нежные черты (без усреднения 12 лиц).
+**Микрофон:** DJI Mic Mini Transmitter в руке у рта (ведущая-расследователь).
+**Окантовка:** ЖИРНАЯ красная журнальная рамка по всему внешнему периметру 16:9.
+**Текст на обложке:** только ударный overlay из `clickbait.txt` (броский display-шрифт).
+**Сцена и свет:** берутся строго из сюжета истории (`story.md`).
 
-## Кадр 1 (обложка в ленте)
+## Промпт (ядро 16:9, 1K)
 
-- Картинка, не видео. Вика + Mic Mini.
-- Overlay дословно из `clickbait.txt` (не title/h1 статьи): 
-- Шрифт: журнальный, вшит в композицию, оптический центр. Не Comic/Impact/наклейка.
-- Красная окантовка: аккуратная журнальная, только этот кадр. Не WordArt.
-
-## Кадры 2–6
-
-Без заголовка. Без красной рамки. Тот же глянец, другие позы (сидит/стоит).
-
-| Срез | Бит | Поза / момент | Подпись (не на кадре 2–6) |
-| --- | --- | --- | --- |
-| slice-01 | завязка |  | `caption-01.txt` (≠ overlay) |
-| slice-02 | ставка |  | `caption-02.txt` |
-| slice-03 | ставка растёт |  | `caption-03.txt` |
-| slice-04 | поворот |  | `caption-04.txt` |
-| slice-05 | затяжка |  | `caption-05.txt` |
-| slice-06 | цена |  | `caption-06.txt` |
-
-Сменила одежду на одном кадре — одна строка в `canvas_note`, холст не пересобирать. Art не валит Writer.
-
-## Промпт (ядро)
-
-Одна сцена, одно полотно: одно лицо, одна одежда, одно место, один свет, один Mic Mini, 6 ракурсов (сидит/стоит). Современный журнал 2020-х. Кадр 1: журнальный overlay + аккуратная красная рамка. Кадры 2–6: без текста и без красной рамки. Срезы 2–6 — врезки в статью.
+```text
+A cinematic 16:9 horizontal photographic editorial magazine cover. A single woman on scene: distinct hazel-green eyes (green with a subtle warm brown tint), warm blonde hair with darker roots, soft gentle facial features referenced strictly from single identity anchor of reference sheet (no face morphing). She is a stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth as she speaks on scene. Panel features a BOLD THICK RED magazine cover border frame around the entire perimeter and high-impact DISPLAY typography overlay text. 1K resolution, cinematic lighting, editorial magazine aesthetic.
+```
 
 ## Стоп
 
-Не Алёна. Не лого «ТАРО СЕЙЧАС». Не бот. Не лицо «по памяти». Пиксели не обязательны. Публикации нет.
+Не 2×3, не 6 кадров. Не Алёна. Не лого «ТАРО СЕЙЧАС». Не бот. Не лицо «по памяти». Пиксели не обязательны. Публикации нет.

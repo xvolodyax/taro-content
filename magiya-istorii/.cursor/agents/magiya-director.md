@@ -23,7 +23,7 @@ is_background: false
 ```text
 Scout/Wordstat → Plot(заметки, можно игнор) → Title(только H1) → Writer(только тело) → Gate(только проверка)
 Clickbait (overlay кадра 1) — после Plot, не вместо Title, не в тело
-Art — после Clickbait: рисует готовую строку, прозу не пишет
+Art — после Clickbait: обложка 16:9 (1K) с готовой строкой clickbait.txt, прозу не пишет
 ```
 
 - Не вызывай `Task(magiya-director)`

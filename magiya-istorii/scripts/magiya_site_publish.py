@@ -49,8 +49,7 @@ def make_tar_bytes(package_dir: Path) -> bytes:
     - article.html
     - article.meta.json
     - description-brief.json
-    - cover/cover.png (slice-01)
-    - cover/inline-01.png..inline-05.png (slice-02..06)
+    - cover/cover.png (обложка 16:9)
     """
     story_path = package_dir / "story.md"
     meta_path = package_dir / "meta.json"
@@ -72,31 +71,9 @@ def make_tar_bytes(package_dir: Path) -> bytes:
     h1_title = meta.get("h1") or meta.get("title") or "Магия истории"
     slug = meta.get("slug") or "story"
 
-    # Строим html с врезками картинок
-    # 5 врезок: inline-01..inline-05 (соответствуют slice-02..06)
-    # Распределяем их по тексту статьи
     html_parts = [f"<h1>{h1_title}</h1>\n"]
-
-    total_p = len(paragraphs)
-    # Интервалы для 5 врезок
-    inline_positions = {}
-    if total_p >= 5:
-        step = max(1, total_p // 5)
-        for i in range(1, 6):
-            pos = min(total_p - 1, i * step)
-            inline_positions[pos] = f"inline-{i:02d}.png"
-    elif total_p > 1:
-        for i in range(1, min(6, total_p)):
-            inline_positions[i] = f"inline-{i:02d}.png"
-
-    for idx, p in enumerate(paragraphs):
+    for p in paragraphs:
         html_parts.append(f"<p>{p}</p>\n")
-        if idx in inline_positions:
-            img_name = inline_positions[idx]
-            caption_file = package_dir / f"caption-0{int(img_name.split('-')[1].split('.')[0]) + 1}.txt"
-            cap_text = caption_file.read_text(encoding="utf-8").strip() if caption_file.exists() else ""
-            cap_html = f"<figcaption>{cap_text}</figcaption>" if cap_text else ""
-            html_parts.append(f'<figure><img src="{img_name}" alt="{h1_title}" />{cap_html}</figure>\n')
 
     article_html = "".join(html_parts)
 
@@ -162,24 +139,17 @@ def make_tar_bytes(package_dir: Path) -> bytes:
             ti.size = len(content)
             tar.addfile(ti, io.BytesIO(content))
 
-        # Добавляем cover/cover.png (slice-01)
-        slice_01 = package_dir / "slice-01.png"
-        if not slice_01.exists():
-            slice_01 = package_dir / "canvas.png"
-        if slice_01.exists():
-            c_bytes = slice_01.read_bytes()
+        # Добавляем cover/cover.png (16:9)
+        cover_file = package_dir / "cover.png"
+        if not cover_file.exists():
+            cover_file = package_dir / "slice-01.png"
+        if not cover_file.exists():
+            cover_file = package_dir / "canvas.png"
+        if cover_file.exists():
+            c_bytes = cover_file.read_bytes()
             ti = tarfile.TarInfo(name="cover/cover.png")
             ti.size = len(c_bytes)
             tar.addfile(ti, io.BytesIO(c_bytes))
-
-        # Добавляем cover/inline-01.png..inline-05.png (slice-02..06)
-        for i in range(1, 6):
-            sl = package_dir / f"slice-{i+1:02d}.png"
-            if sl.exists():
-                sl_bytes = sl.read_bytes()
-                ti = tarfile.TarInfo(name=f"cover/inline-{i:02d}.png")
-                ti.size = len(sl_bytes)
-                tar.addfile(ti, io.BytesIO(sl_bytes))
 
     return buf.getvalue()
 

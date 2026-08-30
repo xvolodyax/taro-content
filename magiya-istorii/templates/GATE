@@ -23,8 +23,8 @@ magazine_2020s:
 one_scene_same_outfit: 
 no_cover_hero_dup: 
 not_carousel: 
-canvas_note: none
-canvas_regen: no 
+cover_note: none
+cover_regen: no 
 steps_swarm: 
 publish: SKIP
 incident_report: none
@@ -50,7 +50,7 @@ incident_report: none
 - [ ] холст 6, глянец 2020-х
 - [ ] кадр 1: overlay Clickbait + журнальная красная рамка
 - [ ] кадры 2–6 без заголовка и без красной рамки
-- [ ] холст не валит verdict прозы (только canvas_note, regen=no)
+- [ ] обложка 16:9 не валит verdict прозы (только cover_note, regen=no)
 - [ ] срезы в статью, не карусель; обложку в теле не дублировать
 - [ ] publish SKIP
 - [ ] posts/ не задеты

@@ -34,8 +34,8 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 | `clickbait.txt` | Clickbait | Overlay кадра 1, одна строка |
 | `meta.json` | Package Metadata | `title`/`h1` ≠ `overlay_clickbait` |
 | `GATE` | Gate | Только проверка. Предложения не переписывает |
-| `art-brief.md` | Art | Холст 2×3, кадр 1 только текст Clickbait |
-| `canvas.png`, `slice-01.png`…`slice-06.png` | Art | Холст и 6 срезов |
+| `art-brief.md` | Art | Текст промпта обложки 16:9 (1K) |
+| `cover.png` | Art | Готовая обложка 16:9 |
 | `package.meta.json` | Director | Статус публикации и пайплайна |
 | `steps/0N-ROLE.json` | Director | Шаги выполнения ролей |
 
@@ -43,23 +43,17 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 
 ```text
 package-upload.tgz
-├── article.html              # H1 + тело без дубля cover-hero, врезки slice-02..06
+├── article.html              # H1 + тело без дубля cover-hero
 ├── article.meta.json          # title, slug, kind, product
 ├── description-brief.json     # excerpt (не дубль лида)
 └── cover/
-    ├── cover.png              # slice-01.png (обложка с красной рамкой и overlay)
-    ├── inline-01.png          # slice-02.png
-    ├── inline-02.png          # slice-03.png
-    ├── inline-03.png          # slice-04.png
-    ├── inline-04.png          # slice-05.png
-    └── inline-05.png          # slice-06.png
+    └── cover.png              # cover.png (обложка 16:9 с красной рамкой и overlay)
 ```
 
 Правила верстки `article.html`:
 - H1 в начале статьи.
 - Лид идёт один раз в тексте, без дублирования `dek` / `excerpt` сразу под H1.
-- Обложка (`cover.png` = `slice-01.png`) отображается сайтом как hero один раз. Внутри `article.html` картинка `slice-01` **НЕ дублируется**.
-- В теле статьи размещаются только врезки `inline-01.png` … `inline-05.png` (`slice-02` … `slice-06`).
+- Обложка (`cover.png`) отображается сайтом как hero один раз. Внутри `article.html` картинка `cover.png` не дублируется.
 - Нет слов «Сцена», «Возьмём:», «Примерьте на свою» и карточек Plot.
 
 ## Swarm
@@ -96,7 +90,7 @@ chars: <n>
 kind: fiction | document
 h1: <Эскалибур>
 overlay: <кадр 1>
-art: art-brief.md (canvas 2x3)
+art: art-brief.md (cover 16:9)
 site_publish: OK (URL) | SKIP (reason) | FAIL (error)
 next: Hall
 incident_report: none

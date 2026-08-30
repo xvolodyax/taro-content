@@ -59,7 +59,7 @@ FAIL **overlay** → **Clickbait** (тело и H1 не трогать):
 - Нет «утра», нет «сломал правило», нет кухни, нет списка оставленных вещей
 - Writer проигнорировал `plot.md`
 - Длина меньше 8 тысяч, если история кончилась
-- Картинки → только `canvas_note`. Art не валит Writer
+- Картинка → только `cover_note`. Art не валит Writer
 
 ## Выход
 
@@ -82,7 +82,7 @@ inlines_2_6: yes | n/a
 kirill_clone: no | yes
 dossier: no | yes
 recipe: no | yes
-canvas_note: none
-canvas_regen: no
+cover_note: none
+cover_regen: no
 incident_report: none
 ```

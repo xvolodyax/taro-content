@@ -11,7 +11,8 @@ disable-model-invocation: true
 ```text
 Scout → Plot(заметки) → Title(H1) → Writer(тело) → Gate(проверка)
 Clickbait ∥ overlay кадра 1
-Art рисует готовую строку
+Обложка 16:9 (1K) рисует готовую строку.
+Вика: глаза строго зеленые с легким карим оттенком, микрофон в руке у рта, красная рамка по периметру.
 ```
 
 Тело — один Writer. H1 — Title. Overlay — Clickbait.
