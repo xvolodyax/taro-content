@@ -1,0 +1,25 @@
+{
+  "slot": "2121",
+  "written_by": "gemini",
+  "thesis": "Другая сторона экрана",
+  "candidates": [
+    "Другая сторона экрана",
+    "Как ты?",
+    "Чат который бросил"
+  ],
+  "chosen": "Другая сторона экрана",
+  "why_this_one": "Стоящее имя рубрики. Заявка не про прочитано и не про тишину, оверлеи не ставить. Три слова читаются в центре сетки.",
+  "highlight": "экрана",
+  "words": 3,
+  "case": "sentence",
+  "placement": "center",
+  "contrast": "high type-on-ground, readable at ~200px Instagram grid",
+  "font": "magazine display didone or refined grotesque; not Arial, Roboto, Inter, Impact, squish-bold, meme caps",
+  "medallion": "native",
+  "face": false,
+  "victoria_credit": false,
+  "resolution": "1K",
+  "aspect": "1:1",
+  "palette": "воскресный вечер, холодное стекло телефона, тёплый графит",
+  "scene": "светлый подоконник, чат с одной короткой строкой без лиц, хук в центре, медальон сбоку"
+}
