@@ -1,8 +1,10 @@
 {
-  "date": "2026-08-30",
-  "director_inline": false,
   "pipeline": "magiya-istorii",
-  "pixels": "skip",
+  "director_inline": false,
   "publish": "SKIP",
-  "slug": "zachem-delayut-otlivku-voskom-na-vodu"
+  "pixels": "generated",
+  "date": "2026-08-30",
+  "slug": "zachem-delayut-otlivku-voskom-na-vodu",
+  "format": "16:9",
+  "frames": 1
 }
