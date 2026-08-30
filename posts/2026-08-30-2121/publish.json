@@ -1,0 +1,22 @@
+{
+  "package": "/workspace/posts/2026-08-30-2121",
+  "date": "2026-08-30",
+  "slot": "2121",
+  "status": "SENT",
+  "reason": "слот наступил — слать сразу",
+  "live_url": "https://t.me/TodayTaro/4152",
+  "message_id": 4152,
+  "results": [
+    {
+      "dest": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "SENT",
+      "reason": "",
+      "message_id": 4152
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED"
+}
