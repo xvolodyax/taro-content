@@ -1,0 +1,20 @@
+{
+  "name": "taro-posts",
+  "displayName": "Посты ТАРО СЕЙЧАС",
+  "description": "Рой постов 12:12 / 15:15 / 21:21 / alena-0700. После GATE PASS Директор публикует через Composio. Холл не публикует.",
+  "version": "0.3.0",
+  "keywords": [
+    "taro",
+    "posts",
+    "swarm",
+    "telegram",
+    "instagram"
+  ],
+  "author": {
+    "name": "ТАРО СЕЙЧАС"
+  },
+  "rules": "../.cursor/rules/",
+  "skills": "../.cursor/skills/",
+  "agents": "../.cursor/agents/",
+  "commands": "../.cursor/commands/"
+}

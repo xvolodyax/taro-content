@@ -1,0 +1,25 @@
+{
+  "slot": "2121",
+  "written_by": "gemini",
+  "thesis": "Другая сторона «как ты?»",
+  "candidates": [
+    "Другая сторона «как ты?»",
+    "Что стоит за его «как ты?»",
+    "Зачем он пишет после тишины"
+  ],
+  "chosen": "Другая сторона «как ты?»",
+  "why_this_one": "Точно называет инверсию вечерней рубрики для дневной заявки. Четыре слова контрастно читаются в центре сетки 1:1 (~200px).",
+  "highlight": "«как ты?»",
+  "words": 4,
+  "case": "sentence",
+  "placement": "center",
+  "contrast": "high type-on-ground, readable at ~200px Instagram grid",
+  "font": "magazine display didone",
+  "medallion": "native",
+  "face": false,
+  "victoria_credit": false,
+  "resolution": "1K",
+  "aspect": "1:1",
+  "palette": "глубокий индиго + дымчатый фарфор",
+  "scene": "вечерний натюрморт, телефон на матовой керамике, хук в оптическом центре"
+}
