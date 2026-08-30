@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: cold porcelain sink + daylight milk
+who: none
+thesis: Чат на вчерашней ссоре
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Editorial still life in soft morning daylight with cold porcelain sink and daylight milk palette. A modern smartphone lies face up beside a clear glass of water. Hook "Чат на вчерашней ссоре" centered strictly at optical center of the 1:1 frame, high contrast dark serif typography against soft neutral ground, readable at Instagram grid thumbnail. Magazine display didone letters living in natural light, not a bottom bar, not a corner plaque. Native circular champagne-gold medallion with ТАРО / СЕЙЧАС off-center as a physical object. No human face, no Victoria credit, no dark wood table, no candles. No extra text besides the hook, no website, no URL, no watermark.
+
+why: хук в оптическом центре 1:1, холодная раковина и молоко в кадре, читается в сетке превью
