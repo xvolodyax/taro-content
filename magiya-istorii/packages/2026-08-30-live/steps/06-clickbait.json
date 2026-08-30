@@ -1,0 +1,12 @@
+{
+  "role": "magiya-clickbait",
+  "spawn": "Task",
+  "subagent_type": "magiya-clickbait",
+  "model": "gemini-3.7-flash-high",
+  "inline": false,
+  "artifacts": ["clickbait.txt", "meta.json"],
+  "publish": "SKIP",
+  "overlay": "Ирина льет воск в воду в Саратове — в миске застыли чужие пальцы",
+  "equals_h1": false,
+  "red_frame": true
+}

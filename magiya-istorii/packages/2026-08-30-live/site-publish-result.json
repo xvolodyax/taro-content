@@ -1,0 +1,11 @@
+{
+  "status": "OK",
+  "article_id": 35,
+  "live_url": "https://www.таросейчас.рф/blog/zachem-delayut-otlivku-voskom-na-vodu/",
+  "punycode_url": "https://www.xn--80aaoqxlidb0d.xn--p1ai/blog/zachem-delayut-otlivku-voskom-na-vodu/",
+  "http_live": 200,
+  "in_rss": true,
+  "cover_once": true,
+  "inlines": "none",
+  "note": "upload article 35; sitemap.xml EACCES на шаге publish; страница и RSS уже 200 index,follow. Retry approve/publish hit 409 quality — fiction article already public."
+}

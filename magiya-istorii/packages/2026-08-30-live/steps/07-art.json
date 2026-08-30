@@ -1,0 +1,19 @@
+{
+  "role": "magiya-art",
+  "spawn": "Task",
+  "subagent_type": "magiya-art",
+  "model": "gemini-3.7-flash-high",
+  "inline": false,
+  "artifacts": ["art-brief.md", "cover.png"],
+  "publish": "SKIP",
+  "format": "16:9",
+  "resolution": "1K",
+  "wh": [1920, 1080],
+  "generations": 1,
+  "regen": false,
+  "mic_in_hand": true,
+  "hazel_green_eyes": true,
+  "bold_red_border": true,
+  "face": "Виктория.png",
+  "overlay": "Ирина льет воск в воду в Саратове — в миске застыли чужие пальцы"
+}
