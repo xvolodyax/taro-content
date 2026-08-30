@@ -1,0 +1,9 @@
+{
+  "role": "magiya-gate",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["GATE"],
+  "publish": "SKIP"
+}

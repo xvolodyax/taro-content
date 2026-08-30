@@ -1,0 +1,9 @@
+{
+  "role": "magiya-art",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["art-brief.md"],
+  "publish": "SKIP"
+}

@@ -1,0 +1,13 @@
+{
+  "role": "magiya-scout",
+  "spawn": "Task",
+  "subagent_type": "magiya-scout",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["scout.md"],
+  "publish": "SKIP",
+  "wordstat": "OK",
+  "angle": "отливки воском фигуры",
+  "fattest": "проклятие / 901826",
+  "live_signal": "dzen+site+week+wordstat"
+}

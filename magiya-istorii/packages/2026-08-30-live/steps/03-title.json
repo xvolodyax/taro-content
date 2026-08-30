@@ -1,0 +1,13 @@
+{
+  "role": "magiya-title",
+  "spawn": "Task",
+  "subagent_type": "magiya-title",
+  "model": "gemini-3.7-flash-high",
+  "inline": false,
+  "artifacts": ["title-brief.md", "meta.json"],
+  "publish": "SKIP",
+  "h1": "Зачем делают отливку воском на воду",
+  "title_equals_h1": true,
+  "used_fattest": false,
+  "touched_body": false
+}
