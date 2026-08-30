@@ -1,0 +1,97 @@
+# Контракт пакета «Магия истории»
+
+Пакет = одна история. Папка:
+
+```text
+magiya-istorii/packages/YYYY-MM-DD-slug/
+```
+
+`slug` — из **title/H1** (Эскалибур), не из кликбейта, не жирнейшая фраза Вордстата.
+
+## Публикация на сайт (Эскалибур-пайплайн)
+
+После того как `GATE` = PASS и сформированы `slice-01.png`…`slice-06.png`, Director запускает скрипт публикации `scripts/magiya_site_publish.py`. `publish` больше не всегда SKIP.
+Холл руками ничего не upload, не approve и не publish — всё делает рой.
+
+- Секрет: `SITE_PUBLISH_TOKEN` (также проверяются `HALL_PUBLISH_TOKEN`, `PUBLISH_TOKEN`, `TARO_SITE_TOKEN`).
+- Токены **никогда не писать** в git, логи, чат или json-файлы.
+- Если токена в окружении нет — скрипт выставляет `GATE` = PASS и `publish: SKIP` с причиной `нет ключа`, пайплайн не падает.
+- Дзен Студию не открывать — сайт сам отдаёт RSS из `/blog/rss.xml`.
+- Никаких воронок ТАРО: нет бота, нет приложения, нет «3 бесплатных расклада», нет кодовых слов.
+
+## Файлы пакета
+
+| Файл | Кто | Зачем |
+| --- | --- | --- |
+| `scout.md` | Scout | Живой спрос, угол ≠ топ H1. Историю не пишет |
+| `plot.md` | Plot | Необязательные заметки. В статью не пишет. Биты не предписывает |
+| `title-brief.md` | Title | Только H1 == title. Тело не правит |
+| `story.md` | Writer | Только тело: проза + триггерный вопрос. Один проход |
+| `article.html` | Director / Publisher | Чистый HTML из `story.md` + H1 + врезки `slice-02`…`06` |
+| `article.meta.json` | Director / Publisher | Метаданные для загрузки на сайт |
+| `description-brief.json` | Director / Publisher | Описание/excerpt (не дубль первого абзаца) |
+| `caption-01.txt` … `caption-06.txt` | Writer | Тезисы/подписи к кадрам |
+| `clickbait.txt` | Clickbait | Overlay кадра 1, одна строка |
+| `meta.json` | Package Metadata | `title`/`h1` ≠ `overlay_clickbait` |
+| `GATE` | Gate | Только проверка. Предложения не переписывает |
+| `art-brief.md` | Art | Текст промпта обложки 16:9 (1K) |
+| `cover.png` | Art | Готовая обложка 16:9 |
+| `package.meta.json` | Director | Статус публикации и пайплайна |
+| `steps/0N-ROLE.json` | Director | Шаги выполнения ролей |
+
+## Структура архива tgz для публикации
+
+```text
+package-upload.tgz
+├── article.html              # H1 + тело без дубля cover-hero
+├── article.meta.json          # title, slug, kind, product
+├── description-brief.json     # excerpt (не дубль лида)
+└── cover/
+    └── cover.png              # cover.png (обложка 16:9 с красной рамкой и overlay)
+```
+
+Правила верстки `article.html`:
+- H1 в начале статьи.
+- Лид идёт один раз в тексте, без дублирования `dek` / `excerpt` сразу под H1.
+- Обложка (`cover.png`) отображается сайтом как hero один раз. Внутри `article.html` картинка `cover.png` не дублируется.
+- Нет слов «Сцена», «Возьмём:», «Примерьте на свою» и карточек Plot.
+
+## Swarm
+
+Директор **не** пишет scout / plot / title / story / clickbait / GATE / art-brief.
+Каждый шаг — отдельный `Task`. Cloud: `Task(generalPurpose)` + файл роли.
+Inline Директора = FAIL.
+Фиксера / копирайтера / второго прохода по телу **нет**.
+
+```text
+Scout → Plot(заметки) → Title(только H1) → Writer(только тело) → Gate(только проверка)
+Clickbait: после Plot (можно параллельно с Writer — разный текст)
+Art: после Clickbait; на кадр 1 кладёт ТОЛЬКО clickbait.txt; прозу не пишет
+Publisher: только если Холл явно сказал публиковать
+```
+
+FAIL тела → Writer. FAIL H1 → Title. FAIL overlay → Clickbait.
+Plot на тело не возвращать. Холст текст не валит. Не чинить самому.
+**Одна генерация холста.** Director не говорит «ещё раз нарисуй». Art не fail'ит Writer.
+Лицо Холл не рисует.
+
+## Чужое
+
+Не открывать и не трогать: слоты 12:12 / 15:15 / 21:21, Алёну, `posts/`, `PUBLISH.md`, Composio, Дзен-боль, Excalibur-плагин, Карусельку.
+Живые пакеты (домовой, соль) не переписывать без нового задания Холла.
+
+## Выход Директора Холлу
+
+```text
+=== MAGIYA DIRECTOR ===
+package: magiya-istorii/packages/YYYY-MM-DD-slug
+gate: PASS | FAIL
+chars: <n>
+kind: fiction | document
+h1: <Эскалибур>
+overlay: <кадр 1>
+art: art-brief.md (cover 16:9)
+site_publish: OK (URL) | SKIP (reason) | FAIL (error)
+next: Hall
+incident_report: none
+```

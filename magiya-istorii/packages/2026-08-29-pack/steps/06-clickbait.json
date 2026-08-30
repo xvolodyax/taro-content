@@ -1,0 +1,9 @@
+{
+  "role": "magiya-clickbait",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["clickbait.txt"],
+  "publish": "SKIP"
+}

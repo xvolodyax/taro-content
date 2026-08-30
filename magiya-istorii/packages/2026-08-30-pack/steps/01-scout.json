@@ -1,0 +1,12 @@
+{
+  "role": "magiya-scout",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["scout.md"],
+  "publish": "SKIP",
+  "wordstat": "OK",
+  "angle": "как вызвать домового",
+  "fattest": "магия / 1933462"
+}

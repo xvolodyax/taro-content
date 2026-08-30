@@ -1,0 +1,19 @@
+{
+  "role": "magiya-writer",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gemini-3.7-flash-high",
+  "inline": false,
+  "chars": 3156,
+  "artifacts": [
+    "story.md",
+    "meta.json",
+    "caption-01.txt",
+    "caption-02.txt",
+    "caption-03.txt",
+    "caption-04.txt",
+    "caption-05.txt",
+    "caption-06.txt"
+  ],
+  "publish": "SKIP"
+}

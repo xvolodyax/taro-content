@@ -1,0 +1,31 @@
+{
+  "product": "magiya-istorii",
+  "kind": "fiction",
+  "title": "Зачем сыплют соль в угол от скандалов",
+  "h1": "Зачем сыплют соль в угол от скандалов",
+  "overlay_clickbait": "Настя сыплет соль за шкаф в Омске — крик срезался, а ярость заперта в спальне",
+  "clickbait_red_frame": true,
+  "slug": "zachem-syplyut-sol-v-ugol-ot-skandalov",
+  "person": "Настя",
+  "city": "Омск",
+  "story_date": "2026-02",
+  "ritual": "соль в дальний угол за шкафом от скандалов",
+  "stake": "запереть крик в углу или остаться в запертой ярости",
+  "price": "ярость заперта в спальне рядом с человеком",
+  "wordstat_status": "OK",
+  "angle": "соль в угол от скандалов",
+  "fattest_query_not_in_h1": true,
+  "h1_equals_title": true,
+  "overlay_not_in_title": true,
+  "captions": [
+    "caption-01.txt",
+    "caption-02.txt",
+    "caption-03.txt",
+    "caption-04.txt",
+    "caption-05.txt",
+    "caption-06.txt"
+  ],
+  "chars": 3156,
+  "living_people": "none",
+  "publish": "PUBLISHED"
+}

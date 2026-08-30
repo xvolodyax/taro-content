@@ -1,0 +1,31 @@
+=== MAGIYA GATE ===
+package: magiya-istorii/packages/2026-08-29-pack
+verdict: PASS
+return: none
+chars: 3289
+hook_first_line: yes
+short_grafs: yes
+escalation: yes
+dossier: no
+recipe: no
+sale: no
+he_didnt_write: no
+h1_equals_title: yes
+overlay_not_in_title: yes
+theme_magic: yes
+canvas_note: none
+canvas_regen: no
+publish: SKIP
+incident_report: none
+
+# Чеклист
+
+- [x] крючок-парадокс в первой строке
+- [x] абзацы 1–3 предложения, воздух
+- [x] эскалация случаев (Рязань → Кимры → Тула → Калуга)
+- [x] не досье, не plot в рот
+- [x] тема = магия (соль на порог)
+- [x] не рецепт, не продажа, нет бота
+- [x] title == h1 Эскалибур
+- [x] overlay не в H1
+- [x] холст не валит текст

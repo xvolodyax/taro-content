@@ -1,0 +1,9 @@
+{
+  "role": "magiya-scout",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "artifacts": ["scout.md"],
+  "publish": "SKIP"
+}
