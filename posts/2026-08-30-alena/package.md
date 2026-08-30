@@ -10,4 +10,4 @@
 **Кстати:** разговоры
 **Обложка:** `/workspace/alena-covers/prognoz-na-den.png` (готова, не генерить)
 **GATE:** PASS
-**Публикация:** рой шлёт сам в 07:00 МСК через `@composia_bot` / telegram-composia (картинка + caption в одной подписи). Нативной отложки нет.
+**Публикация:** отправлено 2026-08-30 07:02 МСК в https://t.me/AlenaSafonova_queen/2761 (`@composia_bot` / telegram-composia). Картинка + caption в одной подписи. Не дубль: до отправки последний живой был 29.08, msg 2760.
