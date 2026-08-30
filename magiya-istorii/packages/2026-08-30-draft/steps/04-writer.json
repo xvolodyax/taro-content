@@ -5,5 +5,7 @@
   "model": "gemini-3.7-flash-high",
   "inline": false,
   "artifacts": ["story.md", "meta.json"],
-  "publish": "SKIP"
+  "publish": "SKIP",
+  "chars": 2985,
+  "h1_untouched": true
 }
