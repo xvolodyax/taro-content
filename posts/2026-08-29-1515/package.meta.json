@@ -1,0 +1,17 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.7-flash-high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "1515",
+  "date": "2026-08-29",
+  "kind": "poll+debrief",
+  "cards": [
+    "Семёрка жезлов",
+    "Паж жезлов",
+    "Семёрка пентаклей",
+    "Девятка кубков"
+  ]
+}

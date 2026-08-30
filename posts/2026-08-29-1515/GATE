@@ -1,0 +1,33 @@
+=== POSTS GATE ===
+slot: 2026-08-29-1515
+verdict: PASS
+return: none
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+written_by: gemini
+cards: Семёрка жезлов | Паж жезлов | Семёрка пентаклей | Девятка кубков
+limits: vk_poll=36/80, tg_poll=108/300, opt1=42/100, opt2=30/100, opt3=31/100, opt4=41/100, tg_len=931
+tg_len: 931
+incident_report: none
+
+# Причины
+резать нечего
+
+# Чеклист
+- [x] рой: researcher → meaning → copywriter → gate (spawn: Task, inline: false, cloud dispatch)
+- [x] Директор не писал inline
+- [x] written_by: gemini
+- [x] Главред снят (REMOVED)
+- [x] первая строка = сцена (Суббота клонится к вечеру, а под утренним сообщением всё так же стоит «прочитано».)
+- [x] нет слова «ловушка»
+- [x] бот ≠ приложение (в 15:15 ссылок нет)
+- [x] вопрос ВК (poll_question: 36 символов) ≤ 80
+- [x] TG header+вопрос (108 символов) ≤ 300
+- [x] варианты опроса (42, 30, 31, 41) ≤ 100
+- [x] poll.txt ровно 5 строк, идентичен posts/polls/2026-08-29-1515/poll.txt
+- [x] 4 разные случайные карты (Семёрка жезлов | Паж жезлов | Семёрка пентаклей | Девятка кубков), не набор 28.08
+- [x] нет картинки, нет ПРИНИМАЮ в эфире, нет ссылок на бота, нет кодового слова
+- [x] нет max/ig/yt/cover
+- [x] чужие пакеты (1212, alena, статьи) не тронуты
+- [x] publish SKIP
