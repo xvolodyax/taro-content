@@ -1,8 +1,10 @@
 {
   "pipeline": "magiya-istorii",
   "director_inline": false,
-  "publish": "SKIP",
-  "pixels": "skip",
+  "publish": "PUBLISHED",
+  "pixels": "generated",
   "date": "2026-08-30",
-  "slug": ""
+  "slug": "zachem-vtykayut-igolku-v-dvernoy-kosyak",
+  "format": "16:9",
+  "frames": 1
 }

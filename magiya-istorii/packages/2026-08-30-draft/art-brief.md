@@ -1,7 +1,7 @@
 ---
 format: 16:9
 resolution: 1K
-pixels: skip
+pixels: generated
 face: Виктория.png
 overlay_source: clickbait.txt
 ---

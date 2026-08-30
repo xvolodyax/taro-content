@@ -5,5 +5,8 @@
   "model": "inherit",
   "inline": false,
   "artifacts": ["GATE"],
-  "publish": "SKIP"
+  "publish": "SKIP",
+  "verdict": "PASS",
+  "chars": 2985,
+  "rewrote_sentences": false
 }
