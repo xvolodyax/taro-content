@@ -1,0 +1,24 @@
+{
+  "slot": "2121",
+  "thesis": "Заходит и молчит",
+  "candidates": [
+    "Заходит и молчит",
+    "Потом так и висит",
+    "Спросить не вышло"
+  ],
+  "chosen": "Заходит и молчит",
+  "why_this_one": "Смысл вечера: «потом» с понедельника, сторис без слов, спросить вслух не вышло. Три коротких слова держатся в центре сетки (~200px). Удар — «молчит». Не капс-H1 и не первая строка TG.",
+  "highlight": "молчит",
+  "words": 3,
+  "case": "sentence",
+  "placement": "center",
+  "contrast": "high type-on-ground, readable at ~200px Instagram grid",
+  "font": "magazine display didone or refined grotesque; not Arial, Roboto, Inter, Impact, squish-bold, meme caps",
+  "medallion": "native",
+  "face": false,
+  "victoria_credit": false,
+  "resolution": "1K",
+  "aspect": "1:1",
+  "palette": "вечернее окно + тёплый графит",
+  "scene": "светлый подоконник, телефон экраном вниз, хук в оптическом центре, медальон как предмет сбоку"
+}

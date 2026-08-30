@@ -1,0 +1,13 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.7-flash-high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "2121",
+  "date": "2026-08-30",
+  "rubric": "Другая сторона экрана",
+  "hall_publishes": false,
+  "hall_writes": false
+}
