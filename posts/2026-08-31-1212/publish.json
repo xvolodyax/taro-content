@@ -1,0 +1,41 @@
+{
+  "package": "posts/2026-08-31-1212",
+  "date": "2026-08-31",
+  "slot": "1212",
+  "status": "PARTIAL",
+  "reason": "TG+IG RU live; Max SKIP: нет MAX_BOT_TOKEN/MAX_CHAT_ID в env",
+  "results": [
+    {
+      "dest": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "SENT",
+      "url": "https://t.me/TodayTaro/4154",
+      "message_id": 4154,
+      "chat": "@TodayTaro"
+    },
+    {
+      "dest": "instagram-ru",
+      "alias": "instagram-ru",
+      "tool": "INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
+      "status": "SENT",
+      "url": "https://www.instagram.com/p/DcsytNnmwuv/",
+      "media_id": "18030241403665914",
+      "username": "todaytaro_ru"
+    },
+    {
+      "dest": "max",
+      "alias": "",
+      "tool": "MAX_SEND",
+      "status": "SKIP",
+      "reason": "нет MAX_BOT_TOKEN и MAX_CHAT_ID в CLOUD_AGENT secrets; Composio Max toolkit нет; web.max.ru без сессии"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "instagram_en": "UNTOUCHED",
+  "cover_url": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000e73481f5aa4f3cca4794f9b2.png",
+  "chosen": "Палец замер над трубкой",
+  "gate": "PASS"
+}
