@@ -5,5 +5,5 @@ GATE PASS. Рубрика «Другая сторона экрана». Текс
 «Палец над его номером прямо сейчас».
 Карты: Императрица | Шестёрка жезлов | Восьмёрка пентаклей.
 
-Эфир Telegram: 21:21 МСК (18:21 UTC) 31.08.2026, alias `telegram-composia`, фото+подпись.
-Раньше слота не слать. Instagram / Макс / ВК / YouTube не трогать.
+Эфир Telegram SENT: https://t.me/TodayTaro/4159
+alias `telegram-composia`, фото+подпись. Instagram / Макс / ВК / YouTube не трогали.
