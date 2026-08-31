@@ -1,21 +1,25 @@
 {
-  "slot": "1212 | 2121",
+  "slot": "1212",
   "written_by": "gemini",
-  "thesis": "",
-  "candidates": ["", "", ""],
-  "chosen": "",
-  "why_this_one": "",
-  "highlight": "",
-  "words": 0,
+  "thesis": "В середине дня всё упирается не в его мысли, а в твой физический выбор прямо сейчас: нажать вызов, переждать обед или стереть набранный номер.",
+  "candidates": [
+    "Палец замер над трубкой",
+    "Нажать вызов или закрыть",
+    "Секунда до кнопки вызова"
+  ],
+  "chosen": "Палец замер над трубкой",
+  "why_this_one": "Смысл слота: физический выбор в середине рабочего дня — нажать вызов или убрать телефон. Хук из четырёх слов фиксирует зависший палец над экраном строго в оптическом центре превью 1:1 (~200px). Не капс-H1, не запрос Вордстата и не первая строка TG.",
+  "highlight": "над трубкой",
+  "words": 4,
   "case": "sentence",
   "placement": "center",
   "contrast": "high type-on-ground, readable at ~200px Instagram grid",
-  "font": "magazine display serif/didone or refined grotesque; not Arial, Roboto, Inter, Impact, squish-bold, meme caps",
+  "font": "magazine display didone or refined grotesque; not Arial, Roboto, Inter, Impact, squish-bold, meme caps",
   "medallion": "native",
   "face": false,
   "victoria_credit": false,
   "resolution": "1K",
   "aspect": "1:1",
-  "palette": "",
-  "scene": ""
+  "palette": "офисное стекло + бумажный стакан",
+  "scene": "офисная кухня, стекло и бумажный стакан с кофе, смартфон на столе с экраном вызова, хук в оптическом центре, медальон как предмет сбоку"
 }

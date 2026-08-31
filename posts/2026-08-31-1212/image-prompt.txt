@@ -3,13 +3,13 @@ mode: i2i
 model: gpt-image-2-image-to-image
 ref: images/refs/taro-seichas-logo.png
 resolution: 1K
-palette: 
+palette: офисное стекло + бумажный стакан
 who: none
-thesis: 
+thesis: В середине дня всё упирается не в его мысли, а в твой физический выбор прямо сейчас: нажать вызов, переждать обед или стереть набранный номер.
 placement: center
 overlay: centered hook + gold medallion only
 signature: none
 
-prompt: <English, 40–80 words: scene, light, palette, lens, editorial still. Hook in quotes ONCE, strictly at optical center of the 1:1 frame, high contrast letter vs background, readable at Instagram grid thumbnail. Magazine display serif/didone or refined grotesque, not Arial/Roboto/Inter/Impact/squish-bold, letters live in the light not a sticker, not a bottom bar, not a corner plaque. Native circular champagne-gold medallion with readable ТАРО / СЕЙЧАС off-center as an object. No face, no Victoria credit, no dark wood table, no candles. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.>
+prompt: Bright midday 1:1 editorial still life in a modern office kitchen setting, not a dark candle tarot table. Frosted office glass reflecting soft daylight, a warm kraft paper coffee cup, and a sleek smartphone lying face up with a muted call screen. One face-down tarot card as a clean tactile accent. A circular champagne-gold Art Deco medallion sits off-center as a real physical object: keep the circle and the exact readable letters ТАРО / СЕЙЧАС. At the optical center of the square, large high-contrast magazine display type, didone or refined grotesque, not Arial, not Roboto, not Inter, not Impact, not squish-bold: «Палец замер над трубкой». Letters live in the light, not a sticker, not a bottom bar, not a corner plaque. Readable at Instagram grid thumbnail. Frosted glass reflections, warm kraft, brushed aluminum, champagne gold. 50mm, shallow depth of field, glossy editorial still. No human face, no Victoria signature, no candles, no dark wood table. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.
 
-why: <одна строка по-русски: хук, почему в центре, что в кадре>
+why: хук «Палец замер над трубкой» строго по центру: превью сетки передаёт паузу перед звонком в обеденный перерыв. Медальон сбоку как предмет, не перекрывает буквы.
