@@ -10,12 +10,12 @@
   "rubric": "Другая сторона экрана",
   "hall_publishes": false,
   "hall_writes": false,
-  "evening_air": "HOLD this launch",
+  "evening_air": "21:21 MSK this launch — telegram-composia only",
   "destinations": {
-    "telegram": "NOT this launch — slot later",
+    "telegram": "21:21 MSK TELEGRAM_SEND_PHOTO @TodayTaro",
     "instagram": false,
     "max": false,
-    "vk": "UNTouched this launch",
-    "youtube_community": "UNTouched this launch"
+    "vk": "UNTOUCHED",
+    "youtube_community": "UNTOUCHED"
   }
 }
