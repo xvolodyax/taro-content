@@ -1,0 +1,21 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.7-flash-high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "2121",
+  "date": "2026-08-31",
+  "rubric": "Другая сторона экрана",
+  "hall_publishes": false,
+  "hall_writes": false,
+  "evening_air": "HOLD this launch",
+  "destinations": {
+    "telegram": "NOT this launch — slot later",
+    "instagram": false,
+    "max": false,
+    "vk": "UNTouched this launch",
+    "youtube_community": "UNTouched this launch"
+  }
+}

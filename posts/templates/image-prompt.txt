@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: 
+who: none
+thesis: 
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: <English, 40–80 words: scene, light, palette, lens, editorial still. Hook in quotes ONCE, strictly at optical center of the 1:1 frame, high contrast letter vs background, readable at Instagram grid thumbnail. Magazine display serif/didone or refined grotesque, not Arial/Roboto/Inter/Impact/squish-bold, letters live in the light not a sticker, not a bottom bar, not a corner plaque. Native circular champagne-gold medallion with readable ТАРО / СЕЙЧАС off-center as an object. No face, no Victoria credit, no dark wood table, no candles. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.>
+
+why: <одна строка по-русски: хук, почему в центре, что в кадре>
