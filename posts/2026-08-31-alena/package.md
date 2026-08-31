@@ -10,4 +10,4 @@
 **Кстати:** покупки
 **Обложка:** `/workspace/alena-covers/prognoz-na-den.png` (готова, не генерить)
 **GATE:** PASS
-**Публикация:** ждёт ровно 07:00 МСК (`@composia_bot` / telegram-composia). Картинка + caption в одной подписи. Не раньше.
+**Публикация:** отправлено 2026-08-31 07:09 МСК в https://t.me/AlenaSafonova_queen/2762 (`@composia_bot` / telegram-composia). Картинка + caption в одной подписи. Не дубль: до отправки верх канала был 30.08.
