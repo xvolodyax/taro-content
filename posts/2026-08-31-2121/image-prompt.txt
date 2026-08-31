@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: deep twilight graphite, cool indigo blue, neon glow of smartphone screen
+who: none
+thesis: Инверсия прямого вызова: что происходит на той стороне трубки, когда палец замер над номером
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Cinematic editorial still life in deep twilight graphite and cool indigo tones. A sleek smartphone rests on a dark textured graphite surface, emitting a subtle neon screen glow. In the exact optical center of the 1:1 square frame, the hook "Другая сторона экрана" is typeset in high-contrast magazine display serif typography, readable at thumbnail size. A physical circular champagne-gold medallion embossed with ТАРО / СЕЙЧАС sits off-center as an object. No face, no Victoria credit, no dark wood, no candles. No extra text, no URL, no watermark.
+
+why: Хук «Другая сторона экрана» строго по центру для превью сетки; сумеречный графит и индиго-свечение смартфона передают атмосферу паузы перед вызовом.
