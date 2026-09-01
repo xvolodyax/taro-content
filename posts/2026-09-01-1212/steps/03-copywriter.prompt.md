@@ -1,25 +1,25 @@
 Ты один шаг роя постов ТАРО СЕЙЧАС. Не Директор.
 
-Роль: posts-researcher
+Роль: posts-copywriter
 Пакет: posts/2026-09-01-1212
 Runtime: cloud
 Спавн: Task(generalPurpose) — этот промпт целиком
-Модель шага: inherit
-written_by: inherit
+Модель шага: gemini-3.7-flash-high
+written_by: gemini
 publish: SKIP
 Главред: REMOVED. Не писать «можно публиковать».
 
 Прочитай целиком и следуй:
-- .cursor/agents/posts-researcher.md
-- .cursor/skills/posts-researcher/SKILL.md
+- .cursor/agents/posts-copywriter.md
+- .cursor/skills/posts-copywriter/SKILL.md
 - POSTS.md
 - shared/posts-soul.md
 - shared/posts-funnel.md
 - shared/posts-step-contract.md
 - shared/posts-model-policy.json
 
-Уже готово: смотри файлы пакета
-Артефакты этого шага: brief.md
+Уже готово: brief.md + meaning.md готовы; слот 12:12; написать tg.html vk.html max.txt ig.txt yt.txt; слово Сцена запрещено
+Артефакты этого шага: tg.html, vk.html, debrief.md
 
 Запрещено:
 - писать соседние роли (тема + тезис + пост + хук в одних руках)
