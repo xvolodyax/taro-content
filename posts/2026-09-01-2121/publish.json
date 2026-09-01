@@ -2,9 +2,21 @@
   "package": "/workspace/posts/2026-09-01-2121",
   "date": "2026-09-01",
   "slot": "2121",
-  "status": "WAIT",
-  "reason": "слот 21:21 МСК ещё не наступил; env COMPOSIO_API_KEY без tool_execution — эфир через MCP telegram-composia в слот",
-  "wait_until": "2026-09-01T21:21:00+03:00",
+  "status": "SENT",
+  "reason": "слот наступил — фото+подпись через Composio MCP alias telegram-composia",
+  "live_url": "https://t.me/TodayTaro/4164",
+  "message_id": 4164,
+  "sent_at_utc": "2026-09-01T18:23:57Z",
+  "results": [
+    {
+      "dest": "telegram-photo",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "SENT",
+      "reason": "",
+      "message_id": 4164
+    }
+  ],
   "hall_publishes": false,
   "vk": "UNTOUCHED",
   "youtube": "UNTOUCHED",
