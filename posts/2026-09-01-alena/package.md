@@ -10,4 +10,4 @@
 **Кстати:** еда
 **Обложка:** `/workspace/alena-covers/prognoz-na-den.png` (готова, не генерить)
 **GATE:** PASS
-**Публикация:** ждёт ровно 07:00 МСК; шлёт рой через `@composia_bot` / telegram-composia. Не раньше.
+**Публикация:** отправлено 2026-09-01 07:04 МСК в https://t.me/AlenaSafonova_queen/2764 (`@composia_bot` / telegram-composia). Картинка + caption в одной подписи. Не дубль: до отправки верх канала был личный 2763, слот 31.08 — 2762.
