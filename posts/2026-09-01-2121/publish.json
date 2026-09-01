@@ -1,0 +1,13 @@
+{
+  "package": "/workspace/posts/2026-09-01-2121",
+  "date": "2026-09-01",
+  "slot": "2121",
+  "status": "WAIT",
+  "reason": "слот 21:21 МСК ещё не наступил; env COMPOSIO_API_KEY без tool_execution — эфир через MCP telegram-composia в слот",
+  "wait_until": "2026-09-01T21:21:00+03:00",
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "instagram": "UNTOUCHED",
+  "max": "UNTOUCHED"
+}
