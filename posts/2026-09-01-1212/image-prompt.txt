@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: синяя пластиковая Тройка, матовая сталь турникета, жёлтый квадрат валидатора
+who: none
+thesis: Внезапный зов встретиться ставит тебя перед выбором чужого расписания: сорваться по первому сигналу означает подтвердить полную доступность, а отказаться прямо сейчас страшно из-за риска всё сломать.
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Midday 1:1 editorial still life in a metro entrance lobby. Brushed matte stainless steel turnstile, illuminated yellow validator square, vibrant blue transit card held by fingertips, and a smartphone screen in soft focus. A circular champagne-gold Art Deco medallion sits off-center as a real physical object: keep the circle and exact readable letters ТАРО / СЕЙЧАС. At the optical center of the square, large high-contrast magazine display type, didone or refined grotesque, not Arial, not Roboto, not Inter, not Impact, not squish-bold: «Замерла перед валидатором». Letters live in the light, not a sticker, not a bottom bar, not a corner plaque. Readable at Instagram grid thumbnail. Blue plastic, matte steel, amber yellow, champagne gold. 50mm, shallow depth of field, glossy editorial still. No human face, no Victoria signature, no candles, no dark wood table. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.
+
+why: хук «Замерла перед валидатором» строго по центру: превью сетки передаёт паузу перед турникетом и выбор ехать или нет. Медальон сбоку как предмет, не перекрывает буквы.
