@@ -1,0 +1,26 @@
+{
+  "package": "/workspace/posts/2026-09-01-1515",
+  "date": "2026-09-01",
+  "slot": "1515",
+  "status": "SENT",
+  "reason": "слот наступил — скрипт env-ключа дал 403, опрос ушёл через Composio MCP alias telegram-composia",
+  "live_url": "https://t.me/TodayTaro/4163",
+  "message_id": 4163,
+  "sent_at_utc": "2026-09-01T12:20:25Z",
+  "results": [
+    {
+      "dest": "telegram-poll",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_POLL",
+      "status": "SENT",
+      "reason": "",
+      "message_id": 4163,
+      "poll_id": "5240233449742145267"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "instagram": "UNTOUCHED",
+  "max": "UNTOUCHED"
+}

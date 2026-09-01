@@ -1,0 +1,22 @@
+# READY — 15:15 2026-09-01
+
+GATE PASS. Опрос залочен, не переписывать.
+Вечер: отдельный пакет `posts/2026-09-01-2121/`.
+
+**Опрос.** Слот 15:15 МСК (12:15 UTC). Без отложки. Рой шлёт только `TELEGRAM_SEND_POLL` в `@TodayTaro` (alias `telegram-composia`).
+
+```text
+Он написал «я на месте». Где ты в эту секунду?
+Уже еду, прикладываю карту к турникету
+Он на точке, а я еще дома у зеркала
+Приехала первой, стою одна и ищу его глазами
+Никуда не поехала, так и осталась дома
+```
+
+```text
+python3 scripts/posts_publish.py --package posts/2026-09-01-1515 --wait
+```
+
+Эфир Telegram SENT: https://t.me/TodayTaro/4163
+alias `telegram-composia`, только `TELEGRAM_SEND_POLL`.
+Instagram / Макс / ВК / YouTube не трогали.

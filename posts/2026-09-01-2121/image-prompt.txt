@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: warm amber streetlight glow, dark wet asphalt, polished brass accents
+who: none
+thesis: Инверсия встречи на точке: что стоит за его сообщением «я на месте» и чужим таймингом
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Cinematic editorial still life in warm amber and deep rain-washed asphalt tones. A moody night city meeting point with dark glistening wet pavement reflecting warm amber lantern light and subtle polished brass accents. In the exact optical center of the 1:1 square frame, the hook "Другая сторона экрана" is typeset in high-contrast magazine display serif typography, readable at thumbnail size. A physical circular champagne-gold medallion embossed with ТАРО / СЕЙЧАС sits off-center as an object. No face, no Victoria credit, no dark wood table, no candles. No extra text, no website, no URL, no watermark, no logo except the referenced medallion.
+
+why: Хук «Другая сторона экрана» строго в оптическом центре для читаемости в превью сетки; тёплый янтарь фонаря, влажный асфальт и латунь турникета передают ночную атмосферу точки встречи.
