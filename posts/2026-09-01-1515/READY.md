@@ -17,5 +17,6 @@ GATE PASS. Опрос залочен, не переписывать.
 python3 scripts/posts_publish.py --package posts/2026-09-01-1515 --wait
 ```
 
-До слота WAIT. Instagram и Макс не трогать.
-ВК и YouTube community не трогать.
+Эфир Telegram SENT: https://t.me/TodayTaro/4163
+alias `telegram-composia`, только `TELEGRAM_SEND_POLL`.
+Instagram / Макс / ВК / YouTube не трогали.
