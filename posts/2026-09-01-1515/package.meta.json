@@ -8,7 +8,7 @@
   "slot": "1515",
   "date": "2026-09-01",
   "evening": "OPEN",
-  "poll_locked": false,
+  "poll_locked": true,
   "hall_publishes": false,
   "hall_writes": false,
   "destinations": {

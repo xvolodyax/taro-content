@@ -18,7 +18,7 @@ publish: SKIP
 - shared/posts-step-contract.md
 - shared/posts-model-policy.json
 
-Уже готово: один writer + cover после заморозки tg.html. прогони python3 scripts/posts_gate.py --package posts/2026-09-01-2121 --require-swarm --write. предложения не переписывать. 21:21: TG≤1024, нет Сцена, нет примерить, пульс Похоже? ❤️/ Не то ⚡, позиция 3 = она.
+Уже готово: смотри файлы пакета
 Артефакты этого шага: GATE
 
 Запрещено:
