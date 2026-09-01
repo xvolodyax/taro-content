@@ -18,7 +18,7 @@ publish: SKIP
 - shared/posts-step-contract.md
 - shared/posts-model-policy.json
 
-Уже готово: смотри файлы пакета
+Уже готово: тексты+хук+cover.png готовы; только проверка
 Артефакты этого шага: GATE
 
 Запрещено:
