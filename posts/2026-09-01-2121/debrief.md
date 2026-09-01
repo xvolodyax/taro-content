@@ -1,3 +1,5 @@
+written_by: gemini
+
 # Debrief: Другая сторона экрана
 
 ---
