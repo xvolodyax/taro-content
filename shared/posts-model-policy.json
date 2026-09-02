@@ -1,0 +1,79 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "text_model": "gemini-3.7-flash-high",
+  "text_model_id": "gemini-3.7-flash",
+  "text_model_display": "Gemini 3.7 Flash",
+  "written_by": "gemini",
+  "publish": "SKIP",
+  "publish_after_pass": "composio",
+  "hall_publishes": false,
+  "composio_aliases": ["telegram-composia", "instagram-ru", "instagram-en"],
+  "glavred": "REMOVED",
+  "inherit_means": "Модель родителя = модель окна Холла. Текстовые шаги всё равно Gemini. Не подменять.",
+  "roles": [
+    "posts-director",
+    "posts-researcher",
+    "posts-meaning",
+    "posts-copywriter",
+    "posts-cover-text",
+    "posts-gate"
+  ],
+  "text_agents": [
+    "posts-meaning",
+    "posts-copywriter",
+    "posts-cover-text",
+    "posts-gate"
+  ],
+  "inherit_agents": [
+    "posts-director",
+    "posts-researcher"
+  ],
+  "orchestrators": [
+    "posts-director"
+  ],
+  "never_as_task": [
+    "posts-director"
+  ],
+  "aliases": {
+    "posts-scout": "posts-researcher",
+    "posts-writer": "posts-meaning",
+    "posts-sol": "posts-copywriter"
+  },
+  "cloud_spawn": {
+    "subagent_type": "generalPurpose",
+    "require_dispatch_prompt": true,
+    "one_task_per_step": true
+  },
+  "plugin_spawn": {
+    "subagent_type_prefix": "posts-",
+    "one_task_per_step": true
+  },
+  "forbidden_writers": [
+    "opus",
+    "sonnet",
+    "composer",
+    "claude-opus",
+    "claude-sonnet",
+    "cursor-composer"
+  ],
+  "human_text_files": [
+    "meaning.md",
+    "tg.html",
+    "vk.html",
+    "max.txt",
+    "ig.txt",
+    "yt.txt",
+    "debrief.md",
+    "cover-text.json"
+  ],
+  "parallel_pairs": [],
+  "forbidden_task_fields": {
+    "environment": ["cloud"],
+    "run_in_background": [true],
+    "isolated": true
+  },
+  "forbidden_subagent_types": [
+    "best-of-n-runner",
+    "posts-director"
+  ]
+}
