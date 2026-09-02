@@ -1,0 +1,11 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.7-flash-high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "1212",
+  "date": "2026-09-02",
+  "image_url": "https://tempfile.aiquickdraw.com/images/chatgpt/42181e5d3abf5549210f9d18d4bef136_d784c2e199074c918422cc2012fe46f2.png"
+}
