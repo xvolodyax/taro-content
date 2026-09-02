@@ -5,17 +5,17 @@
   "publish": "SKIP",
   "glavred": "REMOVED",
   "director_inline": false,
-  "slot": "1515",
+  "slot": "2121",
   "date": "2026-09-02",
   "evening": "OPEN",
-  "poll_locked": true,
   "hall_publishes": false,
   "hall_writes": false,
   "destinations": {
-    "telegram": "TELEGRAM_SEND_POLL at 15:15 MSK — do not send before slot, no bot schedule",
+    "telegram": "photo+caption at 21:21 MSK — do not send before slot, no bot schedule",
     "instagram": false,
     "max": false,
     "vk": "UNTouched this launch",
     "youtube_community": "UNTouched this launch"
-  }
+  },
+  "image_url": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000c4f881f5afa3f1591cfdece0.png"
 }
