@@ -4,11 +4,11 @@ verdict: PASS
 return: none
 water: нет
 funnel: рефки байт-в-байт, столбик
-limits: caption.txt 1224 / 1700
+limits: caption.txt 972 / 1700 (≤ 1024)
 voice: письмо, без заголовков блоков
 kstati: деньги (не еда, не покупки, не разговоры, не дом, не сон, не стрижка)
 cover: skip
-tg_len: 1224
+tg_len: 972
 incident_report: none
 
 # Чеклист
