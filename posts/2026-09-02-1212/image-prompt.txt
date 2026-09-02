@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: бордовый футляр, ржавая волна, тёплый свет подоконника
+who: none
+thesis: Голосовое сообщение требует прямого включения в чужую интонацию и сразу ломает дистанцию. Пока запись не включена, контроль над скоростью разговора остается у нее.
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Editorial still life on a wooden windowsill with warm side lighting. An open burgundy earphone case rests beside a black smartphone displaying a rusty-orange audio waveform. Centered in crisp ivory magazine display serif typography is "Держишь палец над кнопкой", perfectly legible at small grid size. Circular champagne-gold medallion with ТАРО / СЕЙЧАС sits off-center. No face, no Victoria credit, no extra text.
+
+why: «Держишь палец над кнопкой» в центре квадрата для читаемости в превью, в кадре открытый бордовый футляр и телефон с волной голосового на подоконнике.

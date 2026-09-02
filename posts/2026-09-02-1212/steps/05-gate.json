@@ -1,0 +1,14 @@
+{
+  "role": "posts-gate",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gemini-3.7-flash-high",
+  "inline": false,
+  "written_by": "gemini",
+  "dispatch_prompt": "steps/05-gate.prompt.md",
+  "artifacts": [
+    "GATE"
+  ],
+  "publish": "SKIP",
+  "runtime": "cloud"
+}
