@@ -1,0 +1,13 @@
+{
+  "taskId": "de5732992b8f08d7301e3c1a92cf38c8",
+  "model": "gpt-image-2-image-to-image",
+  "format": "1:1",
+  "generations": 1,
+  "create": {
+    "code": 200,
+    "msg": "success"
+  },
+  "code": 200,
+  "msg": "success",
+  "resultUrl": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000c4f881f5afa3f1591cfdece0.png"
+}
