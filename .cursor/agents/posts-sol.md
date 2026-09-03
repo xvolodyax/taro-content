@@ -1,7 +1,8 @@
 ---
 name: posts-sol
 description: "Alias posts-copywriter. Не отдельная роль. Director MUST Task(posts-copywriter) = Gemini."
-model: gemini-3.8-flash-high
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---

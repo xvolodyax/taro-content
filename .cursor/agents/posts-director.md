@@ -42,15 +42,19 @@ Cover только 12:12 и (после заморозки поста) 21:21. Н
 
 1. `python3 scripts/posts_dispatch_prompt.py --role ROLE --package DIR --runtime cloud`
 2. Сохранить `steps/NN-ROLE.prompt.md`
-3. Один `Task(generalPurpose)` с этим промптом. Текстовые шаги: `model: gemini-3.8-flash-high`.
+3. Один `Task(generalPurpose)` с этим промптом. Текстовые шаги: Cloud model `gemini-3.8-flash` + `reasoning_effort=high` (alias IDE Task: `gemini-3.8-flash-high`).
 4. `python3 scripts/posts_step_record.py --package DIR --role ROLE --runtime cloud --slot SLOT`
 
 Нельзя: писать артефакт самому, потом «записать шаг». Это inline.
 
+**Жёсткое правило (HARD 03.09):**
+Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Ни статьи magiya, ни посты 12:12/15:15/21:21, ни опросы, ни Алёна, ни рилсы-текст.
+Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет!
+
 Запрещено: `Task(posts-director)`, `environment: cloud`, `/in-cloud`, `/babysit`,
 `run_in_background: true`, параллель, второй Директор, `posts-cover-hook`.
 
-Текст (meaning / copywriter / cover-text / gate): `model: gemini-3.8-flash-high`.
+Текст (meaning / copywriter / cover-text / gate): Cloud id `gemini-3.8-flash` + `reasoning_effort=high` (alias IDE Task: `gemini-3.8-flash-high`).
 Researcher: `inherit`.
 `written_by: gemini` на человеческий текст. Opus / Sonnet / Composer = FAIL.
 Специалисты не ходят в Telegram / Composio. Ключ `COMPOSIO_API_KEY` в чат и git не писать.
@@ -80,7 +84,7 @@ Instagram и Макс нет.
 Meaning **не** запускать. Не конвейер. Не «обогащение».
 researcher? только если в brief ещё нет трёх вопросов из СЕГОДНЯШНЕГО опроса.
 Карты: `python3 scripts/draw_rw_cards.py --count 3 --ledger posts/LEDGER.md`.
-Потом **один** `Task(posts-copywriter)` / Cloud `Task(generalPurpose)` модель Gemini 3.8 Flash High.
+Потом **один** `Task(posts-copywriter)` / Cloud `Task(generalPurpose)` модель Gemini 3.8 Flash High (`gemini-3.8-flash` + `reasoning_effort: high`).
 Cover после заморозки `tg.html`, пост не правит.
 Gate только механика: длина, «Сцена», пустая вода про «примерить», пульс, позиция 3 = она.
 Предложения не гладить. Три позиции. Позиция 3 про неё. Пульс точно `Похоже? ❤️/ Не то ⚡`.

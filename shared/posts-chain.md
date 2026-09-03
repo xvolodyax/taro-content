@@ -45,6 +45,7 @@ python3 scripts/posts_dispatch_prompt.py --role posts-copywriter --package posts
 
 ## Модели
 
-- meaning / copywriter / cover-text / gate: `gemini-3.8-flash-high`
+- meaning / copywriter / cover-text / gate: Cloud id `gemini-3.8-flash` + `reasoning_effort=high` (alias IDE Task: `gemini-3.8-flash-high`)
 - researcher / director: `inherit`
+- Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Директор НИКОГДА не подменяет текст.
 - Если Task опускает `model`, runtime может взять модель окна. Текстовые шаги передавать явно.

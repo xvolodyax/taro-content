@@ -25,11 +25,14 @@ not_six_frames:
 cover_note: none
 cover_regen: no 
 steps_swarm: 
+gemini_model_available: 
+director_inline: 
 publish: SKIP
 incident_report: none
 
 # Чеклист
 
+- [ ] дефолтный Cloud Agent / Director НЕ подменял текст Gemini (если модель недоступна — FAIL, без своего черновика)
 - [ ] тема = магия
 - [ ] первый абзац сцена, нет слова «Сцена»
 - [ ] одна ночь / один человек / один обряд

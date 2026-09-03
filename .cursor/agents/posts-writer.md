@@ -1,7 +1,8 @@
 ---
 name: posts-writer
 description: "Alias posts-meaning. Не отдельная роль и не сцена. Director MUST Task(posts-meaning)."
-model: gemini-3.8-flash-high
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---

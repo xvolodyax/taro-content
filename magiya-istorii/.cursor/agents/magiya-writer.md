@@ -1,14 +1,18 @@
 ---
 name: magiya-writer
-description: "Writer «Магия истории»: один проход, только ТЕЛО статьи. Gemini 3.8 Flash High only."
-model: gemini-3.8-flash-high
+description: "Writer «Магия истории»: один проход, только ТЕЛО статьи. Gemini 3.8 Flash High."
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---
 
 ## Модель (HARD)
 
-Только **`gemini-3.8-flash-high`**. Никаких Grok, Composer, Claude.
+Только **Gemini 3.8 Flash High**:
+- **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort=high` (тело статьи пишется строго на этой модели!).
+- **Локальный Task (IDE):** slug `gemini-3.8-flash-high` зафиксирован только как alias для локальных вызовов.
+- **Дефолтный агент в эфир не пишет ничего:** ни H1, ни кликбейт, ни тело статьи. Если модель недоступна / Task не спавнится / slug неверный — только **FAIL** («модель недоступна»), Director сам текст не пишет! Никаких дефолтных моделей, Grok, Composer, Claude.
 
 ## Цепочка (HARD)
 

@@ -14,31 +14,39 @@
 
 Разные роли владеют **разным** текстом. Это нормально.
 
-| Текст | Кто пишет | Кто не трогает |
-| --- | --- | --- |
-| Тело статьи (`story.md`: проза + триггерный вопрос) | **Writer**, один проход, Gemini 3.8 Flash High | Plot, Title, Clickbait, Gate, Art, Director, любой фиксер / копирайтер / «обогатитель» |
-| H1 == title | **Title** | Writer, Clickbait, Gate, Plot, Art, Director |
-| Overlay кадра 1 | **Clickbait** | Title, Writer, Gate, Plot, Art (Art только рисует готовую строку) |
+| Текст | Кто пишет | Модель (Cloud / Local Task alias) | Правило дефолта | Кто не трогает |
+| --- | --- | --- | --- | --- |
+| Тело статьи (`story.md`: проза + триггерный вопрос) | **Writer**, один проход | `gemini-3.8-flash` + `reasoning_effort: high` (alias Task: `gemini-3.8-flash-high`) | Дефолт не пишет: FAIL if unavailable | Plot, Title, Clickbait, Gate, Art, Director, любой фиксер / копирайтер / «обогатитель» |
+| H1 == title | **Title** | `gemini-3.8-flash` + `reasoning_effort: high` (alias Task: `gemini-3.8-flash-high`) | Дефолт не пишет: FAIL if unavailable | Writer, Clickbait, Gate, Plot, Art, Director |
+| Overlay кадра 1 | **Clickbait** | `gemini-3.8-flash` + `reasoning_effort: high` (alias Task: `gemini-3.8-flash-high`) | Дефолт не пишет: FAIL if unavailable | Title, Writer, Gate, Plot, Art (Art только рисует готовую строку) |
 
 **Болезнь (убить):** Plot / Gate / Title / Clickbait / фиксер / копирайтер наваливаются на **тело**. Второй проход по прозе запрещён.
+Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Дефолт не пишет в эфир ничего: ни H1, ни кликбейт, ни тело статьи. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет!
 
 Ролей fixer / copywriter / enrichment / Главред по `story.md` **нет**. Не звать. Не выдумывать.
 
 ## Цепочка
 
-| # | Роль | Файл | Модель | Task? | Что сдаёт |
+| # | Роль | Файл | Модель (Cloud / Local) | Task? | Что сдаёт |
 | --- | --- | --- | --- | --- | --- |
 | 0 | Директор | `magiya-director.md` | `inherit` | **нет** | будит роли, не пишет |
 | 1 | Scout / Wordstat | `magiya-scout.md` | `inherit` | да | тема (Wordstat / Дзен / сайт). Историю не пишет |
 | 2 | Plot | `magiya-plot.md` | `inherit` | да | необязательные заметки. В статью не пишет. Биты не предписывает |
-| 3 | Title | `magiya-title.md` | `gemini-3.8-flash-high` | да | только H1. Тело не правит |
-| 4 | Writer | `magiya-writer.md` | `gemini-3.8-flash-high` | да | только тело. Один проход |
+| 3 | Title | `magiya-title.md` | `gemini-3.8-flash` + `reasoning_effort: high` (alias IDE Task: `gemini-3.8-flash-high`) | да | только H1. Тело не правит |
+| 4 | Writer | `magiya-writer.md` | `gemini-3.8-flash` + `reasoning_effort: high` (alias IDE Task: `gemini-3.8-flash-high`) | да | только тело. Один проход |
 | 5 | Gate | `magiya-gate.md` | `inherit` | да | только проверка. Предложения не переписывает |
-| 6 | Clickbait | `clickbait.md` | `gemini-3.8-flash-high` | да, после Plot | только overlay кадра 1 |
-| 7 | Art | `magiya-art.md` | `gemini-3.8-flash-high` | да, после Clickbait | пиксели / art-brief. Прозу не пишет |
+| 6 | Clickbait | `clickbait.md` | `gemini-3.8-flash` + `reasoning_effort: high` (alias IDE Task: `gemini-3.8-flash-high`) | да, после Plot | только overlay кадра 1 |
+| 7 | Art | `magiya-art.md` | `gemini-3.8-flash` + `reasoning_effort: high` (alias IDE Task: `gemini-3.8-flash-high`) | да, после Clickbait | пиксели / art-brief. Прозу не пишет |
 | 8 | Site Publish | `scripts/magiya_site_publish.py` | Python stdlib | скрипт Director | не в этом прогоне, если Холл сказал не публиковать |
 
-Все читаемые текстовые роли (Title, Writer, Clickbait, Art-brief) — строго `gemini-3.8-flash-high`.
+## Два слоя моделей текстовых ролей (HARD)
+
+Все читаемые текстовые роли и заголовки (Title / H1, Writer / тело, Clickbait / overlay, Art-brief) пишутся строго на **Gemini 3.8 Flash High**:
+1. **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort: high` (в Cloud Agents нет отдельного слага `gemini-3.8-flash-high`, связка `gemini-3.8-flash` + `reasoning_effort=high` и реализует Gemini 3.8 Flash High).
+2. **Локальный Task:** `gemini-3.8-flash-high` зафиксирован только как alias для локальных вызовов Task внутри IDE Cursor.
+
+**Жёсткое правило (HARD 03.09):**
+Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Дефолт не пишет в эфир ничего: ни H1, ни кликбейт, ни тело статьи. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет!
 
 Title ≠ Clickbait ≠ Writer.
 Clickbait не меняет `title` / `h1` / `story.md`.

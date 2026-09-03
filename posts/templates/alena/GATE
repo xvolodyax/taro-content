@@ -2,6 +2,8 @@
 slot: YYYY-MM-DD-alena
 verdict: FAIL
 return: Writer | Scout | none
+director_inline: ok | FAIL
+gemini_model_available: ok | FAIL (модель недоступна)
 water: 
 funnel: 
 limits: 
@@ -14,6 +16,7 @@ incident_report: none
 # Чеклист
 
 Прозу не переписывать. Sol не возвращать.
+Дефолтный Cloud Agent / Director текст не подменяет: если Gemini недоступна — FAIL, без своего черновика.
 
 - [ ] канал queen, не @TodayTaro
 - [ ] первая строка = привет и дата

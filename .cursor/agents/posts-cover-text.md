@@ -1,7 +1,8 @@
 ---
 name: posts-cover-text
 description: "Cover 12:12 и 21:21: 3 хука, один выбран, центр 1:1 для IG preview. 15:15 нет. Не Kie. Director MUST Task. Gemini."
-model: gemini-3.8-flash-high
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---

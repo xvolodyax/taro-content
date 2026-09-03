@@ -2,7 +2,9 @@
   "role": "magiya-writer",
   "spawn": "Task",
   "subagent_type": "generalPurpose",
-  "model": "gemini-3.8-flash-high",
+  "model": "gemini-3.8-flash",
+  "reasoning_effort": "high",
+  "local_task_alias": "gemini-3.8-flash-high",
   "inline": false,
   "artifacts": ["story.md", "meta.json"],
   "publish": "SKIP"

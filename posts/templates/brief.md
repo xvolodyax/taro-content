@@ -52,3 +52,4 @@ wordstat: PARTIAL | фразы и частоты
 ## Воронка
 
 Бот ≠ приложение. Ссылки только из `shared/posts-funnel.md`.
+В `max.txt` (12:12) обе ссылки ведут только на Макс (бот `https://max.ru/id531102974575_bot`, аудио `https://max.ru/id531102974575_bot?startapp=ref_9BAD4149`). Не ставить `vk.com/app54565776`!

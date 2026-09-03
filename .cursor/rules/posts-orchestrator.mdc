@@ -18,7 +18,8 @@ Inline = `GATE` FAIL.
 
 - Plugin 12:12 / 15:15: `Task(posts-researcher)` → `Task(posts-meaning)` → `Task(posts-copywriter)` → `Task(posts-cover-text)?` → `Task(posts-gate)`
 - Plugin 21:21: `Task(posts-researcher)?` → `Task(posts-copywriter)` → `Task(posts-gate)`. Meaning нет.
-- Cloud: один `Task(generalPurpose)` на шаг с dispatch-prompt из `scripts/posts_dispatch_prompt.py`. Тексты: Gemini 3.8 Flash High.
+- Cloud: один `Task(generalPurpose)` на шаг с dispatch-prompt из `scripts/posts_dispatch_prompt.py`. Тексты: Cloud id `gemini-3.8-flash` + `reasoning_effort=high` (alias IDE Task: `gemini-3.8-flash-high`).
+- Жёсткое правило (HARD 03.09): Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст Gemini (ни статьи, ни посты 12:12/15:15/21:21, ни опрос, ни Алёна, ни рилсы). Если модель недоступна — только FAIL («модель недоступна»), без своего черновика! Лазейки «напишу сам» нет.
 
 ### Снято
 

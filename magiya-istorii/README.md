@@ -19,7 +19,9 @@
 Собери пакет «Магия истории» на YYYY-MM-DD.
 Канон: magiya-istorii/CANON.md. Контракт: magiya-istorii/CONTRACT.md.
 Director сам тексты не пишет.
-Тело — только Writer (один проход, Gemini 3.8 Flash High). H1 — только Title. Overlay — только Clickbait.
+Текстовые роли (H1, тело, overlay, art): Cloud model gemini-3.8-flash + reasoning_effort=high (alias IDE Task: gemini-3.8-flash-high).
+Дефолт не пишет в эфир ничего: ни H1, ни кликбейт, ни тело. Если Task недоступен — только FAIL.
+Тело — только Writer (один проход). H1 — только Title. Overlay — только Clickbait.
 Plot — необязательные заметки, биты в Writer не вшивать.
 Scout → Plot → Title(только H1) → Writer(только тело) → Gate(только проверка).
 Clickbait (только overlay кадра 1) после Plot, не в title/h1/тело.

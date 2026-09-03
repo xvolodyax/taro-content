@@ -27,6 +27,7 @@ is_background: false
 
 **File Ownership & Handoff Lock Enforcement:**
 - PASS/FAIL only. No copy edits. Hall does not write montage.
+- **Fail if Director or default Cloud Agent wrote/substituted any copy.** If Gemini is unavailable / Task fails to spawn / slug is invalid, result is strictly FAIL with report «модель недоступна». No draft substitutions.
 - FAIL if two roles wrote the same file.
 - FAIL if `script-draft.md` is missing.
 - FAIL if storyboard follows the Gemini draft instead of the Смыслы final.

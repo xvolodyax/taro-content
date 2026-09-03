@@ -14,15 +14,16 @@
 | 1 | Extractor | `2-extractor.md` | inherit | `knowledge/*` |
 | 2 | Analyst | `3-analyst.md` | inherit | `knowledge/*` |
 | 3 | Filter | `4-filter.md` | inherit | red zones |
-| 4 | Gemini | `5-gemini.md` | `gemini-3.8-flash-high` | `script-draft.md` |
-| 5 | Смыслы | `smysly.md` | `gemini-3.8-flash-high` | `script.md`, `smysly.md` |
-| 6 | Funnel | `6-funnel.md` | `gemini-3.8-flash-high` | `caption.md`, `code-word.txt` |
-| 7 | Storyboard | `7-storyboard.md` | `gemini-3.8-flash-high` | `storyboard.md` |
-| 8 | Монтаж | `9-montage.md` | `gemini-3.8-flash-high` | `montage.md`, `montage-ai.json` |
-| 9 | Вопросы | `10-questions.md` | `gemini-3.8-flash-high` | `questions.md` |
+| 4 | Gemini | `5-gemini.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `script-draft.md` |
+| 5 | Смыслы | `smysly.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `script.md`, `smysly.md` |
+| 6 | Funnel | `6-funnel.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `caption.md`, `code-word.txt` |
+| 7 | Storyboard | `7-storyboard.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `storyboard.md` |
+| 8 | Монтаж | `9-montage.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `montage.md`, `montage-ai.json` |
+| 9 | Вопросы | `10-questions.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `questions.md` |
 | 10 | Gate | `8-gate.md` | inherit | PASS/FAIL |
 
-Текстовые Task: явно `model: gemini-3.8-flash-high`.
+Текстовые Task: Cloud model `gemini-3.8-flash` + `reasoning_effort: high` (alias IDE Task: `gemini-3.8-flash-high`).
+Жёсткое правило (HARD 03.09): Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL («модель недоступна»), без своего черновика. Лазейки «напишу сам» нет!
 `written_by: gemini`. Opus / Sonnet / Composer / Grok = FAIL.
 Не Gemini: Kie / пиксели, Composio / публикация, Wordstat API.
 Живые пакеты эфира не переписывать ради модели.

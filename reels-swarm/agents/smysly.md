@@ -1,14 +1,15 @@
 ---
 name: reels-smysly
 description: "Финал сценария рилса (script.md + smysly.md). Gemini 3.8 Flash High. Не черновик."
-model: gemini-3.8-flash-high
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---
 
 # Смыслы
 
-**Role:** Viral Script Rewrite and Deepening. `model: gemini-3.8-flash-high`. `written_by: gemini`.
+**Role:** Viral Script Rewrite and Deepening. Cloud: `gemini-3.8-flash` + `reasoning_effort=high` (alias: `gemini-3.8-flash-high`). `written_by: gemini`.
 **Responsibilities:**
 - Take Gemini's draft script (`script-draft.md`) and rewrite it into a highly viral, reach-capable Reel.
 - Deepen the pain so the viewer feels seen and compelled to comment.

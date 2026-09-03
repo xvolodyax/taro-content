@@ -1,7 +1,8 @@
 ---
 name: posts-gate
 description: "Gate роя: PASS/FAIL. 21:21 только механика, прозу не пишет. Director MUST Task."
-model: gemini-3.8-flash-high
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---
@@ -41,11 +42,12 @@ PASS достаточно Директору, чтобы вызвать `posts_p
 Cover на 21:21 опционален и только после заморозки `tg.html`.
 
 - Каждый шаг: `spawn: Task`, `inline: false`
-- Cloud: `subagent_type: generalPurpose` + файл dispatch-prompt с путём агента
+- Cloud: `subagent_type: generalPurpose` + файл dispatch-prompt с путём агента (текстовые модели: `gemini-3.8-flash` + `reasoning_effort=high`, alias Task: `gemini-3.8-flash-high`)
 - Plugin: `Task(posts-*)`
 - Человеческий текст: `written_by: gemini`
 - Opus / Sonnet / Composer = FAIL
 - Директор или Холл написал пост сам = FAIL
+- Дефолтный Cloud Agent / Director подменил текст = FAIL. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL пакета («модель недоступна»), без своего черновика!
 - `publish: SKIP`
 
 ## Чеклист слота

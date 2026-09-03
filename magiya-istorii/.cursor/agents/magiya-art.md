@@ -1,14 +1,18 @@
 ---
 name: magiya-art
 description: "Art «Магия истории»: один кадр 16:9, реф Виктория.png, микрофон в руке, жирная красная рамка + кликбейт. Gemini 3.8 Flash High. Не шесть кадров."
-model: gemini-3.8-flash-high
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---
 
 ## Модель (HARD)
 
-Только **`gemini-3.8-flash-high`**. Пиксели, Kie и генерацию НЕ запускать — роль пишет только текстовый бриф / промпт.
+Только **Gemini 3.8 Flash High**:
+- **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort: high`.
+- **Локальный Task (IDE):** slug `gemini-3.8-flash-high` зафиксирован только как alias для локальных вызовов.
+- Пиксели, Kie и генерацию НЕ запускать — роль пишет только текстовый бриф / промпт.
 
 ## Цепочка (HARD)
 

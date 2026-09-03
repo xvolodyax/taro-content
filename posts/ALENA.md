@@ -11,7 +11,8 @@
 
 ## Один Writer
 
-Астропост пишет **один** Writer, один проход, Gemini 3.8 Flash High. Тело письма — только его.
+Астропост пишет **один** Writer, один проход, Gemini 3.8 Flash High (в Cloud: model `gemini-3.8-flash` + `reasoning_effort: high`, alias IDE Task: `gemini-3.8-flash-high`). Тело письма — только его.
+Дефолтный Cloud Agent / Director текст не подменяет: если Gemini недоступна — только FAIL («модель недоступна»), без своего черновика.
 
 ```text
 Scout(луна) → Writer(письмо) → Gate

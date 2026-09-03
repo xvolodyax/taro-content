@@ -35,19 +35,23 @@ is_background: false
 
 ## Модели (HARD)
 
-Текст, который видит зритель или уходит в монтаж как текст, пишет **только Gemini 3.8 Flash High**.
+Текст, который видит зритель или уходит в монтаж как текст, пишет **только Gemini 3.8 Flash High**:
+- **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort: high`.
+- **Локальный IDE Task:** alias `gemini-3.8-flash-high`.
+- **Жёсткое правило (HARD 03.09):** Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет!
+
 Директор передаёт модель в Task явно. Если опустить — окно Холла перебьёт YAML.
 
 | Роль | Файл | Task `model` | Пишет |
 | --- | --- | --- | --- |
 | Director | `1-director.md` | inherit | ничего |
 | Extractor / Analyst / Filter | `2` / `3` / `4` | inherit | `knowledge/*` |
-| Gemini | `5-gemini.md` | `gemini-3.8-flash-high` | `script-draft.md` |
-| Смыслы | `smysly.md` | `gemini-3.8-flash-high` | `script.md`, `smysly.md` |
-| Funnel | `6-funnel.md` | `gemini-3.8-flash-high` | `caption.md`, `code-word.txt` |
-| Storyboard | `7-storyboard.md` | `gemini-3.8-flash-high` | `storyboard.md` |
-| Монтаж | `9-montage.md` | `gemini-3.8-flash-high` | `montage.md`, `montage-ai.json` |
-| Вопросы | `10-questions.md` | `gemini-3.8-flash-high` | `questions.md` |
+| Gemini | `5-gemini.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `script-draft.md` |
+| Смыслы | `smysly.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `script.md`, `smysly.md` |
+| Funnel | `6-funnel.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `caption.md`, `code-word.txt` |
+| Storyboard | `7-storyboard.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `storyboard.md` |
+| Монтаж | `9-montage.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `montage.md`, `montage-ai.json` |
+| Вопросы | `10-questions.md` | `gemini-3.8-flash` + high (alias: `gemini-3.8-flash-high`) | `questions.md` |
 | Gate | `8-gate.md` | inherit | PASS/FAIL |
 
 `written_by: gemini` на сценарий, caption, storyboard, montage (md+json как текст), questions.

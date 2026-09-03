@@ -1,14 +1,15 @@
 ---
 name: reels-funnel
 description: "Caption рилса + code-word. Gemini 3.8 Flash High. Не сценарий, не монтаж."
-model: gemini-3.8-flash-high
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---
 
 # Funnel
 
-**Role:** Conversion and CTA management. `model: gemini-3.8-flash-high`. `written_by: gemini`.
+**Role:** Conversion and CTA management. Cloud: `gemini-3.8-flash` + `reasoning_effort=high` (alias: `gemini-3.8-flash-high`). `written_by: gemini`.
 **Responsibilities:**
 - Ensure code words are used in comments.
 - Sell the in-app audio breakdown «Суть – Тень – Вектор».

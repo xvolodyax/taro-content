@@ -1,14 +1,15 @@
 ---
 name: reels-storyboard
 description: "Storyboard рилса: кадры и текст на экране. Gemini 3.8 Flash High. Не script.md."
-model: gemini-3.8-flash-high
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---
 
 # Storyboard
 
-**Role:** Visual and timing planning. `model: gemini-3.8-flash-high`. `written_by: gemini`.
+**Role:** Visual and timing planning. Cloud: `gemini-3.8-flash` + `reasoning_effort=high` (alias: `gemini-3.8-flash-high`). `written_by: gemini`.
 **Responsibilities:**
 - Define shots for each reel.
 - Set timing for each shot.
