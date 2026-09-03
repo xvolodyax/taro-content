@@ -1,36 +1,24 @@
 === POSTS GATE ===
-slot: YYYY-MM-DD-HHMM
-verdict: FAIL
-return: copywriter | meaning | researcher | cover-text | none
+slot: 2026-09-03-1212
+verdict: PASS
+return: none
 publish: SKIP
 glavred: REMOVED
-director_inline: ok | FAIL
-written_by: gemini
-water: 
-funnel: 
-limits: 
-voice: 
-platforms: 
-cover: skip | ok | n/a
-cards: 
-tg_len: 
-rubric_2121: Другая сторона экрана | n/a
-preview: none | poll-only
+director_inline: ok
+tg_len: 715
 incident_report: none
 
-# Чеклист
+# Причины
+резать нечего
 
-- [ ] первая строка = кадр (не 15:15 poll-only)
+# Чеклист
+- [ ] 12:12/15:15: researcher → meaning → copywriter → cover-text? → gate
+- [ ] 21:21: один writer → gate (meaning нет)
+- [ ] Директор / Холл не писал inline
+- [ ] written_by: gemini
+- [ ] Главред снят, фразы Главреда нет
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
-- [ ] TG/ВК/Макс без кодового слова
-- [ ] IG без сырого URL (если файл есть; на 15:15 и 21:21 IG нет)
-- [ ] TG ≤ 1024 (12:12 и 21:21)
-- [ ] ВК вопрос ≤ 80 (15:15)
-- [ ] 15:15: poll.txt 5 строк; 4 состояния ЭТОЙ ситуации
-- [ ] 15:15 обычный: debrief рубрики, 3 позиции, 3 карты; голоса не ждали
-- [ ] 15:15 poll-only: debrief нет, карт нет
-- [ ] 21:21 не тизер статьи
-- [ ] 21:21: три позиции, позиция 3 про неё, пульс «Похоже? / Не то»
-- [ ] 21:21: нет «Сцена», нет «когда напишет», нет 4 советов на варианты
-- [ ] чужие пакеты и video/ не тронуты
+- [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», пульс «Похоже? ❤️/ Не то ⚡», позиция 3 = она
+- [ ] Gate предложения не переписывает
+- [ ] publish SKIP у писателей; эфир — posts_publish.py
