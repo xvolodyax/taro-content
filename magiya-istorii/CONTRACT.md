@@ -61,6 +61,7 @@ package-upload.tgz
 Директор **не** пишет scout / plot / title / story / clickbait / GATE / art-brief.
 Каждый шаг — отдельный `Task`. Cloud: `Task(generalPurpose)` + файл роли.
 Текстовые роли: строго Gemini 3.8 Flash High (в Cloud: model `gemini-3.8-flash`, param `reasoning_effort: high`; alias IDE Task: `gemini-3.8-flash-high`).
+Дефолт не пишет в эфир ничего: ни H1, ни кликбейт, ни тело статьи.
 Если Gemini недоступна / Task не спавнится / slug неверный — Director НЕ пишет текст сам! Только FAIL («модель недоступна»), без своего черновика. Лазейки «напишу сам» нет.
 Inline Директора = FAIL.
 Фиксера / копирайтера / второго прохода по телу **нет**.

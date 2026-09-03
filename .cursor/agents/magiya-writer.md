@@ -10,3 +10,4 @@ is_background: false
 Исполняй `magiya-istorii/.cursor/agents/magiya-writer.md`.
 Только тело статьи. H1 и overlay не писать.
 Модель: Cloud model `gemini-3.8-flash` + `reasoning_effort: high` (alias локального IDE Task: `gemini-3.8-flash-high`).
+Дефолтный агент тело не пишет: если модель недоступна — FAIL («модель недоступна»), без своего черновика.

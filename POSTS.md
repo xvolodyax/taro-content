@@ -234,9 +234,9 @@ Gate только: длина ≤1024, нет «Сцена», нет пусто�
 | --- | --- | --- | --- |
 | 0 | `posts-director` | inherit | папка, Task, step records, после PASS `posts_publish.py` |
 | 1 | `posts-researcher` | inherit | `brief.md`; на 21:21 может сразу 3 вопроса из опроса |
-| 2 | `posts-meaning` | `gemini-3.8-flash` + high | `meaning.md` на 12:12 / 15:15. На 21:21 шага нет |
-| 3 | `posts-copywriter` | `gemini-3.8-flash` + high | 12:12 / 15:15 площадки; 21:21 = единственный писатель поста |
-| 4 | `posts-cover-text` | `gemini-3.8-flash` + high | кадр 12:12; на 21:21 только после заморозки `tg.html` |
+| 2 | `posts-meaning` | `gemini-3.8-flash` + `reasoning_effort: high` | `meaning.md` на 12:12 / 15:15. На 21:21 шага нет |
+| 3 | `posts-copywriter` | `gemini-3.8-flash` + `reasoning_effort: high` | 12:12 / 15:15 площадки; 21:21 = единственный писатель поста |
+| 4 | `posts-cover-text` | `gemini-3.8-flash` + `reasoning_effort: high` | кадр 12:12; на 21:21 только после заморозки `tg.html` |
 | 5 | `posts-gate` | `scripts/posts_gate.py` (+ чеклист). На 21:21 предложения не пишет | `GATE` |
 
 Алиасы: Scout → researcher, Writer → meaning, Sol → copywriter. Новых ролей сверх таблицы нет.

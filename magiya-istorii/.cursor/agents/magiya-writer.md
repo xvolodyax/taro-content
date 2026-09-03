@@ -10,9 +10,9 @@ is_background: false
 ## Модель (HARD)
 
 Только **Gemini 3.8 Flash High**:
-- **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort: high`.
+- **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort=high` (тело статьи пишется строго на этой модели!).
 - **Локальный Task (IDE):** slug `gemini-3.8-flash-high` зафиксирован только как alias для локальных вызовов.
-- Никаких дефолтных моделей, Grok, Composer, Claude. Если модель недоступна — FAIL, но Director сам текст не пишет!
+- **Дефолтный агент в эфир не пишет ничего:** ни H1, ни кликбейт, ни тело статьи. Если модель недоступна / Task не спавнится / slug неверный — только **FAIL** («модель недоступна»), Director сам текст не пишет! Никаких дефолтных моделей, Grok, Composer, Claude.
 
 ## Цепочка (HARD)
 

@@ -13,8 +13,8 @@
 | Поле | Хозяин | Правило |
 | --- | --- | --- |
 | Тело `story.md` (проза + триггерный вопрос) | **Writer**, один проход, Gemini 3.8 Flash High (`gemini-3.8-flash` + `reasoning_effort: high`) | Plot, Title, Clickbait, Gate, Art, Director, фиксер / копирайтер / «обогатитель» тело **не** переписывают. Дефолтный Cloud Agent / Director текст НЕ подменяет: если Gemini недоступна — FAIL («модель недоступна»), без своего черновика |
-| H1 == title | **Title** | Writer H1 не выдумывает. Clickbait / Gate H1 не правят |
-| Overlay кадра 1 | **Clickbait** | Не в H1, не в тело. Art только рисует готовую строку |
+| H1 == title | **Title**, Gemini 3.8 Flash High (`gemini-3.8-flash` + `reasoning_effort: high`) | Writer H1 не выдумывает. Clickbait / Gate H1 не правят. Дефолт H1 не пишет: FAIL if unavailable |
+| Overlay кадра 1 | **Clickbait**, Gemini 3.8 Flash High (`gemini-3.8-flash` + `reasoning_effort: high`) | Не в H1, не в тело. Art только рисует готовую строку. Дефолт overlay не пишет: FAIL if unavailable |
 
 `plot.md` — необязательные заметки. Writer может игнорировать. Plot **не** пишет в статью и **не** предписывает биты («утро», «ночь», «что осталось», «сломал правило»).
 
@@ -96,7 +96,9 @@ Writer сам выбирает, какой вектор углубить. Это
 - **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Базовое ядро промпта держит Вику с DJI Mic Mini в руке у рта, зеленые с карим глаза (hazel-green), формат 16:9 (1K) и жирную красную рамку с overlay из `clickbait.txt`. Генерацию пикселей НЕ запускать.
 
 **Жёсткое правило (HARD 03.09):**
-Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Никаких лазеек «напишу сам».
+Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Дефолт не пишет в эфир ничего: ни H1, ни кликбейт, ни тело статьи, ни посты 12:12/15:15/21:21, ни опрос, ни Алёна, ни рилсы-текст.
+Заголовки историй (Title / H1 / Clickbait overlay) и текст постов/статей пишутся только на Gemini 3.8 Flash High (cloud `gemini-3.8-flash` + `reasoning_effort=high`).
+Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Никаких лазеек «напишу сам».
 
 Другими семействами моделей (Grok, Claude, Composer) заголовки, кликбейт, промпты картинок и `story.md` не писать.
 Scout / Plot / Gate остаются `inherit` как служебные. Plot в статью не пишет. Gate предложения не переписывает.
