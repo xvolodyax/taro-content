@@ -10,4 +10,4 @@
 **Кстати:** поездки
 **Обложка:** `/workspace/alena-covers/prognoz-na-den.png` (готова, не генерить)
 **GATE:** PASS
-**Публикация:** ждать 07:00 МСК, затем один sendPhoto ботом `@composia_bot` / telegram-composia. Картинка + весь текст в подписи. Из ленты Send не жать.
+**Публикация:** отправлено 2026-09-03 ~07:02 МСК в https://t.me/AlenaSafonova_queen/2779 (`@composia_bot` / telegram-composia). Картинка + caption в одной подписи. Не дубль: 2774–2778 — личные альбомы (Софи / ДМС), слот 02.09 — 2773.
