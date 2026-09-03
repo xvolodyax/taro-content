@@ -9,5 +9,5 @@
 **День:** 22-й до 20:35 МСК, затем 23-й
 **Кстати:** поездки
 **Обложка:** `/workspace/alena-covers/prognoz-na-den.png` (готова, не генерить)
-**GATE:** pending
+**GATE:** PASS
 **Публикация:** ждать 07:00 МСК, затем один sendPhoto ботом `@composia_bot` / telegram-composia. Картинка + весь текст в подписи. Из ленты Send не жать.
