@@ -1,0 +1,44 @@
+{
+  "package": "posts/2026-09-03-1212",
+  "date": "2026-09-03",
+  "slot": "1212",
+  "status": "PARTIAL",
+  "reason": "TG+IG RU live; Max SKIP: нет MAX_BOT_TOKEN/MAX_CHAT_ID в env, Composio Max toolkit нет. REST COMPOSIO_API_KEY без tool_execution — эфир через MCP alias.",
+  "results": [
+    {
+      "dest": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "SENT",
+      "url": "https://t.me/TodayTaro/4170",
+      "message_id": 4170,
+      "chat": "@TodayTaro"
+    },
+    {
+      "dest": "instagram-ru",
+      "alias": "instagram-ru",
+      "tool": "INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
+      "status": "SENT",
+      "url": "https://www.instagram.com/p/Dc0d0julbLB/",
+      "media_id": "18011355362955092",
+      "container_id": "17922369735416739",
+      "media_type": "IMAGE",
+      "media_product_type": "FEED",
+      "username": "todaytaro_ru"
+    },
+    {
+      "dest": "max",
+      "alias": "",
+      "tool": "MAX_SEND",
+      "status": "SKIP",
+      "reason": "нет MAX_BOT_TOKEN и MAX_CHAT_ID; Composio Max toolkit нет"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "instagram_en": "UNTOUCHED",
+  "cover_url": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000d53081f58e325f03b5190b3d.png",
+  "chosen": "Слова отозваны после отправки",
+  "gate": "PASS"
+}
