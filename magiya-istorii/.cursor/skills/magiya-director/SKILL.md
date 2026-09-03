@@ -15,6 +15,8 @@ Clickbait ∥ overlay кадра 1
 ```
 
 Тело — один Writer. H1 — Title. Overlay — Clickbait.
+Текстовые роли: строго Gemini 3.8 Flash High (в Cloud Agent: model `gemini-3.8-flash`, param `reasoning_effort=high`; alias для локального Task в IDE: `gemini-3.8-flash-high`).
+Если Task со слагом недоступен — Director НЕ пишет текст сам! Либо `gemini-3.8-flash` + high, либо FAIL.
 Plot в промпт Writer битами не класть. Фиксера нет.
 Канон `magiya-istorii/CANON.md`. Контракт `magiya-istorii/CONTRACT.md`.
 Не трогать posts/, 21:21, Excalibur, Карусельку. Живые истории не переписывать.

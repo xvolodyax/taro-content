@@ -60,6 +60,8 @@ package-upload.tgz
 
 Директор **не** пишет scout / plot / title / story / clickbait / GATE / art-brief.
 Каждый шаг — отдельный `Task`. Cloud: `Task(generalPurpose)` + файл роли.
+Текстовые роли: строго Gemini 3.8 Flash High (в Cloud: model `gemini-3.8-flash`, param `reasoning_effort: high`; alias IDE Task: `gemini-3.8-flash-high`).
+Если Task недоступен — Director НЕ пишет текст сам (fallback на `gemini-3.8-flash`+high либо FAIL).
 Inline Директора = FAIL.
 Фиксера / копирайтера / второго прохода по телу **нет**.
 

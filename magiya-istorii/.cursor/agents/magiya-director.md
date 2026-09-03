@@ -28,6 +28,7 @@ Art — после Clickbait: обложка 16:9 (1K) с готовой стр�
 
 - Не вызывай `Task(magiya-director)`
 - Не пиши scout / plot / title-brief / story / clickbait / GATE / art-brief сам
+- **Если Task для текстовой роли недоступен — НЕ писать текст самому!** Либо вызвать `gemini-3.8-flash` + `reasoning_effort: high`, либо FAIL пакета. Самому прозу/H1/overlay не дописывать ни при каких условиях.
 - **Не вшивай в промпт Writer биты Plot.** Ни «утро», ни «ночь», ни «что осталось», ни «сломал правило». Plot в Task Writer либо не класть, либо одной строкой: «plot.md — необязательные заметки, можно игнорировать»
 - **Нет фиксера / копирайтера / «обогатителя» / второго Writer.** После Writer тело не гладить
 - Не рисуй лицо руками
@@ -52,10 +53,17 @@ Art — после Clickbait: обложка 16:9 (1K) с готовой стр�
 8. Публикация — только если Холл явно сказал публиковать. Иначе `site_publish: SKIP`.
 9. Строка в `LEDGER.md` только для нового пакета. Стоп. Холлу: путь, GATE, h1, overlay, art. Без переписанных живых историй.
 
-## Спавн (Cloud)
+## Спавн (Cloud и Local)
 
 `Task(generalPurpose)` + полный текст роли из `magiya-istorii/.cursor/agents/`.
-Writer: `model: gemini-3.7-flash-high`. Title и Clickbait — та же модель.
+
+**Два слоя конфигурации текстовых моделей (Title, Writer, Clickbait, Art-brief):**
+1. **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort=high` (это и есть «Gemini 3.8 Flash High», отдельного слага `gemini-3.8-flash-high` в Cloud нет).
+2. **Локальный Task:** `gemini-3.8-flash-high` допустим только как alias для локальных вызовов Task внутри IDE.
+
+**Жёсткое правило Director (HARD):**
+Если Task с `gemini-3.8-flash-high` недоступен / падает — Director **КАТЕГОРИЧЕСКИ НЕ ПИШЕТ ТЕКСТ САМ**. Либо вызвать через `gemini-3.8-flash` + `reasoning_effort=high`, либо вернуть FAIL. Никаких дефолтных моделей, никакого собственного написания прозы / H1 / overlay.
+
 В промпт Writer не копировать поля Plot как обязательный сценарий.
 
 ## Выход

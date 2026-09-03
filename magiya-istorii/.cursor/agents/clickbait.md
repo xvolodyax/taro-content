@@ -1,14 +1,18 @@
 ---
 name: magiya-clickbait
-description: "Clickbait «Магия истории»: ТОЛЬКО overlay кадра 1. Gemini 3.7 only."
-model: gemini-3.7-flash-high
+description: "Clickbait «Магия истории»: ТОЛЬКО overlay кадра 1. Gemini 3.8 Flash High."
+model: gemini-3.8-flash
+reasoning_effort: high
 readonly: false
 is_background: false
 ---
 
 ## Модель (HARD)
 
-Только **`gemini-3.7-flash-high`**. Никаких Grok, Composer, Claude.
+Только **Gemini 3.8 Flash High**:
+- **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort: high`.
+- **Локальный Task (IDE):** slug `gemini-3.8-flash-high` зафиксирован только как alias для локальных вызовов.
+- Никаких дефолтных моделей, Grok, Composer, Claude.
 
 ## Цепочка (HARD)
 
