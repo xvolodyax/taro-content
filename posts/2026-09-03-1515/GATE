@@ -1,0 +1,24 @@
+=== POSTS GATE ===
+slot: 2026-09-03-1515
+verdict: PASS
+return: none
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+tg_len: 204
+incident_report: none
+
+# Причины
+резать нечего
+
+# Чеклист
+- [ ] 12:12/15:15: researcher → meaning → copywriter → cover-text? → gate
+- [ ] 21:21: один writer → gate (meaning нет)
+- [ ] Директор / Холл не писал inline
+- [ ] written_by: gemini
+- [ ] Главред снят, фразы Главреда нет
+- [ ] нет слова «ловушка»
+- [ ] бот ≠ приложение
+- [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», пульс «Похоже? ❤️/ Не то ⚡», позиция 3 = она
+- [ ] Gate предложения не переписывает
+- [ ] publish SKIP у писателей; эфир — posts_publish.py

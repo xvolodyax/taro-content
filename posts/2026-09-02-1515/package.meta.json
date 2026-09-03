@@ -1,0 +1,21 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.7-flash-high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "1515",
+  "date": "2026-09-02",
+  "evening": "OPEN",
+  "poll_locked": true,
+  "hall_publishes": false,
+  "hall_writes": false,
+  "destinations": {
+    "telegram": "TELEGRAM_SEND_POLL at 15:15 MSK — do not send before slot, no bot schedule",
+    "instagram": false,
+    "max": false,
+    "vk": "UNTouched this launch",
+    "youtube_community": "UNTouched this launch"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "package": "/workspace/posts/2026-09-02-2121",
+  "date": "2026-09-02",
+  "slot": "2121",
+  "status": "SKIP",
+  "reason": "слот наступил или прошёл — слать сразу",
+  "results": [
+    {
+      "dest": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "SKIP",
+      "reason": "HTTP 403 {\"error\":{\"message\":\"This API key does not have the permissions required for POST /api/v3/tools/execute/TELEGRAM_SEND_PHOTO. This route requires \\\"tool_execution\\\" write access, but the key has no access for \\\"tool_execution\\\".\",\"code\":812,\"slug\":\"APIKey_InsufficientPermissions\",\"status\":403,\"request_id\":\"15e6f10a-18f2-4ac0-b8ac-47f62a5210c3\",\"suggested_fix\":\"Grant the \\\"tool_execution\\\" permissio",
+      "live_check": "HTTP 403 {\"error\":{\"message\":\"This API key does not have the permissions required for POST /api/v3/tools/execute/TELEGRAM_GET_CHAT_HISTORY. This route requires \\\"tool_execution\\\" write access, but the key has no access for \\\"tool_execution\\\".\",\"code\":812,\"slug\":\"APIKey_InsufficientPermissions\",\"status\":403,\"request_id\":\"f5347d16-1bc7-4815-aa76-2767a6c30dba\",\"suggested_fix\":\"Grant the \\\"tool_execution\\\" per"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "key_env": "COMPOSIO_API_KEY",
+  "key_present": true
+}

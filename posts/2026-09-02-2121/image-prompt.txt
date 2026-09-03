@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: night cyan of outgoing message bubble, muted milky grey kitchen surface
+who: none
+thesis: Фраза «мне нужно время» ушла на резком импульсе, чтобы закрыться от разговора; эта пауза без срока просит не замирать у экрана, а вернуть внимание себе.
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Editorial still life of a quiet late-night kitchen table. Muted milky grey tones with a soft cyan screen glow reflecting across matte ceramic. Hook "Другая сторона экрана" set strictly at the optical center of the square 1:1 frame in high-contrast magazine display didone serif typography, crisp and readable at grid thumbnail size. A small circular champagne-gold medallion with engraved ТАРО / СЕЙЧАС rests off-center. 50mm lens, shallow depth of field. No face, no candles, no extra text, no watermark.
+
+why: Рубрика «Другая сторона экрана» в оптическом центре квадрата 1:1, в кадре ночной циан экрана и молочно-серая тишина кухни
