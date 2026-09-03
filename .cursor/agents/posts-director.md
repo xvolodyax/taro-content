@@ -84,7 +84,7 @@ Instagram и Макс нет.
 Meaning **не** запускать. Не конвейер. Не «обогащение».
 researcher? только если в brief ещё нет трёх вопросов из СЕГОДНЯШНЕГО опроса.
 Карты: `python3 scripts/draw_rw_cards.py --count 3 --ledger posts/LEDGER.md`.
-Потом **один** `Task(posts-copywriter)` / Cloud `Task(generalPurpose)` модель Gemini 3.8 Flash High.
+Потом **один** `Task(posts-copywriter)` / Cloud `Task(generalPurpose)` модель Gemini 3.8 Flash High (`gemini-3.8-flash` + `reasoning_effort: high`).
 Cover после заморозки `tg.html`, пост не правит.
 Gate только механика: длина, «Сцена», пустая вода про «примерить», пульс, позиция 3 = она.
 Предложения не гладить. Три позиции. Позиция 3 про неё. Пульс точно `Похоже? ❤️/ Не то ⚡`.

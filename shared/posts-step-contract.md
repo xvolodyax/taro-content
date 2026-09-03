@@ -40,7 +40,7 @@ posts/<slot>/package.meta.json
 | `inline` | только `false`. `true` или отсутствие шага при живом артефакте = FAIL |
 | `subagent_type` | Plugin: `posts-<role>`. Cloud: `generalPurpose` |
 | `dispatch_prompt` | Cloud обязателен: файл с полным промптом из `scripts/posts_dispatch_prompt.py` |
-| `model` | meaning / copywriter / cover-text / gate → `gemini-3.8-flash-high` |
+| `model` | meaning / copywriter / cover-text / gate → `gemini-3.8-flash` + `reasoning_effort: high` (alias IDE Task: `gemini-3.8-flash-high`) |
 | `written_by` | человеческий текст → `gemini`. Opus / Sonnet / Composer = FAIL |
 | `publish` | у писателей всегда `SKIP`. Эфир после PASS — `scripts/posts_publish.py` у Директора |
 
