@@ -1,0 +1,11 @@
+{
+  "taskId": "38d3c57efe170c5b40d340c9993e0a48",
+  "model": "gpt-image-2-text-to-image",
+  "format": "1:1",
+  "generations": 1,
+  "code": 200,
+  "msg": "success",
+  "state": "success",
+  "resultJson": "{\"resultUrls\":[\"https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000db2481f7891610ea129afeaf.png\"]}",
+  "resultUrl": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000db2481f7891610ea129afeaf.png"
+}
