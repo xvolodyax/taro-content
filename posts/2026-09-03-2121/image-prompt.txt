@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: dusty ochre of an incoming chat line, graphite of an empty reply field; not night cyan, not milky kitchen grey
+who: none
+thesis: Он кинул строку как объявление встречи и тему оставил у себя. Пока разговора нет, строка просит её не дописывать тему и не заполнять пустое поле за двоих.
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Editorial still, phone chat, 1K square. Dusty ochre incoming line, graphite empty reply field. No night cyan, no milky kitchen. Hook "Другая сторона экрана" strictly at the optical center, high-contrast magazine didone, readable at Instagram grid thumbnail. Native circular champagne-gold medallion with readable ТАРО / СЕЙЧАС off-center as an object. 50mm, shallow depth. No face, no candles, no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.
+
+why: «Другая сторона экрана» в оптическом центре квадрата 1:1; в кадре пыльная охра входящей строки и графит пустого поля ответа

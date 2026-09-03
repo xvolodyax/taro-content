@@ -1,0 +1,29 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "hall-rewrite",
+  "text_model": "gemini-3.8-flash-high",
+  "canon_model": "gemini-3.8-flash-high",
+  "rewrite": "21:21 one-spread canon 2026-09-03",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": "hall-asked rewrite under new canon",
+  "slot": "2121",
+  "date": "2026-09-03",
+  "evening": "OPEN",
+  "pulse": "removed",
+  "spread_question": "Пока он молчит после «нам надо поговорить»: что он уже решил, и чего тебе не делать первой?",
+  "cards": ["Четвёрка жезлов", "Восьмёрка жезлов", "Девятка пентаклей"],
+  "cards_redrawn": false,
+  "cover_regenerated": false,
+  "hall_publishes": false,
+  "hall_writes": false,
+  "destinations": {
+    "telegram": "already SENT https://t.me/TodayTaro/4173 — do not resend",
+    "instagram": false,
+    "max": false,
+    "vk": "READY for Hall — wiki links, do not publish from swarm",
+    "youtube_community": "UNTouched"
+  },
+  "image_url": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000db2481f7891610ea129afeaf.png",
+  "cover_path": "posts/2026-09-03-2121/cover.png"
+}
