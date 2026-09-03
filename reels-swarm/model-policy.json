@@ -1,0 +1,43 @@
+{
+  "pipeline": "taro-reels-swarm",
+  "text_model": "gemini-3.8-flash-high",
+  "text_model_id": "gemini-3.8-flash-high",
+  "text_model_display": "Gemini 3.8 Flash High",
+  "written_by": "gemini",
+  "publish": "SKIP",
+  "inherit_means": "Модель родителя = модель окна Холла. Текстовые шаги всё равно Gemini. Не подменять.",
+  "text_agents": [
+    "reels-gemini",
+    "reels-smysly",
+    "reels-funnel",
+    "reels-storyboard",
+    "reels-montage",
+    "reels-questions"
+  ],
+  "inherit_agents": [
+    "reels-director",
+    "reels-extractor",
+    "reels-analyst",
+    "reels-filter",
+    "reels-gate"
+  ],
+  "human_text_files": [
+    "script-draft.md",
+    "script.md",
+    "smysly.md",
+    "caption.md",
+    "storyboard.md",
+    "montage.md",
+    "montage-ai.json",
+    "questions.md"
+  ],
+  "forbidden_writers": [
+    "opus",
+    "sonnet",
+    "composer",
+    "grok",
+    "claude-opus",
+    "claude-sonnet",
+    "cursor-composer"
+  ]
+}

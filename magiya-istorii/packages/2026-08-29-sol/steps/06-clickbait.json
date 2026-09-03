@@ -2,7 +2,7 @@
   "role": "magiya-clickbait",
   "spawn": "Task",
   "subagent_type": "generalPurpose",
-  "model": "gemini-3.7-flash-high",
+  "model": "gemini-3.8-flash-high",
   "inline": false,
   "overlay": "Настя сыплет соль за шкаф в Омске — крик срезался, а ярость заперта в спальне",
   "artifacts": [

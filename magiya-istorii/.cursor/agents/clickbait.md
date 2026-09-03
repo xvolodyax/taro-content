@@ -1,14 +1,14 @@
 ---
 name: magiya-clickbait
-description: "Clickbait «Магия истории»: ТОЛЬКО overlay кадра 1. Gemini 3.7 only."
-model: gemini-3.7-flash-high
+description: "Clickbait «Магия истории»: ТОЛЬКО overlay кадра 1. Gemini 3.8 Flash High only."
+model: gemini-3.8-flash-high
 readonly: false
 is_background: false
 ---
 
 ## Модель (HARD)
 
-Только **`gemini-3.7-flash-high`**. Никаких Grok, Composer, Claude.
+Только **`gemini-3.8-flash-high`**. Никаких Grok, Composer, Claude.
 
 ## Цепочка (HARD)
 
