@@ -1,0 +1,29 @@
+{
+  "package": "posts/2026-09-03-1515",
+  "date": "2026-09-03",
+  "slot": "1515",
+  "status": "SENT",
+  "reason": "слот 15:15 МСК наступил — один TELEGRAM_SEND_POLL",
+  "sent_at_utc": "2026-09-03T12:15:57Z",
+  "sent_at_msk": "2026-09-03T15:15:57+03:00",
+  "link": "https://t.me/TodayTaro/4171",
+  "message_id": 4171,
+  "poll_id": "5246954450790127864",
+  "results": [
+    {
+      "dest": "telegram-poll",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_POLL",
+      "status": "SENT",
+      "chat_id": "@TodayTaro",
+      "message_id": 4171,
+      "link": "https://t.me/TodayTaro/4171"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "instagram": "UNTOUCHED",
+  "max": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "evening_2121": "NOT_PUBLISHED_THIS_TURN"
+}
