@@ -12,7 +12,7 @@
 
 | Поле | Хозяин | Правило |
 | --- | --- | --- |
-| Тело `story.md` (проза + триггерный вопрос) | **Writer**, один проход, Gemini 3.7 | Plot, Title, Clickbait, Gate, Art, Director, фиксер / копирайтер / «обогатитель» тело **не** переписывают |
+| Тело `story.md` (проза + триггерный вопрос) | **Writer**, один проход, Gemini 3.8 Flash High | Plot, Title, Clickbait, Gate, Art, Director, фиксер / копирайтер / «обогатитель» тело **не** переписывают |
 | H1 == title | **Title** | Writer H1 не выдумывает. Clickbait / Gate H1 не правят |
 | Overlay кадра 1 | **Clickbait** | Не в H1, не в тело. Art только рисует готовую строку |
 
@@ -85,11 +85,11 @@ Writer сам выбирает, какой вектор углубить. Это
 
 ## Модели ролей (HARD)
 
-Все **текстовые роли** продукта (всё, что видит читатель или что уходит в промпт картинки) пишутся **только на модели Gemini 3.7** (`gemini-3.7-flash-high`):
-- **Writer** (`magiya-writer.md`): `gemini-3.7-flash-high`. Только тело. H1 не пишет.
-- **Title** (`magiya-title.md`): `gemini-3.7-flash-high`. Только H1. Тело не правит.
-- **Clickbait** (`magiya-clickbait.md` / `clickbait.md`): `gemini-3.7-flash-high`. Пишет ударный overlay для кадра 1.
-- **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.7-flash-high`. Базовое ядро промпта держит Вику с DJI Mic Mini в руке у рта, зеленые с карим глаза (hazel-green), формат 16:9 (1K) и жирную красную рамку с overlay из `clickbait.txt`. Генерацию пикселей НЕ запускать.
+Все **текстовые роли** продукта (всё, что видит читатель или что уходит в промпт картинки) пишутся **только на модели Gemini 3.8 Flash High** (`gemini-3.8-flash-high`):
+- **Writer** (`magiya-writer.md`): `gemini-3.8-flash-high`. Только тело. H1 не пишет.
+- **Title** (`magiya-title.md`): `gemini-3.8-flash-high`. Только H1. Тело не правит.
+- **Clickbait** (`magiya-clickbait.md` / `clickbait.md`): `gemini-3.8-flash-high`. Пишет ударный overlay для кадра 1.
+- **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.8-flash-high`. Базовое ядро промпта держит Вику с DJI Mic Mini в руке у рта, зеленые с карим глаза (hazel-green), формат 16:9 (1K) и жирную красную рамку с overlay из `clickbait.txt`. Генерацию пикселей НЕ запускать.
 
 Другими моделями (Grok, Claude, Composer) заголовки, кликбейт, промпты картинок и `story.md` не писать.
 Scout / Plot / Gate остаются `inherit` как служебные. Plot в статью не пишет. Gate предложения не переписывает.

@@ -55,7 +55,7 @@ Art — после Clickbait: обложка 16:9 (1K) с готовой стр�
 ## Спавн (Cloud)
 
 `Task(generalPurpose)` + полный текст роли из `magiya-istorii/.cursor/agents/`.
-Writer: `model: gemini-3.7-flash-high`. Title и Clickbait — та же модель.
+Writer: `model: gemini-3.8-flash-high`. Title, Clickbait и Art-brief — та же модель.
 В промпт Writer не копировать поля Plot как обязательный сценарий.
 
 ## Выход
