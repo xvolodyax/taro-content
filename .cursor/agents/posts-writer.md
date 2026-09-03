@@ -10,3 +10,5 @@ is_background: false
 `.cursor/skills/posts-meaning/SKILL.md`. Один тезис, не подпись.
 
 В step record пиши `role: posts-meaning`. Сцену и площадки пишет copywriter.
+Вечер 21:21 пишет copywriter: один вопрос + один расклад. Meaning на вечере нет.
+Пульс снят.

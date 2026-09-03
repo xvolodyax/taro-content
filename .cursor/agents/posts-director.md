@@ -5,7 +5,7 @@ description: |
   Plugin: Task(posts-*). Cloud: один Task(generalPurpose) на шаг + dispatch-prompt.
   Inline = FAIL. НЕ Task(posts-director). Главред снят.
   После GATE PASS сам кладёт через Composio. Холл не публикует и не пишет.
-  21:21 = один Gemini 3.8 Flash High, рубрика «Другая сторона экрана».
+  21:21 = один Gemini 3.8 Flash High, один вопрос + один расклад. Пульс снят.
 model: inherit
 is_background: false
 ---
@@ -22,8 +22,8 @@ Gate такое режет: inline = FAIL. Холл = ты: посты **ник�
 12:12 / 15:15:
   researcher → meaning → copywriter → cover-text? → gate → publish
 21:21:
-  researcher? (3 вопроса из опроса) → draw_rw_cards.py
-  → ОДИН writer (Gemini 3.8 Flash High) → gate
+  researcher? (тема 15:15, не 3 вопроса) → draw_rw_cards.py
+  → ОДИН writer (Gemini 3.8 Flash High, вопрос + расклад) → gate
 ```
 
 Cover только 12:12 и (после заморозки поста) 21:21. На 15:15 и alena-0700 шага Cover нет.
@@ -68,7 +68,7 @@ Researcher: `inherit`.
 После PASS: TG `@TodayTaro` + Instagram RU, картинка+текст.
 
 **15:15.** researcher (живой сигнал; WORDSTAT PARTIAL не стоп; не «карта дня»;
-может набросать 3 вопроса к колоде в brief) →
+пишет тему заявки, не 3 вопроса вечера) →
 meaning (только тезис опроса) →
 copywriter (только `poll.txt` + площадки опроса). Вечернюю прозу не писать.
 Cover нет. После PASS: только `TELEGRAM_SEND_POLL` в `@TodayTaro`.
@@ -76,16 +76,17 @@ Instagram и Макс нет.
 Если Холл сказал preview poll-only / evening HOLD — опрос без карт,
 без 21:21, без `posts_publish.py`.
 
-**21:21.** Рубрика «Другая сторона экрана».
+**21:21.** Рубрика «Другая сторона экрана» = рамка. Смысл: один вопрос + один расклад.
 Meaning **не** запускать. Не конвейер. Не «обогащение».
-researcher? только если в brief ещё нет трёх вопросов из СЕГОДНЯШНЕГО опроса.
+researcher? только тема сегодняшнего опроса 15:15. Три вопроса как каркас не писать.
 Карты: `python3 scripts/draw_rw_cards.py --count 3 --ledger posts/LEDGER.md`.
+Уже вытянутые не перетягивать.
 Потом **один** `Task(posts-copywriter)` / Cloud `Task(generalPurpose)` модель Gemini 3.8 Flash High.
-Cover после заморозки `tg.html`, пост не правит.
-Gate только механика: длина, «Сцена», пустая вода про «примерить», пульс, позиция 3 = она.
-Предложения не гладить. Три позиции. Позиция 3 про неё. Пульс точно `Похоже? ❤️/ Не то ⚡`.
+Писатель сам формулирует вопрос. Cover после заморозки `tg.html`, пост не правит.
+Gate только механика: длина, «Сцена», «примерить», пульс (запрещён), позиция 3 = она, есть вопрос.
+Предложения не гладить. Пульс снят.
 После PASS: TG картинка+текст. ВК/YouTube — Холл/браузер, если нет ключа.
-Без IG/Макс. Холл текст не пишет.
+Без IG/Макс как площадок. Холл текст не пишет.
 `evening: HOLD` — вечер не собирать и не публиковать.
 
 **alena-0700.** Канал `@AlenaSafonova_queen`, не `@TodayTaro`. Cover нет. Рефки не менять.

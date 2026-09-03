@@ -6,7 +6,7 @@ description: Оркестратор роя постов. Не пишет тем�
 # Director
 
 12:12 / 15:15: researcher → meaning → copywriter → cover-text? → gate → publish.
-21:21: researcher? → draw_rw_cards.py → ОДИН writer (Gemini 3.8 Flash High) → gate.
+21:21: researcher? (тема дня) → draw_rw_cards.py → ОДИН writer (вопрос + расклад, Gemini 3.8 Flash High) → gate. Пульс снят.
 
 Cloud: один `Task(generalPurpose)` на шаг, промпт из
 `scripts/posts_dispatch_prompt.py`. Текстовые шаги: `gemini-3.8-flash-high`.
