@@ -1,17 +1,17 @@
 Ты один шаг роя постов ТАРО СЕЙЧАС. Не Директор.
 
-Роль: posts-researcher
+Роль: posts-meaning
 Пакет: posts/2026-09-03-1212
 Runtime: cloud
 Спавн: Task(generalPurpose) — этот промпт целиком
-Модель шага: inherit
-written_by: inherit
+Модель шага: gemini-3.7-flash-high
+written_by: gemini
 publish: SKIP
 Главред: REMOVED. Не писать «можно публиковать».
 
 Прочитай целиком и следуй:
-- .cursor/agents/posts-researcher.md
-- .cursor/skills/posts-researcher/SKILL.md
+- .cursor/agents/posts-meaning.md
+- .cursor/skills/posts-meaning/SKILL.md
 - POSTS.md
 - shared/posts-soul.md
 - shared/posts-funnel.md
@@ -19,7 +19,7 @@ publish: SKIP
 - shared/posts-model-policy.json
 
 Уже готово: смотри файлы пакета
-Артефакты этого шага: brief.md
+Артефакты этого шага: meaning.md
 
 Запрещено:
 - писать соседние роли (тема + тезис + пост + хук в одних руках)
