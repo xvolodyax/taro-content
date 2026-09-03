@@ -29,6 +29,7 @@ is_background: false
 - `inline-02`…`06` / срезы не делать и в статью не класть
 - Cover / overlay не вместо H1; на обложке остаются жирная красная рамка и кликбейт
 - Тело писал один Writer, без чужих рук в прозе
+- Дефолтный Cloud Agent / Director НЕ подменял текст Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — вердикт строго FAIL («модель недоступна»), без своего черновика!
 
 ## Бракует
 
@@ -71,6 +72,8 @@ FAIL **overlay** → **Clickbait** (тело и H1 не трогать):
 verdict: PASS | FAIL
 return: none | Writer | Title | Clickbait | Scout | Director
 chars: <n>
+gemini_model_available: yes | no (модель недоступна)
+director_inline: no | yes
 rewrote_sentences: no
 own_architecture: yes | no
 range_clone: none | whale | einstein | teeth

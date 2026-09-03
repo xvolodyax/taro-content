@@ -12,7 +12,7 @@
 
 | Поле | Хозяин | Правило |
 | --- | --- | --- |
-| Тело `story.md` (проза + триггерный вопрос) | **Writer**, один проход, Gemini 3.8 Flash High (`gemini-3.8-flash` + `reasoning_effort: high`) | Plot, Title, Clickbait, Gate, Art, Director, фиксер / копирайтер / «обогатитель» тело **не** переписывают. Если Task недоступен — Director текст сам НЕ пишет (fallback на `gemini-3.8-flash`+high либо FAIL) |
+| Тело `story.md` (проза + триггерный вопрос) | **Writer**, один проход, Gemini 3.8 Flash High (`gemini-3.8-flash` + `reasoning_effort: high`) | Plot, Title, Clickbait, Gate, Art, Director, фиксер / копирайтер / «обогатитель» тело **не** переписывают. Дефолтный Cloud Agent / Director текст НЕ подменяет: если Gemini недоступна — FAIL («модель недоступна»), без своего черновика |
 | H1 == title | **Title** | Writer H1 не выдумывает. Clickbait / Gate H1 не правят |
 | Overlay кадра 1 | **Clickbait** | Не в H1, не в тело. Art только рисует готовую строку |
 
@@ -94,6 +94,12 @@ Writer сам выбирает, какой вектор углубить. Это
 - **Title** (`magiya-title.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Только H1. Тело не правит.
 - **Clickbait** (`magiya-clickbait.md` / `clickbait.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Пишет ударный overlay для кадра 1.
 - **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Базовое ядро промпта держит Вику с DJI Mic Mini в руке у рта, зеленые с карим глаза (hazel-green), формат 16:9 (1K) и жирную красную рамку с overlay из `clickbait.txt`. Генерацию пикселей НЕ запускать.
+
+**Жёсткое правило (HARD 03.09):**
+Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Никаких лазеек «напишу сам».
+
+Другими семействами моделей (Grok, Claude, Composer) заголовки, кликбейт, промпты картинок и `story.md` не писать.
+Scout / Plot / Gate остаются `inherit` как служебные. Plot в статью не пишет. Gate предложения не переписывает.
 
 Другими семействами моделей (Grok, Claude, Composer) заголовки, кликбейт, промпты картинок и `story.md` не писать.
 Scout / Plot / Gate остаются `inherit` как служебные. Plot в статью не пишет. Gate предложения не переписывает.

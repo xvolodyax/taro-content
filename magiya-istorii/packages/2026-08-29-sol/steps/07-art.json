@@ -2,7 +2,7 @@
   "role": "magiya-art",
   "spawn": "Task",
   "subagent_type": "generalPurpose",
-  "model": "gemini-3.7-flash-high",
+  "model": "gemini-3.8-flash-high",
   "inline": false,
   "artifacts": [
     "art-brief.md"

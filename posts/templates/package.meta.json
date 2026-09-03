@@ -1,0 +1,10 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.8-flash-high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "1212",
+  "date": "YYYY-MM-DD"
+}

@@ -21,7 +21,7 @@
 | Overlay кадра 1 | **Clickbait** | `gemini-3.8-flash` + `reasoning_effort: high` (alias Task: `gemini-3.8-flash-high`) | Title, Writer, Gate, Plot, Art (Art только рисует готовую строку) |
 
 **Болезнь (убить):** Plot / Gate / Title / Clickbait / фиксер / копирайтер наваливаются на **тело**. Второй проход по прозе запрещён.
-Если Task с текстовой ролью недоступен — Director текст сам НЕ пишет! Либо вызов `gemini-3.8-flash` + high, либо FAIL.
+Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет!
 
 Ролей fixer / copywriter / enrichment / Главред по `story.md` **нет**. Не звать. Не выдумывать.
 
@@ -43,7 +43,10 @@
 
 Все читаемые текстовые роли (Title, Writer, Clickbait, Art-brief) пишутся строго на **Gemini 3.8 Flash High**:
 1. **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort: high` (в Cloud Agents нет отдельного слага `gemini-3.8-flash-high`, связка `gemini-3.8-flash` + `reasoning_effort=high` и реализует Gemini 3.8 Flash High).
-2. **Локальный Task:** `gemini-3.8-flash-high` зафиксирован только как alias для локальных вызовов Task внутри IDE Cursor. Если slug `gemini-3.8-flash-high` недоступен — вызывать `gemini-3.8-flash` + high либо падать с FAIL, но Director сам текст не пишет!
+2. **Локальный Task:** `gemini-3.8-flash-high` зафиксирован только как alias для локальных вызовов Task внутри IDE Cursor.
+
+**Жёсткое правило (HARD 03.09):**
+Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет!
 
 Title ≠ Clickbait ≠ Writer.
 Clickbait не меняет `title` / `h1` / `story.md`.

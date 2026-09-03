@@ -1,0 +1,48 @@
+{
+  "pipeline": "taro-reels-swarm",
+  "text_model": "gemini-3.8-flash",
+  "text_model_id": "gemini-3.8-flash",
+  "text_model_param": "reasoning_effort=high",
+  "text_model_alias_ide_task": "gemini-3.8-flash-high",
+  "text_model_display": "Gemini 3.8 Flash High",
+  "written_by": "gemini",
+  "cloud_model_id": "gemini-3.8-flash",
+  "cloud_reasoning_effort": "high",
+  "hard_rule_0309": "Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Ни статьи magiya, ни посты 12:12/15:15/21:21, ни опросы, ни Алёна, ни рилсы-текст. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет.",
+  "publish": "SKIP",
+  "inherit_means": "Модель родителя = модель окна Холла. Текстовые шаги всё равно Gemini. Не подменять.",
+  "text_agents": [
+    "reels-gemini",
+    "reels-smysly",
+    "reels-funnel",
+    "reels-storyboard",
+    "reels-montage",
+    "reels-questions"
+  ],
+  "inherit_agents": [
+    "reels-director",
+    "reels-extractor",
+    "reels-analyst",
+    "reels-filter",
+    "reels-gate"
+  ],
+  "human_text_files": [
+    "script-draft.md",
+    "script.md",
+    "smysly.md",
+    "caption.md",
+    "storyboard.md",
+    "montage.md",
+    "montage-ai.json",
+    "questions.md"
+  ],
+  "forbidden_writers": [
+    "opus",
+    "sonnet",
+    "composer",
+    "grok",
+    "claude-opus",
+    "claude-sonnet",
+    "cursor-composer"
+  ]
+}
