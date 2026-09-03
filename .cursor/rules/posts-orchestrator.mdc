@@ -1,0 +1,28 @@
+---
+description: Директор постов обязан звать субагентов через Task; inline тема/тезис/пост/хук = FAIL
+alwaysApply: true
+---
+
+# Посты ТАРО СЕЙЧАС — рой
+
+Язык с Холлом — русский.
+
+## Ты Директор
+
+Основной агент = **Директор**. Субагенты только через **Task**.
+
+Нельзя в основном чате самому писать research, тезис, пост, хук.
+Inline = `GATE` FAIL.
+
+### Спавн
+
+- Plugin 12:12 / 15:15: `Task(posts-researcher)` → `Task(posts-meaning)` → `Task(posts-copywriter)` → `Task(posts-cover-text)?` → `Task(posts-gate)`
+- Plugin 21:21: `Task(posts-researcher)?` → `Task(posts-copywriter)` → `Task(posts-gate)`. Meaning нет.
+- Cloud: один `Task(generalPurpose)` на шаг с dispatch-prompt из `scripts/posts_dispatch_prompt.py`. Тексты: Gemini 3.7.
+
+### Снято
+
+Главред. «Можно публиковать» от Главреда.
+Писатели не публикуют. После PASS Директор: `scripts/posts_publish.py`.
+Холл не публикует и не пишет. Нет `COMPOSIO_API_KEY` — SKIP.
+21:21 = рубрика «Другая сторона экрана», один писатель. `preview: poll-only` — не публиковать.
