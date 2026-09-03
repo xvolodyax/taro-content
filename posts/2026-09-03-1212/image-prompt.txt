@@ -3,13 +3,13 @@ mode: i2i
 model: gpt-image-2-image-to-image
 ref: images/refs/taro-seichas-logo.png
 resolution: 1K
-palette: 
+palette: muted gray car interior, matte black steering wheel, neutral unopened lunch container, cold diffuse overcast daylight from parking lot
 who: none
-thesis: 
+thesis: A deleted message leaves a gray system notification in the chat, forcing a midday decision in the quiet car.
 placement: center
 overlay: centered hook + gold medallion only
 signature: none
 
-prompt: <English, 40–80 words: scene, light, palette, lens, editorial still. Hook in quotes ONCE, strictly at optical center of the 1:1 frame, high contrast letter vs background, readable at Instagram grid thumbnail. Magazine display serif/didone or refined grotesque, not Arial/Roboto/Inter/Impact/squish-bold, letters live in the light not a sticker, not a bottom bar, not a corner plaque. Native circular champagne-gold medallion with readable ТАРО / СЕЙЧАС off-center as an object. No face, no Victoria credit, no dark wood table, no candles. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.>
+prompt: Editorial still life photograph inside a car parked at noon. Atmospheric perspective from the driver seat featuring a matte black steering wheel, textured cool gray upholstery, and an unopened matte food container resting on the passenger seat. Soft overcast diffuse daylight streaming through the front window. Minimalist, quiet, cinematic mood, 50mm lens aesthetic. In the strictly optical center of the 1:1 square frame, the text "Слова отозваны после отправки" appears in high-contrast refined magazine display typography, perfectly balanced, legible at a 200px Instagram thumbnail preview. A native circular champagne-gold medallion with crisp readable Russian lettering "ТАРО / СЕЙЧАС" lies naturally on the console surface as an authentic metallic object. No human faces, no Victoria credit, no candles, no dark wood. No extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.
 
-why: <одна строка по-русски: хук, почему в центре, что в кадре>
+why: Хук «Слова отозваны после отправки» расположен строго в оптическом центре квадрата 1:1 на фоне сдержанного серого салона автомобиля в холодном дневном свете без лиц и лишних плашек.
