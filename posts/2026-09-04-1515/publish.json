@@ -1,0 +1,24 @@
+{
+  "package": "/workspace/posts/2026-09-04-1515",
+  "date": "2026-09-04",
+  "slot": "1515",
+  "status": "WAIT",
+  "reason": "слот МСК ещё не наступил, без отложки",
+  "wait_until": "2026-09-04T15:15:00+03:00",
+  "destinations": [
+    {
+      "name": "telegram-poll",
+      "toolkit": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_POLL",
+      "chat_id": "@TodayTaro",
+      "skip": false,
+      "reason": ""
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "key_env": "COMPOSIO_API_KEY",
+  "key_present": true
+}

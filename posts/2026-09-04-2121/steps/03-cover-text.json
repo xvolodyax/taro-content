@@ -1,0 +1,15 @@
+{
+  "role": "posts-cover-text",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gemini-3.8-flash",
+  "inline": false,
+  "written_by": "gemini",
+  "dispatch_prompt": "steps/03-cover-text.prompt.md",
+  "artifacts": [
+    "cover-text.json",
+    "image-prompt.txt"
+  ],
+  "publish": "SKIP",
+  "runtime": "cloud"
+}
