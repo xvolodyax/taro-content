@@ -1,10 +1,9 @@
 {
-  "package": "/workspace/posts/2026-09-04-1515",
+  "package": "posts/2026-09-04-1515",
   "date": "2026-09-04",
   "slot": "1515",
-  "status": "WAIT",
-  "reason": "слот МСК ещё не наступил, без отложки",
-  "wait_until": "2026-09-04T15:15:00+03:00",
+  "status": "SKIP",
+  "reason": "СТОП от Холла — Холл сама шлёт TELEGRAM_SEND_POLL",
   "destinations": [
     {
       "name": "telegram-poll",
@@ -12,13 +11,13 @@
       "alias": "telegram-composia",
       "tool": "TELEGRAM_SEND_POLL",
       "chat_id": "@TodayTaro",
-      "skip": false,
-      "reason": ""
+      "skip": true,
+      "reason": "Холл шлёт опрос сама"
     }
   ],
-  "hall_publishes": false,
+  "hall_publishes": true,
   "vk": "UNTOUCHED",
-  "youtube": "UNTOUCHED",
-  "key_env": "COMPOSIO_API_KEY",
-  "key_present": true
+  "instagram": "UNTOUCHED",
+  "max": "UNTOUCHED",
+  "youtube": "UNTOUCHED"
 }
