@@ -10,4 +10,4 @@
 **Кстати:** спорт
 **Обложка:** `/workspace/alena-covers/prognoz-na-den.png` (готова, не генерить)
 **GATE:** PASS
-**Публикация:** ждать 07:00 МСК, затем один sendPhoto ботом `@composia_bot` / telegram-composia в https://t.me/AlenaSafonova_queen. Картинка + весь текст в подписи. Из ленты Send не жать.
+**Публикация:** отправлено 2026-09-04 07:01 МСК в https://t.me/AlenaSafonova_queen/2780 (`@composia_bot` / telegram-composia). Картинка + caption в одной подписи (message_id: 2780). Не дубль: предыдущий слот 03.09 — 2779.
