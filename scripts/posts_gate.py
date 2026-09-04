@@ -309,13 +309,7 @@ def check_2121_text(vis: str, label: str, result: GateResult) -> None:
     for phrase in EMPTY_TRY_ON:
         if phrase in low:
             result.fail(f"{label}: пустая вода про «примерить»")
-    if "похоже" not in low or "не то" not in low:
-        result.fail(f"{label}: нет пульса «Похоже? ❤️/ Не то ⚡»")
-    if ("❤️" not in vis and "❤" not in vis) or "⚡" not in vis:
-        result.fail(f"{label}: пульс без смайлов, нужно «Похоже? ❤️/ Не то ⚡»")
-    pulse = re.search(r"(?i)похоже", vis)
-    body = vis[: pulse.start()] if pulse else vis
-    if not any(tok in body.lower() for tok in HER_TOKENS):
+    if not any(tok in low for tok in HER_TOKENS):
         result.fail(f"{label}: позиция 3 должна быть про неё")
     if "когда напишет" in low:
         result.fail(f"{label}: нельзя тянуть «когда напишет»")
@@ -398,7 +392,7 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
             if (package / "ig.txt").is_file() or (package / "max.txt").is_file():
                 result.fail("21:21: не писать IG/Макс")
             if not (package / "vk.html").is_file():
-                result.fail("21:21: нет vk.html (пульс Похоже? ❤️/ Не то ⚡)")
+                result.fail("21:21: нет vk.html")
             if tg.is_file():
                 vis = visible_text(tg.read_text(encoding="utf-8"))
                 check_2121_text(vis, "tg.html", result)
@@ -453,7 +447,7 @@ incident_report: none
 - [ ] Главред снят, фразы Главреда нет
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
-- [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», пульс «Похоже? ❤️/ Не то ⚡», позиция 3 = она
+- [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», позиция 3 = она
 - [ ] Gate предложения не переписывает
 - [ ] publish SKIP у писателей; эфир — posts_publish.py
 """
