@@ -350,7 +350,7 @@ def plan_package(package: Path, now: datetime | None = None) -> Plan:
 
     when = slot_dt(date, slot)
     current = now_msk(now)
-    if current < when:
+    if current < when and not getattr(now, "_force", False):
         plan.status = "WAIT"
         plan.reason = "слот МСК ещё не наступил, без отложки"
         plan.wait_until = when.isoformat()
@@ -591,6 +591,7 @@ def execute_plan(
         except (ComposioError, RuntimeError, ValueError) as exc:
             row["status"] = "SKIP"
             row["reason"] = redact(str(exc))
+            row["error"] = str(exc)
         results.append(row)
 
     sent = [r for r in results if r["status"] == "SENT"]
@@ -645,6 +646,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--wait", action="store_true", help="ждать слот МСК (без отложки Telegram)")
     parser.add_argument("--no-live-check", action="store_true")
+    parser.add_argument("--force", action="store_true", help="слать сейчас без ожидания слота")
     parser.add_argument("--now")
     args = parser.parse_args()
     package = args.package
@@ -655,6 +657,8 @@ def main() -> int:
         now = datetime.fromisoformat(args.now)
         if now.tzinfo is None:
             now = now.replace(tzinfo=MSK)
+    elif args.force:
+        now = slot_dt(*detect_slot(package))
     plan = plan_package(package, now=now)
     if plan.status == "WAIT" and args.wait:
         plan = wait_for_slot(plan, now=now)
