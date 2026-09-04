@@ -1,0 +1,14 @@
+{
+  "role": "posts-meaning",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gemini-3.8-flash",
+  "inline": false,
+  "written_by": "gemini",
+  "dispatch_prompt": "steps/02-meaning.prompt.md",
+  "artifacts": [
+    "meaning.md"
+  ],
+  "publish": "SKIP",
+  "runtime": "cloud"
+}
