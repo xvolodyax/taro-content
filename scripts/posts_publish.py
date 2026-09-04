@@ -569,15 +569,24 @@ def execute_plan(
             results.append(row)
             continue
         try:
+            resp: dict[str, Any] = {}
             if dest.tool == CFG["tools"]["telegram_poll"]:
                 question, options = parse_poll(package)
-                send_telegram_poll(client, dest, question, options)
+                resp = send_telegram_poll(client, dest, question, options)
             elif dest.toolkit == "instagram":
-                send_instagram(client, dest, text, photo)
+                resp = send_instagram(client, dest, text, photo)
             else:
-                send_telegram_photo(client, dest, text, photo)
+                resp = send_telegram_photo(client, dest, text, photo)
             row["status"] = "SENT"
             row["reason"] = ""
+            resp_data = resp.get("data") if isinstance(resp, dict) else {}
+            if isinstance(resp_data, dict):
+                inner_res = resp_data.get("result") if isinstance(resp_data.get("result"), dict) else resp_data
+                msg_id = inner_res.get("message_id")
+                if msg_id:
+                    row["message_id"] = msg_id
+                    if dest.chat_id and dest.chat_id.startswith("@"):
+                        row["link"] = f"https://t.me/{dest.chat_id.lstrip('@')}/{msg_id}"
             ledger_add(plan.date, plan.slot, dest.name, {"tool": dest.tool, "alias": dest.alias})
         except (ComposioError, RuntimeError, ValueError) as exc:
             row["status"] = "SKIP"
@@ -607,6 +616,11 @@ def execute_plan(
         "key_env": KEY_ENV,
         "key_present": key_present(),
     }
+    for r in results:
+        if r.get("link"):
+            report["link"] = r["link"]
+        if r.get("message_id"):
+            report["message_id"] = r["message_id"]
     save_json(package / "publish.json", report)
     return report
 
