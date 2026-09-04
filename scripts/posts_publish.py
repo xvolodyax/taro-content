@@ -310,17 +310,13 @@ def build_destinations(slot: str) -> list[Dest]:
 
 def apply_optional_max(dests: list[Dest]) -> None:
     token = (os.environ.get("MAX_BOT_TOKEN") or "").strip()
-    chat = (os.environ.get("MAX_CHAT_ID") or "").strip()
+    chat = (os.environ.get("MAX_CHAT_ID") or "AaBmlTdadaI").strip()
     for dest in dests:
         if dest.name != "max":
             continue
         if not token:
             dest.skip = True
             dest.reason = "нет MAX_BOT_TOKEN"
-            continue
-        if not chat:
-            dest.skip = True
-            dest.reason = "есть MAX_BOT_TOKEN, нет MAX_CHAT_ID"
             continue
         dest.skip = False
         dest.reason = ""
@@ -556,15 +552,24 @@ def execute_plan(
             row["reason"] = "dry-run, в эфир не ушло"
             results.append(row)
             continue
+        if dest.name == "max":
+            try:
+                send_max(caption_plain or caption_html, photo, dest.chat_id)
+                row["status"] = "SENT"
+                row["reason"] = ""
+                ledger_add(plan.date, plan.slot, dest.name, {"tool": dest.tool, "alias": dest.alias})
+            except Exception as exc:
+                row["status"] = "SKIP"
+                row["reason"] = redact(str(exc))
+            results.append(row)
+            continue
         if client is None:
             row["status"] = "SKIP"
             row["reason"] = "нет клиента Composio"
             results.append(row)
             continue
         try:
-            if dest.name == "max":
-                send_max(caption_plain or caption_html, photo, dest.chat_id)
-            elif dest.tool == CFG["tools"]["telegram_poll"]:
+            if dest.tool == CFG["tools"]["telegram_poll"]:
                 question, options = parse_poll(package)
                 send_telegram_poll(client, dest, question, options)
             elif dest.toolkit == "instagram":
