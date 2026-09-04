@@ -1,23 +1,27 @@
 {
-  "package": "/workspace/posts/2026-09-04-2121",
+  "package": "posts/2026-09-04-2121",
   "date": "2026-09-04",
   "slot": "2121",
-  "status": "SKIP",
-  "reason": "слот наступил или прошёл — слать сразу",
+  "status": "SENT",
+  "reason": "слот 21:21 МСК наступил — TELEGRAM_SEND_PHOTO",
+  "sent_at_utc": "2026-09-04T18:30:10Z",
+  "sent_at_msk": "2026-09-04T21:30:10+03:00",
+  "link": "https://t.me/TodayTaro/4180",
+  "message_id": 4180,
   "results": [
     {
       "dest": "telegram",
       "alias": "telegram-composia",
       "tool": "TELEGRAM_SEND_PHOTO",
-      "status": "SKIP",
-      "reason": "HTTP 403 {\"error\":{\"message\":\"This API key does not have the permissions required for POST /api/v3/tools/execute/TELEGRAM_SEND_PHOTO. This route requires \\\"tool_execution\\\" write access, but the key has no access for \\\"tool_execution\\\".\",\"code\":812,\"slug\":\"APIKey_InsufficientPermissions\",\"status\":403,\"request_id\":\"4b8465d3-9470-44a7-93ea-b9aa6f214a76\",\"suggested_fix\":\"Grant the \\\"tool_execution\\\" permissio",
-      "live_check": "HTTP 403 {\"error\":{\"message\":\"This API key does not have the permissions required for POST /api/v3/tools/execute/TELEGRAM_GET_CHAT_HISTORY. This route requires \\\"tool_execution\\\" write access, but the key has no access for \\\"tool_execution\\\".\",\"code\":812,\"slug\":\"APIKey_InsufficientPermissions\",\"status\":403,\"request_id\":\"2efcf4b1-bbd3-4254-b38c-2d159b781be7\",\"suggested_fix\":\"Grant the \\\"tool_execution\\\" per",
-      "error": "HTTP 403 {\"error\":{\"message\":\"This API key does not have the permissions required for POST /api/v3/tools/execute/TELEGRAM_SEND_PHOTO. This route requires \\\"tool_execution\\\" write access, but the key has no access for \\\"tool_execution\\\".\",\"code\":812,\"slug\":\"APIKey_InsufficientPermissions\",\"status\":403,\"request_id\":\"4b8465d3-9470-44a7-93ea-b9aa6f214a76\",\"suggested_fix\":\"Grant the \\\"tool_execution\\\" permissio"
+      "status": "SENT",
+      "chat_id": "@TodayTaro",
+      "message_id": 4180,
+      "link": "https://t.me/TodayTaro/4180"
     }
   ],
   "hall_publishes": false,
   "vk": "UNTOUCHED",
-  "youtube": "UNTOUCHED",
-  "key_env": "COMPOSIO_API_KEY",
-  "key_present": true
+  "instagram": "UNTOUCHED",
+  "max": "UNTOUCHED",
+  "youtube": "UNTOUCHED"
 }
