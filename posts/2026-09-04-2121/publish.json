@@ -3,11 +3,9 @@
   "date": "2026-09-04",
   "slot": "2121",
   "status": "SENT",
-  "reason": "слот 21:21 МСК наступил — TELEGRAM_SEND_PHOTO",
-  "sent_at_utc": "2026-09-04T18:30:10Z",
-  "sent_at_msk": "2026-09-04T21:30:10+03:00",
-  "link": "https://t.me/TodayTaro/4180",
-  "message_id": 4180,
+  "reason": "слот 21:21 МСК опубликован Холлом (msg 4179); дубль 4180 удалён",
+  "link": "https://t.me/TodayTaro/4179",
+  "message_id": 4179,
   "results": [
     {
       "dest": "telegram",
@@ -15,11 +13,11 @@
       "tool": "TELEGRAM_SEND_PHOTO",
       "status": "SENT",
       "chat_id": "@TodayTaro",
-      "message_id": 4180,
-      "link": "https://t.me/TodayTaro/4180"
+      "message_id": 4179,
+      "link": "https://t.me/TodayTaro/4179"
     }
   ],
-  "hall_publishes": false,
+  "hall_publishes": true,
   "vk": "UNTOUCHED",
   "instagram": "UNTOUCHED",
   "max": "UNTOUCHED",
