@@ -10,4 +10,4 @@
 **Кстати:** спорт
 **Обложка:** `/workspace/alena-covers/prognoz-na-den.png` (готова, не генерить)
 **GATE:** PASS
-**Отложка:** Холл, 7:00, `@composia_bot`. Агент не публикует.
+**Публикация:** ждать 07:00 МСК, затем один sendPhoto ботом `@composia_bot` / telegram-composia в https://t.me/AlenaSafonova_queen. Картинка + весь текст в подписи. Из ленты Send не жать.
