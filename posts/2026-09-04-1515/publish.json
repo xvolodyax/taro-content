@@ -1,0 +1,23 @@
+{
+  "package": "posts/2026-09-04-1515",
+  "date": "2026-09-04",
+  "slot": "1515",
+  "status": "SKIP",
+  "reason": "СТОП от Холла — Холл сама шлёт TELEGRAM_SEND_POLL",
+  "destinations": [
+    {
+      "name": "telegram-poll",
+      "toolkit": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_POLL",
+      "chat_id": "@TodayTaro",
+      "skip": true,
+      "reason": "Холл шлёт опрос сама"
+    }
+  ],
+  "hall_publishes": true,
+  "vk": "UNTOUCHED",
+  "instagram": "UNTOUCHED",
+  "max": "UNTOUCHED",
+  "youtube": "UNTOUCHED"
+}

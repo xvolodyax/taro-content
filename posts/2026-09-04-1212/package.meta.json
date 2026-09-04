@@ -1,0 +1,12 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.8-flash",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "1212",
+  "date": "2026-09-04",
+  "chosen": "Онлайн для всех, кроме тебя",
+  "cover_url": "https://raw.githubusercontent.com/xvolodyax/taro-content/cursor/post-1212-04sep-21cd/posts/2026-09-04-1212/cover.png"
+}

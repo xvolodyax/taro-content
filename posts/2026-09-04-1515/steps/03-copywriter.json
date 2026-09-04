@@ -1,0 +1,17 @@
+{
+  "role": "posts-copywriter",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gemini-3.8-flash",
+  "inline": false,
+  "written_by": "gemini",
+  "dispatch_prompt": "steps/03-copywriter.prompt.md",
+  "artifacts": [
+    "poll.txt",
+    "tg.html",
+    "vk.html",
+    "yt.txt"
+  ],
+  "publish": "SKIP",
+  "runtime": "cloud"
+}

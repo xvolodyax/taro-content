@@ -1,0 +1,14 @@
+{
+  "slot": "2121",
+  "send_not_before": "2026-09-04T21:21:00+03:00",
+  "send_not_before_utc": "2026-09-04T18:21:00Z",
+  "tool": "TELEGRAM_SEND_PHOTO",
+  "account": "telegram-composia",
+  "arguments": {
+    "chat_id": "@TodayTaro",
+    "photo": "https://tempfile.aiquickdraw.com/images/chatgpt/20cfbcbb56b8c7d7e4a92b6335b75088_6561d42b825040a3890b436a4eec5f67.png",
+    "parse_mode": "HTML"
+  },
+  "caption_file": "tg.html",
+  "do_not_touch": ["instagram", "max", "vk", "youtube"]
+}

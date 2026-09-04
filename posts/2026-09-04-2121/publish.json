@@ -1,0 +1,25 @@
+{
+  "package": "posts/2026-09-04-2121",
+  "date": "2026-09-04",
+  "slot": "2121",
+  "status": "SENT",
+  "reason": "слот 21:21 МСК опубликован Холлом (msg 4179); дубль 4180 удалён",
+  "link": "https://t.me/TodayTaro/4179",
+  "message_id": 4179,
+  "results": [
+    {
+      "dest": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "SENT",
+      "chat_id": "@TodayTaro",
+      "message_id": 4179,
+      "link": "https://t.me/TodayTaro/4179"
+    }
+  ],
+  "hall_publishes": true,
+  "vk": "UNTOUCHED",
+  "instagram": "UNTOUCHED",
+  "max": "UNTOUCHED",
+  "youtube": "UNTOUCHED"
+}
