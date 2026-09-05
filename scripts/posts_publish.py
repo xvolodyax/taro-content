@@ -417,13 +417,16 @@ def plan_package(package: Path, now: datetime | None = None) -> Plan:
 def live_fingerprints(client: ComposioClient, dest: Dest) -> list[str]:
     if dest.toolkit != "telegram" or not dest.chat_id:
         return []
-    data = client.execute(
-        CFG["tools"]["telegram_history"],
-        {"chat_id": dest.chat_id, "limit": 20},
-        dest.alias,
-    )
-    blob = json.dumps(data, ensure_ascii=False)
-    return [fingerprint(blob)]
+    try:
+        data = client.execute(
+            CFG["tools"]["telegram_history"],
+            {"chat_id": dest.chat_id, "limit": 20},
+            dest.alias,
+        )
+        blob = json.dumps(data, ensure_ascii=False)
+        return [fingerprint(blob)]
+    except Exception:
+        return []
 
 
 def looks_duplicate(live: list[str], text: str) -> bool:
@@ -587,8 +590,11 @@ def execute_plan(
                     row["message_id"] = msg_id
                     if dest.chat_id and dest.chat_id.startswith("@"):
                         row["link"] = f"https://t.me/{dest.chat_id.lstrip('@')}/{msg_id}"
+                pub_id = inner_res.get("id") or inner_res.get("media_id")
+                if pub_id and dest.toolkit == "instagram":
+                    row["media_id"] = pub_id
             ledger_add(plan.date, plan.slot, dest.name, {"tool": dest.tool, "alias": dest.alias})
-        except (ComposioError, RuntimeError, ValueError) as exc:
+        except (ComposioError, RuntimeError, ValueError, Exception) as exc:
             row["status"] = "SKIP"
             row["reason"] = redact(str(exc))
             row["error"] = str(exc)
@@ -631,10 +637,15 @@ def wait_for_slot(plan: Plan, now: datetime | None = None) -> Plan:
         return plan
     target = datetime.fromisoformat(plan.wait_until)
     current = now_msk(now)
+    print(f"[{current.strftime('%Y-%m-%d %H:%M:%S %Z')}] Ожидание слота {target.strftime('%Y-%m-%d %H:%M:%S %Z')}...", flush=True)
     while current < target:
-        delay = min(30, max(1, int((target - current).total_seconds())))
+        remaining = int((target - current).total_seconds())
+        if remaining % 300 == 0 or remaining <= 60 or remaining == 180:
+            print(f"[{current.strftime('%H:%M:%S')}] До слота осталось {remaining}с ({remaining//60} мин)...", flush=True)
+        delay = min(30, max(1, remaining))
         time.sleep(delay)
         current = now_msk()
+    print(f"[{current.strftime('%Y-%m-%d %H:%M:%S %Z')}] Слот наступил! Начинаем отправку...", flush=True)
     plan.status = "READY"
     plan.reason = "слот наступил — слать сразу"
     return plan
