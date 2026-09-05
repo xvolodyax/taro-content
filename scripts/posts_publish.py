@@ -637,10 +637,15 @@ def wait_for_slot(plan: Plan, now: datetime | None = None) -> Plan:
         return plan
     target = datetime.fromisoformat(plan.wait_until)
     current = now_msk(now)
+    print(f"[{current.strftime('%Y-%m-%d %H:%M:%S %Z')}] Ожидание слота {target.strftime('%Y-%m-%d %H:%M:%S %Z')}...", flush=True)
     while current < target:
-        delay = min(30, max(1, int((target - current).total_seconds())))
+        remaining = int((target - current).total_seconds())
+        if remaining % 300 == 0 or remaining <= 60:
+            print(f"[{current.strftime('%H:%M:%S')}] До слота осталось {remaining}с ({remaining//60} мин)...", flush=True)
+        delay = min(30, max(1, remaining))
         time.sleep(delay)
         current = now_msk()
+    print(f"[{current.strftime('%Y-%m-%d %H:%M:%S %Z')}] Слот наступил! Начинаем отправку...", flush=True)
     plan.status = "READY"
     plan.reason = "слот наступил — слать сразу"
     return plan
