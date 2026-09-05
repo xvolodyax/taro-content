@@ -1,6 +1,6 @@
 ---
 name: posts-copywriter
-description: Gemini 3.8 Flash High. 12:12 сцена. 15:15 опрос. 21:21 единственный писатель вечера.
+description: inherit + reasoning_effort=low. 12:12 сцена. 15:15 опрос. 21:21 единственный писатель вечера.
 disable-model-invocation: true
 ---
 

@@ -7,8 +7,9 @@
 3. Вставить промпт слота из `POSTS.md`.
 4. Cloud: Директор на каждый шаг делает `Task(generalPurpose)` + dispatch-prompt.
    Plugin: `Task(posts-*)`.
-5. Дождаться `GATE` = PASS. Директор сам:
+5. Дождаться `GATE` = PASS. Один раз:
    `python3 scripts/posts_publish.py --package DIR`
+   Без `--wait`. Слот не наступил — READY_TO_SEND и выход. Не жить до 12:12 / 15:15 / 21:21.
 6. Кадр: публичный HTTPS в `POST_IMAGE_URL` / `cover-url.txt`. Без URL фото-площадки SKIP.
 
 Алиасы: `telegram-composia`, `instagram-ru`.

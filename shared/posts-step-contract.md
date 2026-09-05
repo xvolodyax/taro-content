@@ -40,9 +40,9 @@ posts/<slot>/package.meta.json
 | `inline` | только `false`. `true` или отсутствие шага при живом артефакте = FAIL |
 | `subagent_type` | Plugin: `posts-<role>`. Cloud: `generalPurpose` |
 | `dispatch_prompt` | Cloud обязателен: файл с полным промптом из `scripts/posts_dispatch_prompt.py` |
-| `model` | meaning / copywriter / cover-text / gate → `gemini-3.8-flash` + `reasoning_effort: high` (alias IDE Task: `gemini-3.8-flash-high`) |
+| `model` | inherit (окно). `reasoning_effort=low`. high — только явный оверрайд Владимира |
 | `written_by` | человеческий текст → `gemini`. Opus / Sonnet / Composer = FAIL |
-| `publish` | у писателей всегда `SKIP`. Эфир после PASS — `scripts/posts_publish.py` у Директора |
+| `publish` | у писателей всегда `SKIP`. После PASS — один `posts_publish.py` без `--wait` → READY_TO_SEND / SENT → EXIT |
 
 ## Cloud vs plugin
 
@@ -63,6 +63,7 @@ posts/<slot>/package.meta.json
 - `written_by` из стоп-листа моделей
 - есть шаг / файл Главреда, или фраза «можно публиковать» от Главреда
 - `publish` у шага писателя не `SKIP`
+- cover stale: `cover.png` дублирует md5 предыдущих дней или хук не совпадает с выбранным кандидатным хуком из `cover-text.json`
 
 Алиасы старых имён в step record принимаются: `posts-scout` → researcher,
 `posts-writer` → meaning, `posts-sol` → copywriter.

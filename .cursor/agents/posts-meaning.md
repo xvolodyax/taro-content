@@ -1,8 +1,8 @@
 ---
 name: posts-meaning
-description: "Meaning постов: один тезис на 12:12 / 15:15. На 21:21 шага нет. Gemini 3.8 Flash High. Director MUST Task."
-model: gemini-3.8-flash
-reasoning_effort: high
+description: "Meaning постов: один тезис на 12:12 / 15:15. На 21:21 шага нет. inherit + reasoning_effort=low. Director MUST Task."
+model: inherit
+reasoning_effort: low
 readonly: false
 is_background: false
 ---

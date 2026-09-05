@@ -67,7 +67,7 @@ Instagram и Макс в 21:21 не писать. Instagram и Макс опро
 
 ### Один писатель. Конвейер вечера убит
 
-21:21 пишет **один** Gemini 3.8 Flash High (в Cloud: model `gemini-3.8-flash` + `reasoning_effort=high`; alias IDE Task: `gemini-3.8-flash-high`). Один проход. Весь текст Telegram сразу.
+21:21 пишет **один** writer: inherit модель окна, `reasoning_effort=low` (high — только явный оверрайд Владимира). Один проход. Весь текст Telegram сразу.
 Второй писатель, «обогащение» и полировка **запрещены**.
 Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Никаких лазеек «напишу сам».
 
@@ -124,15 +124,17 @@ Env в среду агента (значение ключа в чат и git н�
 Алиасы Composio, не default: `telegram-composia` (`@TodayTaro` / канал Алёны),
 `instagram-ru`, `instagram-en` (EN этими слотами не шлём).
 
-1. **alena-0700** — промпт слота. PASS → `posts_publish.py` в `t.me/AlenaSafonova_queen` в 07:00 МСК. Рефки не менять.
-2. **12:12** — промпт. PASS → TG+IG RU, картинка+текст. ВК и YouTube community не трогать.
-3. **15:15** — опрос + вечерний debrief рубрики вместе. PASS → только `TELEGRAM_SEND_POLL`.
-4. **21:21** — один писатель Gemini 3.8 Flash High, один проход. PASS → TG картинка+текст. ВК/YouTube — Холл/браузер, если нет ключа.
+1. **alena-0700** — промпт слота. PASS → READY_TO_SEND → EXIT. 07:00 МСК = Холл / air wake в `t.me/AlenaSafonova_queen`. Рефки не менять.
+2. **12:12** — промпт. PASS → один `posts_publish.py` без `--wait` → SENT или READY_TO_SEND → EXIT.
+3. **15:15** — опрос + вечерний debrief рубрики вместе. PASS → один прогон (poll) или READY_TO_SEND → EXIT.
+4. **21:21** — один писатель (inherit + low), один проход. PASS → SENT или READY_TO_SEND → EXIT. ВК/YouTube — Холл/браузер, если нет ключа.
 
-Telegram без отложки: раньше слота МСК не слать. Слот прошёл — сразу.
+После PASS: один прогон `posts_publish.py` **без** `--wait`. Слот не наступил — `READY_TO_SEND` и выход.
+Запрещено жить до слота: sleep / poll / Read-loop до 12:12 / 15:15 / 21:21.
+Эфир в слот = Холл / короткий air wake. Слот уже прошёл — скрипт шлёт сразу и выходит.
 Живые сегодняшние не дублировать.
 
-После PASS Директор:
+После PASS Директор (один раз, потом EXIT):
 
 ```text
 python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-HHMM
@@ -140,7 +142,7 @@ python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-HHMM
 
 Писатели шагов: `publish: SKIP`.
 `preview: poll-only` — `posts_publish.py` **не** звать.
-`evening: HOLD` — вечер не писать; опрос 15:15 после PASS готов к слоту. Раньше 15:15 МСК не слать.
+`evening: HOLD` — вечер не писать; опрос 15:15 после PASS готов. Агент выходит, не ждёт 15:15.
 
 ### Cloud vs plugin
 
@@ -160,8 +162,10 @@ researcher → meaning → copywriter → cover-text → gate.
 Cloud: один Task(generalPurpose) на шаг + dispatch-prompt.
 Plugin: Task(posts-*).
 written_by: gemini. Opus/Sonnet/Composer = FAIL.
+Воркеры inherit, reasoning_effort=low. high — только оверрайд Владимира.
 Пакет: posts/YYYY-MM-DD-1212/
 После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-1212
+Без --wait. READY_TO_SEND или SENT → EXIT. Не жить до 12:12.
 TG+IG RU, картинка+текст. ВК и YouTube не трогать. Холл не публикует.
 Не генерировать картинку. Не писать 15:15 и 21:21.
 Главред не звать. Существующие и уже вышедшие посты не трогать.
@@ -184,9 +188,10 @@ Researcher: может сразу набросать 3 вопроса к кол�
 Copywriter 15:15: только poll.txt (5 строк) + площадки опроса. Вечерний пост не писать.
 Meaning на вечер не звать. Не 4 совета на варианты.
 Cloud: Task(generalPurpose)+dispatch. Plugin: Task(posts-*).
-written_by: gemini. Gemini 3.8 Flash High на тексты. Главред не звать.
+written_by: gemini. inherit + reasoning_effort=low на тексты. Главред не звать.
 Пакет: posts/YYYY-MM-DD-1515/
 После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-1515
+Без --wait. READY_TO_SEND или SENT → EXIT. Не жить до 15:15.
 Только TELEGRAM_SEND_POLL. Instagram и Макс опрос не получают.
 Холл не публикует. Существующие посты не трогать.
 ```
@@ -195,12 +200,12 @@ written_by: gemini. Gemini 3.8 Flash High на тексты. Главред не
 
 Конвейер вечера убит. Meaning не звать. Copywriter не «доглаживает» чужой черновик.
 Если 15:15 `evening: HOLD` и Холл не просил вечер — не писать.
-Холл пост не пишет. Пишет рой: один Gemini 3.8 Flash High.
+Холл пост не пишет. Пишет рой: один writer, inherit + reasoning_effort=low.
 
 ```text
 Слот 21:21 на YYYY-MM-DD.
 Канон: POSTS.md. Рубрика «Другая сторона экрана».
-Один писатель: Gemini 3.8 Flash High, один проход, весь пост Telegram сразу.
+Один писатель: inherit + reasoning_effort=low, один проход, весь пост Telegram сразу.
 Вход: опрос 15:15 + 3 вопроса researcher (если есть в brief) +
 3 карты из draw_rw_cards.py --count 3.
 Не звать meaning. Не второй проход. Не обогащать метафорами мастей.
@@ -217,6 +222,7 @@ Gate только: длина ≤1024, нет «Сцена», нет пусто�
 пульс, позиция 3 = она. Предложения не переписывать.
 Пакет: posts/YYYY-MM-DD-2121/
 После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-2121
+Без --wait. READY_TO_SEND или SENT → EXIT. Не жить до 21:21.
 Холл не публикует и не пишет. Существующие эфиры не трогать.
 ```
 
@@ -227,16 +233,16 @@ Gate только: длина ≤1024, нет «Сцена», нет пусто�
   researcher → meaning → copywriter → cover-text? → gate → publish
 21:21:
   researcher? (3 вопроса из опроса) → draw_rw_cards.py
-  → ОДИН writer (Gemini 3.8 Flash High, весь пост) → gate
+  → ОДИН writer (inherit + low, весь пост) → gate
 ```
 
 | Шаг | Агент | Модель | Выход |
 | --- | --- | --- | --- |
-| 0 | `posts-director` | inherit | папка, Task, step records, после PASS `posts_publish.py` |
+| 0 | `posts-director` | inherit | папка, Task, step records, после PASS READY_TO_SEND → EXIT |
 | 1 | `posts-researcher` | inherit | `brief.md`; на 21:21 может сразу 3 вопроса из опроса |
-| 2 | `posts-meaning` | `gemini-3.8-flash` + `reasoning_effort: high` | `meaning.md` на 12:12 / 15:15. На 21:21 шага нет |
-| 3 | `posts-copywriter` | `gemini-3.8-flash` + `reasoning_effort: high` | 12:12 / 15:15 площадки; 21:21 = единственный писатель поста |
-| 4 | `posts-cover-text` | `gemini-3.8-flash` + `reasoning_effort: high` | кадр 12:12; на 21:21 только после заморозки `tg.html` |
+| 2 | `posts-meaning` | inherit + `reasoning_effort: low` | `meaning.md` на 12:12 / 15:15. На 21:21 шага нет |
+| 3 | `posts-copywriter` | inherit + `reasoning_effort: low` | 12:12 / 15:15 площадки; 21:21 = единственный писатель поста |
+| 4 | `posts-cover-text` | inherit + `reasoning_effort: low` | кадр 12:12; на 21:21 только после заморозки `tg.html` |
 | 5 | `posts-gate` | `scripts/posts_gate.py` (+ чеклист). На 21:21 предложения не пишет | `GATE` |
 
 Алиасы: Scout → researcher, Writer → meaning, Sol → copywriter. Новых ролей сверх таблицы нет.
@@ -291,7 +297,7 @@ TG / ВК / Макс **без** кодового слова. Опрос 15:15 м
 
 - **researcher:** один угол из Wordstat / боли / Дзена / сайта / недели. На 21:21 может выбрать 3 вопроса из опроса.
 - **meaning:** тезис 12:12 / 15:15. На 21:21 не существует.
-- **copywriter = Gemini 3.8 Flash High:** 12:12 сцена; 15:15 опрос; 21:21 весь вечерний пост одним проходом.
+- **copywriter = inherit + low:** 12:12 сцена; 15:15 опрос; 21:21 весь вечерний пост одним проходом.
 - **cover-text:** 3 хука. На 21:21 не переписывает пост.
 - **gate:** на 21:21 только длина ≤1024, «Сцена», пустая вода про «примерить»,
   пульс `Похоже? ❤️/ Не то ⚡`, позиция 3 = она. Предложения не трогает.
@@ -322,6 +328,14 @@ IG / YT: сырых URL нет, «ссылки в шапке», IG — слов�
 
 3 кандидата, один выбран. Хук 2–6 слов **строго по центру** 1:1, читается как превью сетки (~200px).
 Не капс-H1, не Вордстат, не первая строка TG. Пиксели рисует Холл через Kie.
+
+### COVER ANTI-STALE (жёстко)
+1. `cover.png` в пакете дня = **новый** кадр под **сегодняшний** выбранный хук из `cover-text`.
+2. **Запрещено:** копировать / переименовывать / symlink / raw-download вчерашний или любой прошлый `posts/YYYY-MM-DD-*/cover.png`.
+3. Перед коммитом/публикацией: `md5sum cover.png` сравнить с `posts/*/cover.png` за последние 7 дней. Если совпал хоть с одним — **FAIL**, перерисовать через Kie.
+4. Kie: генерить по `image-prompt.txt` этого слота. Хук на кадре должен читаться и совпадать с выбранным candidate.
+5. В GATE/отчёте: строка `cover_md5: …` + `cover_hook: …`. Без нового md5 пакет не PASS.
+
 15:15 картинки нет.
 
 **21:21.** Стоящее имя рубрики — «Другая сторона экрана».
@@ -368,6 +382,7 @@ posts/YYYY-MM-DD-HHMM/
 - 12:12 в ВК и YouTube community
 - 15:15 / 21:21 в Instagram или Макс
 - Отложка Telegram; слать раньше слота МСК
+- Жить до слота: sleep / poll / Read-loop `posts_publish.py` до 12:12 / 15:15 / 21:21
 - Дубль живого сегодняшнего
 - `Task(posts-director)`, `/in-cloud`, `/babysit`, background Task
 - Специалист зовёт `Task(posts-*)`
@@ -401,8 +416,8 @@ posts/YYYY-MM-DD-HHMM/
 Слот alena-0700 на YYYY-MM-DD.
 Канал: https://t.me/AlenaSafonova_queen (не @TodayTaro).
 Канон: POSTS.md + posts/ALENA.md. Рефки не менять.
-После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-alena
-Холл не публикует. Cover нет.
+После PASS: READY_TO_SEND → EXIT. 07:00 = Холл / air wake.
+Холл не публикует из роя. Cover нет.
 ```
 
 ## Файлы

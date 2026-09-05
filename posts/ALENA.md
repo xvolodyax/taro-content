@@ -11,7 +11,7 @@
 
 ## Один Writer
 
-Астропост пишет **один** Writer, один проход, Gemini 3.8 Flash High (в Cloud: model `gemini-3.8-flash` + `reasoning_effort: high`, alias IDE Task: `gemini-3.8-flash-high`). Тело письма — только его.
+Астропост пишет **один** Writer, один проход: inherit модель окна, `reasoning_effort=low` (high — только явный оверрайд Владимира). Тело письма — только его.
 Дефолтный Cloud Agent / Director текст не подменяет: если Gemini недоступна — только FAIL («модель недоступна»), без своего черновика.
 
 ```text
@@ -42,7 +42,7 @@ Sol не звать. Cover нет. posts-cover-text не звать. Главр�
 После PASS верни Холлу: путь, длина caption, луна/день, тема «кстати», вердикт GATE.
 ```
 
-3. Дождаться `GATE` = PASS и папки `posts/YYYY-MM-DD-alena/`.
+3. Дождаться `GATE` = PASS и папки `posts/YYYY-MM-DD-alena/`. READY_TO_SEND → EXIT. Не жить до 07:00.
 4. Забрать `caption.txt` / `caption.html` и чеклист `REFS`.
 5. Обложка готова, не генерить: `/workspace/alena-covers/prognoz-na-den.png`.
 6. Отложку **7:00 МСК** ставит Холл сам через `@composia_bot`. Кода публикации в репо нет. Агент в Telegram не ходит.
