@@ -1,0 +1,13 @@
+{
+  "taskId": "375f39d9516bcda86d983a3141865b61",
+  "model": "gpt-image-2-text-to-image",
+  "state": "success",
+  "param": "{\"input\":\"{\\\"aspect_ratio\\\":\\\"1:1\\\",\\\"prompt\\\":\\\"Editorial still life of sunlit Saturday midday, 50mm lens. Terracotta cup, car keys, folded planner on light beige stone tabletop. Russian hook \\\\\\\"Обещал списаться и молчит\\\\\\\" strictly at optical center in high-contrast editorial didone serif. Native champagne-gold circular medallion with ТАРО СЕЙЧАС off-center. No face, no Victoria credit, no dark wood table, no candles. No extra text besides hook, no website, no URL, no watermark, no logo except referenced medallion.\\\",\\\"resolution\\\":\\\"1K\\\"}\",\"model\":\"gpt-image-2-text-to-image\"}",
+  "resultJson": "{\"resultUrls\":[\"https://tempfile.aiquickdraw.com/images/chatgpt/file_0000000083b881f594b7c9f3926b578f.png\"]}",
+  "failCode": null,
+  "failMsg": null,
+  "costTime": 66,
+  "completeTime": 1788600690088,
+  "createTime": 1788600623968,
+  "creditsConsumed": 6.0
+}

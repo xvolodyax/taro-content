@@ -1,0 +1,14 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.8-flash",
+  "reasoning_effort": "high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "2121",
+  "date": "2026-09-05",
+  "rubric": "Другая сторона экрана",
+  "cover_url": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000b2c8820ca08aa023321f15b2.png",
+  "image_url": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000b2c8820ca08aa023321f15b2.png"
+}
