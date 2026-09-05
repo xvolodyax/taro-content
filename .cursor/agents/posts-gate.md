@@ -1,8 +1,8 @@
 ---
 name: posts-gate
-description: "Gate роя: PASS/FAIL. 21:21 только механика, прозу не пишет. Director MUST Task."
-model: gemini-3.8-flash
-reasoning_effort: high
+description: "Gate роя: PASS/FAIL. 21:21 только механика, прозу не пишет. Director MUST Task. inherit + low."
+model: inherit
+reasoning_effort: low
 readonly: false
 is_background: false
 ---
@@ -32,7 +32,7 @@ python3 scripts/posts_gate.py --package DIR --require-swarm --write
 
 Проверяешь пакет. Пишешь `GATE`. Голос не гладишь.
 Главред снят: нет шага Главреда, нет фразы «можно публиковать».
-PASS достаточно Директору, чтобы вызвать `posts_publish.py`. Холл не публикует.
+PASS достаточно Директору для одного `posts_publish.py` без `--wait` → READY_TO_SEND / SENT → EXIT. Холл не публикует.
 `preview: poll-only` / `evening: HOLD` — PASS не значит «шли в эфир». Publish SKIP.
 
 ## Рой (обязательно)
@@ -42,7 +42,7 @@ PASS достаточно Директору, чтобы вызвать `posts_p
 Cover на 21:21 опционален и только после заморозки `tg.html`.
 
 - Каждый шаг: `spawn: Task`, `inline: false`
-- Cloud: `subagent_type: generalPurpose` + файл dispatch-prompt с путём агента (текстовые модели: `gemini-3.8-flash` + `reasoning_effort=high`, alias Task: `gemini-3.8-flash-high`)
+- Cloud: `subagent_type: generalPurpose` + файл dispatch-prompt с путём агента (воркеры inherit, `reasoning_effort=low`; high — только оверрайд Владимира)
 - Plugin: `Task(posts-*)`
 - Человеческий текст: `written_by: gemini`
 - Opus / Sonnet / Composer = FAIL
@@ -61,6 +61,7 @@ Cover на 21:21 опционален и только после замороз�
 - 21:21 ТОЛЬКО: TG ≤ 1024; нет «Сцена»; нет пустой воды про «примерить»;
   позиция 3 про неё; пульс точно `Похоже? ❤️/ Не то ⚡`
 - 21:21: предложения не переписывать. FAIL → вернуть writer Task-ом.
+- cover anti-stale (12:12 и 21:21): новый кадр через Kie под выбранный хук из cover-text, уникальный md5 (не дубль 7 дней), строка cover_md5 и cover_hook в GATE
 
 ## Выход
 

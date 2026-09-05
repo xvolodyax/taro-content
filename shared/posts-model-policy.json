@@ -1,20 +1,22 @@
 {
   "pipeline": "taro-posts-swarm",
-  "text_model": "gemini-3.8-flash",
-  "text_model_id": "gemini-3.8-flash",
-  "text_model_param": "reasoning_effort=high",
-  "text_model_alias_ide_task": "gemini-3.8-flash-high",
-  "text_model_display": "Gemini 3.8 Flash High",
+  "text_model": "inherit",
+  "text_model_id": "inherit",
+  "text_model_param": "reasoning_effort=low",
+  "text_model_alias_ide_task": "inherit",
+  "text_model_display": "inherit (окно); reasoning_effort=low",
   "written_by": "gemini",
-  "cloud_model_id": "gemini-3.8-flash",
-  "cloud_reasoning_effort": "high",
-  "hard_rule_0309": "Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Ни статьи magiya, ни посты 12:12/15:15/21:21, ни опросы, ни Алёна, ни рилсы-текст. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет.",
+  "cloud_model_id": "inherit",
+  "cloud_reasoning_effort": "low",
+  "cloud_reasoning_effort_high_requires": "explicit Vladimir override",
+  "hard_rule_0309": "Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет воркер окна. Ни статьи magiya, ни посты 12:12/15:15/21:21, ни опросы, ни Алёна, ни рилсы-текст. Если Task не спавнится / модель недоступна — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет.",
+  "after_gate_pass": "READY_TO_SEND then EXIT. No sleep/poll/Read-loop until 12:12 / 15:15 / 21:21. Slot air = Hall / short wake.",
   "publish": "SKIP",
-  "publish_after_pass": "composio",
+  "publish_after_pass": "composio-once-or-ready-to-send",
   "hall_publishes": false,
   "composio_aliases": ["telegram-composia", "instagram-ru", "instagram-en"],
   "glavred": "REMOVED",
-  "inherit_means": "Модель родителя = модель окна Холла. Текстовые шаги всё равно Gemini. Не подменять.",
+  "inherit_means": "Воркеры inherit модель окна Холла. Не пинить gemini-3.8-flash-high. reasoning_effort=low; high только по явному оверрайду Владимира. Дефолтный Cloud Agent / Director текст не пишет.",
   "roles": [
     "posts-director",
     "posts-researcher",
@@ -31,7 +33,11 @@
   ],
   "inherit_agents": [
     "posts-director",
-    "posts-researcher"
+    "posts-researcher",
+    "posts-meaning",
+    "posts-copywriter",
+    "posts-cover-text",
+    "posts-gate"
   ],
   "orchestrators": [
     "posts-director"
@@ -47,11 +53,15 @@
   "cloud_spawn": {
     "subagent_type": "generalPurpose",
     "require_dispatch_prompt": true,
-    "one_task_per_step": true
+    "one_task_per_step": true,
+    "model": "inherit",
+    "reasoning_effort": "low"
   },
   "plugin_spawn": {
     "subagent_type_prefix": "posts-",
-    "one_task_per_step": true
+    "one_task_per_step": true,
+    "model": "inherit",
+    "reasoning_effort": "low"
   },
   "forbidden_writers": [
     "opus",
