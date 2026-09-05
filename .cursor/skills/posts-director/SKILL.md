@@ -14,6 +14,7 @@ Cloud: один `Task(generalPurpose)` на шаг, промпт из
 Plugin: `Task(posts-*)`.
 
 После шага: `scripts/posts_step_record.py`. Потом stamp + gate.
+Cover anti-stale (жёстко): новый кадр через Kie под выбранный хук из cover-text, md5sum антидубль за 7 дней, cover_md5 и cover_hook в GATE.
 После `GATE` = PASS: `python3 scripts/posts_publish.py --package DIR`.
 Ключ только `COMPOSIO_API_KEY`. Нет ключа — SKIP, не падать.
 Холл не публикует и не пишет посты. Сегодняшние эфиры не переписывать.

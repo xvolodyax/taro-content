@@ -6,6 +6,8 @@ publish: SKIP
 glavred: REMOVED
 director_inline: ok
 tg_len: 900
+cover_md5: 75c8a72cef537f21cbf171eb35d9908b
+cover_hook: Обещал списаться и молчит
 incident_report: none
 
 # Причины
@@ -20,5 +22,6 @@ incident_report: none
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
 - [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», позиция 3 = она
+- [ ] cover anti-stale: новый кадр, уникальный md5, хук совпадает
 - [ ] Gate предложения не переписывает
 - [ ] publish SKIP у писателей; эфир — posts_publish.py

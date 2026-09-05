@@ -141,6 +141,8 @@ class GateResult:
     publish_count: int = 0
     tg_len: int = 0
     slot: str = ""
+    cover_md5: str = ""
+    cover_hook: str = ""
 
     def fail(self, reason: str) -> None:
         self.verdict = "FAIL"
@@ -377,6 +379,7 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
         cover = package / "cover-text.json"
         if cover.is_file():
             data = json.loads(cover.read_text(encoding="utf-8"))
+            result.cover_hook = str(data.get("chosen") or "")
             if data.get("placement") != "center":
                 result.fail("cover placement не center")
             cands = data.get("candidates") or []
@@ -384,6 +387,20 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
                 result.fail("cover: нужны ровно 3 хука")
             if not data.get("chosen"):
                 result.fail("cover: не выбран хук")
+        cover_img = package / "cover.png"
+        if cover_img.is_file():
+            import hashlib
+            cur_md5 = hashlib.md5(cover_img.read_bytes()).hexdigest()
+            result.cover_md5 = cur_md5
+            # Anti-stale: compare with other covers in posts/*/cover.png
+            root_posts = ROOT / "posts"
+            if root_posts.is_dir():
+                for other in root_posts.glob("*/cover.png"):
+                    if other.resolve() != cover_img.resolve():
+                        other_md5 = hashlib.md5(other.read_bytes()).hexdigest()
+                        if other_md5 == cur_md5:
+                            result.fail(f"cover.png дублирует {other.parent.name} (md5 {cur_md5})")
+                            break
         if slot == "1212":
             for name in ("ig.txt", "yt.txt", "max.txt", "vk.html"):
                 if not (package / name).is_file():
@@ -434,6 +451,8 @@ publish: SKIP
 glavred: REMOVED
 director_inline: {"FAIL" if any("inline" in r.lower() or "steps/" in r for r in result.reasons) else "ok"}
 tg_len: {result.tg_len or "n/a"}
+cover_md5: {result.cover_md5 or "n/a"}
+cover_hook: {result.cover_hook or "n/a"}
 incident_report: none
 
 # Причины
@@ -448,6 +467,7 @@ incident_report: none
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
 - [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», позиция 3 = она
+- [ ] cover anti-stale: новый кадр, уникальный md5, хук совпадает
 - [ ] Gate предложения не переписывает
 - [ ] publish SKIP у писателей; эфир — posts_publish.py
 """
@@ -466,6 +486,8 @@ def main() -> int:
     print(f"verdict={result.verdict}")
     print(f"publish_count={result.publish_count}")
     print(f"tg_len={result.tg_len}")
+    print(f"cover_md5={result.cover_md5}")
+    print(f"cover_hook={result.cover_hook}")
     for reason in result.reasons:
         print(f"FAIL: {reason}")
     return 0 if result.verdict == "PASS" else 1
