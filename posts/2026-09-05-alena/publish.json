@@ -1,0 +1,32 @@
+{
+  "package": "/workspace/posts/2026-09-05-alena",
+  "date": "2026-09-05",
+  "slot": "alena",
+  "status": "SENT",
+  "reason": "слот наступил — отправлено в эфир",
+  "results": [
+    {
+      "dest": "telegram-alena",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "SENT",
+      "reason": "",
+      "message_id": 2784,
+      "link": "https://t.me/AlenaSafonova_queen/2784"
+    },
+    {
+      "dest": "max",
+      "alias": "",
+      "tool": "MAX_SEND",
+      "status": "SKIP",
+      "reason": "нет MAX_BOT_TOKEN"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "key_env": "COMPOSIO_API_KEY",
+  "key_present": true,
+  "link": "https://t.me/AlenaSafonova_queen/2784",
+  "message_id": 2784
+}
