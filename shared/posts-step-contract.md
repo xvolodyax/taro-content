@@ -63,6 +63,7 @@ posts/<slot>/package.meta.json
 - `written_by` из стоп-листа моделей
 - есть шаг / файл Главреда, или фраза «можно публиковать» от Главреда
 - `publish` у шага писателя не `SKIP`
+- cover stale: `cover.png` дублирует md5 предыдущих дней или хук не совпадает с выбранным кандидатным хуком из `cover-text.json`
 
 Алиасы старых имён в step record принимаются: `posts-scout` → researcher,
 `posts-writer` → meaning, `posts-sol` → copywriter.
