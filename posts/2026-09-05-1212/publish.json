@@ -3,7 +3,8 @@
   "date": "2026-09-05",
   "slot": "1212",
   "status": "SENT",
-  "reason": "слот 12:12 МСК отправлен в эфир",
+  "reason": "слот 12:12 МСК отправлен в эфир (cover stale duplicate 04.09)",
+  "note": "cover stale duplicate 04.09 sent to TG/IG at 12:26 MSK before user stop; new cover.png generated via Kie with hook 'Обещал списаться и молчит'",
   "link": "https://t.me/TodayTaro/4185",
   "message_id": 4185,
   "results": [
@@ -12,7 +13,7 @@
       "alias": "telegram-composia",
       "tool": "TELEGRAM_SEND_PHOTO",
       "status": "SENT",
-      "reason": "",
+      "reason": "cover stale duplicate 04.09",
       "message_id": 4185,
       "link": "https://t.me/TodayTaro/4185"
     },
@@ -21,7 +22,7 @@
       "alias": "instagram-ru",
       "tool": "INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
       "status": "SENT",
-      "reason": "",
+      "reason": "cover stale duplicate 04.09",
       "media_id": "18009506054966782",
       "link": "https://www.instagram.com/p/Dc5owVJmxAF/"
     },
