@@ -1,0 +1,11 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "gemini",
+  "text_model": "gemini-3.8-flash",
+  "reasoning_effort": "high",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "alena",
+  "date": "2026-09-05"
+}

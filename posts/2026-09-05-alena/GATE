@@ -1,0 +1,33 @@
+=== POSTS GATE ===
+slot: 2026-09-05-alena
+verdict: PASS
+return: none
+director_inline: ok
+gemini_model_available: ok
+water: ok
+funnel: ok
+limits: caption.txt 960 / 1700 (≤ 1024)
+voice: ok
+kstati: цветы
+cover: skip
+tg_len: 960
+incident_report: none
+
+# Чеклист
+
+Прозу не переписывать. Sol не возвращать.
+Дефолтный Cloud Agent / Director текст не подменяет: если Gemini недоступна — FAIL, без своего черновика.
+
+- [x] канал queen, не @TodayTaro
+- [x] первая строка = привет и дата
+- [x] 4–6 живых предложений
+- [x] нет заголовков «Развилка / Действие / Не стоит»
+- [x] луна, день с часом, 1–2 аспекта, легче/тяжелее
+- [x] «кстати» не копия вчера
+- [x] стрижка не каждый день — по правилам слота
+- [x] рефки байт-в-байт, столбик
+- [x] caption ≤ 1700
+- [x] Sol тело не трогал
+- [x] Cover не звали, Главред не звали
+- [x] чужие пакеты не тронуты
+- [x] `python3 scripts/alena_check.py` = ok

@@ -1,0 +1,28 @@
+{
+  "package": "/workspace/posts/2026-09-05-alena",
+  "date": "2026-09-05",
+  "slot": "alena",
+  "status": "DRY-RUN",
+  "reason": "слот наступил или прошёл — слать сразу",
+  "results": [
+    {
+      "dest": "telegram-alena",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "DRY-RUN",
+      "reason": "dry-run, в эфир не ушло"
+    },
+    {
+      "dest": "max",
+      "alias": "",
+      "tool": "MAX_SEND",
+      "status": "SKIP",
+      "reason": "нет MAX_BOT_TOKEN"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "key_env": "COMPOSIO_API_KEY",
+  "key_present": true
+}
