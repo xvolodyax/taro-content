@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: warm ochre daylight, terracotta ceramic, olive linen, light beige stone surface
+who: none
+thesis: Когда предварительная договорённость на выходные зависает без подтверждения к полудню субботы, чужое молчание ставит твои собственные планы на паузу и забирает контроль над твоим временем.
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Editorial still life of sunlit Saturday midday, 50mm lens. Terracotta cup, car keys, folded planner on light beige stone tabletop. Russian hook "Обещал списаться и молчит" strictly at optical center in high-contrast editorial didone serif. Native champagne-gold circular medallion with ТАРО СЕЙЧАС off-center. No face, no Victoria credit, no dark wood table, no candles. No extra text besides hook, no website, no URL, no watermark, no logo except referenced medallion.
+
+why: Хук «Обещал списаться и молчит» крупно в центре кадра на светлом фоне, натюрморт субботнего полудня без лица и свечей.

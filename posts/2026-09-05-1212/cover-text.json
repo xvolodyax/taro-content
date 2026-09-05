@@ -1,0 +1,25 @@
+{
+  "slot": "1212",
+  "written_by": "gemini",
+  "thesis": "Когда предварительная договорённость на выходные зависает без подтверждения к полудню субботы, чужое молчание ставит твои собственные планы на паузу и забирает контроль над твоим временем.",
+  "candidates": [
+    "Обещал списаться и молчит",
+    "Суббота зависла в ожидании",
+    "Договорились, но день на паузе"
+  ],
+  "chosen": "Обещал списаться и молчит",
+  "why_this_one": "Хук из 4 слов бьет в суть субботней неопределенности: обещание связи застыло в тишине. Контрастная типографика в оптическом центре квадрата читается даже в превью сетки Instagram (~200px).",
+  "highlight": "молчит",
+  "words": 4,
+  "case": "sentence",
+  "placement": "center",
+  "contrast": "high type-on-ground, readable at ~200px Instagram grid",
+  "font": "magazine display serif/didone or refined grotesque; not Arial, Roboto, Inter, Impact, squish-bold, meme caps",
+  "medallion": "native",
+  "face": false,
+  "victoria_credit": false,
+  "resolution": "1K",
+  "aspect": "1:1",
+  "palette": "warm ochre daylight, terracotta ceramic, olive linen, light beige stone surface",
+  "scene": "Субботний полдень у залитого солнцем окна: чашка кофе из терракотовой керамики, ключи от машины, свернутый список дел на светлой каменной столешнице. Без лица, без свечей, без темного дерева."
+}

@@ -1,0 +1,42 @@
+{
+  "package": "/workspace/posts/2026-09-05-1212",
+  "date": "2026-09-05",
+  "slot": "1212",
+  "status": "WAIT",
+  "reason": "слот МСК ещё не наступил, без отложки",
+  "wait_until": "2026-09-05T12:12:00+03:00",
+  "destinations": [
+    {
+      "name": "telegram",
+      "toolkit": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "chat_id": "@TodayTaro",
+      "skip": false,
+      "reason": ""
+    },
+    {
+      "name": "instagram-ru",
+      "toolkit": "instagram",
+      "alias": "instagram-ru",
+      "tool": "INSTAGRAM_POST_IG_USER_MEDIA",
+      "chat_id": "",
+      "skip": false,
+      "reason": ""
+    },
+    {
+      "name": "max",
+      "toolkit": "max",
+      "alias": "",
+      "tool": "MAX_SEND",
+      "chat_id": "",
+      "skip": true,
+      "reason": "нет MAX_BOT_TOKEN"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "key_env": "COMPOSIO_API_KEY",
+  "key_present": true
+}
