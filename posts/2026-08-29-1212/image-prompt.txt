@@ -1,0 +1,15 @@
+aspect: 1:1
+mode: i2i
+model: gpt-image-2-image-to-image
+ref: images/refs/taro-seichas-logo.png
+resolution: 1K
+palette: полуденный кафель + холодная сталь телефона
+who: none
+thesis: Отметка «прочитано» под утренним сообщением подталкивает писать второе, чтобы снять собственное напряжение до вечера.
+placement: center
+overlay: centered hook + gold medallion only
+signature: none
+
+prompt: Bright midday 1:1 editorial still, not a dark candle tarot table. Pale midday ceramic tile countertop in soft natural daylight, cold brushed steel smartphone face-up with a muted chat interface. One face-down tarot card as a clean tactile accent. A circular champagne-gold Art Deco medallion sits off-center as a real object: keep the circle and the exact readable letters ТАРО / СЕЙЧАС. At the optical center of the square, large high-contrast magazine display type, didone or refined grotesque, not Arial, not Roboto, not Inter, not Impact, not squish-bold: «Поле ввода уже открыто». Letters live in the light, not a sticker, not a bottom bar, not a corner plaque. Readable at Instagram grid thumbnail. Cool ceramic white, brushed steel, champagne gold. 50mm, shallow depth of field, glossy editorial still. No face, no Victoria signature, no candles, no dark wood table. End: no extra text besides the hook, no website, no URL, no watermark, no logo except the referenced medallion.
+
+why: хук «Поле ввода уже открыто» строго по центру: превью сетки держит паузу перед вторым сообщением. Медальон сбоку, не перекрывает буквы.
