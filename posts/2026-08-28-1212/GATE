@@ -1,0 +1,31 @@
+=== POSTS GATE ===
+slot: 2026-08-28-1212
+verdict: PASS
+return: none
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+written_by: gemini
+water: ok
+funnel: ok
+limits: ok
+voice: ok
+platforms: ok
+cover: ok
+cards: n/a
+tg_len: 463
+incident_report: none
+
+# Чеклист
+
+- [x] первая строка = кадр
+- [x] нет слова «ловушка»
+- [x] бот ≠ приложение
+- [x] TG/ВК/Макс без кодового слова
+- [x] IG без сырого URL (если файл есть; на 21:21 IG нет)
+- [x] TG ≤ 1024 (12:12 и 21:21)
+- [x] ВК вопрос ≤ 80 (15:15)
+- [x] 15:15: 4 варианта + debrief, голоса не ждали
+- [x] 21:21 не тизер статьи
+- [x] 21:21: 4 разные случайные карты, не вчерашний набор
+- [x] чужие пакеты и video/ не тронуты
