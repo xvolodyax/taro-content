@@ -1,0 +1,30 @@
+=== POSTS GATE ===
+slot: 2026-09-08-alena
+verdict: FAIL
+return: Writer
+director_inline: ok
+openai_api: FAIL
+gemini_model_available: skip (слот с 07.09 пишет только openai-api-gpt-5.5)
+water: n/a
+funnel: n/a
+limits: n/a
+voice: n/a
+kstati: n/a
+cover: skip (канон /workspace/alena-covers/prognoz-na-den.png в снимке нет; лицо не генерили)
+tg_len: n/a
+cover_md5: n/a
+cover_hook: n/a
+incident_report: OPENAI_API_KEY есть, chat completions gpt-5.5 недоступен. api.openai.com → 401 ip_not_authorized с egress 35.83.9.202. Cursor-моделью письмо не подменяли. Composio toolkit openai без ACTIVE connection, авторизацию не ждали. caption.* не писали.
+
+# Причины
+- Writer: openai-api-gpt-5.5 недоступен (IP not authorized). Нет API = FAIL, текст не подменять.
+
+# Чеклист
+- [x] scout.md живой, ≥2 источника, МСК
+- [x] фаза убывающая, знак Лев, 27-й день с ~01:30 МСК
+- [x] аспекты: секстиль Уран до 07:56; тригон Сатурн 13:00–21:28
+- [ ] caption.html / caption.txt / max.txt — нет, Writer не отработал
+- [x] Director / Gemini / inherit письмо не писал
+- [x] Главред не звали, posts-cover-text не звали
+- [x] в Telegram / Макс не ходили, publish SKIP
+- [x] слот 07:00 не ждали
