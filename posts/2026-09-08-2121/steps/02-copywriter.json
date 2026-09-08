@@ -14,5 +14,10 @@
   ],
   "publish": "SKIP",
   "runtime": "cloud",
-  "text_via": "openai-api-gpt-5.5"
+  "text_via": "openai-api-gpt-5.5",
+  "executed": true,
+  "openai_status": "401 ip_not_authorized",
+  "artifacts_written": [
+    "openai-error.json"
+  ]
 }
