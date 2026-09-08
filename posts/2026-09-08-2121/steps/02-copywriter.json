@@ -9,10 +9,10 @@
   "artifacts": [
     "debrief.md",
     "tg.html",
-    "vk.html"
+    "vk.html",
+    "cards.json"
   ],
   "publish": "SKIP",
   "runtime": "cloud",
-  "executed": false,
-  "reason": "openai-api-gpt-5.5 401 ip_not_authorized; text step not spawned"
+  "text_via": "openai-api-gpt-5.5"
 }

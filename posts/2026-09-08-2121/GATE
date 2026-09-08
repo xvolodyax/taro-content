@@ -10,18 +10,20 @@ gemini_model_available: skip (слот с 07.09 пишет только openai-a
 tg_len: n/a
 cover_md5: n/a
 cover_hook: n/a
-cards_2121: n/a
-incident_report: OPENAI_API_KEY есть, chat completions gpt-5.5 недоступен. api.openai.com → 401 ip_not_authorized с egress 52.41.62.68. Composio toolkit openai без ACTIVE connection. Cursor-моделью (Gemini/inherit/composer) текст не подменяли. debrief/tg/ig/max/vk/yt/cover-text не писали. Task writer не спавнили. Карты не тянули. Kie не вызывали — нет хука. Слот 21:21 не ждали, не публиковали.
+cards_2121: Шестёрка пентаклей | Башня | Тройка мечей
+live_fingerprint: t.me/s/TodayTaro 2026-09-08 — 12:12 «наберу после обеда» + опрос 15:15 «Мыла кружку и увидела его лайк другой» есть; «Другая сторона экрана» за сегодня НЕТ (дыра). Send не делали: нет текста.
+incident_report: OPENAI_API_KEY есть. chat completions gpt-5.5 → 401 ip_not_authorized. Локальный egress 52.41.62.68 и Composio remote 35.247.44.6 оба отклонены. Cursor-моделью (Gemini/inherit/composer) текст не подменяли. debrief/tg/vk/cover-text не писали. Kie не вызывали. TG не слали. Instagram/Макс/ВК/YouTube/Дзен не трогали.
 
 # Причины
-- openai-api-gpt-5.5 недоступен (IP not authorized). Нет API / 401 = FAIL, текст не подменять.
-- нет debrief.md, tg.html, cards.json, cover.png — пайплайн не стартовал после проверки API
+- openai-api-gpt-5.5 недоступен (IP not authorized на Cloud и на Composio remote). Нет API / 401 = FAIL, текст не подменять.
+- нет debrief.md, tg.html, cover.png — эфир невозможен без подмены
 
 # Чеклист
 - [ ] 21:21: один writer → gate
 - [x] Директор / Cursor-модель вечер не писал
 - [x] Главред снят
-- [ ] written_by: openai-api-gpt-5.5 на артефактах — нет артефактов
+- [ ] written_by: openai-api-gpt-5.5 на артефактах — нет прозы
+- [x] cards.json зафиксирован (Шестёрка пентаклей | Башня | Тройка мечей)
 - [ ] cover anti-stale — cover.png не генерировали
-- [x] publish SKIP; в Telegram/IG/Макс/ВК/YT не ходили
-- [x] слот 21:21 не ждали
+- [x] publish SKIP; в Telegram не ходили
+- [x] слот не ждали; другие площадки не трогали
