@@ -1,0 +1,18 @@
+{
+  "role": "posts-copywriter",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "written_by": "gemini",
+  "dispatch_prompt": "steps/02-copywriter.prompt.md",
+  "artifacts": [
+    "debrief.md",
+    "tg.html",
+    "vk.html"
+  ],
+  "publish": "SKIP",
+  "runtime": "cloud",
+  "executed": false,
+  "reason": "openai-api-gpt-5.5 401 ip_not_authorized; text step not spawned"
+}

@@ -1,0 +1,17 @@
+{
+  "model_requested": "gpt-5.5",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "http_status": 401,
+  "error_code": "ip_not_authorized",
+  "error_type": "invalid_request_error",
+  "egress_ip": "52.41.62.68",
+  "key_present": true,
+  "composio_openai_active": false,
+  "substituted": false,
+  "checked_at": "2026-09-08T10:28:35Z",
+  "slot": "2026-09-08-2121",
+  "blocked_steps": [
+    "posts-copywriter (debrief.md, tg/ig/max/vk/yt)",
+    "posts-cover-text (cover hooks)"
+  ]
+}
