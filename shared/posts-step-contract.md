@@ -40,8 +40,8 @@ posts/<slot>/package.meta.json
 | `inline` | только `false`. `true` или отсутствие шага при живом артефакте = FAIL |
 | `subagent_type` | Plugin: `posts-<role>`. Cloud: `generalPurpose` |
 | `dispatch_prompt` | Cloud обязателен: файл с полным промптом из `scripts/posts_dispatch_prompt.py` |
-| `model` | inherit (окно). `reasoning_effort=low`. high — только явный оверрайд Владимира |
-| `written_by` | человеческий текст → `gemini`. Opus / Sonnet / Composer = FAIL |
+| `model` | текст слота → `gpt-5.6-sol` (OpenAI API). Task-оркестрация → inherit. `reasoning_effort=low`. high — только явный оверрайд Владимира |
+| `written_by` | человеческий текст слота → `openai-api-gpt-5.6-sol`. `gpt-5.5` / Opus / Sonnet / Composer = FAIL |
 | `publish` | у писателей всегда `SKIP`. После PASS — один `posts_publish.py` без `--wait` → READY_TO_SEND / SENT → EXIT |
 
 ## Cloud vs plugin
@@ -57,7 +57,7 @@ posts/<slot>/package.meta.json
 
 - нет `steps/` у нового пакета, а тексты уже есть
 - шаг с `inline: true` или `spawn` ≠ `Task`
-- дефолтный Cloud Agent / Director подменил текст Gemini (если Gemini недоступна — только FAIL «модель недоступна»)
+- дефолтный Cloud Agent / Director подменил текст Sol / OpenAI API (если API недоступен — только FAIL «модель недоступна»)
 - Cloud-шаг без файла dispatch-prompt
 - dispatch-prompt не содержит путь агента роли
 - `written_by` из стоп-листа моделей

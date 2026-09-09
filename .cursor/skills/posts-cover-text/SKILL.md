@@ -7,7 +7,7 @@ disable-model-invocation: true
 # Cover-text
 
 Вход: замороженный `tg.html`. На 12:12 ещё `meaning.md`. На 21:21 meaning нет.
-Выход: `cover-text.json`, `image-prompt.txt` (`model: gpt-image-2-5-flare-image-to-image`). `written_by: gemini`.
+Выход: `cover-text.json`, `image-prompt.txt` (`model: gpt-image-2-5-flare-image-to-image`). `written_by: openai-api-gpt-5.6-sol`. Текст хуков: `--model gpt-5.6-sol`.
 `tg.html` не править.
 
 3 кандидата, один chosen, `placement: center`. Превью IG ~200px.

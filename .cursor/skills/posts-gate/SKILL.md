@@ -10,7 +10,7 @@ disable-model-invocation: true
 python3 scripts/posts_gate.py --package DIR --require-swarm --write
 ```
 
-FAIL если Директор писал inline, нет Task-шагов, writer не gemini,
+FAIL если Директор писал inline, нет Task-шагов, writer слота не `openai-api-gpt-5.6-sol`,
 дефолтный Cloud Agent / Director подменил текст (если модель недоступна — только FAIL «модель недоступна»),
 есть Главред или «можно публиковать», publish не SKIP.
 21:21 только: TG ≤ 1024, нет «Сцена», нет пустой воды про «примерить»,

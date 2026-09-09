@@ -1,6 +1,6 @@
 ---
 name: posts-copywriter
-description: inherit + reasoning_effort=low. 12:12 сцена. 15:15 опрос. 21:21 единственный писатель вечера.
+description: gpt-5.6-sol / OpenAI API. 12:12 сцена. 15:15 опрос. 21:21 единственный писатель вечера.
 disable-model-invocation: true
 ---
 
@@ -10,7 +10,7 @@ disable-model-invocation: true
 На 12:12 / 15:15 ещё `meaning.md`. На 21:21 meaning нет.
 Выход: площадки слота. На 15:15 только `poll.txt` (5 строк).
 На 21:21 весь вечерний пост одним проходом + `debrief.md`.
-`written_by: gemini`.
+`written_by: openai-api-gpt-5.6-sol`. Текст: `python3 scripts/chat_completions.py --model gpt-5.6-sol`. `gpt-5.5` запрещён.
 
 12:12 первая строка = кадр (жест, предмет, время). 2–3 живых вопроса для бота — выбор хода на сегодня (копируются как есть, без телепатии). Бот ≠ приложение.
 CTA строго по площадкам:

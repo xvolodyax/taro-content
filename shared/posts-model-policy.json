@@ -1,22 +1,31 @@
 {
   "pipeline": "taro-posts-swarm",
-  "text_model": "inherit",
-  "text_model_id": "inherit",
-  "text_model_param": "reasoning_effort=low",
+  "text_model": "gpt-5.6-sol",
+  "text_model_id": "gpt-5.6-sol",
+  "text_model_param": "--model gpt-5.6-sol",
   "text_model_alias_ide_task": "inherit",
-  "text_model_display": "inherit (окно); reasoning_effort=low",
-  "written_by": "gemini",
+  "text_model_display": "OpenAI API gpt-5.6-sol (scripts/chat_completions.py)",
+  "written_by": "openai-api-gpt-5.6-sol",
+  "openai_api": true,
+  "openai_cli": "python3 scripts/chat_completions.py --model gpt-5.6-sol",
+  "openai_endpoint": "https://api.openai.com/v1/chat/completions",
+  "lock_since": "2026-09-09",
+  "lock_doc": "docs/POSTS_TEXT_MODEL.md",
+  "post_slots": ["1212", "1515", "2121"],
+  "alena_text_model": "inherit",
+  "alena_written_by": "gemini",
+  "removed_post_models": ["gpt-5.5", "openai-api-gpt-5.5"],
   "cloud_model_id": "inherit",
   "cloud_reasoning_effort": "low",
   "cloud_reasoning_effort_high_requires": "explicit Vladimir override",
-  "hard_rule_0309": "Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет воркер окна. Ни статьи magiya, ни посты 12:12/15:15/21:21, ни опросы, ни Алёна, ни рилсы-текст. Если Task не спавнится / модель недоступна — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет.",
+  "hard_rule_0309": "Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст воркера. Ни статьи magiya, ни посты 12:12/15:15/21:21, ни опросы, ни Алёна, ни рилсы-текст. Если Task / OpenAI API недоступны — только FAIL + явный отчёт «модель недоступна», без своего черновика. Лазейки «напишу сам» нет.",
   "after_gate_pass": "READY_TO_SEND then EXIT. No sleep/poll/Read-loop until 12:12 / 15:15 / 21:21. Slot air = Hall / short wake.",
   "publish": "SKIP",
   "publish_after_pass": "composio-once-or-ready-to-send",
   "hall_publishes": false,
   "composio_aliases": ["telegram-composia", "instagram-ru", "instagram-en"],
   "glavred": "REMOVED",
-  "inherit_means": "Воркеры inherit модель окна Холла. Не пинить gemini-3.8-flash-high. reasoning_effort=low; high только по явному оверрайду Владимира. Дефолтный Cloud Agent / Director текст не пишет.",
+  "inherit_means": "Task-оркестрация inherit модель окна. Текст слотов 12:12/15:15/21:21 — только OpenAI API gpt-5.6-sol. gpt-5.5 запрещён. Алёна и статьи — не этот lock. reasoning_effort=low у Task; high только по явному оверрайду Владимира. Дефолтный Cloud Agent / Director текст не пишет.",
   "roles": [
     "posts-director",
     "posts-researcher",
@@ -28,15 +37,11 @@
   "text_agents": [
     "posts-meaning",
     "posts-copywriter",
-    "posts-cover-text",
-    "posts-gate"
+    "posts-cover-text"
   ],
   "inherit_agents": [
     "posts-director",
     "posts-researcher",
-    "posts-meaning",
-    "posts-copywriter",
-    "posts-cover-text",
     "posts-gate"
   ],
   "orchestrators": [
@@ -69,10 +74,13 @@
     "composer",
     "claude-opus",
     "claude-sonnet",
-    "cursor-composer"
+    "cursor-composer",
+    "gpt-5.5",
+    "openai-api-gpt-5.5"
   ],
   "human_text_files": [
     "meaning.md",
+    "poll.txt",
     "tg.html",
     "vk.html",
     "max.txt",

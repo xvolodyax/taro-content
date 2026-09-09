@@ -37,7 +37,7 @@ python3 scripts/posts_dispatch_prompt.py --role posts-copywriter --package posts
 | `Task(posts-director)` | оркестратор не субагент |
 | Специалист вызывает `Task(posts-*)` | вложенный пайплайн |
 | Главред / «можно публиковать» | шаг снят |
-| Opus / Sonnet / Composer как писатель | `written_by` не gemini |
+| Opus / Sonnet / Composer / gpt-5.5 как писатель слота | `written_by` не `openai-api-gpt-5.6-sol` |
 | Публикация писателем шага | `publish: SKIP`; после PASS — один `posts_publish.py` без `--wait` → READY_TO_SEND / SENT → EXIT |
 | Жить до слота | sleep / poll / Read-loop до 12:12 / 15:15 / 21:21. Эфир в слот = Холл / air wake |
 
@@ -46,7 +46,10 @@ python3 scripts/posts_dispatch_prompt.py --role posts-copywriter --package posts
 
 ## Модели
 
-- все воркеры (meaning / copywriter / cover-text / gate / researcher): `inherit` модель окна
-- `reasoning_effort=low`. high — только явный оверрайд Владимира
-- Если Task не спавнится / модель недоступна — только FAIL + явный отчёт «модель недоступна», без своего черновика. Директор НИКОГДА не подменяет текст.
+- текст 12:12 / 15:15 / 21:21: `python3 scripts/chat_completions.py --model gpt-5.6-sol`
+- штамп: `written_by: openai-api-gpt-5.6-sol`. `gpt-5.5` запрещён
+- Task-оркестрация (director / researcher / gate): `inherit` модель окна
+- `reasoning_effort=low` у Task. high — только явный оверрайд Владимира
+- Если API / Task недоступны — только FAIL + явный отчёт «модель недоступна», без своего черновика. Директор НИКОГДА не подменяет текст.
 - `model` в Task не пинить: inherit. Дефолтный агент текст не пишет.
+- Алёна и статьи — не этот lock. Канон: `docs/POSTS_TEXT_MODEL.md`

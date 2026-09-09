@@ -7,6 +7,8 @@
 3. Вставить промпт слота из `POSTS.md`.
 4. Cloud: Директор на каждый шаг делает `Task(generalPurpose)` + dispatch-prompt.
    Plugin: `Task(posts-*)`.
+   Текст 12:12 / 15:15 / 21:21: `python3 scripts/chat_completions.py --model gpt-5.6-sol`.
+   Штамп `written_by: openai-api-gpt-5.6-sol`. `gpt-5.5` не звать.
 5. Дождаться `GATE` = PASS. Один раз:
    `python3 scripts/posts_publish.py --package DIR`
    Без `--wait`. Слот не наступил — READY_TO_SEND и выход. Не жить до 12:12 / 15:15 / 21:21.

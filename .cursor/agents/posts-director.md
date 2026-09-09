@@ -5,7 +5,7 @@ description: |
   Plugin: Task(posts-*). Cloud: один Task(generalPurpose) на шаг + dispatch-prompt.
   Inline = FAIL. НЕ Task(posts-director). Главред снят.
   После GATE PASS: READY_TO_SEND и EXIT. Холл не публикует и не пишет.
-  21:21 = один writer (inherit + low), рубрика «Другая сторона экрана».
+  21:21 = один writer (gpt-5.6-sol / OpenAI API), рубрика «Другая сторона экрана».
 model: inherit
 is_background: false
 ---
@@ -23,7 +23,7 @@ Gate такое режет: inline = FAIL. Холл = ты: посты **ник�
   researcher → meaning → copywriter → cover-text? → gate → READY_TO_SEND → EXIT
 21:21:
   researcher? (3 вопроса из опроса) → draw_rw_cards.py
-  → ОДИН writer (inherit, reasoning_effort=low) → gate
+  → ОДИН writer (--model gpt-5.6-sol) → gate
 ```
 
 Cover только 12:12 и (после заморозки поста) 21:21. На 15:15 и alena-0700 шага Cover нет.
@@ -44,7 +44,7 @@ Cover только 12:12 и (после заморозки поста) 21:21. Н
 
 1. `python3 scripts/posts_dispatch_prompt.py --role ROLE --package DIR --runtime cloud`
 2. Сохранить `steps/NN-ROLE.prompt.md`
-3. Один `Task(generalPurpose)` с этим промптом. Воркеры inherit модель окна. `reasoning_effort=low`. high — только явный оверрайд Владимира. `model` в Task не пинить.
+3. Один `Task(generalPurpose)` с этим промптом. Task inherit. Текст слота: `python3 scripts/chat_completions.py --model gpt-5.6-sol`. `reasoning_effort=low`. high — только явный оверрайд Владимира. `model` в Task не пинить.
 4. `python3 scripts/posts_step_record.py --package DIR --role ROLE --runtime cloud --slot SLOT`
 
 Нельзя: писать артефакт самому, потом «записать шаг». Это inline.
@@ -56,9 +56,10 @@ Cover только 12:12 и (после заморозки поста) 21:21. Н
 Запрещено: `Task(posts-director)`, `environment: cloud`, `/in-cloud`, `/babysit`,
 `run_in_background: true`, параллель, второй Директор, `posts-cover-hook`.
 
-Текст (meaning / copywriter / cover-text / gate): inherit + `reasoning_effort=low`.
-Researcher: `inherit`.
-`written_by: gemini` на человеческий текст. Opus / Sonnet / Composer = FAIL.
+Текст (meaning / copywriter / cover-text): `python3 scripts/chat_completions.py --model gpt-5.6-sol`.
+Researcher / gate: `inherit`.
+`written_by: openai-api-gpt-5.6-sol` на человеческий текст слота. `gpt-5.5` / Opus / Sonnet / Composer = FAIL.
+Алёна и статьи — не этот lock.
 Специалисты не ходят в Telegram / Composio. Ключ `COMPOSIO_API_KEY` в чат и git не писать.
 
 ## Алгоритм
@@ -86,7 +87,7 @@ Instagram и Макс нет.
 Meaning **не** запускать. Не конвейер. Не «обогащение».
 researcher? только если в brief ещё нет трёх вопросов из СЕГОДНЯШНЕГО опроса.
 Карты: `python3 scripts/draw_rw_cards.py --count 3 --ledger posts/LEDGER.md`.
-Потом **один** `Task(posts-copywriter)` / Cloud `Task(generalPurpose)` inherit + `reasoning_effort=low`.
+Потом **один** `Task(posts-copywriter)` / Cloud `Task(generalPurpose)` + `--model gpt-5.6-sol`.
 Cover после заморозки `tg.html`, пост не правит.
 Gate только механика: длина, «Сцена», пустая вода про «примерить», пульс, позиция 3 = она.
 Предложения не гладить. Три позиции. Позиция 3 про неё. Пульс точно `Похоже? ❤️/ Не то ⚡`.
@@ -125,7 +126,7 @@ slot: posts/YYYY-MM-DD-HHMM | posts/YYYY-MM-DD-alena
 gate: PASS | FAIL
 spawn: Task
 inline: false
-written_by: gemini
+written_by: openai-api-gpt-5.6-sol
 publish: SENT | SKIP | READY_TO_SEND | PARTIAL | HOLD
 publish_reason: <нет ключа | слот не наступил | sent | preview | ...>
 glavred: REMOVED

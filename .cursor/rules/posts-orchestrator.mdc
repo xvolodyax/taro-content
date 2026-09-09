@@ -18,7 +18,7 @@ Inline = `GATE` FAIL.
 
 - Plugin 12:12 / 15:15: `Task(posts-researcher)` → `Task(posts-meaning)` → `Task(posts-copywriter)` → `Task(posts-cover-text)?` → `Task(posts-gate)`
 - Plugin 21:21: `Task(posts-researcher)?` → `Task(posts-copywriter)` → `Task(posts-gate)`. Meaning нет.
-- Cloud: один `Task(generalPurpose)` на шаг с dispatch-prompt из `scripts/posts_dispatch_prompt.py`. Воркеры inherit модель окна. `reasoning_effort=low`. high — только явный оверрайд Владимира.
+- Cloud: один `Task(generalPurpose)` на шаг с dispatch-prompt из `scripts/posts_dispatch_prompt.py`. Task inherit. Текст 12:12/15:15/21:21: `python3 scripts/chat_completions.py --model gpt-5.6-sol`, штамп `written_by: openai-api-gpt-5.6-sol`. `gpt-5.5` запрещён. `reasoning_effort=low`. high — только явный оверрайд Владимира.
 - Жёсткое правило (HARD 03.09): Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст воркера (ни статьи, ни посты 12:12/15:15/21:21, ни опрос, ни Алёна, ни рилсы). Если модель недоступна — только FAIL («модель недоступна»), без своего черновика! Лазейки «напишу сам» нет.
 
 ### Снято
