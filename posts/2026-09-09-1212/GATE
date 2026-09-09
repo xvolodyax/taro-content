@@ -1,0 +1,27 @@
+=== POSTS GATE ===
+slot: 2026-09-09-1212
+verdict: FAIL
+return: openai-api-gpt-5.5
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL
+gemini_model_available: skip (слот пишет только openai-api-gpt-5.5)
+tg_len: n/a
+cover_md5: n/a
+cover_hook: n/a
+incident_report: OPENAI_API_KEY есть, chat completions gpt-5.5 недоступен. api.openai.com → 401 ip_not_authorized с egress 52.14.104.140. Cursor-моделью (Gemini/inherit/Grok/composer) текст не подменяли. Composio toolkit openai без ACTIVE connection. brief/meaning/tg/ig/max/vk/yt/cover-text не писали. Kie не вызывали — нет хука. posts_publish.py не звали (нет PASS).
+
+# Причины
+- openai-api-gpt-5.5 недоступен (IP not authorized). Нет API = FAIL, текст не подменять.
+- нет brief.md, meaning.md, tg.html, cover.png — пайплайн не стартовал после проверки API
+- cover_md5 / cover_hook пустые: кадра нет, копировать прошлый cover.png запрещено
+
+# Чеклист
+- [ ] 12:12: researcher → meaning → copywriter → cover-text → gate
+- [x] Директор / Cursor-модель письмо не писал
+- [x] Главред снят
+- [ ] written_by: openai-api-gpt-5.5 на артефактах — нет артефактов
+- [ ] cover anti-stale — cover.png не генерировали
+- [x] publish SKIP; в Telegram/IG/Макс/ВК/YT не ходили
+- [x] слот 12:12 не ждали
