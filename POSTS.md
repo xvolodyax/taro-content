@@ -333,7 +333,7 @@ IG / YT: сырых URL нет, «ссылки в шапке», IG — слов�
 1. `cover.png` в пакете дня = **новый** кадр под **сегодняшний** выбранный хук из `cover-text`.
 2. **Запрещено:** копировать / переименовывать / symlink / raw-download вчерашний или любой прошлый `posts/YYYY-MM-DD-*/cover.png`.
 3. Перед коммитом/публикацией: `md5sum cover.png` сравнить с `posts/*/cover.png` за последние 7 дней. Если совпал хоть с одним — **FAIL**, перерисовать через Kie.
-4. Kie: генерить по `image-prompt.txt` этого слота. Хук на кадре должен читаться и совпадать с выбранным candidate.
+4. Kie: генерить по `image-prompt.txt` этого слота, модель **GPT Image 2.5 Flare** i2i (`gpt-image-2-5-flare-image-to-image`). Не Sunburst, не `gpt-image-2*`. Хук на кадре должен читаться и совпадать с выбранным candidate. Канон id: [`docs/KIE_MODELS.md`](docs/KIE_MODELS.md).
 5. В GATE/отчёте: строка `cover_md5: …` + `cover_hook: …`. Без нового md5 пакет не PASS.
 
 15:15 картинки нет.
@@ -427,4 +427,5 @@ posts/YYYY-MM-DD-HHMM/
 Цепочка: [`shared/posts-chain.md`](shared/posts-chain.md).
 Шаги: [`shared/posts-step-contract.md`](shared/posts-step-contract.md).
 Модели: [`shared/posts-model-policy.json`](shared/posts-model-policy.json).
+Kie (пиксели): [`docs/KIE_MODELS.md`](docs/KIE_MODELS.md).
 Роли: [`.cursor/agents/FOR-AGENTS.md`](.cursor/agents/FOR-AGENTS.md).

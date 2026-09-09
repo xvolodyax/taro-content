@@ -202,6 +202,11 @@ Scout / Plot / Gate остаются `inherit` как служебные. Plot �
 **Одна горизонтальная картинка 16:9** на всю статью. Файл: `cover.png`.  
 `inline-02`…`inline-06` / `slice-01`…`slice-06` **не делать** и в статью не класть. Ту же картинку в тело второй раз не ставить.
 
+### 0. Kie-модель (HARD, с 2026-09-09):
+- Новые кадры — **GPT Image 2.5 Flare** i2i: `gpt-image-2-5-flare-image-to-image`.
+- Не Sunburst. Не `gpt-image-2` / `gpt-image-2-image-to-image`.
+- Канон id: [`docs/KIE_MODELS.md`](../docs/KIE_MODELS.md).
+
 ### 1. Персонаж, лицо и микрофон (HARD):
 - **Вика** (i2i с `magiya-istorii/refs/Виктория.png`, ровно 2 191 823 байт).
 - Лицо **с рефа**. Один ракурс с листа, без усреднения 12 лиц.

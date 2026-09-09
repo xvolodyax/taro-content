@@ -13,6 +13,7 @@ is_background: false
 - **Cloud Agent / launch:** model id `gemini-3.8-flash`, param `reasoning_effort: high`.
 - **Локальный Task (IDE):** slug `gemini-3.8-flash-high` зафиксирован только как alias для локальных вызовов.
 - Пиксели, Kie и генерацию НЕ запускать — роль пишет только текстовый бриф / промпт.
+- В брифе для Холла: Kie **GPT Image 2.5 Flare** i2i `gpt-image-2-5-flare-image-to-image`. Не Sunburst, не `gpt-image-2*`. Канон: `docs/KIE_MODELS.md`.
 
 ## Цепочка (HARD)
 

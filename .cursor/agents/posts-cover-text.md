@@ -60,7 +60,7 @@ Skill: `.cursor/skills/posts-cover-text/SKILL.md`.
 ## Выход
 
 1. `cover-text.json` — `thesis`, `candidates` (3), `chosen`, `why_this_one`, `placement` = `"center"`, `written_by` = `"gemini"`
-2. `image-prompt.txt` — английский для Холла / Kie: hook centered at optical center, 1K 1:1
+2. `image-prompt.txt` — английский для Холла / Kie: `model: gpt-image-2-5-flare-image-to-image` (не Sunburst, не `gpt-image-2*`), hook centered at optical center, 1K 1:1. Канон: `docs/KIE_MODELS.md`.
 
 ```text
 === POSTS COVER ===
