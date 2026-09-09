@@ -1,0 +1,41 @@
+{
+  "package": "/workspace/posts/2026-09-09-2121",
+  "date": "2026-09-09",
+  "slot": "2121",
+  "status": "SENT",
+  "reason": "air wake: TELEGRAM_SEND_PHOTO @TodayTaro, live fingerprint без сегодняшнего разбора",
+  "destinations": [
+    {
+      "name": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "chat_id": "@TodayTaro",
+      "skip": false,
+      "status": "SENT",
+      "message_id": 4212,
+      "link": "https://t.me/TodayTaro/4212"
+    }
+  ],
+  "results": [
+    {
+      "dest": "telegram",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_PHOTO",
+      "status": "SENT",
+      "message_id": 4212,
+      "link": "https://t.me/TodayTaro/4212"
+    }
+  ],
+  "link": "https://t.me/TodayTaro/4212",
+  "message_id": 4212,
+  "cover_md5": "e4056ff96df7313a75df6fb78f4c6c8a",
+  "cover_hook": "Ждала вечер — он исчез",
+  "cards_2121": ["Дьявол", "Семёрка жезлов", "Восьмёрка пентаклей"],
+  "written_by": "openai-api-gpt-5.5",
+  "hall_publishes": false,
+  "instagram": "UNTOUCHED",
+  "max": "UNTOUCHED",
+  "vk": "UNTOUCHED",
+  "youtube": "UNTOUCHED",
+  "dzen": "UNTOUCHED"
+}
