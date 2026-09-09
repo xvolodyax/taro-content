@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Нарезка холста 2×3 по белым швам (как Excalibur). Лицо не рисует."""
+"""Нарезка холста 2×2 по белым швам → cover + inline-01..03.
+
+Тот же дешёвый пайплайн, что у статей Эскалибура: один canvas 2K,
+толстые белые gutters, четыре клетки. Лицо не рисует.
+Канон: docs/CANVAS_2K.md
+"""
 
 from __future__ import annotations
 
@@ -10,6 +15,8 @@ try:
     from PIL import Image
 except ImportError as e:
     raise SystemExit("нужен Pillow: pip install Pillow") from e
+
+SLICE_NAMES = ("cover.png", "inline-01.png", "inline-02.png", "inline-03.png")
 
 
 def _white_runs(mask: list[bool]) -> list[tuple[int, int]]:
@@ -62,29 +69,34 @@ def _seams(img: Image.Image, axis: str, thresh: int = 245, min_run: int = 4) -> 
 
 
 def slice_canvas(src: Path, dest: Path) -> list[Path]:
+    """Режет 2×2 canvas.png → cover.png + inline-01..03 по белым швам."""
     img = Image.open(src).convert("RGB")
     xs, ys = _seams(img, "x"), _seams(img, "y")
-    if len(xs) != 4 or len(ys) != 3:
+    if len(xs) != 3 or len(ys) != 3:
         w, h = img.size
-        xs = [0, w // 3, 2 * w // 3, w]
+        xs = [0, w // 2, w]
         ys = [0, h // 2, h]
     dest.mkdir(parents=True, exist_ok=True)
     out = []
-    n = 1
+    n = 0
     for yi in range(len(ys) - 1):
         for xi in range(len(xs) - 1):
+            if n >= len(SLICE_NAMES):
+                break
             box = (xs[xi], ys[yi], xs[xi + 1], ys[yi + 1])
-            path = dest / f"slice-{n:02d}.png"
+            path = dest / SLICE_NAMES[n]
             img.crop(box).save(path)
             out.append(path)
             n += 1
-    if len(out) != 6:
-        raise SystemExit(f"ожидали 6 срезов, вышло {len(out)}")
+    if len(out) != 4:
+        raise SystemExit(f"ожидали 4 среза (cover + inline-01..03), вышло {len(out)}")
     return out
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="Режет canvas.png → slice-01..06 по белым швам")
+    p = argparse.ArgumentParser(
+        description="Режет canvas.png → cover.png + inline-01..03 по белым швам (холст 2×2 / 2K)"
+    )
     p.add_argument("canvas")
     p.add_argument("--out", default="")
     args = p.parse_args()

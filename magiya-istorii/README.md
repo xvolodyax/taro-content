@@ -25,8 +25,9 @@ Director сам тексты не пишет.
 Plot — необязательные заметки, биты в Writer не вшивать.
 Scout → Plot → Title(только H1) → Writer(только тело) → Gate(только проверка).
 Clickbait (только overlay кадра 1) после Plot, не в title/h1/тело.
-Art: один кадр 16:9. Реф Виктория.png, микрофон DJI в руке у рта, жирная красная рамка + clickbait.txt на этой же картинке.
-Не шесть кадров, не холст, не нарезка. В тело ту же картинку не ставить.
+Art: один холст 2K 2×2, толстые белые швы, затем срез cover + inline-01…03.
+Клетка cover: реф Виктория.png, микрофон DJI в руке у рта, жирная красная рамка + clickbait.txt на пикселях.
+Врезки без лица Вики. Не четыре 1K createTask. Не одна 16:9 без врезок (новые пакеты). Cover в тело не дублировать.
 Свет и локацию Art берет из сюжета, в базовое ядро промпта «ночь» не зашивать.
 Одна генерация обложки. Картинка не валит текст. Лицо Холл не рисует. Живые истории не перерисовывать.
 Посты ТАРО СЕЙЧАС, Алёну, 12:12/15:15/21:21, PUBLISH.md, Composio не трогать.
@@ -38,7 +39,7 @@ Art: один кадр 16:9. Реф Виктория.png, микрофон DJI �
 ```text
 Scout → Plot(заметки) → Title(H1) → Writer(тело) → Gate(проверка)
 Clickbait ∥ после Plot (не в тело, не в H1)
-Art после Clickbait (обложка 16:9 1K, готовая строка)
+Art после Clickbait (холст 2K 2×2, overlay на клетке cover)
 Publisher: только если Холл сказал публиковать
 ```
 
@@ -50,7 +51,7 @@ Publisher: только если Холл сказал публиковать
 | 4 | `magiya-writer` | только тело `story.md` |
 | 5 | `magiya-gate` | `GATE` (проверка, не рерайт) |
 | 6 | `clickbait` | `clickbait.txt`, `meta.overlay_clickbait` |
-| 7 | `magiya-art` | `art-brief.md`, `cover.png` (16:9 1K) |
+| 7 | `magiya-art` | `art-brief.md`, холст 2K → `cover.png` + `inline-01`…`03` |
 | 8 | `magiya_site_publish.py` | upload, approve, publish на сайт |
 
 Title ≠ Clickbait. Кликбейт не в H1, не в URL.
@@ -64,7 +65,7 @@ python3 magiya-istorii/scripts/wordstat.py "чёрная магия" "обряд
 
 Env: `YANDEX_CLOUD_SEARCH_API_KEY` + `YANDEX_FOLDER_ID`. Ключ не в лог. PARTIAL не стоп.
 
-Нарезка холста **не используется**. Один кадр `cover.png` 16:9. `slice_canvas.py` — хвост старого канона шести кадров.
+Нарезка холста **обязательна для новых пакетов**: `python3 magiya-istorii/scripts/slice_canvas.py canvas.png`. Канон: [`docs/CANVAS_2K.md`](../docs/CANVAS_2K.md). Живые пакеты 2026-08-* не перерисовывать.
 
 ## Демо
 

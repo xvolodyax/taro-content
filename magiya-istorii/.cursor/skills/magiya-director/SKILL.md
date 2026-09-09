@@ -11,7 +11,7 @@ disable-model-invocation: true
 ```text
 Scout → Plot(заметки) → Title(H1) → Writer(тело) → Gate(проверка)
 Clickbait ∥ overlay кадра 1
-Один кадр 16:9: реф Виктория.png, микрофон в руке, жирная красная рамка + кликбейт. Не шесть картинок. В тело ту же картинку не ставить.
+Один холст 2K 2×2: cover (Вика + mic + красная рамка + кликбейт) + inline-01…03 без лица. Не четыре 1K. Cover в тело не дублировать.
 ```
 
 Тело — один Writer. H1 — Title. Overlay — Clickbait.
