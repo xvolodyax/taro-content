@@ -1,0 +1,13 @@
+{
+  "slot": "1515",
+  "date": "2026-09-09",
+  "pipeline": "taro-posts-swarm",
+  "text_model": "openai-api-gpt-5.5",
+  "written_by": "openai-api-gpt-5.5",
+  "reasoning_effort": "low",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "preview": "none",
+  "topic_brief": "нативный опрос 15:15 (среда); тексты только openai-api-gpt-5.5 — API 401, пайплайн остановлен"
+}

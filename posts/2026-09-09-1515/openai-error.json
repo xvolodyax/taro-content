@@ -1,0 +1,22 @@
+{
+  "model_requested": "gpt-5.5",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "http_status": 401,
+  "error_code": "ip_not_authorized",
+  "error_type": "invalid_request_error",
+  "error_message": "Your IP is not authorized to make this request.",
+  "egress_ip": "52.14.104.140",
+  "egress_ip_alt": "18.189.58.56",
+  "key_present": true,
+  "key_len": 164,
+  "substituted": false,
+  "composio_openai": "no ACTIVE connection",
+  "checked_at": "2026-09-09T10:33:11Z",
+  "slot": "2026-09-09-1515",
+  "note": "Тот же 401 ip_not_authorized, что 12:12 сегодня (PR#73) с egress 52.14.104.140. openai-fallback/chat_completions.py в репо на main нет. anti-burn PR#68 уже в main.",
+  "blocked_steps": [
+    "posts-researcher (brief.md)",
+    "posts-meaning",
+    "posts-copywriter (poll.txt / vk-poll-question.txt)"
+  ]
+}
