@@ -20,6 +20,7 @@
 
 Не Gemini: Director / Extractor / Analyst / Filter / Gate (`inherit`); Kie / пиксели; Composio / публикация; Wordstat API.
 Пиксели не генерировать. В Telegram не слать. Живые пакеты эфира не переписывать ради модели.
+Каруселька / carousel storyboard: Kie `resolution` **4K**. Не холст 2K статей/историй и не 1K-still постов.
 
 Политика: [`model-policy.json`](model-policy.json). Роли: [`agents/FOR-AGENTS.md`](agents/FOR-AGENTS.md).
 

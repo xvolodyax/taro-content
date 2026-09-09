@@ -44,16 +44,72 @@ def _redact(text: str, token: str | None) -> str:
     return out
 
 
+def _resolve_cover(package_dir: Path) -> Path | None:
+    for name in ("cover.png", "slice-01.png", "canvas.png"):
+        path = package_dir / name
+        if path.exists():
+            return path
+    return None
+
+
+def _resolve_inlines(package_dir: Path) -> list[tuple[str, Path]]:
+    """Новые пакеты: inline-01..03. Старые 2×3: slice-02..06 → inline-01..05, без регена."""
+    found: list[tuple[str, Path]] = []
+    for i in range(1, 4):
+        path = package_dir / f"inline-{i:02d}.png"
+        if path.exists():
+            found.append((f"inline-{i:02d}.png", path))
+    if found:
+        return found
+    for i in range(1, 6):
+        path = package_dir / f"slice-{i + 1:02d}.png"
+        if path.exists():
+            found.append((f"inline-{i:02d}.png", path))
+    return found
+
+
+def _article_html(package_dir: Path, paragraphs: list[str], h1_title: str) -> str:
+    """H1 + тело. Cover в HTML не дублировать. Врезки — только если файлы уже есть."""
+    html_parts = [f"<h1>{h1_title}</h1>\n"]
+    inlines = _resolve_inlines(package_dir)
+    inline_positions: dict[int, str] = {}
+    total_p = len(paragraphs)
+    n_in = len(inlines)
+    if n_in and total_p >= n_in:
+        step = max(1, total_p // (n_in + 1))
+        for i, (img_name, _) in enumerate(inlines, start=1):
+            pos = min(total_p - 1, i * step)
+            inline_positions[pos] = img_name
+    elif n_in and total_p > 1:
+        for i, (img_name, _) in enumerate(inlines, start=1):
+            if i < total_p:
+                inline_positions[i] = img_name
+
+    used = set()
+    for idx, p in enumerate(paragraphs):
+        html_parts.append(f"<p>{p}</p>\n")
+        if idx in inline_positions and inline_positions[idx] not in used:
+            img_name = inline_positions[idx]
+            used.add(img_name)
+            stem = Path(img_name).stem
+            caption_file = package_dir / f"caption-{stem.split('-')[-1]}.txt"
+            cap_text = caption_file.read_text(encoding="utf-8").strip() if caption_file.exists() else ""
+            cap_html = f"<figcaption>{cap_text}</figcaption>" if cap_text else ""
+            html_parts.append(f'<figure><img src="{img_name}" alt="{h1_title}" />{cap_html}</figure>\n')
+    return "".join(html_parts)
+
+
 def make_tar_bytes(package_dir: Path) -> bytes:
     """Собирает tgz с файлами:
     - article.html
     - article.meta.json
     - description-brief.json
-    - cover/cover.png (один кадр 16:9; в article.html не дублировать; inline-02…06 не класть)
+    - cover/cover.png (клетка 1 холста 2×2; в article.html не дублировать)
+    - cover/inline-01.png..inline-03.png (клетки 2–4; только если уже нарезаны)
+    Живые пакеты без врезок остаются cover-only — пиксели не регенерировать.
     """
     story_path = package_dir / "story.md"
     meta_path = package_dir / "meta.json"
-    title_brief_path = package_dir / "title-brief.md"
 
     if not story_path.exists() or not meta_path.exists():
         raise FileNotFoundError(f"В {package_dir} нет story.md или meta.json")
@@ -71,11 +127,7 @@ def make_tar_bytes(package_dir: Path) -> bytes:
     h1_title = meta.get("h1") or meta.get("title") or "Магия истории"
     slug = meta.get("slug") or "story"
 
-    html_parts = [f"<h1>{h1_title}</h1>\n"]
-    for p in paragraphs:
-        html_parts.append(f"<p>{p}</p>\n")
-
-    article_html = "".join(html_parts)
+    article_html = _article_html(package_dir, paragraphs, h1_title)
 
     # description / excerpt (не дубль первого абзаца, строго от 80 до 170 символов)
     desc_text = ""
@@ -139,17 +191,18 @@ def make_tar_bytes(package_dir: Path) -> bytes:
             ti.size = len(content)
             tar.addfile(ti, io.BytesIO(content))
 
-        # Добавляем cover/cover.png (16:9)
-        cover_file = package_dir / "cover.png"
-        if not cover_file.exists():
-            cover_file = package_dir / "slice-01.png"
-        if not cover_file.exists():
-            cover_file = package_dir / "canvas.png"
-        if cover_file.exists():
+        cover_file = _resolve_cover(package_dir)
+        if cover_file is not None:
             c_bytes = cover_file.read_bytes()
             ti = tarfile.TarInfo(name="cover/cover.png")
             ti.size = len(c_bytes)
             tar.addfile(ti, io.BytesIO(c_bytes))
+
+        for img_name, img_path in _resolve_inlines(package_dir):
+            sl_bytes = img_path.read_bytes()
+            ti = tarfile.TarInfo(name=f"cover/{img_name}")
+            ti.size = len(sl_bytes)
+            tar.addfile(ti, io.BytesIO(sl_bytes))
 
     return buf.getvalue()
 

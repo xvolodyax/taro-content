@@ -15,13 +15,15 @@ h1_equals_title:
 h1_excalibur: 
 overlay_not_in_title: 
 h1_not_fattest: 
-art_one_frame_16x9: 
+canvas_2x2_2k: 
+one_kie_task: 
+four_1k_tasks: no
 frame1_clickbait_only: 
 frame1_red_journal: 
-inlines_2_6: none
+inlines_01_03: 
+cover_once: 
 magazine_2020s: 
 no_cover_hero_dup: 
-not_six_frames: 
 cover_note: none
 cover_regen: no 
 steps_swarm: 
@@ -49,10 +51,11 @@ incident_report: none
 - [ ] не «он не написал»
 - [ ] kind только в meta
 - [ ] title == h1, Эскалибур, не кликбейт
-- [ ] overlay_clickbait только на единственной обложке 16:9, не в title/URL
-- [ ] один кадр 16:9, глянец 2020-х; не холст, не шесть картинок
-- [ ] на этом кадре: overlay Clickbait + жирная красная рамка (не снимать)
-- [ ] обложка 16:9 не валит verdict прозы (только cover_note, regen=no)
-- [ ] обложку в теле не дублировать; inline-02…06 не делать
+- [ ] overlay_clickbait только на клетке cover холста 2×2, не в title/URL
+- [ ] один холст 2K 2×2, не четыре 1K createTask, не одна 16:9 без врезок
+- [ ] cover: overlay Clickbait + жирная красная рамка + DJI у рта; inline-01…03 без лица Вики
+- [ ] картинка не валит verdict прозы (только cover_note, regen=no)
+- [ ] cover в теле не дублировать; врезки только inline-01…03
+- [ ] живые пакеты не перерисованы
 - [ ] publish SKIP
 - [ ] posts/ не задеты
