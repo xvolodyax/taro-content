@@ -4,12 +4,14 @@ resolution: 1K
 pixels: skip
 face: pending-ref
 overlay_source: clickbait.txt
+model: gpt-image-2-5-flare-image-to-image
 ---
 
 # Art brief (Обложка 16:9, 1K)
 
 **Формат:** одна горизонтальная обложка 16:9, 1K (~1920×1080). Не сетка 2×3, не 6 кадров.
 **Язык:** современный журнал / editorial / reportage cover, глянец 2020-х. Не шаблон нейросети, не открытка.
+**Kie:** GPT Image 2.5 Flare i2i (`gpt-image-2-5-flare-image-to-image`). Не Sunburst, не `gpt-image-2*`.
 **Персонаж:** Вика (i2i `magiya-istorii/refs/Виктория.png`).
 **Глаза:** строго зелёные с лёгким карим оттенком (hazel-green).
 **Волосы и лицо:** тёплый блонд с более тёмными корнями, мягкие нежные черты (без усреднения 12 лиц).

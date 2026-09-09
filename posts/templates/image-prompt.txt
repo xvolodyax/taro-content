@@ -1,6 +1,6 @@
 aspect: 1:1
 mode: i2i
-model: gpt-image-2-image-to-image
+model: gpt-image-2-5-flare-image-to-image
 ref: images/refs/taro-seichas-logo.png
 resolution: 1K
 palette: 
