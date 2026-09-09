@@ -1,0 +1,11 @@
+{
+  "model_requested": "gpt-5.5",
+  "script": "/workspace/openai-fallback/chat_completions.py",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "http_status": 401,
+  "error_code": "ip_not_authorized",
+  "error_type": "invalid_request_error",
+  "egress_ip": "52.15.104.219",
+  "key_present": true,
+  "substituted": false
+}
