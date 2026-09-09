@@ -6,10 +6,12 @@ description: Оркестратор роя постов. Не пишет тем�
 # Director
 
 12:12 / 15:15: researcher → meaning → copywriter → cover-text? → gate → READY_TO_SEND → EXIT.
-21:21: researcher? → draw_rw_cards.py → ОДИН writer (inherit, reasoning_effort=low) → gate.
+21:21: researcher? → draw_rw_cards.py → ОДИН writer (`--model gpt-5.6-sol`) → gate.
 
 Cloud: один `Task(generalPurpose)` на шаг, промпт из
-`scripts/posts_dispatch_prompt.py`. Воркеры inherit модель окна.
+`scripts/posts_dispatch_prompt.py`. Task inherit.
+Текст слота: `python3 scripts/chat_completions.py --model gpt-5.6-sol`.
+`written_by: openai-api-gpt-5.6-sol`. `gpt-5.5` запрещён.
 `reasoning_effort=low`. high — только явный оверрайд Владимира.
 Если Task не спавнится / модель недоступна — только FAIL («модель недоступна»), без своего черновика! Director текст сам НЕ подменяет.
 Plugin: `Task(posts-*)`.

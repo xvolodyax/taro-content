@@ -5,6 +5,8 @@
 В эфир — только `GATE` = PASS. После PASS **рой сам** кладёт слот через Composio.
 Холл = Директор: **не** публикует и **никогда** не пишет посты.
 Как вызывать и env: [`posts/PUBLISH.md`](posts/PUBLISH.md).
+Текст слотов 12:12 / 15:15 / 21:21: [`docs/POSTS_TEXT_MODEL.md`](docs/POSTS_TEXT_MODEL.md)
+(`python3 scripts/chat_completions.py --model gpt-5.6-sol`, штамп `openai-api-gpt-5.6-sol`).
 
 Это не статьи Excalibur, не Дзен, не рилсы, не Каруселька-контент.
 Репу `taro-excalibur` не клонировать.
@@ -67,9 +69,9 @@ Instagram и Макс в 21:21 не писать. Instagram и Макс опро
 
 ### Один писатель. Конвейер вечера убит
 
-21:21 пишет **один** writer: inherit модель окна, `reasoning_effort=low` (high — только явный оверрайд Владимира). Один проход. Весь текст Telegram сразу.
+21:21 пишет **один** writer через OpenAI API `gpt-5.6-sol` (`scripts/chat_completions.py --model gpt-5.6-sol`). Один проход. Весь текст Telegram сразу.
 Второй писатель, «обогащение» и полировка **запрещены**.
-Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика. Никаких лазеек «напишу сам».
+`gpt-5.5` на пост не звать. Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст Sol. Если API / Task недоступны — только FAIL + явный отчёт «модель недоступна», без своего черновика. Никаких лазеек «напишу сам».
 
 Убито на вечере:
 
@@ -127,7 +129,7 @@ Env в среду агента (значение ключа в чат и git н�
 1. **alena-0700** — промпт слота. PASS → READY_TO_SEND → EXIT. 07:00 МСК = Холл / air wake в `t.me/AlenaSafonova_queen`. Рефки не менять.
 2. **12:12** — промпт. PASS → один `posts_publish.py` без `--wait` → SENT или READY_TO_SEND → EXIT.
 3. **15:15** — опрос + вечерний debrief рубрики вместе. PASS → один прогон (poll) или READY_TO_SEND → EXIT.
-4. **21:21** — один писатель (inherit + low), один проход. PASS → SENT или READY_TO_SEND → EXIT. ВК/YouTube — Холл/браузер, если нет ключа.
+4. **21:21** — один писатель (`gpt-5.6-sol` / OpenAI API), один проход. PASS → SENT или READY_TO_SEND → EXIT. ВК/YouTube — Холл/браузер, если нет ключа.
 
 После PASS: один прогон `posts_publish.py` **без** `--wait`. Слот не наступил — `READY_TO_SEND` и выход.
 Запрещено жить до слота: sleep / poll / Read-loop до 12:12 / 15:15 / 21:21.
@@ -161,8 +163,9 @@ python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-HHMM
 researcher → meaning → copywriter → cover-text → gate.
 Cloud: один Task(generalPurpose) на шаг + dispatch-prompt.
 Plugin: Task(posts-*).
-written_by: gemini. Opus/Sonnet/Composer = FAIL.
-Воркеры inherit, reasoning_effort=low. high — только оверрайд Владимира.
+written_by: openai-api-gpt-5.6-sol. Текст: python3 scripts/chat_completions.py --model gpt-5.6-sol.
+gpt-5.5 / Opus / Sonnet / Composer = FAIL.
+Task inherit, reasoning_effort=low. high — только оверрайд Владимира.
 Пакет: posts/YYYY-MM-DD-1212/
 После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-1212
 Без --wait. READY_TO_SEND или SENT → EXIT. Не жить до 12:12.
@@ -188,7 +191,7 @@ Researcher: может сразу набросать 3 вопроса к кол�
 Copywriter 15:15: только poll.txt (5 строк) + площадки опроса. Вечерний пост не писать.
 Meaning на вечер не звать. Не 4 совета на варианты.
 Cloud: Task(generalPurpose)+dispatch. Plugin: Task(posts-*).
-written_by: gemini. inherit + reasoning_effort=low на тексты. Главред не звать.
+written_by: openai-api-gpt-5.6-sol. Текст: --model gpt-5.6-sol. gpt-5.5 запрещён. Главред не звать.
 Пакет: posts/YYYY-MM-DD-1515/
 После PASS: python3 scripts/posts_publish.py --package posts/YYYY-MM-DD-1515
 Без --wait. READY_TO_SEND или SENT → EXIT. Не жить до 15:15.
@@ -200,12 +203,12 @@ written_by: gemini. inherit + reasoning_effort=low на тексты. Главр
 
 Конвейер вечера убит. Meaning не звать. Copywriter не «доглаживает» чужой черновик.
 Если 15:15 `evening: HOLD` и Холл не просил вечер — не писать.
-Холл пост не пишет. Пишет рой: один writer, inherit + reasoning_effort=low.
+Холл пост не пишет. Пишет рой: один writer, `python3 scripts/chat_completions.py --model gpt-5.6-sol`.
 
 ```text
 Слот 21:21 на YYYY-MM-DD.
 Канон: POSTS.md. Рубрика «Другая сторона экрана».
-Один писатель: inherit + reasoning_effort=low, один проход, весь пост Telegram сразу.
+Один писатель: --model gpt-5.6-sol (OpenAI API), один проход, весь пост Telegram сразу.
 Вход: опрос 15:15 + 3 вопроса researcher (если есть в brief) +
 3 карты из draw_rw_cards.py --count 3.
 Не звать meaning. Не второй проход. Не обогащать метафорами мастей.
@@ -233,16 +236,16 @@ Gate только: длина ≤1024, нет «Сцена», нет пусто�
   researcher → meaning → copywriter → cover-text? → gate → publish
 21:21:
   researcher? (3 вопроса из опроса) → draw_rw_cards.py
-  → ОДИН writer (inherit + low, весь пост) → gate
+  → ОДИН writer (gpt-5.6-sol / OpenAI API, весь пост) → gate
 ```
 
 | Шаг | Агент | Модель | Выход |
 | --- | --- | --- | --- |
 | 0 | `posts-director` | inherit | папка, Task, step records, после PASS READY_TO_SEND → EXIT |
 | 1 | `posts-researcher` | inherit | `brief.md`; на 21:21 может сразу 3 вопроса из опроса |
-| 2 | `posts-meaning` | inherit + `reasoning_effort: low` | `meaning.md` на 12:12 / 15:15. На 21:21 шага нет |
-| 3 | `posts-copywriter` | inherit + `reasoning_effort: low` | 12:12 / 15:15 площадки; 21:21 = единственный писатель поста |
-| 4 | `posts-cover-text` | inherit + `reasoning_effort: low` | кадр 12:12; на 21:21 только после заморозки `tg.html` |
+| 2 | `posts-meaning` | `gpt-5.6-sol` OpenAI API | `meaning.md` на 12:12 / 15:15. На 21:21 шага нет |
+| 3 | `posts-copywriter` | `gpt-5.6-sol` OpenAI API | 12:12 / 15:15 площадки; 21:21 = единственный писатель поста |
+| 4 | `posts-cover-text` | `gpt-5.6-sol` OpenAI API | кадр 12:12; на 21:21 только после заморозки `tg.html` |
 | 5 | `posts-gate` | `scripts/posts_gate.py` (+ чеклист). На 21:21 предложения не пишет | `GATE` |
 
 Алиасы: Scout → researcher, Writer → meaning, Sol → copywriter. Новых ролей сверх таблицы нет.
@@ -297,7 +300,7 @@ TG / ВК / Макс **без** кодового слова. Опрос 15:15 м
 
 - **researcher:** один угол из Wordstat / боли / Дзена / сайта / недели. На 21:21 может выбрать 3 вопроса из опроса.
 - **meaning:** тезис 12:12 / 15:15. На 21:21 не существует.
-- **copywriter = inherit + low:** 12:12 сцена; 15:15 опрос; 21:21 весь вечерний пост одним проходом.
+- **copywriter = gpt-5.6-sol / OpenAI API:** 12:12 сцена; 15:15 опрос; 21:21 весь вечерний пост одним проходом.
 - **cover-text:** 3 хука. На 21:21 не переписывает пост.
 - **gate:** на 21:21 только длина ≤1024, «Сцена», пустая вода про «примерить»,
   пульс `Похоже? ❤️/ Не то ⚡`, позиция 3 = она. Предложения не трогает.
@@ -371,12 +374,13 @@ posts/YYYY-MM-DD-HHMM/
 
 ## Запреты
 
-- Дефолтный Cloud Agent / Director подменяет текст, который по канону пишет Gemini (ни статьи magiya, ни посты 12:12/15:15/21:21, ни опросы, ни Алёна, ни рилсы-текст)
-- Лазейка «напишу сам»: если Gemini недоступна / Task не спавнится / slug неверный — только FAIL + явный отчёт «модель недоступна», без своего черновика
+- Дефолтный Cloud Agent / Director подменяет текст воркера (ни статьи magiya, ни посты 12:12/15:15/21:21, ни опросы, ни Алёна, ни рилсы-текст)
+- Лазейка «напишу сам»: если OpenAI API / Task недоступны — только FAIL + явный отчёт «модель недоступна», без своего черновика
+- `gpt-5.5` / `openai-api-gpt-5.5` как писатель слота 12:12 / 15:15 / 21:21
 - Один агент пишет тему + тезис + пост + хук
 - Директор пишет inline (без Task / без dispatch-prompt)
 - Главред, «можно публиковать» от Главреда
-- Opus / Sonnet / Composer как писатель
+- Opus / Sonnet / Composer / gpt-5.5 как писатель слота 12:12 / 15:15 / 21:21
 - Публикация писателем шага или Холлом; default-аккаунт Composio
 - Ключ `COMPOSIO_API_KEY` в git / лог / чат
 - 12:12 в ВК и YouTube community
@@ -427,5 +431,6 @@ posts/YYYY-MM-DD-HHMM/
 Цепочка: [`shared/posts-chain.md`](shared/posts-chain.md).
 Шаги: [`shared/posts-step-contract.md`](shared/posts-step-contract.md).
 Модели: [`shared/posts-model-policy.json`](shared/posts-model-policy.json).
+Текст слотов: [`docs/POSTS_TEXT_MODEL.md`](docs/POSTS_TEXT_MODEL.md).
 Kie (пиксели): [`docs/KIE_MODELS.md`](docs/KIE_MODELS.md).
 Роли: [`.cursor/agents/FOR-AGENTS.md`](.cursor/agents/FOR-AGENTS.md).

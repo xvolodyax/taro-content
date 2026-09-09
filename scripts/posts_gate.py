@@ -15,6 +15,20 @@ ROOT = Path(__file__).resolve().parents[1]
 POLICY = json.loads((ROOT / "shared/posts-model-policy.json").read_text(encoding="utf-8"))
 ALIASES = POLICY["aliases"]
 FORBIDDEN_WRITERS = tuple(name.lower() for name in POLICY["forbidden_writers"])
+POST_SLOTS = set(POLICY.get("post_slots") or ["1212", "1515", "2121"])
+POST_WRITER = str(POLICY.get("written_by") or "openai-api-gpt-5.6-sol").lower()
+ALENA_WRITER = str(POLICY.get("alena_written_by") or "gemini").lower()
+POST_TEXT_MODEL = str(POLICY.get("text_model") or "gpt-5.6-sol")
+
+
+def required_writer(slot: str) -> str:
+    return POST_WRITER if slot in POST_SLOTS else ALENA_WRITER
+
+
+def required_text_model(slot: str) -> str:
+    if slot in POST_SLOTS:
+        return POST_TEXT_MODEL
+    return str(POLICY.get("alena_text_model") or "inherit")
 BOT_TG = "https://t.me/TodayTaro_bot?start=id8293683394"
 APP_TG = "https://t.me/TodayTaro_bot?startapp=ref_361BDE45"
 
@@ -162,11 +176,15 @@ def load_steps(package: Path) -> dict[str, dict]:
     return out
 
 
-def check_writer_stamp(text: str, label: str, result: GateResult) -> None:
+def check_writer_stamp(text: str, label: str, result: GateResult, slot: str = "") -> None:
     low = text.lower()
     for name in FORBIDDEN_WRITERS:
         if f"written_by: {name}" in low or f'"written_by": "{name}"' in low:
             result.fail(f"{label}: written_by {name} = FAIL")
+    if slot in POST_SLOTS and label in POLICY["human_text_files"]:
+        expect = required_writer(slot)
+        if f"written_by: {expect}" not in low and f'"written_by": "{expect}"' not in low:
+            result.fail(f"{label}: нет written_by {expect}")
     if "главред" in low and "removed" not in low:
         result.fail(f"{label}: Главред не удалён")
     if "можно публиковать" in low and label != "GATE":
@@ -249,13 +267,15 @@ def check_swarm(package: Path, slot: str, result: GateResult, require_swarm: boo
                 result.fail(f"{role}: плохой subagent_type {sub}")
             if role in POLICY["text_agents"]:
                 model = str(rec.get("model") or "")
-                if model != POLICY["text_model"]:
-                    result.fail(f"{role}: модель {model}, нужен {POLICY['text_model']}")
+                expect_model = required_text_model(slot)
+                if model != expect_model:
+                    result.fail(f"{role}: модель {model}, нужен {expect_model}")
                 writer = str(rec.get("written_by") or "").lower()
                 if writer in FORBIDDEN_WRITERS:
                     result.fail(f"{role}: written_by {writer} = FAIL")
-                if writer and writer != "gemini":
-                    result.fail(f"{role}: written_by {writer}, нужен gemini")
+                expect_writer = required_writer(slot)
+                if writer and writer != expect_writer:
+                    result.fail(f"{role}: written_by {writer}, нужен {expect_writer}")
         if any(canon_role(k).endswith("glavred") or "glavred" in k for k in steps):
             result.fail("шаг Главреда запрещён")
 
@@ -341,7 +361,7 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
         if not path.is_file():
             continue
         text = path.read_text(encoding="utf-8")
-        check_writer_stamp(text, rel, result)
+        check_writer_stamp(text, rel, result, slot)
         for phrase in STOP_PHRASES:
             if phrase in text.lower() and rel != "GATE":
                 if phrase == "главред" and "removed" in text.lower():
@@ -425,8 +445,12 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
         if str(data.get("publish") or "SKIP").upper() != "SKIP":
             result.fail("package.meta.json: publish не SKIP")
             result.publish_count += 1
-        if str(data.get("written_by") or "").lower() in FORBIDDEN_WRITERS:
+        meta_writer = str(data.get("written_by") or "").lower()
+        if meta_writer in FORBIDDEN_WRITERS:
             result.fail("package.meta.json: запрещённый писатель")
+        expect_writer = required_writer(slot)
+        if meta_writer and meta_writer != expect_writer:
+            result.fail(f"package.meta.json: written_by {meta_writer}, нужен {expect_writer}")
         if str(data.get("glavred") or "").upper() not in {"", "REMOVED", "NONE", "SKIP"}:
             result.fail("Главред не REMOVED")
         if data.get("director_inline") is True:
@@ -462,7 +486,7 @@ incident_report: none
 - [ ] 12:12/15:15: researcher → meaning → copywriter → cover-text? → gate
 - [ ] 21:21: один writer → gate (meaning нет)
 - [ ] Директор / Холл не писал inline
-- [ ] written_by: gemini
+- [ ] written_by: {required_writer(result.slot) or "openai-api-gpt-5.6-sol"}
 - [ ] Главред снят, фразы Главреда нет
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение

@@ -17,9 +17,11 @@
 - путь пакета и слот
 - что уже готово
 - что **не** делать (соседние роли, публикация, картинка, Главред)
-- `written_by: gemini` на человеческий текст
+- `written_by: openai-api-gpt-5.6-sol` на человеческий текст слота
+- текст: `python3 scripts/chat_completions.py --model gpt-5.6-sol` (`docs/POSTS_TEXT_MODEL.md`)
+- `gpt-5.5` запрещён
 - `publish: SKIP`
-- модель шага: inherit; `reasoning_effort=low` (high — только оверрайд Владимира)
+- Task inherit; `reasoning_effort=low` (high — только оверрайд Владимира)
 - дефолтный агент / Director текст не пишет
 
 Директор не дописывает в промпт готовый пост «для правки». Это снова inline.

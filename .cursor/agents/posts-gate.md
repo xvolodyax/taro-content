@@ -42,12 +42,12 @@ PASS достаточно Директору для одного `posts_publish.
 Cover на 21:21 опционален и только после заморозки `tg.html`.
 
 - Каждый шаг: `spawn: Task`, `inline: false`
-- Cloud: `subagent_type: generalPurpose` + файл dispatch-prompt с путём агента (воркеры inherit, `reasoning_effort=low`; high — только оверрайд Владимира)
+- Cloud: `subagent_type: generalPurpose` + файл dispatch-prompt с путём агента (Task inherit, `reasoning_effort=low`; текст слота `--model gpt-5.6-sol`)
 - Plugin: `Task(posts-*)`
-- Человеческий текст: `written_by: gemini`
-- Opus / Sonnet / Composer = FAIL
+- Человеческий текст слота: `written_by: openai-api-gpt-5.6-sol`
+- Текст слота только `--model gpt-5.6-sol`. `gpt-5.5` / Opus / Sonnet / Composer = FAIL
 - Директор или Холл написал пост сам = FAIL
-- Дефолтный Cloud Agent / Director подменил текст = FAIL. Если Gemini недоступна / Task не спавнится / slug неверный — только FAIL пакета («модель недоступна»), без своего черновика!
+- Дефолтный Cloud Agent / Director подменил текст = FAIL. Если OpenAI API / Task недоступны — только FAIL пакета («модель недоступна»), без своего черновика!
 - `publish: SKIP`
 
 ## Чеклист слота
@@ -73,7 +73,7 @@ verdict: PASS | FAIL
 return: none | copywriter | meaning | researcher | cover-text
 publish: SKIP
 glavred: REMOVED
-written_by: gemini
+written_by: openai-api-gpt-5.6-sol
 incident_report: none
 ```
 

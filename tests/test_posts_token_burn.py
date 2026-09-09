@@ -36,17 +36,23 @@ class TokenBurnGuards(unittest.TestCase):
 
     def test_policy_default_effort_low(self) -> None:
         self.assertEqual(POLICY["cloud_reasoning_effort"], "low")
-        self.assertEqual(POLICY["text_model"], "inherit")
+        self.assertEqual(POLICY["text_model"], "gpt-5.6-sol")
         self.assertEqual(POLICY["cloud_spawn"]["model"], "inherit")
         self.assertNotEqual(POLICY["cloud_reasoning_effort"], "high")
 
-    def test_workers_inherit(self) -> None:
-        for role in ("posts-meaning", "posts-copywriter", "posts-cover-text", "posts-gate"):
+    def test_orchestrators_inherit(self) -> None:
+        for role in ("posts-researcher", "posts-gate"):
             self.assertEqual(ROLES[role]["model"], "inherit")
 
-    def test_dispatch_stamps_inherit_and_low(self) -> None:
+    def test_text_writers_sol_api(self) -> None:
+        for role in ("posts-meaning", "posts-copywriter", "posts-cover-text"):
+            self.assertEqual(ROLES[role]["model"], "gpt-5.6-sol")
+            self.assertEqual(ROLES[role]["written_by"], "openai-api-gpt-5.6-sol")
+
+    def test_dispatch_stamps_sol_and_low(self) -> None:
         prompt = build_prompt("posts-copywriter", "posts/2026-09-05-2121", "cloud")
-        self.assertIn("Модель шага: inherit", prompt)
+        self.assertIn("--model gpt-5.6-sol", prompt)
+        self.assertIn("written_by: openai-api-gpt-5.6-sol", prompt)
         self.assertIn("reasoning_effort: low", prompt)
         self.assertNotIn("reasoning_effort: high", prompt)
         self.assertNotIn("reasoning_effort=high", prompt)

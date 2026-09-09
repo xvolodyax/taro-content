@@ -10,6 +10,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 POLICY = json.loads((ROOT / "shared/posts-model-policy.json").read_text(encoding="utf-8"))
 
+SOL = POLICY["text_model"]
+SOL_STAMP = POLICY["written_by"]
+SOL_CLI = POLICY.get("openai_cli") or "python3 scripts/chat_completions.py --model gpt-5.6-sol"
+
 ROLES = {
     "posts-researcher": {
         "agent": ".cursor/agents/posts-researcher.md",
@@ -22,29 +26,29 @@ ROLES = {
         "agent": ".cursor/agents/posts-meaning.md",
         "skill": ".cursor/skills/posts-meaning/SKILL.md",
         "artifacts": ["meaning.md"],
-        "model": "inherit",
-        "written_by": "gemini",
+        "model": SOL,
+        "written_by": SOL_STAMP,
     },
     "posts-copywriter": {
         "agent": ".cursor/agents/posts-copywriter.md",
         "skill": ".cursor/skills/posts-copywriter/SKILL.md",
-        "artifacts": ["tg.html", "vk.html", "debrief.md"],
-        "model": "inherit",
-        "written_by": "gemini",
+        "artifacts": ["tg.html", "vk.html", "debrief.md", "poll.txt"],
+        "model": SOL,
+        "written_by": SOL_STAMP,
     },
     "posts-cover-text": {
         "agent": ".cursor/agents/posts-cover-text.md",
         "skill": ".cursor/skills/posts-cover-text/SKILL.md",
         "artifacts": ["cover-text.json", "image-prompt.txt"],
-        "model": "inherit",
-        "written_by": "gemini",
+        "model": SOL,
+        "written_by": SOL_STAMP,
     },
     "posts-gate": {
         "agent": ".cursor/agents/posts-gate.md",
         "skill": ".cursor/skills/posts-gate/SKILL.md",
         "artifacts": ["GATE"],
         "model": "inherit",
-        "written_by": "gemini",
+        "written_by": SOL_STAMP,
     },
 }
 
@@ -71,19 +75,25 @@ def build_prompt(role: str, package: str, runtime: str, ready: str = "") -> str:
     )
     ready_line = ready.strip() or "смотри файлы пакета"
     effort = POLICY.get("cloud_reasoning_effort") or "low"
+    text_line = (
+        f"Текст слота: {SOL_CLI}. Task inherit (не пинить Cursor-slug). gpt-5.5 запрещён."
+        if role in POLICY["text_agents"]
+        else "Модель шага: inherit (модель окна; не пинить slug). Текст слота не писать."
+    )
     return f"""Ты один шаг роя постов ТАРО СЕЙЧАС. Не Директор.
 
 Роль: {role}
 Пакет: {package}
 Runtime: {runtime}
 Спавн: {spawn}
-Модель шага: inherit (модель окна; не пинить slug)
+{text_line}
 reasoning_effort: {effort}
 # high — только явный оверрайд Владимира
 written_by: {spec["written_by"]}
+канон модели: docs/POSTS_TEXT_MODEL.md
 publish: SKIP
 Главред: REMOVED. Не писать «можно публиковать».
-Дефолтный Cloud Agent / Director текст не пишет. Нет модели — FAIL, без своего черновика.
+Дефолтный Cloud Agent / Director текст не пишет. Нет OpenAI API / модели — FAIL, без своего черновика.
 
 Прочитай целиком и следуй:
 - {spec["agent"]}
@@ -103,7 +113,7 @@ publish: SKIP
 - публиковать, ходить в Telegram/Composio/browser
 - генерировать картинку / звать Kie
 - Главред, слово «ловушка»
-- Opus / Sonnet / Composer как писатель
+- Opus / Sonnet / Composer / gpt-5.5 как писатель слота
 
 Верни Директору маркер роли и список файлов. Не публикуй.
 """

@@ -1,6 +1,6 @@
 ---
 name: posts-meaning
-description: "Meaning постов: один тезис на 12:12 / 15:15. На 21:21 шага нет. inherit + reasoning_effort=low. Director MUST Task."
+description: "Meaning постов: один тезис на 12:12 / 15:15. На 21:21 шага нет. gpt-5.6-sol / OpenAI API. Director MUST Task."
 model: inherit
 reasoning_effort: low
 readonly: false
@@ -44,7 +44,7 @@ is_background: false
 не_делать: <что copywriter не должен спутать с темой>
 ```
 
-`written_by: gemini` в файле. Opus / Sonnet / Composer = FAIL.
+`written_by: openai-api-gpt-5.6-sol` в файле. Текст: `python3 scripts/chat_completions.py --model gpt-5.6-sol`. `gpt-5.5` / Opus / Sonnet / Composer = FAIL.
 
 ## Запрещено
 
@@ -65,7 +65,7 @@ is_background: false
 === POSTS MEANING ===
 draft: thesis
 next: copywriter
-written_by: gemini
+written_by: openai-api-gpt-5.6-sol
 publish: SKIP
 incident_report: none
 ```

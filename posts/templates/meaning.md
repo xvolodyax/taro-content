@@ -1,5 +1,5 @@
 ---
-written_by: gemini
+written_by: openai-api-gpt-5.6-sol
 ---
 
 # Meaning — один тезис

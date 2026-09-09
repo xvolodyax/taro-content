@@ -5,8 +5,8 @@ return: copywriter | meaning | researcher | cover-text | none
 publish: SKIP
 glavred: REMOVED
 director_inline: ok | FAIL
-gemini_model_available: ok | FAIL (модель недоступна)
-written_by: gemini
+openai_api: ok | FAIL (модель недоступна)
+written_by: openai-api-gpt-5.6-sol
 water: 
 funnel: 
 limits: 
@@ -24,7 +24,8 @@ incident_report: none
 # Чеклист
 
 - [ ] первая строка = кадр (не 15:15 poll-only)
-- [ ] дефолтный Cloud Agent / Director НЕ подменял текст Gemini (если модель недоступна — FAIL, без своего черновика)
+- [ ] дефолтный Cloud Agent / Director НЕ подменял текст Sol / OpenAI API (если модель недоступна — FAIL, без своего черновика)
+- [ ] текст слота: --model gpt-5.6-sol; gpt-5.5 не звали
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
 - [ ] TG/ВК/Макс без кодового слова

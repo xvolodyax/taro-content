@@ -1,6 +1,6 @@
 ---
 name: posts-cover-text
-description: "Cover 12:12 и 21:21: 3 хука, один выбран, центр 1:1 для IG preview. 15:15 нет. Не Kie. Director MUST Task. inherit + low."
+description: "Cover 12:12 и 21:21: 3 хука, один выбран, центр 1:1 для IG preview. 15:15 нет. Не Kie. Director MUST Task. gpt-5.6-sol / OpenAI API."
 model: inherit
 reasoning_effort: low
 readonly: false
@@ -28,7 +28,7 @@ Skill: `.cursor/skills/posts-cover-text/SKILL.md`.
 
 ## Роль
 
-Читаешь смысл, потом 3 хука, выбираешь один. `written_by: gemini`.
+Читаешь смысл, потом 3 хука, выбираешь один. Текст: `python3 scripts/chat_completions.py --model gpt-5.6-sol`. `written_by: openai-api-gpt-5.6-sol`.
 
 Без прочитанного смысла хук писать нельзя. Ты не придумываешь тему и не пишешь пост.
 
@@ -59,7 +59,7 @@ Skill: `.cursor/skills/posts-cover-text/SKILL.md`.
 
 ## Выход
 
-1. `cover-text.json` — `thesis`, `candidates` (3), `chosen`, `why_this_one`, `placement` = `"center"`, `written_by` = `"gemini"`
+1. `cover-text.json` — `thesis`, `candidates` (3), `chosen`, `why_this_one`, `placement` = `"center"`, `written_by` = `"openai-api-gpt-5.6-sol"`
 2. `image-prompt.txt` — английский для Холла / Kie: `model: gpt-image-2-5-flare-image-to-image` (не Sunburst, не `gpt-image-2*`), hook centered at optical center, 1K 1:1. Канон: `docs/KIE_MODELS.md`.
 
 ```text
@@ -67,7 +67,7 @@ Skill: `.cursor/skills/posts-cover-text/SKILL.md`.
 chosen: <хук>
 candidates: 1) … 2) … 3) …
 placement: center
-written_by: gemini
+written_by: openai-api-gpt-5.6-sol
 next: gate | Hall
 publish: SKIP
 incident_report: none
