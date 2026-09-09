@@ -16,6 +16,7 @@ h1_excalibur:
 overlay_not_in_title: 
 h1_not_fattest: 
 canvas_2x2_2k: 
+aspect_ratio_16_9: 
 one_kie_task: 
 four_1k_tasks: no
 frame1_clickbait_only: 
@@ -52,7 +53,7 @@ incident_report: none
 - [ ] kind только в meta
 - [ ] title == h1, Эскалибур, не кликбейт
 - [ ] overlay_clickbait только на клетке cover холста 2×2, не в title/URL
-- [ ] один холст 2K 2×2, не четыре 1K createTask, не одна 16:9 без врезок
+- [ ] один холст 2K 16:9 2×2 (не 1:1 / не square), не четыре 1K createTask, не одна 16:9 без врезок
 - [ ] cover: overlay Clickbait + жирная красная рамка + DJI у рта; inline-01…03 без лица Вики
 - [ ] картинка не валит verdict прозы (только cover_note, regen=no)
 - [ ] cover в теле не дублировать; врезки только inline-01…03

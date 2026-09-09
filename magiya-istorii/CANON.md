@@ -93,7 +93,7 @@ Writer сам выбирает, какой вектор углубить. Это
 - **Writer** (`magiya-writer.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Только тело. H1 не пишет.
 - **Title** (`magiya-title.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Только H1. Тело не правит.
 - **Clickbait** (`magiya-clickbait.md` / `clickbait.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Пишет ударный overlay для кадра 1.
-- **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Базовое ядро — холст **2K 2×2** с белыми швами: клетка 1 = Вика + DJI Mic Mini у рта + жирная красная рамка + overlay из `clickbait.txt`; клетки 2–4 без лица Вики. Генерацию пикселей НЕ запускать. Канон холста: [`docs/CANVAS_2K.md`](../docs/CANVAS_2K.md).
+- **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Базовое ядро — холст **2K 16:9 2×2** (не 1:1) с белыми швами: клетка 1 = Вика + DJI Mic Mini у рта + жирная красная рамка + overlay из `clickbait.txt`; клетки 2–4 без лица Вики; после среза все четыре клетки 16:9. Генерацию пикселей НЕ запускать. Канон холста: [`docs/CANVAS_2K.md`](../docs/CANVAS_2K.md).
 
 **Жёсткое правило (HARD 03.09):**
 Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Дефолт не пишет в эфир ничего: ни H1, ни кликбейт, ни тело статьи, ни посты 12:12/15:15/21:21, ни опрос, ни Алёна, ни рилсы-текст.
@@ -199,9 +199,9 @@ Scout / Plot / Gate остаются `inherit` как служебные. Plot �
 
 Снимает правило «только одна 16:9 без врезок» для **новых** пакетов. Живые `packages/2026-08-*` не перерисовывать.
 
-Не 9:16. Не сетка 2×3 / шесть кадров. Не четыре отдельных 1K `createTask`. Не видео. Не карусель.
+Не 9:16. Не квадратный мастер `1:1`. Не сетка 2×3 / шесть кадров. Не четыре отдельных 1K `createTask`. Не видео. Не карусель.
 
-**Один холст 2K, четыре клетки, толстые белые швы.** Нарезка: `scripts/slice_canvas.py` → `cover.png` + `inline-01.png`…`inline-03.png`. Общий канон с статьями Эскалибура: [`docs/CANVAS_2K.md`](../docs/CANVAS_2K.md).
+**Один холст 2K, `aspect_ratio: 16:9`, четыре клетки, толстые белые швы.** После среза каждая клетка — **16:9 landscape**. Нарезка: `scripts/slice_canvas.py` → `cover.png` + `inline-01.png`…`inline-03.png`. Общий канон с статьями Эскалибура: [`docs/CANVAS_2K.md`](../docs/CANVAS_2K.md). Живой id80 (квадратный 2K) не перерисовывать.
 
 ```text
 cover        inline-01
@@ -213,6 +213,7 @@ inline-02    inline-03
 ### 0. Kie-модель и разрешение (HARD, с 2026-09-09):
 - Новые кадры — **GPT Image 2.5 Flare** i2i: `gpt-image-2-5-flare-image-to-image`. Нет рефа — t2i.
 - `resolution`: строка **`2K`**. Один createTask на холст.
+- `aspect_ratio`: строка **`16:9`**. Не `1:1`. Не square. Не omit/auto.
 - Не Sunburst. Не `gpt-image-2*`. Не четыре 1K.
 - Канон id: [`docs/KIE_MODELS.md`](../docs/KIE_MODELS.md).
 
@@ -233,9 +234,9 @@ inline-02    inline-03
 - **В БАЗОВЫЙ ПРОМПТ ЗАПРЕЩЕНО вшивать «ночь».** Также не зашивать «кухня», «хрущёвка» и конкретное время суток.
 - Место, свет, время суток и атмосферу Art берёт **строго из конкретной истории** (по `story.md`).
 
-### Базовое ядро промпта холста (2×2, 2K; без ночи):
+### Базовое ядро промпта холста (2×2, 2K, 16:9; без ночи):
 ```text
-A cinematic 2x2 photographic contact sheet of 4 equal panels separated by THICK WHITE gutter seams, resolution 2K, one canvas not four images. Panel 1 (top-left, cover): a single woman referenced from one angle of the Victoria sheet (no face morphing): distinct hazel-green eyes, warm blonde hair with darker roots, soft features; stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth; BOLD THICK RED magazine cover border around THIS PANEL ONLY; high-impact DISPLAY Cyrillic overlay with the clickbait title baked on the pixels. Panels 2 to 4: NO Victoria face, NO red frame, NO clickbait; distinct story-beat editorial photographs of place, object and atmosphere from the same setting and light. Thick white gutters must stay sliceable.
+A cinematic 2x2 photographic contact sheet on ONE 16:9 landscape master canvas (Kie aspect_ratio 16:9, NOT 1:1 square), resolution 2K, one canvas not four images. Four equal 16:9 landscape panels separated by THICK WHITE gutter seams so each panel stays 16:9 after slice. Panel 1 (top-left, cover): a single woman referenced from one angle of the Victoria sheet (no face morphing): distinct hazel-green eyes, warm blonde hair with darker roots, soft features; stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth; BOLD THICK RED magazine cover border around THIS PANEL ONLY; high-impact DISPLAY Cyrillic overlay with the clickbait title baked on the pixels. Panels 2 to 4: NO Victoria face, NO red frame, NO clickbait; distinct story-beat editorial photographs of place, object and atmosphere from the same setting and light. Thick white gutters must stay sliceable.
 ```
 
 ## Холст: одна генерация, текст не браковать
@@ -248,7 +249,7 @@ A cinematic 2x2 photographic contact sheet of 4 equal panels separated by THICK 
 
 Пиксели не обязательны. Лицо Холл не рисует.
 
-Файлы: `canvas.png` (2K) → срез `cover.png` + `inline-01`…`03`.
+Файлы: `canvas.png` (2K, 16:9) → срез `cover.png` + `inline-01`…`03` (каждая 16:9).
 
 ### Дизайн (глянец, не нейросеть)
 

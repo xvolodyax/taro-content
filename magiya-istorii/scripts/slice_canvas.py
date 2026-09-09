@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Нарезка холста 2×2 по белым швам → cover + inline-01..03.
 
-Тот же дешёвый пайплайн, что у статей Эскалибура: один canvas 2K,
-толстые белые gutters, четыре клетки. Лицо не рисует.
-Канон: docs/CANVAS_2K.md
+Тот же дешёвый пайплайн, что у статей Эскалибура: один canvas 2K
+16:9 (не 1:1), толстые белые gutters, четыре клетки 16:9 после среза.
+Лицо не рисует. Канон: docs/CANVAS_2K.md
 """
 
 from __future__ import annotations
@@ -95,7 +95,7 @@ def slice_canvas(src: Path, dest: Path) -> list[Path]:
 
 def main() -> int:
     p = argparse.ArgumentParser(
-        description="Режет canvas.png → cover.png + inline-01..03 по белым швам (холст 2×2 / 2K)"
+        description="Режет canvas.png → cover.png + inline-01..03 по белым швам (холст 2×2 / 2K / 16:9)"
     )
     p.add_argument("canvas")
     p.add_argument("--out", default="")

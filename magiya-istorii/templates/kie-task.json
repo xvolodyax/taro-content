@@ -1,0 +1,12 @@
+{
+  "model": "gpt-image-2-5-flare-image-to-image",
+  "input": {
+    "prompt": "<from art-brief.md canvas kernel>",
+    "input_urls": ["<magiya-istorii/refs/Виктория.png or Victoria 33>"],
+    "aspect_ratio": "16:9",
+    "resolution": "2K"
+  },
+  "one_createTask": true,
+  "not_square": true,
+  "note": "Master is 16:9 landscape 2K, then white-seam slice. All four panels are 16:9. Not 1:1. Not four 1K gens. Do not regenerate live packs (id80)."
+}
