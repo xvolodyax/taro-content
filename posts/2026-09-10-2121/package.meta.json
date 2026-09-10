@@ -1,0 +1,19 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "openai-api-gpt-5.6-sol",
+  "text_model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "2121",
+  "date": "2026-09-10",
+  "rubric": "Другая сторона экрана",
+  "cards_fixed": true,
+  "cards": [
+    "Семёрка мечей",
+    "Тройка пентаклей",
+    "Паж жезлов"
+  ],
+  "poll": "Он предложил кофе на выходных, но не назвал день и время. Что ты делаешь?"
+}
