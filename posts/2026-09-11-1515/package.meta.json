@@ -1,0 +1,25 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "openai-api-gpt-5.6-sol",
+  "text_model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "1515",
+  "date": "2026-09-11",
+  "preview": "none",
+  "evening": "SEED",
+  "poll_locked": true,
+  "telegram": {
+    "status": "LIVE",
+    "tool": "TELEGRAM_SEND_POLL",
+    "by": "hall",
+    "message_id": 4224,
+    "link": "https://t.me/TodayTaro/4224",
+    "resend": false
+  },
+  "vk": "HAND_HALL",
+  "max": "SKIP",
+  "instagram": "SKIP"
+}

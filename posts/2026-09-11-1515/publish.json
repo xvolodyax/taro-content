@@ -1,0 +1,28 @@
+{
+  "package": "posts/2026-09-11-1515",
+  "date": "2026-09-11",
+  "slot": "1515",
+  "status": "SKIP",
+  "reason": "TG 15:15 уже live Холл TELEGRAM_SEND_POLL https://t.me/TodayTaro/4224 — повторно не слать",
+  "link": "https://t.me/TodayTaro/4224",
+  "message_id": 4224,
+  "sent": [
+    {
+      "dest": "telegram-poll",
+      "alias": "telegram-composia",
+      "tool": "TELEGRAM_SEND_POLL",
+      "status": "LIVE_HALL",
+      "chat_id": "@TodayTaro",
+      "message_id": 4224,
+      "link": "https://t.me/TodayTaro/4224",
+      "by": "hall"
+    }
+  ],
+  "hall_publishes": false,
+  "vk": "HAND_HALL",
+  "instagram": "SKIP",
+  "max": "SKIP",
+  "youtube": "UNTOUCHED",
+  "resend_telegram": false,
+  "composio": "NOT_CALLED"
+}
