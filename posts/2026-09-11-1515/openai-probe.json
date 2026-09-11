@@ -1,0 +1,12 @@
+{
+  "cli": "python3 scripts/chat_completions.py --model gpt-5.6-sol",
+  "check": "OK key=present",
+  "live": "FAIL",
+  "http": 401,
+  "code": "ip_not_authorized",
+  "message": "Your IP is not authorized to make this request.",
+  "model": "gpt-5.6-sol",
+  "written_by_target": "openai-api-gpt-5.6-sol",
+  "director_inline": false,
+  "note": "Director probed API before text steps. Meaning/copywriter must use the same CLI. On 401 do not substitute Cursor text."
+}
