@@ -9,5 +9,17 @@
   "slot": "1515",
   "date": "2026-09-11",
   "preview": "none",
-  "evening": "SEED"
+  "evening": "SEED",
+  "poll_locked": true,
+  "telegram": {
+    "status": "LIVE",
+    "tool": "TELEGRAM_SEND_POLL",
+    "by": "hall",
+    "message_id": 4224,
+    "link": "https://t.me/TodayTaro/4224",
+    "resend": false
+  },
+  "vk": "HAND_HALL",
+  "max": "SKIP",
+  "instagram": "SKIP"
 }

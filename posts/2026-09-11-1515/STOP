@@ -1,0 +1,12 @@
+STOP
+slot: 2026-09-11-1515
+telegram: LIVE https://t.me/TodayTaro/4224
+by: hall TELEGRAM_SEND_POLL
+resend: false
+max: SKIP
+instagram: SKIP
+vk: HAND_HALL
+publish: SKIP
+composio: NOT_CALLED
+director_inline: false
+exit: now
