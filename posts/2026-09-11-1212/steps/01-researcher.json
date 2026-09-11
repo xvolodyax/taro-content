@@ -1,0 +1,14 @@
+{
+  "role": "posts-researcher",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "written_by": "inherit",
+  "dispatch_prompt": "steps/01-researcher.prompt.md",
+  "artifacts": [
+    "brief.md"
+  ],
+  "publish": "SKIP",
+  "runtime": "cloud"
+}

@@ -1,0 +1,28 @@
+=== POSTS GATE ===
+slot: 2026-09-11-1212
+verdict: FAIL
+return: none
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL (модель недоступна)
+written_by: openai-api-gpt-5.6-sol
+cover_md5: n/a
+cover_hook: n/a
+tg_len: n/a
+incident_report: OpenAI HTTP 401 ip_not_authorized. Ключ на месте (--check=OK). Живой python3 scripts/chat_completions.py --model gpt-5.6-sol отклонён: IP not authorized. Egress 35.83.9.202. Copywriter / cover-text / Kie / publish не звали. Директор текст не подменял.
+
+# Причины
+- meaning: модель недоступна (OpenAI 401 ip_not_authorized)
+- нет площадок: tg.html, max.txt, vk.html, ig.txt, yt.txt
+- нет cover.png / cover-text (шаг не запускался)
+- нет READY_TO_SEND
+
+# Чеклист
+- [x] researcher → brief.md (Task)
+- [x] meaning Task: FAIL, тезис не писать
+- [ ] copywriter не звать, пока API не откроется
+- [ ] cover-text / Kie не звать
+- [x] Директор / Холл не писал inline
+- [x] gpt-5.5 / Gemini / модель окна как автор текста — не использовались
+- [x] publish SKIP; эфир не слали
