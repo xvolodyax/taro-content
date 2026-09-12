@@ -1,0 +1,32 @@
+=== POSTS GATE ===
+slot: 2026-09-12-1515
+verdict: FAIL
+return: meaning
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL (модель недоступна)
+written_by: openai-api-gpt-5.6-sol
+tg_len: n/a
+cover_md5: n/a
+cover_hook: n/a
+preview: none
+incident_report: openai HTTP 401 ip_not_authorized; модель недоступна; Director текст не писал
+
+# Причины
+- meaning: модель недоступна (OpenAI API gpt-5.6-sol HTTP 401 ip_not_authorized)
+- нет step record: posts-copywriter (не звать: нет живого тезиса)
+- нет step record: posts-gate как отдельный writer-шаг после copy
+- poll.txt не писался; Director / Cursor-модель текст слота не подменяли
+- READY_TO_SEND нет
+
+# Чеклист
+- [x] researcher → brief.md (суббота днём, «что делаешь?» без места и плана)
+- [x] meaning вызван через Task(generalPurpose) + chat_completions.py --model gpt-5.6-sol
+- [ ] copywriter
+- [ ] poll.txt 5 строк
+- [x] 15:15 без cover / IG / Макс
+- [x] written_by lock: openai-api-gpt-5.6-sol (эфирный текст не создан)
+- [x] Главред снят
+- [x] publish SKIP
+- [x] 21:21 сид карт, без пульса и без разбора

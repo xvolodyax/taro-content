@@ -1,0 +1,29 @@
+=== POSTS GATE ===
+slot: 2026-09-12-2121
+verdict: FAIL
+return: none
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL (модель недоступна)
+written_by: openai-api-gpt-5.6-sol
+seed_only: true
+preview: poll-only
+cover_md5: n/a
+cover_hook: n/a
+cards: Рыцарь кубков | Шестёрка мечей | Смерть
+tg_len: n/a
+rubric_2121: Другая сторона экрана
+incident_report: сид карт только; writer не звали — Sol 401; пульс и проза не писались
+
+# Причины
+- seed_only: полный разбор не писался
+- OpenAI gpt-5.6-sol HTTP 401; Director текст не подменял
+- cover HOLD
+
+# Чеклист
+- [x] карты: draw_rw_cards.py --count 3
+- [x] SEED.md привязан к заявке 15:15
+- [ ] writer gpt-5.6-sol
+- [ ] пульс (не в сиде)
+- [x] publish SKIP
