@@ -9,11 +9,12 @@
   "slot": "2121",
   "date": "2026-09-13",
   "rubric": "Другая сторона экрана",
-  "seed_only": false,
+  "seed_only": true,
   "cards_locked": true,
   "from_poll_slot": "none",
   "sunday": true,
   "preview": "",
-  "evening": "OPEN",
-  "note": "полный пакет 21:21; воскресенье без 15:15; карты из сида не перетягивать; from_poll_slot none"
+  "evening": "HOLD",
+  "note": "полный пакет не собран; Director текст не подменял; from_poll_slot none; cards locked",
+  "incident": "модель недоступна: OpenAI gpt-5.6-sol HTTP 401 ip_not_authorized"
 }
