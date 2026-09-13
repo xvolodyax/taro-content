@@ -1,0 +1,34 @@
+=== POSTS GATE ===
+slot: 2026-09-13-2121
+verdict: FAIL
+return: copywriter
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+written_by: openai-api-gpt-5.6-sol
+openai_api: FAIL (модель недоступна)
+tg_len: n/a
+cover_md5: n/a
+cover_hook: n/a
+cover: n/a
+incident_report: модель недоступна (OpenAI gpt-5.6-sol HTTP 401 ip_not_authorized)
+
+# Причины
+- модель недоступна (OpenAI gpt-5.6-sol HTTP 401 ip_not_authorized)
+- нет tg.html
+- полный пакет не собран
+- нет step record: posts-gate
+- 21:21: нет vk.html
+
+# Чеклист
+- [ ] 12:12/15:15: researcher → meaning → copywriter → cover-text? → gate
+- [ ] 21:21: один writer → gate (meaning нет)
+- [ ] Директор / Холл не писал inline
+- [ ] written_by: openai-api-gpt-5.6-sol
+- [ ] Главред снят, фразы Главреда нет
+- [ ] нет слова «ловушка»
+- [ ] бот ≠ приложение
+- [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», позиция 3 = она
+- [ ] cover anti-stale: новый кадр, уникальный md5, хук совпадает
+- [ ] Gate предложения не переписывает
+- [ ] publish SKIP у писателей; эфир — posts_publish.py
