@@ -1,0 +1,20 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "openai-api-gpt-5.6-sol",
+  "text_model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "2121",
+  "date": "2026-09-13",
+  "rubric": "Другая сторона экрана",
+  "seed_only": true,
+  "cards_locked": true,
+  "from_poll_slot": "none",
+  "sunday": true,
+  "preview": "",
+  "evening": "HOLD",
+  "note": "полный пакет не собран; Director текст не подменял; from_poll_slot none; cards locked",
+  "incident": "модель недоступна: OpenAI gpt-5.6-sol HTTP 401 ip_not_authorized"
+}
