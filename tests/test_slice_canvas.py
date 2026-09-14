@@ -16,17 +16,19 @@ sys.path.insert(0, str(ROOT / "magiya-istorii" / "scripts"))
 from slice_canvas import SLICE_NAMES, slice_canvas  # noqa: E402
 
 
-def _make_2x2(path: Path, cell: int = 80, gutter: int = 16) -> None:
-    w = cell * 2 + gutter
-    h = cell * 2 + gutter
+def _make_2x2(
+    path: Path, cell_w: int = 80, cell_h: int = 80, gutter: int = 16
+) -> None:
+    w = cell_w * 2 + gutter
+    h = cell_h * 2 + gutter
     img = Image.new("RGB", (w, h), (255, 255, 255))
     draw = ImageDraw.Draw(img)
     colors = [(200, 30, 30), (30, 200, 30), (30, 30, 200), (200, 200, 30)]
     boxes = [
-        (0, 0, cell, cell),
-        (cell + gutter, 0, w, cell),
-        (0, cell + gutter, cell, h),
-        (cell + gutter, cell + gutter, w, h),
+        (0, 0, cell_w, cell_h),
+        (cell_w + gutter, 0, w, cell_h),
+        (0, cell_h + gutter, cell_w, h),
+        (cell_w + gutter, cell_h + gutter, w, h),
     ]
     for box, color in zip(boxes, colors):
         draw.rectangle(box, fill=color)
@@ -57,6 +59,34 @@ class SliceCanvas2x2Tests(unittest.TestCase):
                 with Image.open(f) as im:
                     sizes.add(im.size)
             self.assertEqual(sizes, {(50, 50)})
+
+    def test_16_9_master_slices_to_16_9_panels(self) -> None:
+        """Мастер 16:9 + равная сетка 2×2 → четыре клетки 16:9."""
+        with tempfile.TemporaryDirectory() as tmp:
+            src = Path(tmp) / "canvas.png"
+            dest = Path(tmp) / "out"
+            _make_2x2(src, cell_w=160, cell_h=90, gutter=16)
+            files = slice_canvas(src, dest)
+            self.assertEqual(len(files), 4)
+            for f in files:
+                with Image.open(f) as im:
+                    w, h = im.size
+                    self.assertGreater(w, h)
+                    self.assertAlmostEqual(w / h, 16 / 9, delta=0.2)
+
+    def test_fallback_16_9_master_even_split(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            src = Path(tmp) / "canvas.png"
+            dest = Path(tmp) / "out"
+            Image.new("RGB", (320, 180), (10, 20, 30)).save(src)
+            files = slice_canvas(src, dest)
+            sizes = set()
+            for f in files:
+                with Image.open(f) as im:
+                    sizes.add(im.size)
+            self.assertEqual(sizes, {(160, 90)})
+            w, h = next(iter(sizes))
+            self.assertAlmostEqual(w / h, 16 / 9, places=5)
 
 
 if __name__ == "__main__":

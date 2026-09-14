@@ -104,7 +104,7 @@ def make_tar_bytes(package_dir: Path) -> bytes:
     - article.html
     - article.meta.json
     - description-brief.json
-    - cover/cover.png (клетка 1 холста 2×2; в article.html не дублировать)
+    - cover/cover.png (клетка 1 холста 2×2 16:9; в article.html не дублировать)
     - cover/inline-01.png..inline-03.png (клетки 2–4; только если уже нарезаны)
     Живые пакеты без врезок остаются cover-only — пиксели не регенерировать.
     """
