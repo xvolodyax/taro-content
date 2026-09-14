@@ -1,0 +1,43 @@
+=== POSTS GATE ===
+slot: 2026-09-14-1515
+verdict: FAIL
+return: none
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL (модель недоступна)
+written_by: openai-api-gpt-5.6-sol
+water: n/a
+funnel: n/a
+limits: n/a
+voice: n/a
+platforms: n/a
+cover: n/a
+cover_md5: n/a
+cover_hook: n/a
+cards: n/a
+tg_len: n/a
+rubric_2121: n/a
+preview: none
+incident_report: OpenAI gpt-5.6-sol HTTP 401 ip_not_authorized; Your IP is not authorized to make this request. Тезис нет. Copywriter не звали. poll.txt нет. Director текст не писал.
+
+# Причины
+- openai_api FAIL (модель недоступна)
+- OpenAI gpt-5.6-sol HTTP 401; code: ip_not_authorized
+- meaning: тезис не писался, свой черновик не подставлялся
+- нет poll.txt; copywriter не звали
+- нет step record: posts-copywriter
+- нет step record: posts-gate
+- Director / Холл текст слота не подменял
+
+# Чеклист
+- [x] meaning звали через Task + gpt-5.6-sol
+- [x] Director текст не писал
+- [x] publish SKIP
+- [x] Главред снят
+- [ ] writer gpt-5.6-sol (401, модель недоступна)
+- [ ] poll.txt 5 строк
+- [ ] площадки опроса
+- [x] cover n/a (слот 15:15 без кадра)
+- [x] cover_md5: n/a
+- [x] cover_hook: n/a
