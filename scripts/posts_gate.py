@@ -8,6 +8,7 @@ import json
 import re
 import sys
 from dataclasses import dataclass, field
+from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -53,6 +54,22 @@ STOP_PHRASES = (
 
 SLOT_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2})-(?P<slot>1212|1515|2121|alena)$")
 SCENA_RE = re.compile(r"(?i)(?:^|\n)\s*«?сцена»?\s*(?:[:.\-—–]|$)|«сцена»")
+FOUR_CARDS_SINCE = date(2026, 9, 15)
+ADVICE_TOKENS = (
+    "напиш",
+    "не пиш",
+    "не пиши",
+    "границ",
+    "подожд",
+    "жди ",
+    "ждать",
+    "спроси",
+    "до утра",
+    "до вечера",
+    "не отвеч",
+    "поставь",
+    "закрыт",
+)
 
 
 class _Visible(HTMLParser):
@@ -73,6 +90,33 @@ def visible_text(html: str) -> str:
 def canon_role(name: str) -> str:
     raw = name if name.startswith("posts-") else f"posts-{name}"
     return ALIASES.get(raw, raw)
+
+
+def package_date(package: Path) -> date | None:
+    match = SLOT_RE.search(package.name)
+    if match:
+        try:
+            return date.fromisoformat(match.group("date"))
+        except ValueError:
+            return None
+    meta = package / "package.meta.json"
+    if meta.is_file():
+        raw = str(json.loads(meta.read_text(encoding="utf-8")).get("date") or "")
+        if raw:
+            try:
+                return date.fromisoformat(raw[:10])
+            except ValueError:
+                return None
+    return None
+
+
+def uses_four_cards(package: Path, slot: str) -> bool:
+    if slot != "2121":
+        return False
+    day = package_date(package)
+    if day is None:
+        return True
+    return day >= FOUR_CARDS_SINCE
 
 
 def detect_slot(package: Path) -> str:
@@ -299,13 +343,17 @@ SUIT_METAPHOR = (
 HER_TOKENS = ("неё", "нее", "тебе", "тебя", "ты ", "ты.", "ей", "читатель", "собой", "себе")
 
 
-def check_debrief_rubric(text: str, label: str, result: GateResult) -> None:
+def check_debrief_rubric(text: str, label: str, result: GateResult, four: bool = False) -> None:
     low = text.lower()
     if "вариант 4" in low and "совет" in low:
         result.fail(f"{label}: старая форма 4 советов на варианты")
-    pos = len(re.findall(r"(?im)^##\s*позиция\s*[123]", text))
-    if pos < 3:
-        result.fail(f"{label}: нужны 3 позиции рубрики, не 4 совета")
+    needed = 4 if four else 3
+    pos = len(re.findall(r"(?im)^##\s*позиция\s*[1234]", text))
+    if pos < needed:
+        if four:
+            result.fail(f"{label}: с 15.09 нужны 4 позиции, позиция 4 = совет")
+        else:
+            result.fail(f"{label}: нужны 3 позиции рубрики, не 4 совета")
     if "когда напишет" in low:
         result.fail(f"{label}: нельзя тянуть «когда напишет»")
     for phrase in FROZEN_TEMPLATE:
@@ -319,12 +367,40 @@ def check_debrief_rubric(text: str, label: str, result: GateResult) -> None:
         blob = third.group(0).lower()
         if not any(tok in blob for tok in HER_TOKENS):
             result.fail(f"{label}: позиция 3 должна быть про неё")
+    if four:
+        fourth = re.search(
+            r"(?is)##\s*позиция\s*4.*?(?=##\s*позиция|\Z)",
+            text,
+        )
+        if fourth:
+            blob = fourth.group(0).lower()
+            if "отпусти" in blob:
+                result.fail(f"{label}: позиция 4 пустое «отпусти»")
+            if not any(tok in blob for tok in ADVICE_TOKENS):
+                result.fail(f"{label}: позиция 4 должна быть ходом сейчас")
     for phrase in EMPTY_TRY_ON:
         if phrase in low:
             result.fail(f"{label}: пустая вода про «примерить»")
 
 
-def check_2121_text(vis: str, label: str, result: GateResult) -> None:
+def card_has_heading(vis: str, card: str) -> bool:
+    escaped = re.escape(card)
+    return bool(
+        re.search(rf"(?is)<b>\s*{escaped}\s*</b>", vis)
+        or re.search(rf"(?im)^\*\*{escaped}\*\*", vis)
+        or re.search(rf"(?im)^##\s*{escaped}\b", vis)
+        or re.search(rf"(?im)^{escaped}\s*$", vis)
+    )
+
+
+def check_2121_text(
+    vis: str,
+    label: str,
+    result: GateResult,
+    *,
+    four: bool = False,
+    cards: list[str] | None = None,
+) -> None:
     low = vis.lower()
     if SCENA_RE.search(vis) or "«сцена»" in low:
         result.fail(f"{label}: слово «Сцена» запрещено")
@@ -344,6 +420,36 @@ def check_2121_text(vis: str, label: str, result: GateResult) -> None:
     for phrase in SUIT_METAPHOR:
         if phrase in low:
             result.fail(f"{label}: метафора мастей / «дозрел до»")
+    if four:
+        if "вытянула четыре карты" not in low:
+            result.fail(f"{label}: нет строки «Вытянула четыре карты»")
+        for card in cards or []:
+            if card and card.lower() not in low:
+                result.fail(f"{label}: не названа карта {card}")
+            elif card and not card_has_heading(vis, card):
+                result.fail(f"{label}: нет заголовка карты {card}")
+        if "отпусти" in low:
+            result.fail(f"{label}: пустое «отпусти» вместо хода")
+
+
+def load_cards_json(package: Path, result: GateResult, four: bool) -> list[str]:
+    path = package / "cards.json"
+    if not path.is_file():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    cards = [str(name) for name in (data.get("cards") or []) if str(name).strip()]
+    if four:
+        count = int(data.get("count") or 0)
+        if count != 4 or len(cards) != 4:
+            result.fail("cards.json: с 15.09 count: 4 и четыре имени")
+        positions = data.get("positions") or []
+        if positions and len(positions) < 4:
+            result.fail("cards.json: нужны 4 позиции")
+        if len(positions) >= 4:
+            name = str(positions[3].get("name") or "").lower()
+            if "совет" not in name and "ход" not in name and "делать" not in name:
+                result.fail("cards.json: позиция 4 = совет сейчас")
+    return cards
 
 
 def check_editorial(package: Path, slot: str, result: GateResult) -> None:
@@ -426,19 +532,32 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
                 if not (package / name).is_file():
                     result.fail(f"12:12: нет {name}")
         if slot == "2121":
+            four = uses_four_cards(package, slot)
+            cards = load_cards_json(package, result, four)
             if (package / "ig.txt").is_file() or (package / "max.txt").is_file():
                 result.fail("21:21: не писать IG/Макс")
             if not (package / "vk.html").is_file():
                 result.fail("21:21: нет vk.html")
             if tg.is_file():
-                vis = visible_text(tg.read_text(encoding="utf-8"))
-                check_2121_text(vis, "tg.html", result)
+                raw = tg.read_text(encoding="utf-8")
+                check_2121_text(raw, "tg.html", result, four=four, cards=cards)
             vk = package / "vk.html"
             if vk.is_file():
-                check_2121_text(visible_text(vk.read_text(encoding="utf-8")), "vk.html", result)
+                check_2121_text(
+                    vk.read_text(encoding="utf-8"),
+                    "vk.html",
+                    result,
+                    four=four,
+                    cards=cards,
+                )
             debrief = package / "debrief.md"
             if debrief.is_file():
-                check_debrief_rubric(debrief.read_text(encoding="utf-8"), "debrief.md", result)
+                check_debrief_rubric(
+                    debrief.read_text(encoding="utf-8"),
+                    "debrief.md",
+                    result,
+                    four=four,
+                )
     meta = package / "package.meta.json"
     if meta.is_file():
         data = json.loads(meta.read_text(encoding="utf-8"))
@@ -490,7 +609,7 @@ incident_report: none
 - [ ] Главред снят, фразы Главреда нет
 - [ ] нет слова «ловушка»
 - [ ] бот ≠ приложение
-- [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», позиция 3 = она
+- [ ] 21:21: длина, нет «Сцена», нет пустой воды про «примерить», 4 карты с 15.09, позиция 3 = она, позиция 4 = совет
 - [ ] cover anti-stale: новый кадр, уникальный md5, хук совпадает
 - [ ] Gate предложения не переписывает
 - [ ] publish SKIP у писателей; эфир — posts_publish.py

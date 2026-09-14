@@ -21,7 +21,11 @@ ROLES = {
         "artifacts": ["brief.md"],
         "model": "inherit",
         "written_by": "inherit",
-        "extra_canon": ["POSTS_SCOUT_CANON.md"],
+        "extra_canon": [
+            "POSTS_SCOUT_CANON.md",
+            "posts/_canon-1515/SEED.md",
+            "posts/_canon-2121/SEED.md",
+        ],
     },
     "posts-meaning": {
         "agent": ".cursor/agents/posts-meaning.md",
@@ -36,6 +40,11 @@ ROLES = {
         "artifacts": ["tg.html", "vk.html", "debrief.md", "poll.txt"],
         "model": SOL,
         "written_by": SOL_STAMP,
+        "extra_canon": [
+            "posts/_canon-2121/SEED.md",
+            "posts/_canon-2121/debrief.md",
+            "posts/_canon-2121/platforms.md",
+        ],
     },
     "posts-cover-text": {
         "agent": ".cursor/agents/posts-cover-text.md",
@@ -50,6 +59,7 @@ ROLES = {
         "artifacts": ["GATE"],
         "model": "inherit",
         "written_by": SOL_STAMP,
+        "extra_canon": ["posts/_canon-2121/platforms.md", "posts/_canon-2121/debrief.md"],
     },
 }
 
