@@ -1,0 +1,33 @@
+=== POSTS GATE ===
+slot: 2026-09-10-alena
+verdict: FAIL
+return: Writer
+director_inline: ok
+openai_api: FAIL
+gemini_model_available: skip (слот пишет только openai-api-gpt-5.5)
+water: n/a
+funnel: n/a
+limits: n/a
+voice: n/a
+kstati: n/a
+cover: skip (канон /workspace/alena-covers/prognoz-na-den.png в снимке нет; лицо не генерили)
+tg_len: n/a
+cover_md5: n/a
+cover_hook: n/a
+visible_chars: n/a
+max: SKIP (нет MAX_BOT_TOKEN; Writer не отработал)
+incident_report: OPENAI_API_KEY есть, chat completions gpt-5.5 → 401 ip_not_authorized. egress 35.163.190.53. Cursor / Gemini / inherit / gpt-5.6-sol письмом не подменяли. caption.html / max.txt / READY.txt / written_by.txt не писали. В Telegram и Макс не ходили, слот 07:00 не ждали.
+
+# Причины
+- Writer: openai-api-gpt-5.5 недоступен (IP not authorized). Нет API = FAIL, текст не подменять.
+
+# Чеклист
+- [x] scout.md живой, ≥2 источника, МСК
+- [x] фаза убывающая, знак Дева, 29-й день с ~04:35 МСК
+- [x] аспекты: квадрат Уран точный 08:21; секстиль Венера до ~12:24
+- [ ] caption.html / max.txt — нет, Writer не отработал
+- [ ] cover.png — канон в снимке отсутствует
+- [x] Director / Gemini / inherit письмо не писал
+- [x] Главред не звали, posts-cover-text не звали
+- [x] в Telegram / Макс не ходили, publish SKIP
+- [x] слот 07:00 не ждали
