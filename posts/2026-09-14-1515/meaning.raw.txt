@@ -1,0 +1,9 @@
+openai chat completions HTTP 401: {
+  "error": {
+    "message": "Your IP is not authorized to make this request.",
+    "type": "invalid_request_error",
+    "code": "ip_not_authorized",
+    "param": null
+  },
+  "status": 401
+}
