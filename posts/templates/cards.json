@@ -1,0 +1,15 @@
+{
+  "date": "YYYY-MM-DD",
+  "slot": "2121",
+  "source": "python3 scripts/draw_rw_cards.py --count 4 --ledger posts/LEDGER.md",
+  "draw": "random",
+  "deck": "RWS",
+  "count": 4,
+  "cards": [],
+  "positions": [
+    {"n": 1, "name": "его сторона", "card": ""},
+    {"n": 2, "name": "почему сейчас", "card": ""},
+    {"n": 3, "name": "что это просит у неё", "card": ""},
+    {"n": 4, "name": "совет сейчас", "card": ""}
+  ]
+}

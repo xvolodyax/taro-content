@@ -22,7 +22,7 @@ Gate такое режет: inline = FAIL. Холл = ты: посты **ник�
 12:12 / 15:15:
   researcher → meaning → copywriter → cover-text? → gate → READY_TO_SEND → EXIT
 21:21:
-  researcher? (3 вопроса из опроса) → draw_rw_cards.py
+  researcher? (4 вопроса из опроса) → draw_rw_cards.py --count 4
   → ОДИН writer (--model gpt-5.6-sol) → gate
 ```
 
@@ -78,7 +78,7 @@ meaning → copywriter → cover-text → gate.
 
 **15:15.** researcher (живой сигнал из широкой ниши; анти-монотонность 7 дней;
 не клон угла 12:12; WORDSTAT PARTIAL не стоп; не «карта дня»;
-может набросать 3 вопроса к колоде в brief) →
+может набросать 4 вопроса к колоде в brief) →
 meaning (только тезис опроса) →
 copywriter (только `poll.txt` + площадки опроса). Вечернюю прозу не писать.
 Cover нет. После PASS: один прогон скрипта (poll) или `READY_TO_SEND` → EXIT.
@@ -88,12 +88,15 @@ Instagram и Макс нет.
 
 **21:21.** Рубрика «Другая сторона экрана».
 Meaning **не** запускать. Не конвейер. Не «обогащение».
-researcher? только если в brief ещё нет трёх вопросов из СЕГОДНЯШНЕГО опроса.
-Карты: `python3 scripts/draw_rw_cards.py --count 3 --ledger posts/LEDGER.md`.
+researcher? только если в brief ещё нет четырёх вопросов из СЕГОДНЯШНЕГО опроса.
+Карты: `python3 scripts/draw_rw_cards.py --count 4 --ledger posts/LEDGER.md`.
+`cards.json` count: 4. С 15.09.2026. Живые пакеты до 15.09 не перетягивать.
 Потом **один** `Task(posts-copywriter)` / Cloud `Task(generalPurpose)` + `--model gpt-5.6-sol`.
 Cover после заморозки `tg.html`, пост не правит.
-Gate только механика: длина, «Сцена», пустая вода про «примерить», пульс, позиция 3 = она.
-Предложения не гладить. Три позиции. Позиция 3 про неё. Пульс точно `Похоже? ❤️/ Не то ⚡`.
+Gate только механика: длина, «Сцена», пустая вода про «примерить», пульс,
+4 карты, позиция 3 = она, позиция 4 = совет сейчас.
+Предложения не гладить. Позиция 3 про неё. Пульс точно `Похоже? ❤️/ Не то ⚡`.
+Канон: `posts/_canon-2121/`.
 После PASS: один прогон скрипта без `--wait` → SENT или `READY_TO_SEND` → EXIT.
 ВК/YouTube — Холл/браузер, если нет ключа.
 Без IG/Макс. Холл текст не пишет.
