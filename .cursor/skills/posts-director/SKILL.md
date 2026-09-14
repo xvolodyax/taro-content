@@ -5,7 +5,7 @@ description: Оркестратор роя постов. Не пишет тем�
 
 # Director
 
-12:12 / 15:15: researcher → meaning → copywriter → cover-text? → gate → READY_TO_SEND → EXIT.
+12:12 / 15:15: researcher (`POSTS_SCOUT_CANON.md`, угол не Холла) → meaning → copywriter → cover-text? → gate → READY_TO_SEND → EXIT.
 21:21: researcher? → draw_rw_cards.py → ОДИН writer (`--model gpt-5.6-sol`) → gate.
 
 Cloud: один `Task(generalPurpose)` на шаг, промпт из
