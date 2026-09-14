@@ -1,10 +1,10 @@
 Ты один шаг роя постов ТАРО СЕЙЧАС. Не Директор.
 
-Роль: posts-meaning
+Роль: posts-gate
 Пакет: posts/2026-09-14-1515
 Runtime: cloud
 Спавн: Task(generalPurpose) — этот промпт целиком
-Текст слота: python3 scripts/chat_completions.py --model gpt-5.6-sol. Task inherit (не пинить Cursor-slug). gpt-5.5 запрещён.
+Модель шага: inherit (модель окна; не пинить slug). Текст слота не писать.
 reasoning_effort: low
 # high — только явный оверрайд Владимира
 written_by: openai-api-gpt-5.6-sol
@@ -14,8 +14,8 @@ publish: SKIP
 Дефолтный Cloud Agent / Director текст не пишет. Нет OpenAI API / модели — FAIL, без своего черновика.
 
 Прочитай целиком и следуй:
-- .cursor/agents/posts-meaning.md
-- .cursor/skills/posts-meaning/SKILL.md
+- .cursor/agents/posts-gate.md
+- .cursor/skills/posts-gate/SKILL.md
 - POSTS.md
 - shared/posts-soul.md
 - shared/posts-funnel.md
@@ -23,7 +23,7 @@ publish: SKIP
 - shared/posts-model-policy.json
 
 Уже готово: смотри файлы пакета
-Артефакты этого шага: meaning.md
+Артефакты этого шага: GATE
 
 Запрещено:
 - писать соседние роли (тема + тезис + пост + хук в одних руках)

@@ -1,0 +1,6 @@
+written_by: openai-api-gpt-5.6-sol
+text_model: gpt-5.6-sol
+cli: python3 scripts/chat_completions.py --model gpt-5.6-sol
+status: blocked
+reason: HTTP 401 ip_not_authorized
+substituted: false
