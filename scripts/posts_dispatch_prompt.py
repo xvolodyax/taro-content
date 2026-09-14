@@ -21,6 +21,7 @@ ROLES = {
         "artifacts": ["brief.md"],
         "model": "inherit",
         "written_by": "inherit",
+        "extra_canon": ["POSTS_SCOUT_CANON.md"],
     },
     "posts-meaning": {
         "agent": ".cursor/agents/posts-meaning.md",
@@ -75,11 +76,21 @@ def build_prompt(role: str, package: str, runtime: str, ready: str = "") -> str:
     )
     ready_line = ready.strip() or "смотри файлы пакета"
     effort = POLICY.get("cloud_reasoning_effort") or "low"
+    extra = spec.get("extra_canon") or []
+    extra_block = "".join(f"- {path}\n" for path in extra)
     text_line = (
         f"Текст слота: {SOL_CLI}. Task inherit (не пинить Cursor-slug). gpt-5.5 запрещён."
         if role in POLICY["text_agents"]
         else "Модель шага: inherit (модель окна; не пинить slug). Текст слота не писать."
     )
+    scout_line = ""
+    if role == "posts-researcher":
+        scout_line = (
+            "\nScout 12:12 / 15:15: ниша relations+marriage+kids+family+tarot_moment. "
+            "Анти-монотонность против зажёванного chat_promise. Холл угол не назначает. "
+            "21:21 угол не выбирает.\n"
+            "Скрипт: python3 scripts/posts_scout_clusters.py --lookback-days 7\n"
+        )
     return f"""Ты один шаг роя постов ТАРО СЕЙЧАС. Не Директор.
 
 Роль: {role}
@@ -99,11 +110,11 @@ publish: SKIP
 - {spec["agent"]}
 - {spec["skill"]}
 - POSTS.md
-- shared/posts-soul.md
+{extra_block}- shared/posts-soul.md
 - shared/posts-funnel.md
 - shared/posts-step-contract.md
 - shared/posts-model-policy.json
-
+{scout_line}
 Уже готово: {ready_line}
 Артефакты этого шага: {", ".join(spec["artifacts"])}
 

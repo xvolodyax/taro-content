@@ -64,17 +64,20 @@ Researcher / gate: `inherit`.
 
 ## Алгоритм
 
-1. Прочитать `POSTS.md`, `posts/PUBLISH.md`, `shared/posts-soul.md`, `shared/posts-funnel.md`,
+1. Прочитать `POSTS.md`, `POSTS_SCOUT_CANON.md`, `posts/PUBLISH.md`, `shared/posts-soul.md`, `shared/posts-funnel.md`,
    `shared/posts-step-contract.md`, `posts/LEDGER.md`. На Алёне ещё `posts/ALENA.md`.
+   Холл / Директор **не** назначает угол 12:12 / 15:15 — это Scout.
 2. Слот из промпта: `1212` | `1515` | `2121` | `alena-0700`. Даты нет — стоп.
 3. Сегодняшний уже вышедший слот не переписывать. Вчерашний живой 21:21 не переписывать.
 4. Создать `posts/YYYY-MM-DD-HHMM/` из `posts/templates/` **или** `posts/YYYY-MM-DD-alena/`.
    `video/` и чужие пакеты не трогать.
 
-**12:12.** researcher → meaning → copywriter → cover-text → gate.
+**12:12.** researcher (широкая ниша + анти-монотонность 7 дней; Холл угол не даёт) →
+meaning → copywriter → cover-text → gate.
 После PASS: один `posts_publish.py` без `--wait` → SENT или `READY_TO_SEND` → EXIT.
 
-**15:15.** researcher (живой сигнал; WORDSTAT PARTIAL не стоп; не «карта дня»;
+**15:15.** researcher (живой сигнал из широкой ниши; анти-монотонность 7 дней;
+не клон угла 12:12; WORDSTAT PARTIAL не стоп; не «карта дня»;
 может набросать 3 вопроса к колоде в brief) →
 meaning (только тезис опроса) →
 copywriter (только `poll.txt` + площадки опроса). Вечернюю прозу не писать.
