@@ -1,0 +1,23 @@
+{
+  "role": "posts-copywriter",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "inherit",
+  "inline": false,
+  "written_by": "gemini",
+  "dispatch_prompt": "steps/02-copywriter.prompt.md",
+  "artifacts": [
+    "debrief.md",
+    "tg.html",
+    "vk.html",
+    "cards.json"
+  ],
+  "publish": "SKIP",
+  "runtime": "cloud",
+  "text_via": "openai-api-gpt-5.5",
+  "executed": true,
+  "openai_status": "401 ip_not_authorized",
+  "artifacts_written": [
+    "openai-error.json"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-08",
+  "slot": "2121",
+  "rubric": "Другая сторона экрана",
+  "draw": "given",
+  "count": 3,
+  "source": "hall-given / local draft",
+  "poll_1515": "Мыла кружку и увидела его лайк другой. Что сделаешь?",
+  "cards": [
+    {
+      "position": 1,
+      "name_ru": "Шестёрка пентаклей",
+      "name_en": "Six of Pentacles"
+    },
+    {
+      "position": 2,
+      "name_ru": "Башня",
+      "name_en": "The Tower"
+    },
+    {
+      "position": 3,
+      "name_ru": "Тройка мечей",
+      "name_en": "Three of Swords"
+    }
+  ]
+}
