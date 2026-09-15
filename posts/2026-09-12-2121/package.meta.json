@@ -1,0 +1,15 @@
+{
+  "pipeline": "taro-posts-swarm",
+  "written_by": "openai-api-gpt-5.6-sol",
+  "text_model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "director_inline": false,
+  "slot": "2121",
+  "date": "2026-09-12",
+  "rubric": "Другая сторона экрана",
+  "seed_only": false,
+  "cards_locked": true,
+  "note": "полный пакет 21:21; карты из сида не перетягивать"
+}

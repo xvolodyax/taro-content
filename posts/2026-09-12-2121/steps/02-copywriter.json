@@ -1,0 +1,16 @@
+{
+  "role": "posts-copywriter",
+  "spawn": "Task",
+  "subagent_type": "generalPurpose",
+  "model": "gpt-5.6-sol",
+  "inline": false,
+  "written_by": "openai-api-gpt-5.6-sol",
+  "dispatch_prompt": "steps/02-copywriter.prompt.md",
+  "artifacts": [
+    "copywriter.system.txt",
+    "copywriter.prompt.txt",
+    "written_by.txt"
+  ],
+  "publish": "SKIP",
+  "runtime": "cloud"
+}
