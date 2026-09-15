@@ -73,7 +73,8 @@ Researcher / gate: `inherit`.
    `video/` и чужие пакеты не трогать.
 
 **12:12.** researcher (широкая ниша + анти-монотонность 7 дней; Холл угол не даёт) →
-meaning → copywriter → cover-text → gate.
+meaning → copywriter (`posts/_canon-1212/`, «Спроси у карт:») → cover-text → gate.
+Живые пакеты до 16.09 не переписывать.
 После PASS: один `posts_publish.py` без `--wait` → SENT или `READY_TO_SEND` → EXIT.
 
 **15:15.** researcher (живой сигнал из широкой ниши; анти-монотонность 7 дней;
