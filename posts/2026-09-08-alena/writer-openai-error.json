@@ -1,0 +1,10 @@
+{
+  "model_requested": "gpt-5.5",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "http_status": 401,
+  "error_code": "ip_not_authorized",
+  "error_type": "invalid_request_error",
+  "egress_ip": "35.83.9.202",
+  "key_present": true,
+  "substituted": false
+}
