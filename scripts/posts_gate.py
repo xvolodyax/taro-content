@@ -55,6 +55,24 @@ STOP_PHRASES = (
 SLOT_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2})-(?P<slot>1212|1515|2121|alena)$")
 SCENA_RE = re.compile(r"(?i)(?:^|\n)\s*«?сцена»?\s*(?:[:.\-—–]|$)|«сцена»")
 FOUR_CARDS_SINCE = date(2026, 9, 15)
+PLAIN_1212_SINCE = date(2026, 9, 16)
+FOG_1212 = (
+    "забирает внимание у",
+    "опора в собственных планах",
+    "опора в планах",
+    "вернуть себе ясность",
+    "вернуть ясность",
+    "обозначить для себя",
+    "динамика неопределённости",
+    "пространство для",
+)
+ACTION_MENU_1212 = (
+    "поднять разговор",
+    "обозначить срок",
+)
+HEADING_1212_RE = re.compile(
+    r"(?im)^(?:если\s+выбираешь(?:\s+ход(?:\s+на\s+сегодня)?)?|ход\s+на\s+сегодня|что\s+сделать\s+сегодня)\s*:?\s*$"
+)
 ADVICE_TOKENS = (
     "напиш",
     "не пиш",
@@ -117,6 +135,44 @@ def uses_four_cards(package: Path, slot: str) -> bool:
     if day is None:
         return True
     return day >= FOUR_CARDS_SINCE
+
+
+def uses_plain_1212(package: Path, slot: str) -> bool:
+    if slot != "1212":
+        return False
+    day = package_date(package)
+    if day is None:
+        return True
+    return day >= PLAIN_1212_SINCE
+
+
+def check_1212_text(vis: str, label: str, result: GateResult) -> None:
+    low = vis.lower()
+    if "если выбираешь ход на сегодня" in low:
+        result.fail(f"{label}: запрещён заголовок «Если выбираешь ход на сегодня»")
+    if HEADING_1212_RE.search(vis):
+        result.fail(f"{label}: запрещён заголовок-меню хода")
+    for phrase in FOG_1212:
+        if phrase in low:
+            result.fail(f"{label}: мутное эссе «{phrase}»")
+    if "спроси у карт:" not in low:
+        result.fail(f"{label}: нет заголовка «Спроси у карт:»")
+        return
+    match = re.search(r"(?is)спроси у карт\s*:\s*(.*)", vis)
+    if not match:
+        result.fail(f"{label}: нет заголовка «Спроси у карт:»")
+        return
+    rest = match.group(1)
+    bullets = re.findall(r"(?m)^\s*[•·]\s+\S.*", rest)
+    if not (2 <= len(bullets) <= 3):
+        result.fail(f"{label}: нужны 2–3 вопроса «•» после «Спроси у карт:»")
+    block = rest.lower()
+    for phrase in ACTION_MENU_1212:
+        if phrase in block:
+            result.fail(f"{label}: вопросы-меню действий, не вопросы к картам")
+    qmarks = sum(1 for line in bullets if "?" in line)
+    if bullets and qmarks < min(2, len(bullets)):
+        result.fail(f"{label}: вопросы к картам должны быть вопросами")
 
 
 def detect_slot(package: Path) -> str:
@@ -531,6 +587,14 @@ def check_editorial(package: Path, slot: str, result: GateResult) -> None:
             for name in ("ig.txt", "yt.txt", "max.txt", "vk.html"):
                 if not (package / name).is_file():
                     result.fail(f"12:12: нет {name}")
+            if uses_plain_1212(package, slot):
+                for name in ("tg.html", "vk.html", "max.txt", "ig.txt", "yt.txt"):
+                    path = package / name
+                    if not path.is_file():
+                        continue
+                    raw = path.read_text(encoding="utf-8")
+                    vis = visible_text(raw) if name.endswith(".html") else raw
+                    check_1212_text(vis, name, result)
         if slot == "2121":
             four = uses_four_cards(package, slot)
             cards = load_cards_json(package, result, four)
@@ -603,6 +667,7 @@ incident_report: none
 
 # Чеклист
 - [ ] 12:12/15:15: researcher → meaning → copywriter → cover-text? → gate
+- [ ] 12:12 с 16.09: «Спроси у карт:» + 2–3 •; нет «Если выбираешь ход на сегодня»; нет мутного эссе
 - [ ] 21:21: один writer → gate (meaning нет)
 - [ ] Директор / Холл не писал inline
 - [ ] written_by: {required_writer(result.slot) or "openai-api-gpt-5.6-sol"}

@@ -8,6 +8,7 @@ is_background: false
 ---
 
 Ты **posts-copywriter**. Открой `.cursor/agents/posts-copywriter.md` и skill
-`.cursor/skills/posts-copywriter/SKILL.md`. Живая сцена, вопросы, CTA.
+`.cursor/skills/posts-copywriter/SKILL.md`. На 12:12 — `posts/_canon-1212/`:
+простой язык, заголовок `Спроси у карт:`, не «ход на сегодня».
 
 В step record пиши `role: posts-copywriter`. `written_by: openai-api-gpt-5.6-sol`. Текст: `--model gpt-5.6-sol`.

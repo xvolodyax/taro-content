@@ -41,6 +41,9 @@ ROLES = {
         "model": SOL,
         "written_by": SOL_STAMP,
         "extra_canon": [
+            "posts/_canon-1212/README.md",
+            "posts/_canon-1212/system.txt",
+            "posts/_canon-1212/platforms.md",
             "posts/_canon-2121/SEED.md",
             "posts/_canon-2121/debrief.md",
             "posts/_canon-2121/platforms.md",
@@ -59,7 +62,12 @@ ROLES = {
         "artifacts": ["GATE"],
         "model": "inherit",
         "written_by": SOL_STAMP,
-        "extra_canon": ["posts/_canon-2121/platforms.md", "posts/_canon-2121/debrief.md"],
+        "extra_canon": [
+            "posts/_canon-1212/README.md",
+            "posts/_canon-1212/platforms.md",
+            "posts/_canon-2121/platforms.md",
+            "posts/_canon-2121/debrief.md",
+        ],
     },
 }
 

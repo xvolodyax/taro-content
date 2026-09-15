@@ -14,6 +14,7 @@
 - путь агента: `.cursor/agents/posts-<role>.md`
 - путь skill: `.cursor/skills/posts-<role>/SKILL.md`
 - канон: `POSTS.md`, `shared/posts-soul.md`, `shared/posts-funnel.md`
+- copywriter / gate на 12:12 ещё: `posts/_canon-1212/`
 - researcher ещё: `POSTS_SCOUT_CANON.md` (широкая ниша + анти-монотонность 7 дней; Холл угол не назначает)
 - путь пакета и слот
 - что уже готово
