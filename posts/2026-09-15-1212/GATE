@@ -1,0 +1,27 @@
+=== POSTS GATE ===
+slot: 2026-09-15-1212
+verdict: FAIL
+return: meaning
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+tg_len: n/a
+cover_md5: n/a
+cover_hook: n/a
+incident_report: модель недоступна
+
+# Причины
+- модель недоступна: OpenAI API HTTP 401 ip_not_authorized (python3 scripts/chat_completions.py --model gpt-5.6-sol)
+- meaning.md не создан; площадки / cover-text / cover.png не писались
+- Director текст не подменял (ни inherit окна, ни Gemini, ни gpt-5.5)
+
+# Чеклист
+- [x] researcher → brief.md (cluster kids)
+- [ ] meaning → FAIL 401, без черновика
+- [ ] copywriter не звался
+- [ ] cover-text не звался
+- [ ] Kie cover не рисовался
+- [x] Директор / Холл не писал inline
+- [x] written_by слота: openai-api-gpt-5.6-sol (текст не вышел)
+- [x] Главред снят
+- [x] publish SKIP; эфир не слали
