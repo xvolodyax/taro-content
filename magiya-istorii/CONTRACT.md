@@ -10,7 +10,7 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 
 ## Публикация на сайт (Эскалибур-пайплайн)
 
-После того как `GATE` = PASS и готов холст 2K (срез `cover.png` + `inline-01`…`03`), Director запускает скрипт публикации `scripts/magiya_site_publish.py`. `publish` больше не всегда SKIP.
+После того как `GATE` = PASS и готов холст 2K 16:9 (срез `cover.png` + `inline-01`…`03`, все клетки 16:9), Director запускает скрипт публикации `scripts/magiya_site_publish.py`. `publish` больше не всегда SKIP.
 Холл руками ничего не upload, не approve и не publish — всё делает рой.
 
 - Секрет: `SITE_PUBLISH_TOKEN` (также проверяются `HALL_PUBLISH_TOKEN`, `PUBLISH_TOKEN`, `TARO_SITE_TOKEN`).
@@ -30,11 +30,12 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 | `article.html` | Director / Publisher | HTML из `story.md` + H1 + врезки `inline-01`…`03`. Без дубля cover |
 | `article.meta.json` | Director / Publisher | Метаданные для загрузки на сайт |
 | `description-brief.json` | Director / Publisher | Описание/excerpt (не дубль первого абзаца) |
-| `clickbait.txt` | Clickbait | Overlay на клетке cover холста 2×2, одна строка |
+| `clickbait.txt` | Clickbait | Overlay на клетке cover холста 2×2 16:9, одна строка |
 | `meta.json` | Package Metadata | `title`/`h1` ≠ `overlay_clickbait` |
 | `GATE` | Gate | Только проверка. Предложения не переписывает |
-| `art-brief.md` | Art | Промпт холста 2K 2×2 |
-| `canvas.png` | Art / Hall | Один Kie 2K; живые пакеты не регенерировать |
+| `art-brief.md` | Art | Промпт холста 2K 16:9 2×2 (не 1:1) |
+| `canvas.png` | Art / Hall | Один Kie 2K `aspect_ratio: 16:9`; живые пакеты не регенерировать |
+| `kie-task.json` | Art / Hall | createTask payload: `aspect_ratio: 16:9`, `resolution: 2K` |
 | `cover.png` | срез | Клетка 1 |
 | `inline-01.png`…`03` | срез | Клетки 2–4, в тело |
 | `package.meta.json` | Director | Статус публикации и пайплайна |
@@ -74,13 +75,13 @@ Inline Директора = FAIL.
 ```text
 Scout → Plot(заметки) → Title(только H1) → Writer(только тело) → Gate(только проверка)
 Clickbait: после Plot (можно параллельно с Writer — разный текст)
-Art: после Clickbait; один холст 2K 2×2 → cover + inline-01…03; прозу не пишет; cover в тело не дублировать
+Art: после Clickbait; один холст 2K 16:9 2×2 (не 1:1) → cover + inline-01…03 все 16:9; прозу не пишет; cover в тело не дублировать
 Publisher: агент сам upload → approve → publish (`SITE_PUBLISH_TOKEN`)
 ```
 
 FAIL тела → Writer. FAIL H1 → Title. FAIL overlay → Clickbait.
 Plot на тело не возвращать. Картинка текст не валит. Не чинить самому.
-**Одна генерация холста 2K.** Не четыре 1K. Не одна 16:9 без врезок (новые пакеты). Director не говорит «ещё раз нарисуй». Art не fail'ит Writer. Живые пакеты не перерисовывать.
+**Одна генерация холста 2K 16:9.** Не 1:1. Не четыре 1K. Не одна 16:9 без врезок (новые пакеты: мастер 16:9, внутри 2×2). Director не говорит «ещё раз нарисуй». Art не fail'ит Writer. Живые пакеты не перерисовывать.
 Лицо Холл не рисует.
 
 ## Чужое
@@ -98,7 +99,7 @@ chars: <n>
 kind: fiction | document
 h1: <Эскалибур>
 overlay: <кадр 1>
-art: canvas 2K → cover + inline-01..03
+art: canvas 2K 16:9 → cover + inline-01..03
 site_publish: OK (URL) | SKIP (reason) | FAIL (error)
 hall_chat: live URL / «на сайте» (полный story.md не класть)
 next: Hall
