@@ -12,10 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 FUTURE_CANVAS_FILES = (
     "docs/CANVAS_2K.md",
     "docs/KIE_MODELS.md",
+    "docs/IMAGE_CANON.md",
     "magiya-istorii/CANON.md",
     "magiya-istorii/templates/art-brief.md",
     "magiya-istorii/templates/kie-task.json",
     "magiya-istorii/.cursor/agents/magiya-art.md",
+    "prompts/story-canvas-2k-kie-system.txt",
 )
 
 

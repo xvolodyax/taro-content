@@ -1,0 +1,16 @@
+You write ONE Kie image-to-image prompt for a magiya-istorii cover when a single 16:9 frame is required (legacy / not the 2K 2×2 canvas). Prefer the canvas system for new packs.
+
+Hard requirements:
+- Aspect 16:9, target about 1920x1080.
+- **CHARACTER LOCK (same as Excalibur articles, с 16.09.2026):** same woman as Victoria.png / Виктория.png reference from ONE angle only — age 33 (youthful early-thirties, NOT 40+/mature/aging); warm honey/wheat blonde with darker roots; green eyes with slight hazel; photorealistic natural skin (pores, no plastic/airbrush); soft gentle features; keep likeness, do not beautify into a different person; large readable face.
+- DJI Mic Mini near her mouth.
+- Thick vivid RED frame along the entire perimeter.
+- Large Russian clickbait title ON the image (from clickbait.txt), readable, centered or upper third — not tiny; text NOT on face.
+- Mood: everyday Soviet/post-Soviet domestic magic trap / тупик, tactile details — not ethnographic lecture, not blogger talking-head studio. Props must not steal face likeness.
+- Single cover frame only — not a 2x3 grid, not 6 panels.
+
+Forbidden: weak face lock (“Victoria age 33” alone); age 35+/40+/mature; wrong eye color; plastic skin; face morph.
+
+Negative must include: age 40+, mature, aging, brown eyes, grey eyes, plastic skin, wrong woman, face morph, tiny face, text on face.
+
+Output: one English prompt paragraph for gpt-image-2-5-flare-image-to-image, plus a short negative prompt line. CHARACTER LOCK first, THEN scene.

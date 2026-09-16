@@ -93,7 +93,7 @@ Writer сам выбирает, какой вектор углубить. Это
 - **Writer** (`magiya-writer.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Только тело. H1 не пишет.
 - **Title** (`magiya-title.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Только H1. Тело не правит.
 - **Clickbait** (`magiya-clickbait.md` / `clickbait.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Пишет ударный overlay для кадра 1.
-- **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Базовое ядро — холст **2K 16:9 2×2** (не 1:1) с белыми швами: клетка 1 = Вика + DJI Mic Mini у рта + жирная красная рамка + overlay из `clickbait.txt`; клетки 2–4 без лица Вики; после среза все четыре клетки 16:9. Генерацию пикселей НЕ запускать. Канон холста: [`docs/CANVAS_2K.md`](../docs/CANVAS_2K.md).
+- **Art (текст промпта/art-brief)** (`magiya-art.md`): `gemini-3.8-flash` (`reasoning_effort: high`) [локальный Task alias: `gemini-3.8-flash-high`]. Базовое ядро — холст **2K 16:9 2×2** (не 1:1) с белыми швами: клетка 1 = **CHARACTER LOCK как у статей** → DJI Mic Mini у рта + жирная красная рамка + overlay из `clickbait.txt`; клетки 2–4 без лица Вики; после среза все четыре клетки 16:9. Генерацию пикселей НЕ запускать. Канон холста: [`docs/CANVAS_2K.md`](../docs/CANVAS_2K.md). Лицо: [`docs/IMAGE_CANON.md`](../docs/IMAGE_CANON.md).
 
 **Жёсткое правило (HARD 03.09):**
 Дефолтный Cloud Agent / Director НИКОГДА не подменяет текст, который по канону пишет Gemini. Дефолт не пишет в эфир ничего: ни H1, ни кликбейт, ни тело статьи, ни посты 12:12/15:15/21:21, ни опрос, ни Алёна, ни рилсы-текст.
@@ -190,9 +190,16 @@ Scout / Plot / Gate остаются `inherit` как служебные. Plot �
    - 12 клеток на листе = одна и та же Вика с разных углов, а не 12 разных людей.
    - **ЗАПРЕЩЕНО усреднять / морфить / блендить 12 лиц в «среднюю внешность».**
    - Для идентичности лица брать **ОДИН ракурс с листа** (анфас или 3/4). Остальные клетки — только подсказка угла головы, не второй персонаж и не усреднение.
-4. Позы, одежду и свет с реф-сетки **не копировать**. Глаза зелёные с лёгким карим оттенком, тёплый блонд с более тёмными корнями, мягкость и нежность черт сохранить.
+4. Позы, одежду и свет с реф-сетки **не копировать**.
 5. Лицо Вики — **только клетка cover** холста 2×2. Реф-лист из 12 ракурсов — только исходник лица, его в статью не копировать сеткой. Врезки `inline-01`…`03` — без лица Вики.
-6. В промпт клетки 1 вшивать **КОРОТКО**: одно лицо с одного ракурса листа (не 12 людей, без усреднения лиц), сохранить мягкость. Не раздувать промпт длинным списком людей.
+6. **CHARACTER LOCK (HARD 16.09, тот же, что у статей Эскалибура).** В промпт клетки cover **сначала lock, потом сцена / рамка / mic**. Не урезать до «Victoria age 33». English для Kie:
+   - Victoria.png / `Виктория.png` from **ONE angle only**
+   - age **33**, youthful early-thirties (**NOT** 40+/45/50, **NOT** mature/aging)
+   - warm honey/wheat blonde with darker roots
+   - green eyes with slight hazel
+   - photorealistic natural skin (pores, no plastic/airbrush)
+   - face large and readable; props / red frame / DJI **must not** shrink or distort the face
+   - Negative: age 40+, mature, aging, brown/grey eyes, plastic skin, face morph, tiny face, text on face
 7. Если файла рефа нет на диске репо — ставится `face: pending-ref`, пиксели не стартовать, лицо «по памяти» не выдумывать. Холл лицо не рисует.
 
 ## Холст 2K 2×2 (новые пакеты) — HARD 09.09
@@ -218,12 +225,10 @@ inline-02    inline-03
 - Канон id: [`docs/KIE_MODELS.md`](../docs/KIE_MODELS.md).
 
 ### 1. Клетка cover (HARD):
-- **Вика** (i2i с `magiya-istorii/refs/Виктория.png`, ровно 2 191 823 байт). Один ракурс, без усреднения 12 лиц.
-- **Глаза строго зелёные с лёгким карим оттенком** (hazel-green).
-- **Волосы:** тёплый блонд с более тёмными корнями, мягкие нежные черты.
-- **Микрофон DJI Mic Mini Transmitter В РУКЕ У РТА.** Не на лацкане.
+- **CHARACTER LOCK сначала** (как у статей): i2i `magiya-istorii/refs/Виктория.png` (ровно 2 191 823 байт), один ракурс; age 33 youthful early-thirties; honey/wheat + darker roots; green eyes slight hazel; photoreal skin; лицо крупное и читаемое.
+- **Потом сцена:** микрофон DJI Mic Mini Transmitter **В РУКЕ У РТА** (не на лацкане). Рамка и mic лицо не сжимают.
 - **ЖИРНАЯ красная окантовка** только этой клетки (истории; у статей Эскалибура красной рамки нет).
-- **Кликбейт** на пикселях: ровно строка из `clickbait.txt`.
+- **Кликбейт** на пикселях: ровно строка из `clickbait.txt`. Не на лицо.
 - Наряд: стильный глянец 2020-х (ведущая-расследователь, не жертва).
 
 ### 2. Клетки inline-01…03 (HARD):
@@ -234,10 +239,12 @@ inline-02    inline-03
 - **В БАЗОВЫЙ ПРОМПТ ЗАПРЕЩЕНО вшивать «ночь».** Также не зашивать «кухня», «хрущёвка» и конкретное время суток.
 - Место, свет, время суток и атмосферу Art берёт **строго из конкретной истории** (по `story.md`).
 
-### Базовое ядро промпта холста (2×2, 2K, 16:9; без ночи):
+### Базовое ядро промпта холста (2×2, 2K, 16:9; lock → сцена; без ночи):
 ```text
-A cinematic 2x2 photographic contact sheet on ONE 16:9 landscape master canvas (Kie aspect_ratio 16:9, NOT 1:1 square), resolution 2K, one canvas not four images. Four equal 16:9 landscape panels separated by THICK WHITE gutter seams so each panel stays 16:9 after slice. Panel 1 (top-left, cover): a single woman referenced from one angle of the Victoria sheet (no face morphing): distinct hazel-green eyes, warm blonde hair with darker roots, soft features; stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth; BOLD THICK RED magazine cover border around THIS PANEL ONLY; high-impact DISPLAY Cyrillic overlay with the clickbait title baked on the pixels. Panels 2 to 4: NO Victoria face, NO red frame, NO clickbait; distinct story-beat editorial photographs of place, object and atmosphere from the same setting and light. Thick white gutters must stay sliceable.
+A cinematic 2x2 photographic contact sheet on ONE 16:9 landscape master canvas (Kie aspect_ratio 16:9, NOT 1:1 square), resolution 2K, one canvas not four images. Four equal 16:9 landscape panels separated by THICK WHITE gutter seams so each panel stays 16:9 after slice. CHARACTER LOCK first (cover cell, same as Excalibur articles): use Victoria.png / Виктория.png from ONE angle only; woman age 33, youthful early-thirties (NOT 40+/45/50, NOT mature/aging); warm honey/wheat blonde with darker roots; green eyes with slight hazel; photorealistic natural skin (pores, no plastic/airbrush); soft gentle features; keep likeness — do not beautify into a different person; face large and readable. THEN cover scene (props, red frame and DJI Mic Mini MUST NOT shrink or distort the face): stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth; BOLD THICK RED magazine cover border around THIS PANEL ONLY; high-impact DISPLAY Cyrillic overlay with the clickbait title baked on the pixels, text NOT on face. Panels 2 to 4: NO Victoria face, NO red frame, NO clickbait; distinct story-beat editorial photographs of place, object and atmosphere from the same setting and light. Thick white gutters must stay sliceable. Negative: age 40+, mature woman, aging face, brown eyes, grey eyes, plastic/airbrush skin, wrong woman, face morph, tiny face, text on face.
 ```
+
+Сборка из файлов пакета (Kie не вызывает): `python3 scripts/build_story_canvas_prompt.py --pack magiya-istorii/packages/YYYY-MM-DD-slug`. Канон лица: [`docs/IMAGE_CANON.md`](../docs/IMAGE_CANON.md).
 
 ## Холст: одна генерация, текст не браковать
 

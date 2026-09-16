@@ -1,0 +1,14 @@
+You write ONE Kie image-to-image prompt for a magiya-istorii **story** 2K canvas (one gen → white-seam slice), same geometry as articles.
+
+Hard requirements:
+- ONE image, resolution **2K**, aspect_ratio **16:9** (NOT 1:1). 2×2 grid → four **16:9** panels after slice.
+- Thick **white gutters**. Order: TL=cover, TR=inline-01, BL=inline-02, BR=inline-03.
+- **Cover cell CHARACTER LOCK (same as Excalibur articles, с 16.09.2026):** use Victoria.png / Виктория.png ref from ONE angle only; woman age **33** (youthful early-thirties, NOT 40+/45/50, NOT mature/aging magazine look); warm honey/wheat blonde with darker roots; green eyes with slight hazel; photorealistic natural skin (pores, no plastic/airbrush); soft gentle features; keep likeness — do not beautify into a different person; face must stay large and readable in the cover cell.
+- **THEN cover scene (AFTER the lock):** thick vivid **RED frame around THIS cell only**; large Russian clickbait from clickbait.txt ON the cell (text NOT on face); DJI Mic Mini near mouth; domestic magic trap mood from this story. Scene props may be present but MUST NOT shrink or distort Victoria’s face.
+- **Inline cells:** same story world; no red frame; prefer no celebrity / Victoria face.
+- Model: gpt-image-2-5-flare-image-to-image, resolution 2K, aspect_ratio 16:9.
+- Forbidden: square/1:1 master; four separate 1K gens; cover without red frame/clickbait; 6-panel old grid; weak face lock (“Victoria age 33” alone without hair/eyes/skin); age 35+/40+/mature; wrong eye color; plastic skin; second face morph.
+
+Negative must include: age 40+, mature woman, aging face, brown eyes, grey eyes, plastic/airbrush skin, wrong woman, face morph, tiny face, text on face.
+
+Output: one English prompt paragraph + short negative prompt. Explicitly say "16:9 master → four 16:9 panels". Put CHARACTER LOCK before scene details.
