@@ -14,7 +14,7 @@ model: gpt-image-2-5-flare-image-to-image
 **createTask:** см. `templates/kie-task.json` и `docs/CANVAS_2K.md`.
 **Канон:** `docs/CANVAS_2K.md`. Модель: GPT Image 2.5 Flare i2i (`gpt-image-2-5-flare-image-to-image`). Нет рефа — t2i. Не Sunburst, не `gpt-image-2*`.
 **Язык:** современный журнал / editorial / reportage, глянец 2020-х.
-**Лицо:** только клетка обложки. i2i `magiya-istorii/refs/Виктория.png`. Холл лицо не рисует. Врезки — без лица Вики.
+**Лицо:** только клетка обложки. i2i `magiya-istorii/refs/Виктория.png`. **CHARACTER LOCK = как у статей Эскалибура** (сначала lock, потом сцена). Age 33 youthful; honey/wheat + darker roots; green eyes slight hazel; photoreal skin. Холл лицо не рисует. Врезки — без лица Вики. Канон: `docs/IMAGE_CANON.md`.
 **Микрофон:** DJI Mic Mini Transmitter в руке у рта — только клетка 1.
 **Наряд (клетка 1):**
 **Сцена и свет:** из `story.md`. В базовый промпт «ночь» не зашивать.
@@ -22,9 +22,9 @@ model: gpt-image-2-5-flare-image-to-image
 
 ## Клетка 1 / cover (лента)
 
-- Вика + Mic Mini. Картинка, не видео. Клетка 16:9 после среза.
-- Overlay дословно из `clickbait.txt` (кириллица на пикселях, display). Не title/h1.
-- **ЖИРНАЯ красная журнальная рамка только этой клетки.**
+- Сначала CHARACTER LOCK (Victoria.png, 33 youthful, honey/wheat, green/hazel, photoreal skin, large face). Потом Вика + Mic Mini. Картинка, не видео. Клетка 16:9 после среза.
+- Overlay дословно из `clickbait.txt` (кириллица на пикселях, display). Не title/h1. Не на лицо.
+- **ЖИРНАЯ красная журнальная рамка только этой клетки.** Рамка/mic/пропсы лицо не сжимают.
 
 ## Клетки 2–4 / inline-01…03
 
@@ -39,10 +39,10 @@ model: gpt-image-2-5-flare-image-to-image
 
 Одна генерация холста. Второй холст в прогоне запрещён. Art не валит Writer. Живые пакеты не перерисовывать.
 
-## Промпт (ядро 2×2, 2K, 16:9)
+## Промпт (ядро 2×2, 2K, 16:9; lock → сцена)
 
 ```text
-A cinematic 2x2 photographic contact sheet on ONE 16:9 landscape master canvas (Kie aspect_ratio 16:9, NOT 1:1 square), resolution 2K, one canvas not four images. Four equal 16:9 landscape panels separated by THICK WHITE gutter seams so each panel stays 16:9 after slice. Panel 1 (top-left, cover): a single woman referenced from one angle of the Victoria sheet (no face morphing): distinct hazel-green eyes, warm blonde hair with darker roots, soft features; stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth; BOLD THICK RED magazine cover border around THIS PANEL ONLY; high-impact DISPLAY Cyrillic overlay with the clickbait title baked on the pixels. Panels 2 to 4: NO Victoria face, NO red frame, NO clickbait; distinct story-beat editorial photographs of place, object and atmosphere from the same setting and light, optional subtle editorial captions. Thick white gutters must stay sliceable.
+A cinematic 2x2 photographic contact sheet on ONE 16:9 landscape master canvas (Kie aspect_ratio 16:9, NOT 1:1 square), resolution 2K, one canvas not four images. Four equal 16:9 landscape panels separated by THICK WHITE gutter seams so each panel stays 16:9 after slice. CHARACTER LOCK first (cover cell, same as Excalibur articles): use Victoria.png / Виктория.png from ONE angle only; woman age 33, youthful early-thirties (NOT 40+/45/50, NOT mature/aging); warm honey/wheat blonde with darker roots; green eyes with slight hazel; photorealistic natural skin (pores, no plastic/airbrush); soft gentle features; keep likeness — do not beautify into a different person; face large and readable. THEN cover scene (props, red frame and DJI Mic Mini MUST NOT shrink or distort the face): stylish 2020s investigative reporter holding a compact black DJI Mic Mini Transmitter in her hand right near her mouth; BOLD THICK RED magazine cover border around THIS PANEL ONLY; high-impact DISPLAY Cyrillic overlay with the clickbait title baked on the pixels, text NOT on face. Panels 2 to 4: NO Victoria face, NO red frame, NO clickbait; distinct story-beat editorial photographs of place, object and atmosphere from the same setting and light, optional subtle editorial captions. Thick white gutters must stay sliceable. Negative: age 40+, mature woman, aging face, brown eyes, grey eyes, plastic/airbrush skin, wrong woman, face morph, tiny face, text on face.
 ```
 
 ## Стоп

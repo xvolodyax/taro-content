@@ -33,7 +33,8 @@ magiya-istorii/packages/YYYY-MM-DD-slug/
 | `clickbait.txt` | Clickbait | Overlay на клетке cover холста 2×2 16:9, одна строка |
 | `meta.json` | Package Metadata | `title`/`h1` ≠ `overlay_clickbait` |
 | `GATE` | Gate | Только проверка. Предложения не переписывает |
-| `art-brief.md` | Art | Промпт холста 2K 16:9 2×2 (не 1:1) |
+| `art-brief.md` | Art | Промпт холста 2K 16:9 2×2 (не 1:1); CHARACTER LOCK как у статей, затем сцена |
+| `prompts/kie-canvas-prompt-full.txt` | `scripts/build_story_canvas_prompt.py` | Сборка Kie-промпта пакета (lock first). Kie не вызывает |
 | `canvas.png` | Art / Hall | Один Kie 2K `aspect_ratio: 16:9`; живые пакеты не регенерировать |
 | `kie-task.json` | Art / Hall | createTask payload: `aspect_ratio: 16:9`, `resolution: 2K` |
 | `cover.png` | срез | Клетка 1 |

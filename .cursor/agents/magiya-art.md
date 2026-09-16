@@ -1,6 +1,6 @@
 ---
 name: magiya-art
-description: "Art «Магия истории»: холст 2K 16:9 2×2 (не 1:1), белые швы, срез cover + inline-01..03 все 16:9. Cover: Вика + DJI + красная рамка + кликбейт. Врезки без лица. Gemini 3.8 Flash High. Не четыре 1K."
+description: "Art «Магия истории»: холст 2K 16:9 2×2 (не 1:1), белые швы, срез cover + inline-01..03 все 16:9. Cover: CHARACTER LOCK как у статей → DJI + красная рамка + кликбейт. Врезки без лица. Gemini 3.8 Flash High. Не четыре 1K."
 model: gemini-3.8-flash
 reasoning_effort: high
 readonly: false

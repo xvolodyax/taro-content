@@ -21,6 +21,7 @@ one_kie_task:
 four_1k_tasks: no
 frame1_clickbait_only: 
 frame1_red_journal: 
+face_lock_article_same:  
 inlines_01_03: 
 cover_once: 
 magazine_2020s: 
@@ -54,7 +55,7 @@ incident_report: none
 - [ ] title == h1, Эскалибур, не кликбейт
 - [ ] overlay_clickbait только на клетке cover холста 2×2, не в title/URL
 - [ ] один холст 2K 16:9 2×2 (не 1:1 / не square), не четыре 1K createTask, не одна 16:9 без врезок
-- [ ] cover: overlay Clickbait + жирная красная рамка + DJI у рта; inline-01…03 без лица Вики
+- [ ] cover: overlay Clickbait + жирная красная рамка + DJI у рта; CHARACTER LOCK как у статей (33 youthful / honey-wheat / green-hazel / photoreal) **перед** сценой; inline-01…03 без лица Вики
 - [ ] картинка не валит verdict прозы (только cover_note, regen=no)
 - [ ] cover в теле не дублировать; врезки только inline-01…03
 - [ ] живые пакеты не перерисованы
