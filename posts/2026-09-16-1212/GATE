@@ -1,0 +1,45 @@
+=== POSTS GATE ===
+slot: 2026-09-16-1212
+verdict: FAIL
+return: meaning
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL (модель недоступна)
+written_by: openai-api-gpt-5.6-sol
+water: n/a (площадок нет)
+funnel: n/a (площадок нет)
+limits: n/a
+voice: n/a
+platforms: нет tg.html / vk.html / max.txt / ig.txt / yt.txt
+cover: skip
+cover_md5: none
+cover_hook: none
+cards: n/a
+tg_len: n/a
+rubric_2121: n/a
+preview: none
+incident_report: none
+
+# Причины
+- openai_api: meaning FAIL. OpenAI API 401 ip_not_authorized, IP 3.149.191.121. Модель недоступна. Тезис не написан. meaning.md пустой шаблон.
+- Дефолтный Cloud Agent / Director текст не подменял. Своего черновика нет.
+- copywriter не звать: нет тезиса.
+- cover-text не звать: нет поста.
+- cover.png нет. cover_md5: none. cover_hook: none.
+- Скрипт `posts_gate.py --require-swarm --write` = FAIL. Вторичные дыры (нет 03/04 step, нет площадок, пустой cover-text.json, debrief.md без штампа) — следствие обрыва на meaning, не повод звать copywriter.
+
+# Чеклист
+- [x] researcher: brief.md есть, кластер marriage, spawn Task(generalPurpose)
+- [x] meaning: Task был, OpenAI API 401, без черновика
+- [ ] copywriter: не звать
+- [ ] cover-text: не звать
+- [x] gate: этот файл
+- [x] Директор / Холл не писал inline
+- [x] текст слота не писался (gpt-5.5 / Opus / Sonnet / Composer не звали)
+- [x] Главред снят, фразы Главреда нет
+- [x] бот ≠ приложение (площадок нет)
+- [ ] 12:12 с 16.09: «Спроси у карт:» + 2–3 • — нет текста
+- [x] cover anti-stale: кадра нет, md5 none, хук none
+- [x] Gate предложения не переписывает
+- [x] publish SKIP
