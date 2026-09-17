@@ -34,3 +34,37 @@ publish: SKIP
 - Opus / Sonnet / Composer / gpt-5.5 как писатель слота
 
 Верни Директору маркер роли и список файлов. Не публикуй.
+
+## Этот шаг
+
+Слот 12:12, четверг 2026-09-17. Вход: `posts/2026-09-17-1212/brief.md` (cluster family).
+Один тезис: почему этот угол бьёт сегодня. Не сцена, не CTA, не хук, не пост.
+
+Текст тезиса ТОЛЬКО так:
+`python3 scripts/chat_completions.py --model gpt-5.6-sol --system-file … --prompt-file … --out …`
+или `--prompt` / `--system`. Штамп `written_by: openai-api-gpt-5.6-sol`.
+`gpt-5.5` запрещён. Свой черновик Cursor-моделью писать нельзя.
+
+Если OpenAI 401 / нет ключа / модель недоступна:
+- не заполнять тезис своим текстом;
+- не копировать чужой meaning;
+- записать в отчёт Директору HTTP-код и тело ошибки (без ключа);
+- `meaning.md` не выдавать за готовый тезис (пустой шаблон ок только как FAIL-след).
+
+Шаблон: `posts/templates/meaning.md`. Секцию 15:15 не заполнять.
+
+Маркер при успехе:
+=== POSTS MEANING ===
+draft: thesis
+next: copywriter
+written_by: openai-api-gpt-5.6-sol
+publish: SKIP
+incident_report: none
+
+Маркер при 401:
+=== POSTS MEANING ===
+draft: FAIL
+next: none
+openai_api: FAIL
+reason: модель недоступна
+publish: SKIP
