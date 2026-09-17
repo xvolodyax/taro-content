@@ -52,19 +52,3 @@ publish: SKIP
 - `meaning.md` не выдавать за готовый тезис (пустой шаблон ок только как FAIL-след).
 
 Шаблон: `posts/templates/meaning.md`. Секцию 15:15 не заполнять.
-
-Маркер при успехе:
-=== POSTS MEANING ===
-draft: thesis
-next: copywriter
-written_by: openai-api-gpt-5.6-sol
-publish: SKIP
-incident_report: none
-
-Маркер при 401:
-=== POSTS MEANING ===
-draft: FAIL
-next: none
-openai_api: FAIL
-reason: модель недоступна
-publish: SKIP
