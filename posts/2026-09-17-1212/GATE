@@ -1,0 +1,48 @@
+=== POSTS GATE ===
+slot: 2026-09-17-1212
+verdict: FAIL
+return: meaning
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL (модель недоступна)
+written_by: openai-api-gpt-5.6-sol
+water: n/a
+funnel: n/a
+limits: n/a
+voice: n/a
+platforms: none
+cover: skip
+cover_md5: none
+cover_hook: none
+cards: n/a
+tg_len: n/a
+rubric_2121: n/a
+preview: none
+incident_report: none
+
+# Причины
+- openai_api: FAIL (модель недоступна)
+- meaning Task: OpenAI 401 ip_not_authorized
+- IP Cloud Agent: 52.15.104.219
+- meaning.md пустой шаблон: тезис / почему_хук / не_делать пустые
+- copywriter / cover-text / Kie не звать, пока нет тезиса
+- площадок нет: tg.html, vk.html, max.txt, ig.txt, yt.txt
+- cover.png нет, хук не выбран
+- scripts/posts_gate.py --require-swarm: FAIL
+- нет step record: posts-copywriter
+- нет step record: posts-cover-text
+
+# Чеклист
+- [x] researcher есть, brief.md family OK
+- [ ] meaning: тезис не написан (модель недоступна, без своего черновика)
+- [ ] copywriter не звать
+- [ ] cover-text не звать
+- [x] Директор / Холл не писал inline
+- [x] текст слота не подменяли: --model gpt-5.6-sol; gpt-5.5 не звали
+- [x] Главред снят, фразы Главреда нет
+- [ ] площадки 12:12 отсутствуют
+- [ ] 12:12 с 16.09: «Спроси у карт:» + 2–3 • — нет текста
+- [x] cover anti-stale: кадра нет
+- [x] Gate предложения не переписывает
+- [x] publish SKIP; READY_TO_SEND нет
