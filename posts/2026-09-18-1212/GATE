@@ -1,0 +1,59 @@
+=== POSTS GATE ===
+slot: 2026-09-18-1212
+verdict: FAIL
+return: meaning
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL (модель недоступна)
+written_by: openai-api-gpt-5.6-sol
+water: n/a
+funnel: n/a
+limits: n/a
+voice: n/a
+platforms: нет
+cover: нет
+cover_md5: нет
+cover_hook: нет
+cards: n/a
+tg_len: n/a
+rubric_2121: n/a
+preview: none
+incident_report: none
+files: brief.md; package.meta.json; steps/01-researcher.*; steps/02-meaning.*; нет meaning.md; нет площадок; нет cover.png
+
+# Причины
+- openai_api: ключ есть (chat_completions --check=OK), живой вызов meaning = HTTP 401 ip_not_authorized; модель недоступна
+- meaning.md нет; тезис не написан; Director текст не подменял
+- нет площадок: tg.html / vk.html / max.txt / ig.txt / yt.txt
+- нет cover.png / cover-text.json / image-prompt.txt
+- нет step record: posts-copywriter
+- нет step record: posts-cover-text
+- нет step record: posts-gate
+- scripts/posts_gate.py --require-swarm: verdict=FAIL
+
+# Чеклист
+
+- [ ] первая строка = кадр (не 15:15 poll-only)
+- [x] дефолтный Cloud Agent / Director НЕ подменял текст Sol / OpenAI API (если модель недоступна — FAIL, без своего черновика)
+- [ ] текст слота: --model gpt-5.6-sol; gpt-5.5 не звали
+- [x] нет слова «ловушка»
+- [ ] бот ≠ приложение
+- [ ] TG/ВК/Макс без кодового слова
+- [ ] Макс (`max.txt`): обе ссылки на Макс (бот + приложение `startapp=ref_9BAD4149`), нет `vk.com/app54565776`
+- [ ] IG без сырого URL (если файл есть; на 15:15 и 21:21 IG нет)
+- [ ] TG ≤ 1024 (12:12 и 21:21)
+- [ ] 12:12 с 16.09: есть «Спроси у карт:» и 2–3 • вопроса к картам
+- [ ] 12:12: нет «Если выбираешь ход на сегодня», нет меню хода, нет мутного эссе
+- [x] 12:12 до 16.09: живые пакеты не переписывать
+- [ ] ВК вопрос ≤ 80 (15:15)
+- [ ] 15:15: poll.txt 5 строк; 4 состояния ЭТОЙ ситуации
+- [ ] 15:15 обычный: вечерний debrief не требовать; в brief можно 4 вопроса
+- [ ] 15:15 poll-only: debrief нет, карт нет
+- [ ] 21:21 не тизер статьи
+- [ ] 21:21 с 15.09: 4 карты, «Вытянула четыре карты», 4 заголовка
+- [ ] 21:21: позиция 3 про неё; позиция 4 = ход сейчас, не «отпусти»
+- [ ] 21:21: нет «Сцена», нет «когда напишет», нет 4 советов на варианты опроса
+- [ ] 21:21 до 15.09: живые 3-карточные пакеты не переписывать
+- [ ] cover anti-stale: новый кадр, уникальный md5 за 7 дней, хук совпадает с выбранным candidate
+- [x] чужие пакеты и video/ не тронуты
