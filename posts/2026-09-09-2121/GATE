@@ -1,0 +1,32 @@
+=== POSTS GATE ===
+slot: 2026-09-09-2121
+verdict: FAIL
+return: openai-api-gpt-5.5
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+openai_api: FAIL
+gemini_model_available: skip (слот пишет только openai-api-gpt-5.5)
+tg_len: n/a
+cover_md5: n/a
+cover_hook: n/a
+written_by: openai-api-gpt-5.5
+cards_2121: n/a
+rubric_2121: Другая сторона экрана
+preview: poll-only
+incident_report: OPENAI_API_KEY есть, chat completions gpt-5.5 недоступен. api.openai.com → 401 ip_not_authorized с egress 52.14.104.140. Cursor-моделью (Gemini/inherit/Grok/composer) текст не подменяли. Composio toolkit openai без ACTIVE connection. debrief/tg/vk/yt/max/ig/cover-text не писали. Карты не тянули. Kie не вызывали — нет хука. posts_publish.py не звали (нет PASS). Слот 21:21 не ждали.
+
+# Причины
+- openai-api-gpt-5.5 недоступен (IP not authorized). Нет API = FAIL, текст не подменять.
+- нет заявки 15:15 и нет writer-артефактов — вечерний проход не стартовал
+- cover_md5 / cover_hook пустые: кадра нет, копировать прошлый cover.png запрещено
+
+# Чеклист
+- [ ] 21:21: один writer → cover-text → gate
+- [x] Директор / Cursor-модель разбор не писал
+- [x] Главред снят
+- [ ] written_by: openai-api-gpt-5.5 на артефактах — нет артефактов
+- [ ] cover anti-stale — cover.png не генерировали
+- [x] publish SKIP; в Telegram/ВК/Макс/IG/YT не ходили
+- [x] слот 21:21 не ждали
+- [x] anti-burn PR#68: FAIL → EXIT, без sleep/poll
