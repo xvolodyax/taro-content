@@ -1,0 +1,27 @@
+=== POSTS GATE ===
+slot: 2026-09-14-1212
+verdict: FAIL
+return: meaning
+publish: SKIP
+glavred: REMOVED
+director_inline: ok
+tg_len: n/a
+cover_md5: n/a
+cover_hook: n/a
+incident_report: openai HTTP 401 ip_not_authorized; модель недоступна; Director текст не писал
+
+# Причины
+- meaning: модель недоступна (OpenAI API gpt-5.6-sol HTTP 401 ip_not_authorized)
+- copywriter не звать: нет живого тезиса
+- cover-text / Kie не звать: нет поста и хука
+- Director / Cursor-модель текст слота не подменяли
+
+# Чеклист
+- [x] researcher → brief.md
+- [x] meaning вызван через Task(generalPurpose); свой черновик не писал
+- [ ] copywriter
+- [ ] cover-text
+- [ ] cover anti-stale
+- [x] written_by lock: openai-api-gpt-5.6-sol (текст не создан)
+- [x] Главред снят
+- [x] publish SKIP
