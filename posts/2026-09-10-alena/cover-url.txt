@@ -1,0 +1,7 @@
+CANON_MISSING_IN_SNAPSHOT
+ожидаемый канон на машине Холла: /workspace/alena-covers/prognoz-na-den.png
+ALENA_COVER_URL в env нет
+на Диске есть prognoz-na-den-2026-08-22.jpg (id 1Co9UqQba9wSpGmTZQa1eSQUgpA4_UPnV) — в FAIL-пакет не клали
+лицо / Kie / posts-cover-text не вызывать
+cover.png в пакет не клали
+прошлый cover не копировали и не скачивали
