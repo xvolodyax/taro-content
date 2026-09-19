@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-08",
+  "slot": "alena-0700",
+  "channel": "https://t.me/AlenaSafonova_queen",
+  "chat_id": "-1002381967798",
+  "written_by": "none",
+  "writer_requested": "openai-api-gpt-5.5",
+  "visible_chars": null,
+  "publish": "SKIP",
+  "glavred": "REMOVED",
+  "gate": "FAIL",
+  "fail_reason": "OPENAI_API_KEY present but chat completions 401 ip_not_authorized; no substitute draft",
+  "moon": {
+    "phase": "убывающая",
+    "sign": "Лев",
+    "lunar_day_at_0700": 27,
+    "lunar_day_change_msk": "01:23–01:33",
+    "aspects": [
+      "Луна секстиль Уран 01:09–07:56 МСК",
+      "Луна тригон Сатурн 13:00–21:28 МСК"
+    ]
+  }
+}
